@@ -1,0 +1,7 @@
+Makefile
+.moc
+.ui
+.obj
+libananas.so.*
+
+libananas.so

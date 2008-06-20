@@ -1,0 +1,9 @@
+dbtitle=Оперативный учет
+dbhost=localhost
+dbport=
+dbtype=mysql
+dbname=ananas_inventory
+dbuser=root
+dbpass=
+configfile=/etc/ananas/inventory.cfg
+workdir=/usr/share/ananas/inventory

@@ -1,0 +1,9 @@
+Makefile
+.moc
+.ui
+.obj
+
+libaext_meta.so
+libaextexample.so
+libaexttext.so
+libaextxml.so

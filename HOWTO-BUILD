@@ -1,0 +1,41 @@
+Deprecated. See http://ananas.lrn.ru/index.php?title=Developer
+Gr@
+
+BUILD ANANAS ENGINE FOR WINDOWS
+
+(c) Leader InfoTech, 2003-2004
+www.leaderit.ru, ananas@leaderit.ru
+
+
+1. Build QT-Win
+
+1.1. Configure QT
+For build ananas engine use qt-win version 3.2.3 or later.
+Before build QT libraries, you need configure QT for 
+correct work with ananas engine.
+For configure QT-win engine copy file config_qt.cache into
+root Qt directory and run:
+bin\configure -thread
+
+1.2. Make QT
+Run make utility for your compiler.
+
+1.3. Make sql servers plugin drivers
+Go to plugins/src/sqldrivers. Go to mysql, psql, odbc, tds 
+directories. You must correct pro files, adding line
+INCLUDEPATH += path_to_sql_headers
+into windows section.
+Then call qmake and make utility.
+
+1.4. Make QSA
+Take qsa-x11-free-1.1.0 archive and unpack to QT root directory.
+Copy .qmake.cache file into qsa root directory.
+Run qmake and make utility. Goto src/plugin directory and
+run qmake, make utility.
+
+1.5. Result Libraries
+Copy all DLL from lib, plugins/* directories into separate
+directory for Ananas distribution.
+
+
+END

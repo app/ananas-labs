@@ -1,0 +1,13 @@
+Source: ananas
+Section: Office
+Priority: optional
+Maintainer: Ananas Project Package Key (ananasproject) <ananasproject@googlegroups.com>
+Build-Depends: debhelper (>= 5), qt3-dev-tools, libqt3-mt-dev, qt3-apps-dev, libmysqlclient-dev, qsa-x11-free, wget
+Standards-Version: 3.7.2
+
+Package: ananas
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, zip, unzip, libqt3-mt, mysql-client (>=4.1), mysql-server (>=4.1), kdelibs4c2a
+Description: Runtime and development environment of Finance Applications
+Description-ru:  Среда разработки и исполнения прикладных решений автоматизации оперативного, бухгалтерского и других видов учета.
+ Учет товаров и рассчетов на компьютере.

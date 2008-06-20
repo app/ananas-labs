@@ -1,0 +1,1214 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>MainForm</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>MainForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>677</width>
+            <height>570</height>
+        </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>7</hsizetype>
+            <vsizetype>7</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="font">
+        <font>
+        </font>
+    </property>
+    <property name="caption">
+        <string>Ananas: Designer</string>
+    </property>
+</widget>
+<menubar>
+    <property name="name">
+        <cstring>menubar</cstring>
+    </property>
+    <property name="enabled">
+        <bool>true</bool>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>677</width>
+            <height>29</height>
+        </rect>
+    </property>
+    <property name="frameShadow">
+        <enum>Raised</enum>
+    </property>
+    <property name="defaultUp">
+        <bool>false</bool>
+    </property>
+    <item text="&amp;File" name="fileMenu">
+        <action name="fileNewAction"/>
+        <action name="fileSaveAction"/>
+        <action name="fileOpenAction"/>
+        <separator/>
+        <action name="filePrintAction"/>
+        <separator/>
+        <action name="fileExitAction"/>
+    </item>
+    <item text="&amp;Edit" name="editMenu">
+        <action name="editUndoAction"/>
+        <action name="editRedoAction"/>
+        <separator/>
+        <action name="editCutAction"/>
+        <action name="editCopyAction"/>
+        <action name="editPasteAction"/>
+        <separator/>
+        <action name="editFindAction"/>
+    </item>
+    <item text="Configuration" name="ConfigurationMenu">
+        <action name="configOpenAction"/>
+        <action name="configSaveAction"/>
+        <separator/>
+        <action name="configNewAction"/>
+    </item>
+    <item text="Object" name="ObjectMenu">
+        <action name="objEditAction"/>
+        <action name="objRenameAction"/>
+        <action name="objDeleteAction"/>
+        <separator/>
+        <action name="objNewObjAction"/>
+        <action name="objNewFieldAction"/>
+        <action name="objNewFormAction"/>
+        <action name="objNewTableAction"/>
+    </item>
+</menubar>
+<toolbars>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>Toolbar</cstring>
+        </property>
+        <property name="label">
+            <string></string>
+        </property>
+        <action name="configNewAction"/>
+        <action name="configOpenAction"/>
+        <action name="configSaveAction"/>
+    </toolbar>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>tbInterface</cstring>
+        </property>
+        <property name="label">
+            <string></string>
+        </property>
+        <action name="objInterfaceNewCommandAction"/>
+        <action name="objInterfaceNewSubmenuAction"/>
+        <action name="objInterfaceNewSeparatorAction"/>
+        <action name="objInterfaceEditAction"/>
+    </toolbar>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>tbMetadata</cstring>
+        </property>
+        <property name="label">
+            <string></string>
+        </property>
+        <action name="objMetadataNewAction"/>
+        <action name="objMetadataEditAction"/>
+    </toolbar>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>tbActions</cstring>
+        </property>
+        <property name="label">
+            <string></string>
+        </property>
+        <action name="objActionsNewAction"/>
+        <action name="objActionsNewGroupAction"/>
+        <action name="objActionsEditAction"/>
+    </toolbar>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>tbRights</cstring>
+        </property>
+        <property name="label">
+            <string></string>
+        </property>
+        <action name="objRoleNewAction"/>
+        <action name="objRoleEditAction"/>
+        <action name="objRoleClearAction"/>
+    </toolbar>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>tbLanguages</cstring>
+        </property>
+        <property name="label">
+            <string></string>
+        </property>
+        <action name="objLanguagesNewAction"/>
+        <action name="objLanguagesEditAction"/>
+        <action name="objLanguagesClearAction"/>
+    </toolbar>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>tbImageCollection</cstring>
+        </property>
+        <property name="label">
+            <string></string>
+        </property>
+        <action name="objImageCollectionAddAction"/>
+    </toolbar>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>TBToolbar</cstring>
+        </property>
+        <property name="label">
+            <string></string>
+        </property>
+        <action name="objTBRenameAction"/>
+        <action name="objTBMoveUpAction"/>
+        <action name="objTBMoveDownAction"/>
+        <action name="objTBDeleteAction"/>
+    </toolbar>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>tbTabs</cstring>
+        </property>
+        <property name="movingEnabled">
+            <bool>true</bool>
+        </property>
+        <property name="newLine">
+            <bool>true</bool>
+        </property>
+        <property name="label">
+            <string>Tabs</string>
+        </property>
+    </toolbar>
+</toolbars>
+<actions>
+    <action>
+        <property name="name">
+            <cstring>fileNewAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>&amp;New</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;New</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+N</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileOpenAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>&amp;Open...</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Open...</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+O</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileSaveAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>&amp;Save</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Save</string>
+        </property>
+        <property name="whatsThis">
+            <string>actFileSave</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+S</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileSaveAsAction</cstring>
+        </property>
+        <property name="text">
+            <string>Save &amp;as...</string>
+        </property>
+        <property name="menuText">
+            <string>Save &amp;as...</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>filePrintAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>&amp;Print</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Print</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+P</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileExitAction</cstring>
+        </property>
+        <property name="text">
+            <string>E&amp;xit</string>
+        </property>
+        <property name="menuText">
+            <string>E&amp;xit</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editUndoAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Undo</string>
+        </property>
+        <property name="menuText">
+            <string>Undo</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+Z</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editRedoAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Redo</string>
+        </property>
+        <property name="menuText">
+            <string>Redo</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+Y</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editCutAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Cut</string>
+        </property>
+        <property name="menuText">
+            <string>Cut</string>
+        </property>
+        <property name="toolTip">
+            <string>Вырезать</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+X</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editCopyAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Copy</string>
+        </property>
+        <property name="menuText">
+            <string>Copy</string>
+        </property>
+        <property name="toolTip">
+            <string>Копировать</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+C</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editPasteAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Paste</string>
+        </property>
+        <property name="menuText">
+            <string>Paste</string>
+        </property>
+        <property name="toolTip">
+            <string>Вставить</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+V</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>editFindAction</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Find</string>
+        </property>
+        <property name="menuText">
+            <string>Find</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+F</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>helpContentsAction</cstring>
+        </property>
+        <property name="text">
+            <string>Содержание</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Содержание...</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>helpIndexAction</cstring>
+        </property>
+        <property name="text">
+            <string>Индекс</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Индекс...</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>helpAboutAction</cstring>
+        </property>
+        <property name="text">
+            <string>О программе</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;О программе</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <actiongroup>
+        <property name="name">
+            <cstring>configGroup</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Конфигурация</string>
+        </property>
+        <property name="menuText">
+            <string>Конфигурация</string>
+        </property>
+        <property name="usesDropDown">
+            <bool>false</bool>
+        </property>
+        <action>
+            <property name="name">
+                <cstring>configNewAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>filenew.png</iconset>
+            </property>
+            <property name="text">
+                <string>New</string>
+            </property>
+            <property name="menuText">
+                <string>New</string>
+            </property>
+            <property name="toolTip">
+                <string>Create new configuration</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>configOpenAction</cstring>
+            </property>
+            <property name="on">
+                <bool>false</bool>
+            </property>
+            <property name="iconSet">
+                <iconset>hi22-action-project_open.png</iconset>
+            </property>
+            <property name="text">
+                <string>&amp;Open</string>
+            </property>
+            <property name="menuText">
+                <string>&amp;Open</string>
+            </property>
+            <property name="toolTip">
+                <string>Open configuration</string>
+            </property>
+            <property name="statusTip">
+                <string>Open configuration</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>configSaveAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>filesave.png</iconset>
+            </property>
+            <property name="text">
+                <string>Save</string>
+            </property>
+            <property name="menuText">
+                <string>Save</string>
+            </property>
+            <property name="toolTip">
+                <string>Save configuration</string>
+            </property>
+            <property name="accel">
+                <string>Ctrl+S</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>config_DBCreateAction</cstring>
+            </property>
+            <property name="text">
+                <string>Создать/обновить БД</string>
+            </property>
+            <property name="menuText">
+                <string>Создать/обновить БД</string>
+            </property>
+        </action>
+    </actiongroup>
+    <actiongroup>
+        <property name="name">
+            <cstring>formGroup</cstring>
+        </property>
+        <property name="text">
+            <string>ActionGroup</string>
+        </property>
+        <property name="menuText">
+            <string>ActionGroup</string>
+        </property>
+        <property name="usesDropDown">
+            <bool>false</bool>
+        </property>
+        <action>
+            <property name="name">
+                <cstring>NewButtonAction</cstring>
+            </property>
+            <property name="text">
+                <string>Новая кнопка</string>
+            </property>
+            <property name="menuText">
+                <string>Новая кнопка</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>NewAttributeAction</cstring>
+            </property>
+            <property name="text">
+                <string>Новый атрибут</string>
+            </property>
+            <property name="menuText">
+                <string>Новый атрибут</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>NewFieldAction</cstring>
+            </property>
+            <property name="text">
+                <string>Новое поле</string>
+            </property>
+            <property name="menuText">
+                <string>Новое поле</string>
+            </property>
+        </action>
+    </actiongroup>
+    <actiongroup>
+        <property name="name">
+            <cstring>objectGroup</cstring>
+        </property>
+        <property name="text">
+            <string>ActionGroup</string>
+        </property>
+        <property name="menuText">
+            <string>ActionGroup</string>
+        </property>
+        <property name="usesDropDown">
+            <bool>false</bool>
+        </property>
+        <action>
+            <property name="name">
+                <cstring>objNewFormAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>form.png</iconset>
+            </property>
+            <property name="text">
+                <string>New form</string>
+            </property>
+            <property name="menuText">
+                <string>New form</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objDeleteAction</cstring>
+            </property>
+            <property name="text">
+                <string>Delete</string>
+            </property>
+            <property name="menuText">
+                <string>Delete</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objNewFieldAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>field.png</iconset>
+            </property>
+            <property name="text">
+                <string>New field</string>
+            </property>
+            <property name="menuText">
+                <string>New field</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objRenameAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>editrename.png</iconset>
+            </property>
+            <property name="text">
+                <string>Rename</string>
+            </property>
+            <property name="menuText">
+                <string>Rename</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objEditAction</cstring>
+            </property>
+            <property name="text">
+                <string>Edit</string>
+            </property>
+            <property name="menuText">
+                <string>Edit</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objNewTableAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>table.png</iconset>
+            </property>
+            <property name="text">
+                <string>New table</string>
+            </property>
+            <property name="menuText">
+                <string>New table</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objNewObjAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>object.png</iconset>
+            </property>
+            <property name="text">
+                <string>New in group</string>
+            </property>
+            <property name="menuText">
+                <string>New in group</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objTBDeleteAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>editdelete.png</iconset>
+            </property>
+            <property name="text">
+                <string>Delete</string>
+            </property>
+            <property name="menuText">
+                <string>Delete</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objMetadataNewAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>doc.png</iconset>
+            </property>
+            <property name="text">
+                <string>New</string>
+            </property>
+            <property name="menuText">
+                <string>New</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objTBRenameAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>editrename.png</iconset>
+            </property>
+            <property name="text">
+                <string>Rename</string>
+            </property>
+            <property name="menuText">
+                <string>Rename</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objTBMoveUpAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>arrow_up.png</iconset>
+            </property>
+            <property name="text">
+                <string>Move Up</string>
+            </property>
+            <property name="menuText">
+                <string>Move Up</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objTBMoveDownAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>arrow_down.png</iconset>
+            </property>
+            <property name="text">
+                <string>Move Down</string>
+            </property>
+            <property name="menuText">
+                <string>Move Down</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objMetadataEditAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>editedit.png</iconset>
+            </property>
+            <property name="text">
+                <string>Edit</string>
+            </property>
+            <property name="menuText">
+                <string>Edit</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objActionsNewGroupAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>function.png</iconset>
+            </property>
+            <property name="text">
+                <string>New Group</string>
+            </property>
+            <property name="menuText">
+                <string>New Group</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objActionsNewAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>filenew.png</iconset>
+            </property>
+            <property name="text">
+                <string>New</string>
+            </property>
+            <property name="menuText">
+                <string>New</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objActionsEditAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>editedit.png</iconset>
+            </property>
+            <property name="text">
+                <string>Action</string>
+            </property>
+            <property name="menuText">
+                <string>Action</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objInterfaceNewSubmenuAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>report_g.png</iconset>
+            </property>
+            <property name="text">
+                <string>New Submenu</string>
+            </property>
+            <property name="menuText">
+                <string>New Submenu</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objInterfaceNewCommandAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>report.png</iconset>
+            </property>
+            <property name="text">
+                <string>New Command</string>
+            </property>
+            <property name="menuText">
+                <string>New Command</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objInterfaceNewSeparatorAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>editsep.png</iconset>
+            </property>
+            <property name="text">
+                <string>New Separator</string>
+            </property>
+            <property name="menuText">
+                <string>New Separator</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objInterfaceEditAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>editedit.png</iconset>
+            </property>
+            <property name="text">
+                <string>Edit</string>
+            </property>
+            <property name="menuText">
+                <string>Edit</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objInterfaceRenameAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>editrename.png</iconset>
+            </property>
+            <property name="text">
+                <string>Rename</string>
+            </property>
+            <property name="menuText">
+                <string>Rename</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objLanguagesNewAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>filenew.png</iconset>
+            </property>
+            <property name="text">
+                <string>New</string>
+            </property>
+            <property name="menuText">
+                <string>New</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objLanguagesEditAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>editedit.png</iconset>
+            </property>
+            <property name="text">
+                <string>Edit</string>
+            </property>
+            <property name="menuText">
+                <string>Edit</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objLanguagesClearAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>editcut.png</iconset>
+            </property>
+            <property name="text">
+                <string>Clear dead aliases</string>
+            </property>
+            <property name="menuText">
+                <string>Clear dead aliases</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objImageCollectionAddAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>filenew.png</iconset>
+            </property>
+            <property name="text">
+                <string>Add</string>
+            </property>
+            <property name="menuText">
+                <string>Add</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objRoleNewAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>doc.png</iconset>
+            </property>
+            <property name="text">
+                <string>Add new role</string>
+            </property>
+            <property name="menuText">
+                <string>Add new role</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objRoleClearAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>editcut.png</iconset>
+            </property>
+            <property name="text">
+                <string>Clear dead roles</string>
+            </property>
+            <property name="menuText">
+                <string>Clear dead roles</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objRoleEditAction</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>editedit.png</iconset>
+            </property>
+            <property name="text">
+                <string>Edit role</string>
+            </property>
+            <property name="menuText">
+                <string>Edit role</string>
+            </property>
+        </action>
+    </actiongroup>
+    <action>
+        <property name="name">
+            <cstring>new_itemAction</cstring>
+        </property>
+        <property name="text">
+            <string>new item</string>
+        </property>
+        <property name="menuText">
+            <string>new item</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>new_itemAction_2</cstring>
+        </property>
+        <property name="text">
+            <string>new item</string>
+        </property>
+        <property name="menuText">
+            <string>new item</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>configurationnew_itemAction</cstring>
+        </property>
+        <property name="text">
+            <string>Image Collection</string>
+        </property>
+        <property name="menuText">
+            <string>Image Collection</string>
+        </property>
+    </action>
+</actions>
+<connections>
+    <connection>
+        <sender>fileSaveAsAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>fileSaveAs()</slot>
+    </connection>
+    <connection>
+        <sender>filePrintAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>filePrint()</slot>
+    </connection>
+    <connection>
+        <sender>fileExitAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>close()</slot>
+    </connection>
+    <connection>
+        <sender>editUndoAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>editUndo()</slot>
+    </connection>
+    <connection>
+        <sender>editRedoAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>editRedo()</slot>
+    </connection>
+    <connection>
+        <sender>editCutAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>editCut()</slot>
+    </connection>
+    <connection>
+        <sender>editCopyAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>editCopy()</slot>
+    </connection>
+    <connection>
+        <sender>editPasteAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>editPaste()</slot>
+    </connection>
+    <connection>
+        <sender>editFindAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>editFind()</slot>
+    </connection>
+    <connection>
+        <sender>helpIndexAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>helpIndex()</slot>
+    </connection>
+    <connection>
+        <sender>helpContentsAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>helpContents()</slot>
+    </connection>
+    <connection>
+        <sender>helpAboutAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>helpAbout()</slot>
+    </connection>
+    <connection>
+        <sender>configNewAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>configNew()</slot>
+    </connection>
+    <connection>
+        <sender>configOpenAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>configOpen()</slot>
+    </connection>
+    <connection>
+        <sender>configSaveAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>configSave()</slot>
+    </connection>
+    <connection>
+        <sender>objTBDeleteAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>fileOpen()</slot>
+    </connection>
+    <connection>
+        <sender>fileNewAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>configNew()</slot>
+    </connection>
+    <connection>
+        <sender>fileOpenAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>configOpen()</slot>
+    </connection>
+    <connection>
+        <sender>fileSaveAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>configSave()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">qtoolbutton.h</include>
+    <include location="local" impldecl="in declaration">qworkspace.h</include>
+    <include location="local" impldecl="in declaration">qvbox.h</include>
+    <include location="local" impldecl="in declaration">cfgform.h</include>
+    <include location="local" impldecl="in declaration">qpopupmenu.h</include>
+    <include location="local" impldecl="in declaration">awindowslist.h</include>
+    <include location="local" impldecl="in declaration">qsettings.h</include>
+    <include location="local" impldecl="in implementation">mainform.ui.h</include>
+</includes>
+<variables>
+    <variable access="public">QLabel *msg;</variable>
+    <variable access="private">QPopupMenu *windowsMenu;</variable>
+    <variable access="public">QWorkspace *ws;</variable>
+    <variable access="public">CfgForm *cfgform;</variable>
+    <variable access="public">QString rcfile;</variable>
+    <variable access="public">aCfg *md;</variable>
+    <variable access="public">int lastFormId;</variable>
+    <variable access="public">int lastTabId;</variable>
+    <variable access="public">aWindowsList *wl;</variable>
+    <variable access="public">QSettings designer_settings;</variable>
+</variables>
+<signals>
+    <signal>tosave()</signal>
+</signals>
+<slots>
+    <slot>filePrint()</slot>
+    <slot>fileExit()</slot>
+    <slot>editUndo()</slot>
+    <slot>editRedo()</slot>
+    <slot>editCut()</slot>
+    <slot>editCopy()</slot>
+    <slot>editPaste()</slot>
+    <slot>editFind()</slot>
+    <slot>helpIndex()</slot>
+    <slot>helpContents()</slot>
+    <slot>helpAbout()</slot>
+    <slot>init()</slot>
+    <slot>configNew()</slot>
+    <slot>configOpen()</slot>
+    <slot>configSave()</slot>
+    <slot>configSaveAs()</slot>
+    <slot>fileOpen()</slot>
+    <slot>fileSave()</slot>
+    <slot>fileSaveAs()</slot>
+    <slot>fileNew()</slot>
+    <slot access="private">windowsMenuActivated( int id )</slot>
+    <slot access="private">windowsMenuAboutToShow()</slot>
+    <slot access="private">tileHorizontal()</slot>
+    <slot access="private">closeEvent( QCloseEvent * e )</slot>
+    <slot>connectSignals( CfgForm * cf )</slot>
+    <slot>getMd( aCfg * * md )</slot>
+    <slot returnType="int">getId()</slot>
+    <slot>addTab( int uid, const QString &amp; winName )</slot>
+    <slot>removeTab( const QString &amp; winName )</slot>
+    <slot>closeChildWindows()</slot>
+    <slot>fileNewAction_activated()</slot>
+</slots>
+<functions>
+    <function returnType="CfgForm *">cfgForm()</function>
+    <function returnType="QWidget *">activeWindow()</function>
+</functions>
+<pixmapinproject/>
+<layoutdefaults spacing="5" margin="5"/>
+</UI>

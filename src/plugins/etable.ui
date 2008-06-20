@@ -1,0 +1,338 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>eTable</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>eTable</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>510</width>
+            <height>318</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Form table</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QGroupBox" row="1" column="0" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>groupBox2</cstring>
+            </property>
+            <property name="title">
+                <string>List of columns</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QListBox" row="0" column="0">
+                    <property name="name">
+                        <cstring>ListCol</cstring>
+                    </property>
+                    <property name="lineWidth">
+                        <number>1</number>
+                    </property>
+                    <property name="margin">
+                        <number>0</number>
+                    </property>
+                    <property name="midLineWidth">
+                        <number>1</number>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>textLabel3</cstring>
+            </property>
+            <property name="text">
+                <string>Table name</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="2" column="0">
+            <property name="name">
+                <cstring>bOK</cstring>
+            </property>
+            <property name="text">
+                <string>OK</string>
+            </property>
+            <property name="default">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="0" column="1" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>eTabName</cstring>
+            </property>
+            <property name="lineWidth">
+                <number>1</number>
+            </property>
+            <property name="maxLength">
+                <number>30</number>
+            </property>
+        </widget>
+        <widget class="QGroupBox" row="1" column="2">
+            <property name="name">
+                <cstring>groupBox1</cstring>
+            </property>
+            <property name="title">
+                <string>Table column</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>textLabel2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Header</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="0">
+                    <property name="name">
+                        <cstring>textLabel2_2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Width</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="3" column="0">
+                    <property name="name">
+                        <cstring>textLabel1</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Field type</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>textLabel2_3</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Field name</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="0" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>textLabel1_2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>View width</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="4" column="3">
+                    <property name="name">
+                        <cstring>textLabel3_2</cstring>
+                    </property>
+                    <property name="text">
+                        <string>decimals</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="5" column="1" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>bColAdd</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Add</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="5" column="0">
+                    <property name="name">
+                        <cstring>bColL</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Up</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="6" column="0">
+                    <property name="name">
+                        <cstring>bColR</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Down</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="6" column="1" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>bColDel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Remove</string>
+                    </property>
+                </widget>
+                <widget class="QSpinBox" row="1" column="2">
+                    <property name="name">
+                        <cstring>eColWidth</cstring>
+                    </property>
+                    <property name="maxValue">
+                        <number>9999</number>
+                    </property>
+                </widget>
+                <widget class="QSpinBox" row="4" column="2">
+                    <property name="name">
+                        <cstring>eColTWidth</cstring>
+                    </property>
+                    <property name="maxValue">
+                        <number>255</number>
+                    </property>
+                </widget>
+                <widget class="QSpinBox" row="4" column="4">
+                    <property name="name">
+                        <cstring>eColTDec</cstring>
+                    </property>
+                    <property name="maxValue">
+                        <number>9</number>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="0" column="2" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>eColHeader</cstring>
+                    </property>
+                    <property name="lineWidth">
+                        <number>1</number>
+                    </property>
+                    <property name="maxLength">
+                        <number>100</number>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="2" column="2" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>eColName</cstring>
+                    </property>
+                    <property name="lineWidth">
+                        <number>1</number>
+                    </property>
+                    <property name="maxLength">
+                        <number>300</number>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="3" column="2" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>eType</cstring>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <widget class="QPushButton" row="2" column="1">
+            <property name="name">
+                <cstring>bCancel</cstring>
+            </property>
+            <property name="text">
+                <string>Cancel</string>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>bOK</sender>
+        <signal>clicked()</signal>
+        <receiver>eTable</receiver>
+        <slot>accept()</slot>
+    </connection>
+    <connection>
+        <sender>bCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>eTable</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>bColAdd</sender>
+        <signal>clicked()</signal>
+        <receiver>eTable</receiver>
+        <slot>ColumnAdd()</slot>
+    </connection>
+    <connection>
+        <sender>bColDel</sender>
+        <signal>clicked()</signal>
+        <receiver>eTable</receiver>
+        <slot>ColumnDel()</slot>
+    </connection>
+    <connection>
+        <sender>bColL</sender>
+        <signal>clicked()</signal>
+        <receiver>eTable</receiver>
+        <slot>ColumnL()</slot>
+    </connection>
+    <connection>
+        <sender>bColR</sender>
+        <signal>clicked()</signal>
+        <receiver>eTable</receiver>
+        <slot>ColumnR()</slot>
+    </connection>
+    <connection>
+        <sender>ListCol</sender>
+        <signal>highlighted(int)</signal>
+        <receiver>eTable</receiver>
+        <slot>ColumnSel(int)</slot>
+    </connection>
+    <connection>
+        <sender>eColHeader</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>eTable</receiver>
+        <slot>ColumnUpd()</slot>
+    </connection>
+    <connection>
+        <sender>eType</sender>
+        <signal>activated(int)</signal>
+        <receiver>eTable</receiver>
+        <slot>ColumnUpd()</slot>
+    </connection>
+    <connection>
+        <sender>eColName</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>eTable</receiver>
+        <slot>ColumnUpd()</slot>
+    </connection>
+    <connection>
+        <sender>eColWidth</sender>
+        <signal>valueChanged(const QString&amp;)</signal>
+        <receiver>eTable</receiver>
+        <slot>ColumnUpd()</slot>
+    </connection>
+    <connection>
+        <sender>eColTWidth</sender>
+        <signal>valueChanged(const QString&amp;)</signal>
+        <receiver>eTable</receiver>
+        <slot>ColumnUpd()</slot>
+    </connection>
+    <connection>
+        <sender>eColTDec</sender>
+        <signal>valueChanged(const QString&amp;)</signal>
+        <receiver>eTable</receiver>
+        <slot>ColumnUpd()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in declaration">ananas.h</include>
+    <include location="local" impldecl="in implementation">etable.ui.h</include>
+</includes>
+<variables>
+    <variable access="private">QStringList otypes, ftype, fname, cwidth;</variable>
+</variables>
+<slots>
+    <slot>insertColumn( const char * Header, const char * Name, int idxt, int cw, int tw, int td )</slot>
+    <slot>ColumnAdd()</slot>
+    <slot>ColumnDel()</slot>
+    <slot>ColumnL()</slot>
+    <slot>ColumnR()</slot>
+    <slot>ColumnSel( int col )</slot>
+    <slot>ColumnUpd()</slot>
+    <slot>setData( QWidget * o, aCfg * md )</slot>
+    <slot>getData( QWidget * o )</slot>
+    <slot>ColumnTextUpd( const QString &amp; s )</slot>
+</slots>
+<functions>
+    <function access="private">init()</function>
+    <function access="private">destroy()</function>
+</functions>
+<pixmapinproject/>
+<layoutdefaults spacing="5" margin="5"/>
+</UI>

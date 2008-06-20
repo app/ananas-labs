@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#for d in \
+#    src/lib \
+#    src/plugins/qafield \
+#    src/plugins/qatable \
+#    src/designer \
+#    src/engine \
+#    src/webengine ; do
+#    pushd . >/dev/null
+#    echo $d
+#    cd $d
+#    qmake
+#    popd >/dev/null
+#done
+
+#sed {s/'Release: [[:alnum:]]*'/'Release: alt0.cvs'$DF/} $PROJECTNAME.spec.in0 >$PROJECTNAME.spec.in;
+
+echo "Ananas engine is configured."
+echo "Run make."

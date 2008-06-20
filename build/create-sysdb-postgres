@@ -1,0 +1,4 @@
+#!/bin/sh
+# create Ananas system database for PostgreSQL server
+# after new install
+psql -U postgres -W template1 -c "create database ananas_system"

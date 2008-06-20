@@ -1,0 +1,764 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Имя</Author>
+  <LastAuthor>Plotnicov Pavel</LastAuthor>
+  <LastPrinted>2007-10-11T10:14:25Z</LastPrinted>
+  <Created>2007-10-11T10:11:03Z</Created>
+  <LastSaved>2007-10-11T10:15:08Z</LastSaved>
+  <Company>Организация</Company>
+  <Version>11.5606</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>9210</WindowHeight>
+  <WindowWidth>15195</WindowWidth>
+  <WindowTopX>0</WindowTopX>
+  <WindowTopY>60</WindowTopY>
+  <RefModeR1C1/>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s21">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s23">
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s25">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:ShrinkToFit="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Bold="1"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s27">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s28">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s29">
+   <Borders>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s30">
+   <Borders/>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s31">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="0"/>
+  </Style>
+  <Style ss:ID="s32">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s33">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="@"/>
+  </Style>
+  <Style ss:ID="s36">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s37">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s38">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="12"
+    ss:Bold="1"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s39">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="12"
+    ss:Bold="1"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s41">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="12"
+    ss:Bold="1"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="Short Date"/>
+  </Style>
+  <Style ss:ID="s43">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:ShrinkToFit="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Bold="1"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="@"/>
+  </Style>
+  <Style ss:ID="s48">
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="@"/>
+  </Style>
+  <Style ss:ID="s49">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s50">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s51">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s52">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="Fixed"/>
+  </Style>
+  <Style ss:ID="s53">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="Fixed"/>
+  </Style>
+  <Style ss:ID="s54">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s55">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Size="8"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="Fixed"/>
+  </Style>
+  <Style ss:ID="s56">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Bold="1"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s58">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Top" ss:WrapText="1"/>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss" ss:Bold="1"
+    ss:Italic="1"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s59">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s61">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s63">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Arial Cyr" x:CharSet="204" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Лист1">
+  <Names>
+   <NamedRange ss:Name="Print_Area" ss:RefersTo="=Лист1!R1C1:R45C9"/>
+  </Names>
+  <Table ss:ExpandedColumnCount="9" ss:ExpandedRowCount="44" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:AutoFitWidth="0" ss:Width="54.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="166.5"/>
+   <Column ss:Hidden="1" ss:AutoFitWidth="0"/>
+   <Column ss:AutoFitWidth="0" ss:Width="51"/>
+   <Column ss:AutoFitWidth="0" ss:Width="31.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="35.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="51.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="46.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="62.25"/>
+   <Row>
+    <Cell ss:MergeAcross="7" ss:StyleID="s21"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s21"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s21"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s21"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s21"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s21"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s21"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s21"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s21"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Продавец</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="6" ss:StyleID="s25"><Data ss:Type="String">&lt;:Организация.Название:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">ИНН</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s28"><Data ss:Type="String">&lt;:Организация.ИНН:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s29"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s29"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s29"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s29"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s30"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Адрес</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s31"><Data ss:Type="String">&lt;:Организация.Адрес:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Р/с</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s33"><Data ss:Type="String">&lt;:Организация.Расч. счет:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">К/с</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">&lt;:Организация.Кор. счет:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Банк</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s36"><Data ss:Type="String">&lt;:Организация.Банк:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">БИК</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s33"><Data ss:Type="String">&lt;:Организация.БИК:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Тел.:</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s36"><Data ss:Type="String">&lt;:Организация.Телефон:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">E-mail</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s37"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s30"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Сайт</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s37"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s32"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s28"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="15.75">
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s38"><Data ss:Type="String">СЧЕТ №</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s39"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s39"><Data ss:Type="String">&lt;:Документ.Номер:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s39"><Data ss:Type="String"> от </Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s41"><Data ss:Type="String">&lt;:Документ.Дата:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Покупатель</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="6" ss:StyleID="s43"><Data ss:Type="String">&lt;:Документ.Покупатель:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">ИНН</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="6" ss:StyleID="s33"><Data ss:Type="String">&lt;:Покупатель.ИНН:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">КПП</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="6" ss:StyleID="s33"><Data ss:Type="String">&lt;:Покупатель.КПП:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Адрес</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="6" ss:StyleID="s33"><Data ss:Type="String">&lt;:Покупатель.Адрес:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Р/с</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="6" ss:StyleID="s33"><Data ss:Type="String">&lt;:Покупатель.Расч. счет:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">К/с</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="6" ss:StyleID="s33"><Data ss:Type="String">&lt;:Покупатель.Кор. счет:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Банк</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="6" ss:StyleID="s33"><Data ss:Type="String">&lt;:Покупатель.Банк:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">БИК</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="6" ss:StyleID="s33"><Data ss:Type="String">&lt;:Покупатель.БИК:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Тел.:</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="6" ss:StyleID="s33"><Data ss:Type="String">&lt;:Покупатель.Телефон:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">E-mail</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="6" ss:StyleID="s33"><Data ss:Type="String">&lt;:Покупатель.Электропочта:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s27"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s48"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s49"><Data ss:Type="String">№ п/п</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s49"><Data ss:Type="String">Наименование товара (работ, услуг)</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s49"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s49"><Data ss:Type="String">Цена</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s49"><Data ss:Type="String">Кол-во</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s49"><Data ss:Type="String">Ед. изм.</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s49"><Data ss:Type="String">Без НДС</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s49"><Data ss:Type="String">НДС</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s49"><Data ss:Type="String">Стоимость</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s49"><Data ss:Type="Number">1</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s50"><Data ss:Type="String">&lt;:f0:&gt;[:строка:]</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s51"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s52"><Data ss:Type="String">&lt;:f3:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s53"><Data ss:Type="String">&lt;:f2:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s49"><Data ss:Type="String">&lt;:f1:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s52"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s52"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s52"><Data ss:Type="String">&lt;:f4:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s30"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s30"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s30"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s30"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s30"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s54"><Data ss:Type="String">Итого</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s55"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s55"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s55"><Data ss:Type="String">&lt;:Итого:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s56"><Data ss:Type="String">Итого к оплате:</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="6" ss:MergeDown="1" ss:StyleID="s58"><Data
+      ss:Type="String">&lt;:Итого:&gt;</Data><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s56"><Data ss:Type="String">В том числе НДС:</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="6" ss:MergeDown="1" ss:StyleID="s58"><NamedCell
+      ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><Data ss:Type="String">Генеральный</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">Главный</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s59"><Data ss:Type="String"> директор</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">&lt;:Организация.Руководитель:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s59"><Data ss:Type="String">бухгалтер</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:MergeAcross="1" ss:StyleID="s61"><Data ss:Type="String">&lt;:Организация.Главбух:&gt;</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s30"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">М.П.</Data><NamedCell
+      ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+    <Cell ss:StyleID="s23"><NamedCell ss:Name="Print_Area"/></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.51181102362204722"/>
+    <Footer x:Margin="0.51181102362204722"/>
+    <PageMargins x:Bottom="0.59055118110236227" x:Left="0.59055118110236227"
+     x:Right="0" x:Top="0.59055118110236227"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1C1:R1C8</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Лист2">
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <PageMargins x:Bottom="0.984251969" x:Left="0.78740157499999996"
+     x:Right="0.78740157499999996" x:Top="0.984251969"/>
+   </PageSetup>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Лист3">
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <PageMargins x:Bottom="0.984251969" x:Left="0.78740157499999996"
+     x:Right="0.78740157499999996" x:Top="0.984251969"/>
+   </PageSetup>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

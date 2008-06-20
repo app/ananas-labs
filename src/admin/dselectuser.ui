@@ -1,0 +1,104 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>dSelectUser</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>dSelectUser</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>602</width>
+            <height>348</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Select user</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QListBox" row="0" column="0">
+            <item>
+                <property name="text">
+                    <string>New Item</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>listBox1</cstring>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="0" column="1">
+            <property name="name">
+                <cstring>layout9</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLayoutWidget">
+                    <property name="name">
+                        <cstring>layout8</cstring>
+                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QPushButton">
+                            <property name="name">
+                                <cstring>bSelect</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Select</string>
+                            </property>
+                        </widget>
+                    </vbox>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>200</height>
+                        </size>
+                    </property>
+                </spacer>
+            </vbox>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>bSelect</sender>
+        <signal>clicked()</signal>
+        <receiver>dSelectUser</receiver>
+        <slot>onSelect()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in declaration">mdtree.h</include>
+    <include location="local" impldecl="in declaration">arole.h</include>
+    <include location="local" impldecl="in implementation">dselectuser.ui.h</include>
+</includes>
+<variables>
+    <variable access="private">Q_ULLONG userId;</variable>
+    <variable access="private">QStringList listId;</variable>
+    <variable access="private">aRole *role;</variable>
+</variables>
+<slots>
+    <slot>setData( aRole * i )</slot>
+    <slot returnType="Q_ULLONG">getData()</slot>
+    <slot access="private">onSelect()</slot>
+</slots>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

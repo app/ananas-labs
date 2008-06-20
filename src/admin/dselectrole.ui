@@ -1,0 +1,94 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>dSelectRole</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>dSelectRole</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>445</width>
+            <height>312</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Select role</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QListBox" row="0" column="0">
+            <item>
+                <property name="text">
+                    <string>New Item</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>listBox1</cstring>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="0" column="1">
+            <property name="name">
+                <cstring>layout4</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bSelect</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Select</string>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>201</height>
+                        </size>
+                    </property>
+                </spacer>
+            </vbox>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>bSelect</sender>
+        <signal>clicked()</signal>
+        <receiver>dSelectRole</receiver>
+        <slot>onSelect()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in declaration">auser.h</include>
+    <include location="local" impldecl="in declaration">arole.h</include>
+    <include location="local" impldecl="in implementation">dselectrole.ui.h</include>
+</includes>
+<variables>
+    <variable access="private">Q_ULLONG roleId;</variable>
+    <variable access="private">aUser *usr;</variable>
+    <variable access="private">QStringList listId;</variable>
+</variables>
+<slots>
+    <slot>setData( aUser * user )</slot>
+    <slot>onSelect()</slot>
+    <slot returnType="Q_ULLONG">getData()</slot>
+</slots>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

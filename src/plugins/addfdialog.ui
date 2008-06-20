@@ -1,0 +1,114 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>addfdialog</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>addfdialog</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>363</width>
+            <height>224</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>select field</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="0" column="1">
+            <property name="name">
+                <cstring>layout1</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>OkButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>OK</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>CButton</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer3</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>120</height>
+                        </size>
+                    </property>
+                </spacer>
+            </vbox>
+        </widget>
+        <widget class="QListBox" row="0" column="0">
+            <property name="name">
+                <cstring>ListBox</cstring>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>OkButton</sender>
+        <signal>clicked()</signal>
+        <receiver>addfdialog</receiver>
+        <slot>doOk()</slot>
+    </connection>
+    <connection>
+        <sender>CButton</sender>
+        <signal>clicked()</signal>
+        <receiver>addfdialog</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>ListBox</sender>
+        <signal>doubleClicked(QListBoxItem*)</signal>
+        <receiver>addfdialog</receiver>
+        <slot>doOk()</slot>
+    </connection>
+</connections>
+<includes>
+	<include location="local" impldecl="in declaration">wdbtable.h</include>
+	<include location="local" impldecl="in implementation">wdbfield.h</include>
+	<include location="local" impldecl="in implementation">addfdialog.ui.h</include>
+</includes>
+<variables>
+    <variable access="public">QStringList list,idlist;</variable>
+    <variable access="private">QString field;</variable>
+    <variable access="private">QString id;</variable>
+</variables>
+<slots>
+    <slot>doOk()</slot>
+    <slot>setData( QStringList displst, QStringList flst, QStringList ilds )</slot>
+    <slot>setData(QWidget *o, aCfg *md)</slot>
+    <slot>getData(QWidget *o)</slot>
+</slots>
+<functions>
+    <function>init()</function>
+    <function>destroy()</function>
+    <function returnType="const QString">getData( bool name )</function>
+</functions>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

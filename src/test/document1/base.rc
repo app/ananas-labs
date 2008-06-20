@@ -1,0 +1,9 @@
+dbpass=
+workdir=.
+dbhost=localhost
+dbtitle=Test Perfomance
+dbuser=root
+dbtype=mysql
+configfile=base.cfg
+dbname=test_perfomance
+dbport=

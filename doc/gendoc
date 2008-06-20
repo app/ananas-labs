@@ -1,0 +1,66 @@
+#!/bin/bash
+SRCDEST=./src
+
+function src2src {
+
+    local l=${#1}
+#    echo $l
+    for f in $1$2; do
+	local fs=${f:$l}
+	echo $f
+# $fs
+#        iconv -f UTF-8 -t KOI8-R $f -o $SRCDEST/$fs
+	cp $f $SRCDEST/$fs
+    done
+}
+
+function tex2pdf {
+
+    local l=${#1}
+#    echo $l
+    for f in $1$2; do
+	local fs=${f:$l}
+	echo $f
+# $fs
+        pdflatex $f.tex
+    done
+}
+
+mkdir $SRCDEST
+#src2src "../include/" "*.h"
+src2src "../src/lib/" "*.cpp"
+src2src "../src/lib/" "*.h"
+src2src "../src/plugins/" "*.cpp"
+src2src "../src/plugins/" "*.h"
+#extensions
+src2src "../src/extensions/example/" "*.cpp"
+src2src "../src/extensions/example/" "*.h"
+src2src "../src/extensions/te/" "*.cpp"
+src2src "../src/extensions/te/" "*.h"
+src2src "../src/extensions/text/" "*.cpp"
+src2src "../src/extensions/text/" "*.h"
+src2src "../src/extensions/xml/" "*.cpp"
+src2src "../src/extensions/xml/" "*.h"
+src2src "../src/extensions/meta/" "*.cpp"
+src2src "../src/extensions/meta/" "*.h"
+src2src "../src/extensions/aextsql/" "*.cpp"
+src2src "../src/extensions/aextsql/" "*.h"
+src2src "../src/extensions/service/" "*.cpp"
+src2src "../src/extensions/service/" "*.h"
+src2src "../src/extensions/dateservice/" "*.cpp"
+src2src "../src/extensions/dateservice/" "*.h"
+
+#src2src "../src/plugins/qafield/" "*.h"
+#src2src "../src/plugins/qatable/" "qananastable.h"
+cp doxygen-common.cfg doxygen_tmp.cfg
+cat doxygen-en.cfg >>doxygen_tmp.cfg
+doxygen doxygen_tmp.cfg
+
+cp doxygen-common.cfg doxygen_tmp.cfg
+cat doxygen-ru.cfg >>doxygen_tmp.cfg
+doxygen doxygen_tmp.cfg
+
+#tex2pdf ananas-script-ru
+
+rm doxygen_tmp.cfg
+rm -r -f $SRCDEST

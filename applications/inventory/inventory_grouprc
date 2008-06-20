@@ -1,0 +1,7 @@
+[0]
+0=/etc/ananas/inventory.rc
+1=/etc/ananas/inventory-demo.rc
+
+[General]
+0=Бизнес-схемы проекта Ананас
+

@@ -1,0 +1,34 @@
+ISCC = iscc
+MAKE = make
+QMAKE = qmake
+MAKEFILE = Makefile
+TS = 	translations\ananas-designer-en.ts \
+	translations\ananas-designer-ru.ts \
+	translations\ananas-lib-en.ts \
+	translations\ananas-lib-ru.ts \
+	translations\ananas-engine-en.ts \
+	translations\ananas-engine-ru.ts \
+	translations\ananas-plugins-en.ts \
+	translations\ananas-plugins-ru.ts \
+	translations\ananas-webengine-en.ts \
+	translations\ananas-webengine-ru.ts 
+
+first: all
+
+all: tr Makefile
+	$(QMAKE) src/src.pro -o src/$(MAKEFILE)
+	cd src 
+	$(MAKE)
+
+clean:
+	cd src 
+	$(MAKE) clean
+
+tr:
+	lrelease $(TS)
+setup:
+	$(ISCC) build\win32\AnanasInstall.iss
+setup2:
+	$(ISCC) build\win32\AnanasInstall2.iss
+upgrade:
+	$(ISCC) build\win32\AnanasUpgrade.iss

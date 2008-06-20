@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmlns:UML="org.omg/standards/UML" verified="false" timestamp="" xmi.version="1.2" >
+ <XMI.header>
+  <XMI.documentation>
+   <XMI.exporter>umbrello uml modeller http://uml.sf.net</XMI.exporter>
+   <XMI.exporterVersion>1.2.0</XMI.exporterVersion>
+   <XMI.exporterEncoding>UnicodeUTF8</XMI.exporterEncoding>
+  </XMI.documentation>
+  <XMI.model xmi.name="architecture" href="/home/app/devel/ananas-engine-qt/doc/architecture.xmi" />
+  <XMI.metamodel xmi.name="UML" href="UML.xml" xmi.version="1.3" />
+ </XMI.header>
+ <XMI.content>
+  <docsettings viewid="942" documentation="" uniqueid="984" />
+  <UML:Model>
+   <UML:DataType stereotype="Тип данных" visibility="public" xmi.id="2" name="int" />
+   <UML:DataType stereotype="Тип данных" visibility="public" xmi.id="3" name="char" />
+   <UML:DataType stereotype="Тип данных" visibility="public" xmi.id="4" name="bool" />
+   <UML:DataType stereotype="Тип данных" visibility="public" xmi.id="5" name="float" />
+   <UML:DataType stereotype="Тип данных" visibility="public" xmi.id="6" name="double" />
+   <UML:DataType stereotype="Тип данных" visibility="public" xmi.id="7" name="long" />
+   <UML:DataType stereotype="Тип данных" visibility="public" xmi.id="8" name="short" />
+   <UML:DataType stereotype="Тип данных" visibility="public" xmi.id="9" name="string" />
+   <UML:Actor visibility="public" xmi.id="941" name="Администратор" />
+   <UML:UseCase visibility="public" xmi.id="943" name="Выбор товара" />
+   <UML:UseCase visibility="public" xmi.id="953" name="Регистрация нового пользователя" />
+   <UML:Package stereotype="application" visibility="public" xmi.id="956" name="Engine" />
+   <UML:Package stereotype="application" visibility="public" xmi.id="957" name="Designer" />
+   <UML:Package stereotype="application" visibility="public" xmi.id="958" name="Web Engine" />
+   <UML:Package stereotype="application" visibility="public" xmi.id="960" name="Admin" />
+   <UML:UseCase visibility="public" xmi.id="966" name="Изменение реквизитов/удаление пользователя" />
+   <UML:UseCase visibility="public" xmi.id="967" name="Назначение ролей пользователю" />
+   <UML:UseCase visibility="public" xmi.id="968" name="Управление правами ролей" />
+   <UML:UseCase visibility="public" xmi.id="969" name="Изменение параметров работы Системы" />
+   <UML:UseCase visibility="public" xmi.id="970" name="Резервное копирование и восстановление БД" />
+   <UML:UseCase visibility="public" xmi.id="971" name="Регламентные работы" />
+  </UML:Model>
+  <diagrams>
+   <diagram snapgrid="0" showattsig="1" fillcolor="#ffffc0" zoom="100" showgrid="0" showopsig="1" usefillcolor="1" snapx="10" canvaswidth="922" snapy="10" showatts="1" xmi.id="1" documentation="" type="402" showops="1" showpackage="0" name="Общая архитектура" localid="30000" showstereotype="0" showscope="1" snapcsgrid="0" font="Sans,10,-1,5,50,0,0,0,0,0" linecolor="#ff0000" canvasheight="845" >
+    <widgets>
+     <packagewidget usesdiagramfillcolour="0" width="138" usesdiagramusefillcolour="0" x="483" linecolour="#ff0000" y="282" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffc0" height="64" usefillcolor="1" isinstance="0" xmi.id="956" showstereotype="0" font="Sans,10,-1,5,75,0,0,0,0,0" />
+     <packagewidget usesdiagramfillcolour="0" width="138" usesdiagramusefillcolour="0" x="136" linecolour="#ff0000" y="409" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffc0" height="64" usefillcolor="1" isinstance="0" xmi.id="957" showstereotype="0" font="Sans,10,-1,5,75,0,0,0,0,0" />
+     <packagewidget usesdiagramfillcolour="0" width="138" usesdiagramusefillcolour="0" x="493" linecolour="#ff0000" y="402" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffc0" height="64" usefillcolor="1" isinstance="0" xmi.id="958" showstereotype="0" font="Sans,10,-1,5,75,0,0,0,0,0" />
+     <packagewidget usesdiagramfillcolour="0" width="138" usesdiagramusefillcolour="0" x="132" linecolour="#ff0000" y="284" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffc0" height="64" usefillcolor="1" isinstance="0" xmi.id="960" showstereotype="0" font="Sans,10,-1,5,75,0,0,0,0,0" />
+     <UML:NoteWidget usesdiagramfillcolour="1" width="368" usesdiagramusefillcolour="1" x="137" linecolour="none" y="566" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="99" usefillcolor="1" isinstance="0" xmi.id="961" text="Зависимость от Designer вызвана тем, что все остальные части системы (в данном случае приложения) работают с метаданными, которые формирует Designer" font="Sans,10,-1,5,50,0,0,0,0,0" />
+     <UML:NoteWidget usesdiagramfillcolour="1" width="497" usesdiagramusefillcolour="1" x="110" linecolour="none" y="67" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="81" usefillcolor="1" isinstance="0" xmi.id="963" text="Высокоуровневое представление Архитектуры платформы Ананас.
+Показаны пакеты (в данном случае самостоятельно исполняемые приложения) и зависимости между ними." font="Sans,10,-1,5,50,0,0,0,0,0" />
+    </widgets>
+    <messages/>
+    <associations>
+     <UML:AssocWidget totalcounta="3" indexa="2" visibilityB="200" totalcountb="3" indexb="2" widgetbid="957" widgetaid="956" roleBdoc="" roleAdoc="" type="502" changeabilityA="900" changeabilityB="900" visibilityA="200" >
+      <linepath>
+       <startpoint startx="483" starty="324" />
+       <endpoint endx="228" endy="409" />
+      </linepath>
+     </UML:AssocWidget>
+     <UML:AssocWidget totalcounta="3" indexa="2" visibilityB="200" totalcountb="2" indexb="1" widgetbid="957" widgetaid="958" roleBdoc="" roleAdoc="" type="502" changeabilityA="900" changeabilityB="900" visibilityA="200" >
+      <linepath>
+       <startpoint startx="493" starty="444" />
+       <endpoint endx="274" endy="441" />
+      </linepath>
+     </UML:AssocWidget>
+     <UML:AssocWidget totalcounta="2" indexa="1" visibilityB="200" totalcountb="3" indexb="1" widgetbid="957" widgetaid="960" roleBdoc="" roleAdoc="" type="502" changeabilityA="900" changeabilityB="900" visibilityA="200" >
+      <linepath>
+       <startpoint startx="201" starty="348" />
+       <endpoint endx="182" endy="409" />
+      </linepath>
+     </UML:AssocWidget>
+     <UML:AssocWidget totalcounta="3" indexa="1" visibilityB="200" totalcountb="3" indexb="1" widgetbid="960" widgetaid="956" roleBdoc="" roleAdoc="" type="502" changeabilityA="900" changeabilityB="900" visibilityA="200" >
+      <linepath>
+       <startpoint startx="483" starty="303" />
+       <endpoint endx="270" endy="305" />
+      </linepath>
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="8" usesdiagramusefillcolour="1" x="376" linecolour="none" y="304" instancename="" posttext="" usesdiagramlinecolour="1" role="703" fillcolour="none" height="22" usefillcolor="1" pretext="" isinstance="0" xmi.id="960" text="" font="Sans,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="8" usesdiagramusefillcolour="1" x="473" linecolour="none" y="279" instancename="" posttext="" usesdiagramlinecolour="1" role="701" fillcolour="none" height="22" usefillcolor="1" pretext="" isinstance="0" xmi.id="-1" text="" font="Sans,10,-1,5,50,0,0,0,0,0" />
+      <UML:FloatingTextWidget usesdiagramfillcolour="1" width="8" usesdiagramusefillcolour="1" x="272" linecolour="none" y="303" instancename="" posttext="" usesdiagramlinecolour="1" role="702" fillcolour="none" height="22" usefillcolor="1" pretext="" isinstance="0" xmi.id="-1" text="" font="Sans,10,-1,5,50,0,0,0,0,0" />
+     </UML:AssocWidget>
+     <UML:AssocWidget totalcounta="3" indexa="1" visibilityB="200" totalcountb="3" indexb="2" widgetbid="960" widgetaid="958" roleBdoc="" roleAdoc="" type="502" changeabilityA="900" changeabilityB="900" visibilityA="200" >
+      <linepath>
+       <startpoint startx="493" starty="423" />
+       <endpoint endx="270" endy="326" />
+      </linepath>
+     </UML:AssocWidget>
+     <UML:AssocWidget totalcounta="2" indexa="1" visibilityB="200" totalcountb="2" indexb="1" widgetbid="957" widgetaid="961" roleBdoc="" roleAdoc="" type="513" changeabilityA="900" changeabilityB="900" visibilityA="200" >
+      <linepath>
+       <startpoint startx="321" starty="566" />
+       <endpoint endx="205" endy="473" />
+      </linepath>
+     </UML:AssocWidget>
+    </associations>
+   </diagram>
+   <diagram snapgrid="1" showattsig="1" fillcolor="#ffffc0" zoom="100" showgrid="1" showopsig="1" usefillcolor="1" snapx="10" canvaswidth="922" snapy="10" showatts="1" xmi.id="942" documentation="" type="400" showops="1" showpackage="0" name="Варианты использования для Администратора" localid="30000" showstereotype="0" showscope="1" snapcsgrid="0" font="Sans,10,-1,5,50,0,0,0,0,0" linecolor="#ff0000" canvasheight="845" >
+    <widgets>
+     <UML:ActorWidget usesdiagramfillcolour="1" width="109" usesdiagramusefillcolour="1" x="60" linecolour="none" y="420" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="63" usefillcolor="1" isinstance="0" xmi.id="941" font="Sans,10,-1,5,50,0,0,0,0,0" />
+     <UML:UseCaseWidget usesdiagramfillcolour="0" width="235" usesdiagramusefillcolour="0" x="190" linecolour="#ff0000" y="60" instancename="" usesdiagramlinecolour="0" fillcolour="#ffffc0" height="53" usefillcolor="1" isinstance="0" xmi.id="953" font="Sans,10,-1,5,50,0,0,0,0,0" />
+     <UML:UseCaseWidget usesdiagramfillcolour="1" width="326" usesdiagramusefillcolour="1" x="300" linecolour="none" y="120" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="53" usefillcolor="1" isinstance="0" xmi.id="966" font="Sans,10,-1,5,50,0,0,0,0,0" />
+     <UML:UseCaseWidget usesdiagramfillcolour="1" width="233" usesdiagramusefillcolour="1" x="450" linecolour="none" y="180" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="53" usefillcolor="1" isinstance="0" xmi.id="967" font="Sans,10,-1,5,50,0,0,0,0,0" />
+     <UML:UseCaseWidget usesdiagramfillcolour="1" width="194" usesdiagramusefillcolour="1" x="520" linecolour="none" y="510" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="53" usefillcolor="1" isinstance="0" xmi.id="968" font="Sans,10,-1,5,50,0,0,0,0,0" />
+     <UML:UseCaseWidget usesdiagramfillcolour="1" width="276" usesdiagramusefillcolour="1" x="420" linecolour="none" y="600" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="53" usefillcolor="1" isinstance="0" xmi.id="969" font="Sans,10,-1,5,50,0,0,0,0,0" />
+     <UML:UseCaseWidget usesdiagramfillcolour="1" width="318" usesdiagramusefillcolour="1" x="490" linecolour="none" y="270" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="53" usefillcolor="1" isinstance="0" xmi.id="970" font="Sans,10,-1,5,50,0,0,0,0,0" />
+     <UML:UseCaseWidget usesdiagramfillcolour="1" width="155" usesdiagramusefillcolour="1" x="110" linecolour="none" y="580" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="53" usefillcolor="1" isinstance="0" xmi.id="971" font="Sans,10,-1,5,50,0,0,0,0,0" />
+     <boxwidget usesdiagramfillcolour="1" width="662" usesdiagramusefillcolour="1" x="160" linecolour="none" y="50" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="298" usefillcolor="1" isinstance="0" xmi.id="981" font="Sans,10,-1,5,50,0,0,0,0,0" />
+     <UML:NoteWidget usesdiagramfillcolour="1" width="207" usesdiagramusefillcolour="1" x="610" linecolour="none" y="60" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="50" usefillcolor="1" isinstance="0" xmi.id="982" text="Admin" font="Sans,10,-1,5,50,0,0,0,0,0" />
+     <boxwidget usesdiagramfillcolour="1" width="472" usesdiagramusefillcolour="1" x="350" linecolour="none" y="410" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="262" usefillcolor="1" isinstance="0" xmi.id="983" font="Sans,10,-1,5,50,0,0,0,0,0" />
+     <UML:NoteWidget usesdiagramfillcolour="1" width="207" usesdiagramusefillcolour="1" x="610" linecolour="none" y="420" instancename="" usesdiagramlinecolour="1" fillcolour="none" height="50" usefillcolor="1" isinstance="0" xmi.id="984" text="Designer" font="Sans,10,-1,5,50,0,0,0,0,0" />
+    </widgets>
+    <messages/>
+    <associations>
+     <UML:AssocWidget totalcounta="4" indexa="1" visibilityB="200" totalcountb="2" indexb="1" widgetbid="953" widgetaid="941" roleBdoc="" roleAdoc="" type="503" changeabilityA="900" changeabilityB="900" visibilityA="200" >
+      <linepath>
+       <startpoint startx="87" starty="420" />
+       <endpoint endx="307" endy="113" />
+      </linepath>
+     </UML:AssocWidget>
+     <UML:AssocWidget totalcounta="4" indexa="2" visibilityB="200" totalcountb="2" indexb="1" widgetbid="966" widgetaid="941" roleBdoc="" roleAdoc="" type="503" changeabilityA="900" changeabilityB="900" visibilityA="200" >
+      <linepath>
+       <startpoint startx="114" starty="420" />
+       <endpoint endx="463" endy="173" />
+      </linepath>
+     </UML:AssocWidget>
+     <UML:AssocWidget totalcounta="4" indexa="3" visibilityB="200" totalcountb="2" indexb="1" widgetbid="967" widgetaid="941" roleBdoc="" roleAdoc="" type="503" changeabilityA="900" changeabilityB="900" visibilityA="200" >
+      <linepath>
+       <startpoint startx="141" starty="420" />
+       <endpoint endx="566" endy="233" />
+      </linepath>
+     </UML:AssocWidget>
+     <UML:AssocWidget totalcounta="4" indexa="2" visibilityB="200" totalcountb="2" indexb="1" widgetbid="968" widgetaid="941" roleBdoc="" roleAdoc="" type="503" changeabilityA="900" changeabilityB="900" visibilityA="200" >
+      <linepath>
+       <startpoint startx="169" starty="451" />
+       <endpoint endx="520" endy="536" />
+      </linepath>
+     </UML:AssocWidget>
+     <UML:AssocWidget totalcounta="4" indexa="3" visibilityB="200" totalcountb="2" indexb="1" widgetbid="969" widgetaid="941" roleBdoc="" roleAdoc="" type="503" changeabilityA="900" changeabilityB="900" visibilityA="200" >
+      <linepath>
+       <startpoint startx="169" starty="467" />
+       <endpoint endx="558" endy="600" />
+      </linepath>
+     </UML:AssocWidget>
+     <UML:AssocWidget totalcounta="4" indexa="1" visibilityB="200" totalcountb="2" indexb="1" widgetbid="970" widgetaid="941" roleBdoc="" roleAdoc="" type="503" changeabilityA="900" changeabilityB="900" visibilityA="200" >
+      <linepath>
+       <startpoint startx="169" starty="435" />
+       <endpoint endx="649" endy="323" />
+      </linepath>
+     </UML:AssocWidget>
+     <UML:AssocWidget totalcounta="2" indexa="1" visibilityB="200" totalcountb="2" indexb="1" widgetbid="971" widgetaid="941" roleBdoc="" roleAdoc="" type="503" changeabilityA="900" changeabilityB="900" visibilityA="200" >
+      <linepath>
+       <startpoint startx="114" starty="483" />
+       <endpoint endx="187" endy="580" />
+      </linepath>
+     </UML:AssocWidget>
+    </associations>
+   </diagram>
+   <diagram snapgrid="0" showattsig="1" fillcolor="#ffffc0" zoom="100" showgrid="0" showopsig="1" usefillcolor="1" snapx="10" canvaswidth="922" snapy="10" showatts="1" xmi.id="977" documentation="" type="407" showops="1" showpackage="0" name="deployment diagram" localid="30000" showstereotype="0" showscope="1" snapcsgrid="0" font="Sans,10,-1,5,50,0,0,0,0,0" linecolor="#ff0000" canvasheight="845" >
+    <widgets/>
+    <messages/>
+    <associations/>
+   </diagram>
+   <diagram snapgrid="0" showattsig="1" fillcolor="#ffffc0" zoom="100" showgrid="0" showopsig="1" usefillcolor="1" snapx="10" canvaswidth="922" snapy="10" showatts="1" xmi.id="978" documentation="" type="406" showops="1" showpackage="0" name="component diagram" localid="30000" showstereotype="0" showscope="1" snapcsgrid="0" font="Sans,10,-1,5,50,0,0,0,0,0" linecolor="#ff0000" canvasheight="845" >
+    <widgets/>
+    <messages/>
+    <associations/>
+   </diagram>
+  </diagrams>
+  <listview>
+   <listitem open="1" type="800" id="-1" label="Виды" >
+    <listitem open="1" type="801" id="-1" label="Логический вид" >
+     <listitem open="0" type="807" id="1" label="Общая архитектура" />
+     <listitem open="1" type="818" id="960" label="Admin" />
+     <listitem open="1" type="818" id="957" label="Designer" />
+     <listitem open="1" type="818" id="956" label="Engine" />
+     <listitem open="1" type="818" id="958" label="Web Engine" />
+     <listitem open="0" type="830" id="-1" label="Datatypes" >
+      <listitem open="1" type="829" id="4" label="bool" />
+      <listitem open="1" type="829" id="3" label="char" />
+      <listitem open="1" type="829" id="6" label="double" />
+      <listitem open="1" type="829" id="5" label="float" />
+      <listitem open="1" type="829" id="2" label="int" />
+      <listitem open="1" type="829" id="7" label="long" />
+      <listitem open="1" type="829" id="8" label="short" />
+      <listitem open="1" type="829" id="9" label="string" />
+     </listitem>
+    </listitem>
+    <listitem open="1" type="802" id="-1" label="Use Case View" >
+     <listitem open="0" type="805" id="942" label="Варианты использования для Администратора" />
+     <listitem open="1" type="811" id="941" label="Администратор" />
+     <listitem open="1" type="812" id="943" label="Выбор товара" />
+     <listitem open="1" type="812" id="969" label="Изменение параметров работы Системы" />
+     <listitem open="1" type="812" id="966" label="Изменение реквизитов/удаление пользователя" />
+     <listitem open="1" type="812" id="967" label="Назначение ролей пользователю" />
+     <listitem open="1" type="812" id="953" label="Регистрация нового пользователя" />
+     <listitem open="1" type="812" id="971" label="Регламентные работы" />
+     <listitem open="1" type="812" id="970" label="Резервное копирование и восстановление БД" />
+     <listitem open="1" type="812" id="968" label="Управление правами ролей" />
+    </listitem>
+    <listitem open="1" type="821" id="-1" label="Component View" >
+     <listitem open="0" type="819" id="978" label="component diagram" />
+    </listitem>
+    <listitem open="1" type="827" id="-1" label="Deployment View" >
+     <listitem open="0" type="825" id="977" label="deployment diagram" />
+    </listitem>
+   </listitem>
+  </listview>
+  <codegeneration>
+   <codegenerator language="Cpp" >
+    <codedocument writeOutCode="false" package="" id="Makefile_DOC" fileExt="" fileName="Makefile" >
+     <textblocks/>
+     <header>
+      <codecomment tag="" />
+     </header>
+    </codedocument>
+   </codegenerator>
+  </codegeneration>
+ </XMI.content>
+</XMI>

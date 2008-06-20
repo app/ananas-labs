@@ -1,0 +1,9 @@
+dbpass=
+workdir=/usr/share/ananas/applications/money/
+dbhost=
+dbtitle=Ananas-money
+dbtype=internal
+dbuser=
+configfile=/etc/ananas/money/money.cfg
+dbname=ananas-money
+dbport=

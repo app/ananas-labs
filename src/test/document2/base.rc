@@ -1,0 +1,9 @@
+dbpass=
+workdir=
+dbhost=localhost
+dbtitle=Test Saldo
+dbtype=mysql
+dbuser=root
+dbname=test_saldo
+configfile=base.cfg
+dbport=

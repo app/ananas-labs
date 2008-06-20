@@ -1,0 +1,92 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>dEditImageCollection</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>dEditImageCollection</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>523</width>
+            <height>320</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Image Collection</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="0" column="1">
+            <property name="name">
+                <cstring>layout17</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bAdd</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Add</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bRename</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Rename</string>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bDelete</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Remove</string>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <spacer row="1" column="1">
+            <property name="name">
+                <cstring>spacer5</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>31</width>
+                    <height>81</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
+</widget>
+<toolbars>
+</toolbars>
+<includes>
+    <include location="local" impldecl="in declaration">acfg.h</include>
+    <include location="local" impldecl="in implementation">deditimagecollection.ui.h</include>
+</includes>
+<variables>
+    <variable access="public">aCfgItem obj;</variable>
+</variables>
+<slots>
+    <slot>setData()</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+</functions>
+<pixmapinproject/>
+<layoutdefaults spacing="5" margin="5"/>
+</UI>

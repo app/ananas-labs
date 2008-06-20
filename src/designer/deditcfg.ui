@@ -1,0 +1,539 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>dEditCfg</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>dEditCfg</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>461</width>
+            <height>348</height>
+        </rect>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>267</width>
+            <height>309</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>Business scheme parameters</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QTabWidget" row="0" column="0">
+            <property name="name">
+                <cstring>tabWidget</cstring>
+            </property>
+            <property name="font">
+                <font>
+                    <pointsize>10</pointsize>
+                </font>
+            </property>
+            <property name="tabPosition">
+                <enum>Bottom</enum>
+            </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Common</string>
+                </attribute>
+                <vbox>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout7</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel5</cstring>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>80</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="frameShape">
+                                    <enum>NoFrame</enum>
+                                </property>
+                                <property name="frameShadow">
+                                    <enum>Plain</enum>
+                                </property>
+                                <property name="text">
+                                    <string>Name</string>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit">
+                                <property name="name">
+                                    <cstring>eName</cstring>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout8</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel7</cstring>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>80</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Author</string>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit">
+                                <property name="name">
+                                    <cstring>eAuthor</cstring>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout9</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel8</cstring>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>80</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Date</string>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit">
+                                <property name="name">
+                                    <cstring>eDate</cstring>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget">
+                        <property name="name">
+                            <cstring>layout10</cstring>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel6</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Description</string>
+                                </property>
+                            </widget>
+                            <widget class="QTextEdit">
+                                <property name="name">
+                                    <cstring>eDescription</cstring>
+                                </property>
+                            </widget>
+                        </vbox>
+                    </widget>
+                </vbox>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>User</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel" row="0" column="0">
+                        <property name="name">
+                            <cstring>textLabel1</cstring>
+                        </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>160</width>
+                                <height>0</height>
+                            </size>
+                        </property>
+                        <property name="text">
+                            <string>Data base server user</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="0" column="1">
+                        <property name="name">
+                            <cstring>eDBUserName</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLayoutWidget" row="1" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>layout18</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel2</cstring>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>160</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Data base password</string>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit">
+                                <property name="name">
+                                    <cstring>eDBPass</cstring>
+                                </property>
+                                <property name="echoMode">
+                                    <enum>Password</enum>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget" row="2" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>layout17</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel3</cstring>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>160</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="maximumSize">
+                                    <size>
+                                        <width>160</width>
+                                        <height>32767</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Data base type</string>
+                                </property>
+                            </widget>
+                            <widget class="QComboBox">
+                                <item>
+                                    <property name="text">
+                                        <string>Unknown</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>mysql</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>postgres</string>
+                                    </property>
+                                </item>
+                                <property name="name">
+                                    <cstring>eDBType</cstring>
+                                </property>
+                                <property name="editable">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="duplicatesEnabled">
+                                    <bool>false</bool>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>layout16</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel4</cstring>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>160</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Data base server address</string>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit">
+                                <property name="name">
+                                    <cstring>eDBHost</cstring>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget" row="5" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>layout14</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel6_2</cstring>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>160</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Data base name</string>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit">
+                                <property name="name">
+                                    <cstring>eDBName</cstring>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>layout27</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout15</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel5_2</cstring>
+                                        </property>
+                                        <property name="minimumSize">
+                                            <size>
+                                                <width>160</width>
+                                                <height>0</height>
+                                            </size>
+                                        </property>
+                                        <property name="text">
+                                            <string>Data base server port</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>eDBPort</cstring>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer7</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>130</width>
+                                        <height>21</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget" row="7" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>layout13</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel7_2</cstring>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>160</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Work directory</string>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit">
+                                <property name="name">
+                                    <cstring>eWorkDir</cstring>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <widget class="QLayoutWidget" row="8" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>layout12</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel8_2</cstring>
+                                </property>
+                                <property name="minimumSize">
+                                    <size>
+                                        <width>160</width>
+                                        <height>0</height>
+                                    </size>
+                                </property>
+                                <property name="text">
+                                    <string>Configuration file name</string>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit">
+                                <property name="name">
+                                    <cstring>eCfgName</cstring>
+                                </property>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <spacer row="9" column="1">
+                        <property name="name">
+                            <cstring>spacer7_2</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>20</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QLabel" row="6" column="0">
+                        <property name="name">
+                            <cstring>textLabel1_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Data base header</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="6" column="1">
+                        <property name="name">
+                            <cstring>eDBHeader</cstring>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Global module</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QSEditor" row="0" column="0">
+                        <property name="name">
+                            <cstring>eModule</cstring>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+        </widget>
+    </grid>
+</widget>
+<toolbars>
+</toolbars>
+<includes>
+    <include location="local" impldecl="in declaration">mdtree.h</include>
+    <include location="local" impldecl="in declaration">acfg.h</include>
+    <include location="local" impldecl="in declaration">qseditor.h</include>
+    <include location="local" impldecl="in declaration">mainform.h</include>
+    <include location="local" impldecl="in implementation">deditcfg.ui.h</include>
+</includes>
+<variables>
+    <variable access="public">aListViewItem *item;</variable>
+    <variable access="public">aCfgItem globals;</variable>
+</variables>
+<slots>
+    <slot>init()</slot>
+    <slot>destroy()</slot>
+    <slot>setData( aListViewItem * o )</slot>
+    <slot>updateMD()</slot>
+</slots>
+<functions>
+    <function access="public">moveToTopLeftCorner()</function>
+</functions>
+<pixmapinproject/>
+<layoutdefaults spacing="5" margin="5"/>
+<includehints>
+    <includehint>qseditor.h</includehint>
+</includehints>
+</UI>

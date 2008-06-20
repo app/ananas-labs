@@ -1,0 +1,163 @@
+# -*-shell-script-*-
+[Meta]
+RootName: @ananasproject.org/ananas:$SOFTWAREVERSION
+DisplayName: Оперативный учет для предпринимателя
+ShortName: ananas
+Maintainer: Andrey Paskal <apaskal at google mail>
+Packager: Andrey Paskal <apaskal  at google mail>
+Summary: Оперативный учет на платформе Ананас 
+URL: http://www.ananasproject.org/
+License: GNU General Public License, Version 2
+SoftwareVersion: 1.0
+# SoftwareVersion: @VERSION@
+Repository: http://files.ananasproject.org/downloads/autopackage/ananas.xml
+
+
+[Description]
+Ананас - первая учетная платформа для Linux
+
+[Description:ru]
+Платформа Ананас предназначена для автомматизации малых и средних предприятий.
+Обеспечивает автоматизацию ведения оперативного и бухгалтерского учета.
+Платформа позволяет создавать приложения, поддерживающие многопользовательский
+режим работы, сопровождается документацией на русском языке,
+имеет русифицированный графический интерфейс пользователя. Для ее
+использования необходимо иметь установленную систему X Window System,
+графическую среду KDE и сервер баз данных с поддержкой транзакций MySQL.
+Пакет ananas необходимо установить, если вы собираетесь использовать
+прикладное решение на платформе Ананас.
+
+# If you change the autopackage but not the software itself,
+# increment this number.
+
+# PackageVersion: 2
+
+# This is the version of the autopackage runtime this package is
+# written for. Increasing this number implies you have read the
+# "Migrating to 1.X" document and understand the impact it will have
+# on your package. Some APIs may change their behaviour and new
+# features will be enabled depending on what this is set to.
+AutopackageTarget: 1.2
+
+# Only uncomment InterfaceVersion if your package exposes interfaces
+# to other software, for instance if it includes DSOs or python/perl
+# modules. See the developer guide for more info, or ask on
+# autopackage-dev if you aren't sure about interface versioning.
+#
+# InterfaceVersion: 0.0
+
+[BuildPrepare]
+# For ./configure based systems this is a good default
+#prepareBuild --with-some-feature
+#prepareBuild
+export PATH=${PATH}:$QTDIR/bin
+./configure
+make
+make tr
+
+[BuildUnprepare]
+#unprepareBuild
+
+[Globals]
+# Anything put here will be run during makeinstall and at
+# install/uninstall time. Define useful variables here:
+# export MY_VAR=1
+
+export SOVER="1.0.1"
+export SOVER2="1.0"
+export SOVER1="1"
+
+[Imports]
+# You may wish to delete some things first, eg libtool .la files or
+# development files (headers)
+
+# rm -r include
+# rm libs/*.la
+
+# This imports every file in 
+# (ie, that is installed by "make install")
+#echo '*' | import
+import <<EOF
+$source_dir/src/ananas/ananas
+$source_dir/src/designer/ananas-designer
+$source_dir/src/lib/libananas.so.$SOVER
+$source_dir/src/plugins/libananasplugin.so
+$source_dir/src/plugins/mysql/libqsqlmysqlu.so
+$source_dir/translations/*.qm
+$source_dir/src/designer/templates/*
+$source_dir/applications/inventory/*.odt
+$source_dir/applications/inventory/*.ods
+$source_dir/applications/inventory/inventory.cfg
+$source_dir/applications/inventory/inventory.rc
+$source_dir/applications/inventory/inventory.sql
+$source_dir/applications/inventory/inventory-demo.cfg
+$source_dir/applications/inventory/inventory-demo.rc
+$source_dir/applications/inventory/inventory-demo.sql
+$source_dir/applications/inventory/inventory_grouprc
+$source_dir/src/extensions/meta/libaext_meta.so
+$source_dir/src/extensions/xml/libaextxml.so
+$source_dir/src/extensions/text/libaexttext.so
+$source_dir/src/extensions/aextsql/libaextsql.so
+$source_dir/build/kde/ananas.desktop
+$source_dir/build/kde/ananas-designer.desktop
+$source_dir/build/kde/images/ananas-32x32.png
+$source_dir/build/kde/images/ananas-designer.png
+EOF
+
+[Prepare]
+# Dependency checking
+
+# You can use "require" and "recommend". They both try to find the
+# given dependency, and install it if missing. But require will return
+# 1 (causing failure) if it can't do that whereas recommend will
+# simply show a notice at the end of the install.
+
+# The second argument here identifies a skeleton file, which is
+# a file that encapsulates a dependency check. The second number
+# identifies the interface version you need. Use as many of these
+# as you need.
+
+#require @whatever.you/need 1.0
+#require @trolltech/qsa 1.1
+
+# The user may have already installed the program from an RPM.
+# Let's try and uninstall it first. We only need one call if 3rd party
+# packages have split the program up into multiple packages.
+
+removeOwningPackage $PREFIX/bin/ananas
+
+[Install]
+# Put your installation script here. See the quickstart guide on
+# the website for an API cheat-sheet
+#installExe ananas
+#installExe ananas-designer
+copyFile ananas "$PREFIX/bin/.ananas.bin"
+copyFile ananas-designer "$PREFIX/bin/.ananas-designer.bin"
+createBootstrapScript "$PREFIX/bin/.ananas.bin" "$PREFIX/bin/ananas"
+createBootstrapScript "$PREFIX/bin/.ananas-designer.bin" "$PREFIX/bin/ananas-designer"
+installLib libananas.so.$SOVER
+linkFile  "$PREFIX/lib/libananas.so.$SOVER" "$PREFIX/lib/libananas.so.$SOVER1"
+linkFile  "$PREFIX/lib/libananas.so.$SOVER" "$PREFIX/lib/libananas.so.$SOVER2"
+linkFile  "$PREFIX/lib/libananas.so.$SOVER" "$PREFIX/lib/libananas.so"
+installLib libananasplugin.so
+linkFile  "$PREFIX/lib/libananasplugin.so" "$PREFIX/lib/ananas/qt3plugins/designer/libananasplugin.so"
+copyFile libqsqlmysqlu.so "$PREFIX/lib/ananas/qt3plugins/sqldrivers/libqsqlmysqlu.so"
+copyFiles libaext*.so "$PREFIX/lib/ananas/"
+installMenuItem Office ananas.desktop
+installMenuItem Development ananas-designer.desktop
+installIcon *.png
+copyFiles *.odt *.ods *.ui.tpl "$PREFIX/share/$SHORTNAME/inventory/"
+copyFiles *.ui.tpl "$PREFIX/share/$SHORTNAME/templates/"
+copyFiles inventory.sql "$PREFIX/share/$SHORTNAME/inventory/"
+copyFiles inventory-demo.sql "$PREFIX/share/$SHORTNAME/inventory/"
+copyFile inventory.cfg "$PREFIX/etc/ananas/inventory.cfg"
+copyFile inventory.rc "$PREFIX/etc/ananas/inventory.rc"
+copyFile inventory-demo.cfg "$PREFIX/etc/ananas/inventory-demo.cfg"
+copyFile inventory-demo.rc "$PREFIX/etc/ananas/inventory-demo.rc"
+copyFile inventory_grouprc "$PREFIX/etc/ananas/inventory_grouprc"
+copyFiles *.qm "$PREFIX/share/$SHORTNAME/translations/"
+
+
+[Uninstall]
+# Usually just the following line is enough to uninstall everything
+uninstallFromLog

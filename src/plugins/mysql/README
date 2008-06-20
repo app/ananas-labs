@@ -1,0 +1,19 @@
+You will need the MySQL development headers and libraries installed
+before compiling this plugin.
+
+See the Qt SQL documentation for more information on compiling Qt SQL
+driver plugins (sql-driver.html).
+
+Plugin from qt-x11-free-3.3.3
+Patched by Valery Grazdankin, Leader Infotech,  for unicode work.
+In QT plugin installed as MYSQL3U.
+
+Not included into Ananas build procedure.
+Please make plugin manualy with command:
+qmake && make
+
+For correct compile, may need to copy .qmake.cache to Ananas source root
+directory.
+
+With best regards,
+Valery Grazdankin

@@ -1,0 +1,48 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>RolesForm</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>RolesForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>398</width>
+            <height>400</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Ananas: Roles</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+    </grid>
+</widget>
+<includes>
+    <include location="local" impldecl="in declaration">mdtree.h</include>
+    <include location="local" impldecl="in declaration">acfg.h</include>
+    <include location="local" impldecl="in implementation">rolesform.ui.h</include>
+</includes>
+<forwards>
+    <forward>class aMetadataTreeView</forward>
+</forwards>
+<variables>
+    <variable access="public">QString rcfile;</variable>
+    <variable access="public">aMetadataTreeView *mdtree;</variable>
+    <variable access="public">aCfg *cfg;</variable>
+</variables>
+<signals>
+    <signal>updateUsers()</signal>
+</signals>
+<slots>
+    <slot>init()</slot>
+    <slot>destroy()</slot>
+    <slot>init( aDatabase * adb )</slot>
+    <slot>createTree()</slot>
+</slots>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

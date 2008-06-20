@@ -1,0 +1,48 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>eAddObj</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>eAddObj</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>417</width>
+            <height>297</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Form1</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QTable" row="0" column="0">
+            <property name="name">
+                <cstring>table1</cstring>
+            </property>
+            <property name="numRows">
+                <number>0</number>
+            </property>
+            <property name="numCols">
+                <number>0</number>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<toolbars>
+</toolbars>
+<includes>
+    <include location="local" impldecl="in declaration">adocument.h</include>
+    <include location="local" impldecl="in declaration">acatalogue.h</include>
+    <include location="local" impldecl="in implementation">eaddobj.ui.h</include>
+</includes>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+    <function access="private" specifier="non virtual">destroy()</function>
+</functions>
+<pixmapinproject/>
+<layoutdefaults spacing="5" margin="5"/>
+</UI>

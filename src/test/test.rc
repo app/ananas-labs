@@ -1,0 +1,9 @@
+dbpass=
+workdir=
+dbhost=localhost
+dbtitle=Test configuration
+dbuser=root
+dbtype=mysql
+configfile=../test.cfg
+dbname=ananas_test_base
+dbport=

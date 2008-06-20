@@ -1,0 +1,10 @@
+dbpass=
+=
+workdir=/usr/share/ananas/inventory
+dbhost=localhost
+dbtitle=Оперативный учет. Демо.
+dbtype=mysql
+dbuser=root
+dbname=ananas_inventory_demo
+configfile=/etc/ananas/inventory-demo.cfg
+dbport=

@@ -1,0 +1,22 @@
+Basic Installation
+==================
+
+Before use Ananas designer for create database and update 
+database structure you need make administration user
+for database server that will be used.
+
+POSTGRESQL
+==========
+
+1. Create admin user in psql shell with command :
+	
+CREATE USER root CREATEUSER CREATEDB;
+
+2. Create ananas system database with command :
+
+CREATE DATABASE ananas_system WITH ENCODING='UTF-8';
+
+
+MySQL
+=====
+

@@ -1,0 +1,740 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>dEditRC</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>dEditRC</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>516</width>
+            <height>385</height>
+        </rect>
+    </property>
+    <property name="font">
+        <font>
+            <pointsize>10</pointsize>
+        </font>
+    </property>
+    <property name="caption">
+        <string>Resource file</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="3" column="0">
+            <property name="name">
+                <cstring>layout13</cstring>
+            </property>
+            <property name="font">
+                <font>
+                </font>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer7_2_2</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>470</width>
+                            <height>21</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bOK</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>OK</string>
+                    </property>
+                    <property name="default">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <spacer>
+            <property name="name">
+                        <cstring>spacer7_2</cstring>
+            </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                </property>
+                    <property name="sizeType">
+                        <enum>Fixed</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>21</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                <property name="name">
+                        <cstring>bCancel</cstring>
+                </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QGroupBox" row="0" column="0">
+            <property name="name">
+                <cstring>groupBox5</cstring>
+            </property>
+            <property name="font">
+                <font>
+                </font>
+            </property>
+            <property name="title">
+                <string>Business Sheme</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLineEdit" row="2" column="1">
+                    <property name="name">
+                        <cstring>eCfgName</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="2" column="2">
+                    <property name="name">
+                        <cstring>bFileCFG</cstring>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>30</width>
+                            <height>32767</height>
+                        </size>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="3" column="1">
+                    <property name="name">
+                        <cstring>eWorkDir</cstring>
+                        </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                        </property>
+                </widget>
+                <widget class="QLabel" row="2" column="0">
+                    <property name="name">
+                        <cstring>textLabel8_2</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                        </property>
+                        <property name="text">
+                        <string>Configuration file name</string>
+                        </property>
+                </widget>
+                <widget class="QLineEdit" row="0" column="1">
+                    <property name="name">
+                        <cstring>eDBTitle</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="1" column="0">
+            <property name="name">
+                        <cstring>textLabel4_2</cstring>
+            </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>Resource file name</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit" row="1" column="1">
+                <property name="name">
+                        <cstring>eRCFile</cstring>
+                </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                </widget>
+                <widget class="QPushButton" row="1" column="2">
+                    <property name="name">
+                        <cstring>bFileRC</cstring>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>30</width>
+                            <height>32767</height>
+                        </size>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>textLabel3_2</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+            </property>
+                    <property name="text">
+                        <string>Data base header</string>
+                </property>
+                </widget>
+                <widget class="QPushButton" row="3" column="2">
+                    <property name="name">
+                        <cstring>bDirCFG</cstring>
+                    </property>
+                    <property name="maximumSize">
+                        <size>
+                            <width>30</width>
+                            <height>32767</height>
+                        </size>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+                <widget class="QLabel" row="3" column="0">
+                    <property name="name">
+                        <cstring>textLabel7_2</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>Work directory</string>
+                    </property>
+                </widget>
+            </grid>
+        </widget>
+        <spacer row="2" column="0">
+                    <property name="name">
+                <cstring>spacer17</cstring>
+                    </property>
+                    <property name="orientation">
+                <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                    <width>16</width>
+                    <height>40</height>
+                        </size>
+                    </property>
+                </spacer>
+        <widget class="QGroupBox" row="1" column="0">
+            <property name="name">
+                <cstring>groupBox4</cstring>
+            </property>
+            <property name="font">
+                <font>
+                </font>
+            </property>
+            <property name="title">
+                <string>DataBase</string>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel" row="0" column="0">
+                    <property name="name">
+                        <cstring>textLabel3</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>Data base server type</string>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget" row="1" column="1" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>layout36</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>eDBHost</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>7</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>4</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="font">
+                                <font>
+                                </font>
+                            </property>
+                        </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                                <cstring>textLabel5_2</cstring>
+                    </property>
+                            <property name="font">
+                                <font>
+                                </font>
+                    </property>
+                    <property name="text">
+                                <string>/ port</string>
+                    </property>
+                </widget>
+                <widget class="QLineEdit">
+                    <property name="name">
+                                <cstring>eDBPort</cstring>
+                    </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>7</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>1</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="font">
+                                <font>
+                                </font>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+                <widget class="QLabel" row="1" column="0">
+            <property name="name">
+                        <cstring>textLabel4</cstring>
+            </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                </property>
+                    <property name="text">
+                        <string>Data base server address</string>
+                    </property>
+                </widget>
+                <widget class="QComboBox" row="0" column="1">
+                    <item>
+                        <property name="text">
+                            <string>Unknown</string>
+                    </property>
+                    </item>
+                    <item>
+                    <property name="text">
+                            <string>internal</string>
+                    </property>
+                    </item>
+                    <item>
+                        <property name="text">
+                            <string>mysql</string>
+                        </property>
+                    </item>
+                    <item>
+                        <property name="text">
+                            <string>postgres</string>
+                        </property>
+                    </item>
+                    <property name="name">
+                        <cstring>eDBType</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                    <property name="editable">
+                        <bool>false</bool>
+                    </property>
+                    <property name="duplicatesEnabled">
+                        <bool>false</bool>
+                    </property>
+                </widget>
+                <spacer row="0" column="2">
+            <property name="name">
+                        <cstring>spacer23</cstring>
+            </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>176</width>
+                            <height>21</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QLayoutWidget" row="2" column="1" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>layout52</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                    </property>
+                <widget class="QLineEdit">
+                    <property name="name">
+                                <cstring>eDBName</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                </font>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                                <cstring>bFindBD</cstring>
+                    </property>
+                            <property name="font">
+                                <font>
+                                </font>
+                    </property>
+                    <property name="text">
+                                <string>Select</string>
+                            </property>
+                            <property name="default">
+                                <bool>true</bool>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+                <widget class="QLabel" row="2" column="0">
+            <property name="name">
+                        <cstring>textLabel6_2</cstring>
+            </property>
+                    <property name="font">
+                        <font>
+                        </font>
+            </property>
+                    <property name="text">
+                        <string>Data base name</string>
+            </property>
+                </widget>
+                <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="3">
+            <property name="name">
+                        <cstring>layout38</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <spacer>
+                    <property name="name">
+                                <cstring>spacer16</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                                    <width>239</width>
+                            <height>21</height>
+                        </size>
+                    </property>
+                </spacer>
+                <widget class="QPushButton">
+                    <property name="name">
+                                <cstring>bTest</cstring>
+                    </property>
+                            <property name="font">
+                                <font>
+                                </font>
+                    </property>
+                    <property name="text">
+                                <string>Test connection</string>
+                    </property>
+                    <property name="default">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                    </hbox>
+                </widget>
+                <widget class="QLabel" row="3" column="0">
+                    <property name="name">
+                        <cstring>textLabel1</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>Data base server user</string>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget" row="3" column="1" rowspan="1" colspan="2">
+                    <property name="name">
+                        <cstring>layout40</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>eDBUserName</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>7</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>3</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="font">
+                                <font>
+                                </font>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel2</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>/ pass</string>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>ePass</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>7</hsizetype>
+                                    <vsizetype>0</vsizetype>
+                                    <horstretch>2</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="font">
+                                <font>
+                                </font>
+                            </property>
+                            <property name="echoMode">
+                                <enum>Password</enum>
+                            </property>
+                        </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                                <cstring>bCreareUser</cstring>
+                    </property>
+                            <property name="enabled">
+                                <bool>true</bool>
+                            </property>
+                            <property name="font">
+                                <font>
+                                </font>
+                    </property>
+                    <property name="text">
+                                <string>Select</string>
+                            </property>
+                            <property name="default">
+                                <bool>true</bool>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+            </grid>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>bCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>dEditRC</receiver>
+        <slot>reject()</slot>
+    </connection>
+    <connection>
+        <sender>bFileRC</sender>
+        <signal>clicked()</signal>
+        <receiver>dEditRC</receiver>
+        <slot>onRCFile()</slot>
+    </connection>
+    <connection>
+        <sender>bOK</sender>
+        <signal>clicked()</signal>
+        <receiver>dEditRC</receiver>
+        <slot>onOK()</slot>
+    </connection>
+    <connection>
+        <sender>bFileCFG</sender>
+        <signal>clicked()</signal>
+        <receiver>dEditRC</receiver>
+        <slot>onCFGFile()</slot>
+    </connection>
+    <connection>
+        <sender>bDirCFG</sender>
+        <signal>clicked()</signal>
+        <receiver>dEditRC</receiver>
+        <slot>on_wDirCFG()</slot>
+    </connection>
+    <connection>
+        <sender>bTest</sender>
+        <signal>clicked()</signal>
+        <receiver>dEditRC</receiver>
+        <slot>bTest_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bFindBD</sender>
+        <signal>clicked()</signal>
+        <receiver>dEditRC</receiver>
+        <slot>bFindBD_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>eDBTitle</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>dEditRC</receiver>
+        <slot>eDBTitle_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>eDBType</sender>
+        <signal>activated(int)</signal>
+        <receiver>dEditRC</receiver>
+        <slot>eDBType_activated(int)</slot>
+    </connection>
+    <connection>
+        <sender>bCreareUser</sender>
+        <signal>clicked()</signal>
+        <receiver>dEditRC</receiver>
+        <slot>bFindUser()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>eDBTitle</tabstop>
+    <tabstop>eRCFile</tabstop>
+    <tabstop>bFileRC</tabstop>
+    <tabstop>eCfgName</tabstop>
+    <tabstop>bFileCFG</tabstop>
+    <tabstop>eWorkDir</tabstop>
+    <tabstop>bDirCFG</tabstop>
+    <tabstop>eDBType</tabstop>
+    <tabstop>eDBHost</tabstop>
+    <tabstop>eDBPort</tabstop>
+    <tabstop>eDBName</tabstop>
+    <tabstop>bFindBD</tabstop>
+    <tabstop>eDBUserName</tabstop>
+    <tabstop>ePass</tabstop>
+    <tabstop>bCreareUser</tabstop>
+    <tabstop>bTest</tabstop>
+    <tabstop>bOK</tabstop>
+    <tabstop>bCancel</tabstop>
+</tabstops>
+<includes>
+    <include location="local" impldecl="in implementation">atests.h</include>
+    <include location="global" impldecl="in declaration">rclistviewitem.h</include>
+    <include location="local" impldecl="in declaration">qstringlist.h</include>
+    <include location="local" impldecl="in declaration">ananasglobal.h</include>
+    <include location="global" impldecl="in declaration">qsqldatabase.h</include>
+    <include location="local" impldecl="in implementation">deditrc.ui.h</include>
+</includes>
+<variables>
+    <variable access="public">QStringList bases;</variable>
+    <variable access="public">QStringList users;</variable>
+    <variable access="public">QString rootpass;</variable>
+    <variable access="private">rcListViewItem *it;</variable>
+    <variable access="public">QSqlDatabase *dataBase;</variable>
+</variables>
+<signals>
+    <signal>onOk(QString rc)</signal>
+</signals>
+<slots>
+    <slot>setdata( QString nameRC, rcListViewItem * item )</slot>
+    <slot>updatecfg()</slot>
+    <slot access="private">onOK()</slot>
+    <slot access="private">onRCFile()</slot>
+    <slot access="protected">onCFGFile()</slot>
+    <slot access="private">on_wDirCFG()</slot>
+    <slot access="private">bTest_clicked()</slot>
+    <slot>bFindBD_clicked()</slot>
+    <slot>eDBTitle_textChanged( const QString &amp; )</slot>
+    <slot access="private">bCreareBD_clicked()</slot>
+    <slot access="private">bCreareUser_clicked()</slot>
+    <slot>eDBType_activated( int dbInd )</slot>
+    <slot>bFindUser()</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+    <function access="protected" returnType="bool">prepareDB()</function>
+</functions>
+<pixmapinproject/>
+<exportmacro>ANANAS_EXPORT</exportmacro>
+<layoutdefaults spacing="5" margin="5"/>
+</UI>

@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <LastAuthor>Plotnicov Pavel</LastAuthor>
+  <Created>2007-10-25T14:20:46Z</Created>
+  <Version>11.5606</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>8190</WindowHeight>
+  <WindowWidth>16380</WindowWidth>
+  <WindowTopX>0</WindowTopX>
+  <WindowTopY>0</WindowTopY>
+  <TabRatio>211</TabRatio>
+  <RefModeR1C1/>
+  <AcceptLabelsInFormulas/>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font x:CharSet="204" x:Family="Swiss"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s21">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font x:CharSet="204" x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s22">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="2"
+     ss:Color="#000000"/>
+   </Borders>
+   <Font x:CharSet="204" x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s23">
+   <Borders/>
+  </Style>
+  <Style ss:ID="s24">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Color="#000000"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Color="#000000"/>
+   </Borders>
+   <Font x:CharSet="204" x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s25">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Color="#000000"/>
+   </Borders>
+   <Font x:CharSet="204" x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s26">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Color="#000000"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Color="#000000"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Color="#000000"/>
+   </Borders>
+   <Font x:CharSet="204" x:Family="Swiss"/>
+  </Style>
+  <Style ss:ID="s29">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="256" ss:ExpandedRowCount="4" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:AutoFitWidth="0" ss:Width="106.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="60.75"/>
+   <Column ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="95.25"/>
+   <Column ss:AutoFitWidth="0" ss:Width="60.75" ss:Span="251"/>
+   <Row>
+    <Cell ss:MergeAcross="3" ss:StyleID="s29"><Data ss:Type="String">Отчет по остаткам на &lt;:Текущая дата:&gt;</Data></Cell>
+   </Row>
+   <Row ss:Height="13.5"/>
+   <Row ss:AutoFitHeight="0" ss:Height="17.8125">
+    <Cell ss:StyleID="s21"><Data ss:Type="String">Товар</Data></Cell>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">Количество</Data></Cell>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">Группа</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Сумма по группе</Data></Cell>
+    <Cell ss:StyleID="s23"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s24"><Data ss:Type="String">[:строка:]&lt;:f0:&gt;</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">&lt;:f1:&gt;</Data></Cell>
+    <Cell ss:StyleID="s25"><Data ss:Type="String">&lt;:f2:&gt;</Data></Cell>
+    <Cell ss:StyleID="s26"><Data ss:Type="String">&lt;:f3:&gt;</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Layout x:StartPageNumber="1"/>
+    <Header x:Margin="0.78749999999999998"/>
+    <Footer x:Margin="0.78749999999999998"/>
+    <PageMargins x:Bottom="1.0249999999999999" x:Left="0.78749999999999998"
+     x:Right="0.78749999999999998" x:Top="1.0249999999999999"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>300</HorizontalResolution>
+    <VerticalResolution>300</VerticalResolution>
+   </Print>
+   <Zoom>150</Zoom>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1C1:R1C4</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet2">
+  <Table ss:ExpandedColumnCount="0" ss:ExpandedRowCount="0" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="60.75"/>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.78749999999999998"/>
+    <Footer x:Margin="0.78749999999999998"/>
+    <PageMargins x:Bottom="1.0249999999999999" x:Left="0.78749999999999998"
+     x:Right="0.78749999999999998" x:Top="1.0249999999999999"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>300</HorizontalResolution>
+    <VerticalResolution>300</VerticalResolution>
+   </Print>
+   <PageBreakZoom>60</PageBreakZoom>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet3">
+  <Table ss:ExpandedColumnCount="0" ss:ExpandedRowCount="0" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="60.75"/>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.78749999999999998"/>
+    <Footer x:Margin="0.78749999999999998"/>
+    <PageMargins x:Bottom="1.0249999999999999" x:Left="0.78749999999999998"
+     x:Right="0.78749999999999998" x:Top="1.0249999999999999"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>300</HorizontalResolution>
+    <VerticalResolution>300</VerticalResolution>
+   </Print>
+   <PageBreakZoom>60</PageBreakZoom>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

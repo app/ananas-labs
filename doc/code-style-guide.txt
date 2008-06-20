@@ -1,0 +1,36 @@
+В этом файле собраны рекомендации по оформлению кода,
+применяемые при написании, форматировании исходного кода проекта Ананас.
+
+
+Пример правильно оформленного коментария:
+
+
+/*!
+ * \en
+ *      \brief Search on a mdtree
+ *
+ *      \param mdItem - The index on a mdtree 
+ *      \param parentObjClass - Class of an parent element in a mdtree
+ *      \param parentObjName - Heading of an element in a mdtree 
+ *      \param objClass - Class of an element in a mdtree
+ *      \param objName - Heading of an element in a mdtree
+ * \_en
+ * \ru
+ *      \brief Поиск по дереву метаданных.  
+ *
+ *      Указываем тег-класс узла, тег-класс его родительского узла и строковые значения
+ *      для узла и его родителя.
+ *      Например: запись findItemInMD(item, "document", "Счет", "field", "Поле" ); означает ищется узел в дереве item, у этого узла
+ *      тег-класс field, текстовое значение Поле,а его родитель имеет тег-класс document и значение Счет.
+ *      Если ищем узел с классом md_headers или md_forms или md_tables и т.д. то при вызове функции
+ *      последний параметр objName указывать не нужно.
+ *      \param mdItem - Указатель на дерево
+ *      \param parentObjClass - Класс родительского элемента в дереве
+ *      \param parentObjName - Заголовок родительского элемента в дереве  
+ *      \param objClass - Класс элемента в дереве
+ *      \param objName - Заголовок элемента в дереве
+ * \_ru
+ */
+aListViewItem*
+aListViewItem::findItemInMD(aListViewItem *mdItem, const QString &parentObjClass, const QString &parentObjName, const QString &objClass, const QString &objName) const
+

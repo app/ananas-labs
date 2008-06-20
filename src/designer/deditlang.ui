@@ -1,0 +1,154 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>dEditLang</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>dEditLang</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>299</width>
+            <height>185</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Language</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QTabWidget" row="0" column="0">
+            <property name="name">
+                <cstring>tabWidget11</cstring>
+            </property>
+            <property name="tabPosition">
+                <enum>Bottom</enum>
+            </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Common</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLayoutWidget" row="0" column="0">
+                        <property name="name">
+                            <cstring>layout51</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout49</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel1</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Tag:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel2</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Name:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel3</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Translation file:</string>
+                                        </property>
+                                    </widget>
+                                </vbox>
+                            </widget>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout50</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>eTag</cstring>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>eName</cstring>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>eTrFile</cstring>
+                                        </property>
+                                    </widget>
+                                </vbox>
+                            </widget>
+                        </hbox>
+                    </widget>
+                    <spacer row="1" column="0">
+                        <property name="name">
+                            <cstring>spacer12</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>21</width>
+                                <height>141</height>
+                            </size>
+                        </property>
+                    </spacer>
+                </grid>
+            </widget>
+        </widget>
+    </grid>
+</widget>
+<toolbars>
+</toolbars>
+<includes>
+    <include location="local" impldecl="in declaration">mdtree.h</include>
+    <include location="local" impldecl="in declaration">cfgform.h</include>
+    <include location="local" impldecl="in declaration">mainform.h</include>
+    <include location="local" impldecl="in implementation">deditlang.ui.h</include>
+</includes>
+<variables>
+    <variable access="private">aCfgItem obj;</variable>
+    <variable access="private">int langCount;</variable>
+    <variable access="private">CfgForm *cf;</variable>
+</variables>
+<slots>
+    <slot>setData( CfgForm * c, aCfgItem o )</slot>
+    <slot>updateMD()</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">init()</function>
+    <function access="private" specifier="non virtual">destroy()</function>
+</functions>
+<pixmapinproject/>
+<layoutdefaults spacing="5" margin="5"/>
+</UI>

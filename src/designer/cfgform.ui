@@ -1,0 +1,682 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>CfgForm</class>
+<author>Leader</author>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>CfgForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>482</width>
+            <height>412</height>
+        </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>7</hsizetype>
+            <vsizetype>7</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="caption">
+        <string>CfgForm</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QTabWidget" row="0" column="0">
+            <property name="name">
+                <cstring>tabWidget</cstring>
+            </property>
+            <property name="font">
+                <font>
+                    <pointsize>10</pointsize>
+                </font>
+            </property>
+            <property name="tabPosition">
+                <enum>Bottom</enum>
+            </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Metadata</string>
+                </attribute>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Actions</string>
+                </attribute>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Interface</string>
+                </attribute>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Rights</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QTable" row="0" column="0">
+                        <column>
+                            <property name="text">
+                                <string>Role name</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Description</string>
+                            </property>
+                        </column>
+                        <property name="name">
+                            <cstring>tRole</cstring>
+                        </property>
+                        <property name="numRows">
+                            <number>0</number>
+                        </property>
+                        <property name="numCols">
+                            <number>2</number>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                        <property name="selectionMode">
+                            <enum>Single</enum>
+                        </property>
+                    </widget>
+                    <widget class="QLayoutWidget" row="0" column="1">
+                        <property name="name">
+                            <cstring>layout8</cstring>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>bAddRole</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Add</string>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>bDeleteRole</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Remove</string>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>bEditRole</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Edit</string>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>bKillRole</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Clear dead roles</string>
+                                </property>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer3</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Vertical</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>21</width>
+                                        <height>250</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </vbox>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Languages</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLayoutWidget" row="0" column="1">
+                        <property name="name">
+                            <cstring>layout12</cstring>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>bAdd</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Add</string>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>bDelete</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Remove</string>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>bEdit</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Edit</string>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>bKill</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Clear dead aliases</string>
+                                </property>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer5</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Vertical</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>20</width>
+                                        <height>250</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </vbox>
+                    </widget>
+                    <widget class="QTable" row="0" column="0">
+                        <column>
+                            <property name="text">
+                                <string>Tag</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Name</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Translation file</string>
+                            </property>
+                        </column>
+                        <property name="name">
+                            <cstring>tLang</cstring>
+                        </property>
+                        <property name="numRows">
+                            <number>0</number>
+                        </property>
+                        <property name="numCols">
+                            <number>3</number>
+                        </property>
+                        <property name="readOnly">
+                            <bool>true</bool>
+                        </property>
+                        <property name="selectionMode">
+                            <enum>SingleRow</enum>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Image collection</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QIconView" row="0" column="0" rowspan="2" colspan="1">
+                        <property name="name">
+                            <cstring>vImageCollection</cstring>
+                        </property>
+                        <property name="maxItemWidth">
+                            <number>50</number>
+                        </property>
+                        <property name="maxItemTextLength">
+                            <number>50</number>
+                        </property>
+                        <property name="itemsMovable">
+                            <bool>false</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLayoutWidget" row="0" column="1">
+                        <property name="name">
+                            <cstring>layout22</cstring>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>bAddImage</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Add</string>
+                                </property>
+                            </widget>
+                            <widget class="QPushButton">
+                                <property name="name">
+                                    <cstring>bRemoveImage</cstring>
+                                </property>
+                                <property name="enabled">
+                                    <bool>false</bool>
+                                </property>
+                                <property name="text">
+                                    <string>Remove</string>
+                                </property>
+                            </widget>
+                        </vbox>
+                    </widget>
+                    <spacer row="1" column="1">
+                        <property name="name">
+                            <cstring>spacer8</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>20</width>
+                                <height>240</height>
+                            </size>
+                        </property>
+                    </spacer>
+                </grid>
+            </widget>
+        </widget>
+    </grid>
+</widget>
+<toolbars>
+</toolbars>
+<actions>
+    <action>
+        <property name="name">
+            <cstring>fileNewAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>New</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;New</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+N</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileOpenAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Open</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Open...</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+O</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileSaveAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Save</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Save</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+S</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileSaveAsAction</cstring>
+        </property>
+        <property name="text">
+            <string>Save As</string>
+        </property>
+        <property name="menuText">
+            <string>Save &amp;As...</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>filePrintAction</cstring>
+        </property>
+        <property name="iconSet">
+            <iconset></iconset>
+        </property>
+        <property name="text">
+            <string>Print</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Print...</string>
+        </property>
+        <property name="accel">
+            <string>Ctrl+P</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>fileExitAction</cstring>
+        </property>
+        <property name="text">
+            <string>Exit</string>
+        </property>
+        <property name="menuText">
+            <string>E&amp;xit</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <actiongroup>
+        <property name="name">
+            <cstring>objGroup</cstring>
+        </property>
+        <property name="text">
+            <string>ActionGroup</string>
+        </property>
+        <property name="usesDropDown">
+            <bool>false</bool>
+        </property>
+        <action>
+            <property name="name">
+                <cstring>objEdit</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset></iconset>
+            </property>
+            <property name="text">
+                <string>Action</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objNew</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset></iconset>
+            </property>
+            <property name="text">
+                <string>Action</string>
+            </property>
+        </action>
+        <action>
+            <property name="name">
+                <cstring>objDelete</cstring>
+            </property>
+            <property name="iconSet">
+                <iconset>editdelete.png</iconset>
+            </property>
+            <property name="text">
+                <string>Action</string>
+            </property>
+        </action>
+    </actiongroup>
+</actions>
+<connections>
+    <connection>
+        <sender>fileExitAction</sender>
+        <signal>activated()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>fileExit()</slot>
+    </connection>
+    <connection>
+        <sender>filePrintAction</sender>
+        <signal>activated()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>filePrint()</slot>
+    </connection>
+    <connection>
+        <sender>fileSaveAsAction</sender>
+        <signal>activated()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>fileSaveAs()</slot>
+    </connection>
+    <connection>
+        <sender>fileSaveAction</sender>
+        <signal>activated()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>fileSave()</slot>
+    </connection>
+    <connection>
+        <sender>fileOpenAction</sender>
+        <signal>activated()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>fileOpen()</slot>
+    </connection>
+    <connection>
+        <sender>fileNewAction</sender>
+        <signal>activated()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>fileNew()</slot>
+    </connection>
+    <connection>
+        <sender>bAdd</sender>
+        <signal>clicked()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>bAdd_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bDelete</sender>
+        <signal>clicked()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>bDelete_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bEdit</sender>
+        <signal>clicked()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>bEdit_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>tLang</sender>
+        <signal>doubleClicked(int,int,int,const QPoint&amp;)</signal>
+        <receiver>CfgForm</receiver>
+        <slot>tLang_doubleClicked(int,int,int,const QPoint&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>bKill</sender>
+        <signal>clicked()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>bKill_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bAddImage</sender>
+        <signal>clicked()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>bAddImage_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bRemoveImage</sender>
+        <signal>clicked()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>bRemoveImage_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>vImageCollection</sender>
+        <signal>itemRenamed(QIconViewItem*,const QString&amp;)</signal>
+        <receiver>CfgForm</receiver>
+        <slot>vImageCollection_itemRenamed(QIconViewItem*,const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>tabWidget</sender>
+        <signal>selected(const QString&amp;)</signal>
+        <receiver>CfgForm</receiver>
+        <slot>tabWidget_selected(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>bAddRole</sender>
+        <signal>clicked()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>bAddRole_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bEditRole</sender>
+        <signal>clicked()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>bEditRole_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>tRole</sender>
+        <signal>doubleClicked(int,int,int,const QPoint&amp;)</signal>
+        <receiver>CfgForm</receiver>
+        <slot>tRole_doubleClicked(int,int,int,const QPoint&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>bDeleteRole</sender>
+        <signal>clicked()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>bDeleteRole_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bKillRole</sender>
+        <signal>clicked()</signal>
+        <receiver>CfgForm</receiver>
+        <slot>bKillRole_clicked()</slot>
+    </connection>
+</connections>
+<tabstops>
+    <tabstop>tabWidget</tabstop>
+</tabstops>
+<includes>
+    <include location="local" impldecl="in declaration">acfg.h</include>
+    <include location="local" impldecl="in declaration">qworkspace.h</include>
+    <include location="local" impldecl="in declaration">qsocket.h</include>
+    <include location="local" impldecl="in declaration">qserversocket.h</include>
+    <include location="local" impldecl="in declaration">acfgrc.h</include>
+    <include location="local" impldecl="in declaration">mdtree.h</include>
+    <include location="local" impldecl="in declaration">actiontree.h</include>
+    <include location="local" impldecl="in declaration">interfacetree.h</include>
+    <include location="local" impldecl="in declaration">pixmappreview.h</include>
+    <include location="local" impldecl="in declaration">awindowslist.h</include>
+    <include location="local" impldecl="in implementation">cfgform.ui.h</include>
+</includes>
+<variables>
+    <variable access="public">QIntDict&lt;QIconViewItem&gt; idList;</variable>
+    <variable access="public">InterfaceTreeView *interfacetree;</variable>
+    <variable access="public">aActionTreeView *actiontree;</variable>
+    <variable access="public">aCfg cfg;</variable>
+    <variable access="public">QWorkspace *ws;</variable>
+    <variable access="public">aMetadataTreeView *mdtree;</variable>
+    <variable access="public">InterfaceTreeView *toolbartree;</variable>
+    <variable access="public">QString rcfile;</variable>
+    <variable access="public">aWindowsList *wl;</variable>
+</variables>
+<signals>
+    <signal>wActivate()</signal>
+    <signal>wDeactivate()</signal>
+</signals>
+<slots>
+    <slot>fileNew()</slot>
+    <slot>fileOpen()</slot>
+    <slot>fileSave()</slot>
+    <slot>fileSaveAs()</slot>
+    <slot>filePrint()</slot>
+    <slot>fileExit()</slot>
+    <slot>init( QString &amp; rcf, bool flagNew )</slot>
+    <slot>initImageCollection()</slot>
+    <slot>bAddImage_clicked()</slot>
+    <slot>bRemoveImage_clicked()</slot>
+    <slot>vImageCollection_itemRenamed( QIconViewItem * item, const QString &amp; name )</slot>
+    <slot>initLang()</slot>
+    <slot>initRoles()</slot>
+    <slot>save()</slot>
+    <slot>bAdd_clicked()</slot>
+    <slot>bDelete_clicked()</slot>
+    <slot>bEdit_clicked()</slot>
+    <slot>tLang_doubleClicked( int, int, int, const QPoint &amp; )</slot>
+    <slot>bKill_clicked()</slot>
+    <slot>newObj()</slot>
+    <slot>listCfg_onItem( QListViewItem * )</slot>
+    <slot>newField()</slot>
+    <slot>newForm()</slot>
+    <slot>newTable()</slot>
+    <slot>tabWidget_selected( const QString &amp; tab )</slot>
+    <slot>bAddRole_clicked()</slot>
+    <slot>bDeleteRole_clicked()</slot>
+    <slot>bEditRole_clicked()</slot>
+    <slot>bKillRole_clicked()</slot>
+    <slot>tRole_doubleClicked( int, int, int, const QPoint &amp; )</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">destroy()</function>
+    <function access="private">closeEvent( QCloseEvent * e )</function>
+    <function access="private" returnType="int">closeSubWindows()</function>
+</functions>
+<pixmapinproject/>
+<layoutdefaults spacing="2" margin="1"/>
+</UI>

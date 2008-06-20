@@ -1,0 +1,602 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>dEditCommand</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>dEditCommand</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>569</width>
+            <height>371</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Command</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QTabWidget" row="0" column="0">
+            <property name="name">
+                <cstring>tabWidget2</cstring>
+            </property>
+            <property name="font">
+                <font>
+                </font>
+            </property>
+            <property name="tabPosition">
+                <enum>Bottom</enum>
+            </property>
+            <property name="tabShape">
+                <enum>Rounded</enum>
+            </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Common</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="3">
+                        <property name="name">
+                            <cstring>layout10</cstring>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>textLabel5</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Description:</string>
+                                </property>
+                            </widget>
+                            <widget class="QTextEdit">
+                                <property name="name">
+                                    <cstring>eDescription</cstring>
+                                </property>
+                            </widget>
+                        </vbox>
+                    </widget>
+                    <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="3">
+                        <property name="name">
+                            <cstring>layout11</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>lHotKey</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Hot Key:</string>
+                                </property>
+                            </widget>
+                            <widget class="QCheckBox">
+                                <property name="name">
+                                    <cstring>cbCTRL</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Ctrl</string>
+                                </property>
+                            </widget>
+                            <widget class="QCheckBox">
+                                <property name="name">
+                                    <cstring>cbALT</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Alt</string>
+                                </property>
+                            </widget>
+                            <widget class="QCheckBox">
+                                <property name="name">
+                                    <cstring>cbShift</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Shift</string>
+                                </property>
+                            </widget>
+                            <widget class="QComboBox">
+                                <item>
+                                    <property name="text">
+                                        <string></string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>1</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>2</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>3</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>4</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>5</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>6</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>7</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>8</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>9</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>0</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>A</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>B</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>C</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>D</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>E</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>F</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>G</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>H</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>I</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>J</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>K</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>L</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>M</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>N</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>O</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>P</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>Q</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>R</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>S</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>T</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>U</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>V</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>W</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>X</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>Y</string>
+                                    </property>
+                                </item>
+                                <item>
+                                    <property name="text">
+                                        <string>Z</string>
+                                    </property>
+                                </item>
+                                <property name="name">
+                                    <cstring>cbKey</cstring>
+                                </property>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer3</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>71</width>
+                                        <height>20</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </hbox>
+                    </widget>
+                    <widget class="QLabel" row="2" column="0">
+                        <property name="name">
+                            <cstring>textLabel2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Type:</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="1" column="0">
+                        <property name="name">
+                            <cstring>textLabel1_2</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Menu text</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="1" column="1" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>eMenuText</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="0" column="1" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>eName</cstring>
+                        </property>
+                        <property name="enabled">
+                            <bool>true</bool>
+                        </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>0</width>
+                                <height>22</height>
+                            </size>
+                        </property>
+                    </widget>
+                    <spacer row="2" column="2">
+                        <property name="name">
+                            <cstring>spacer9</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Horizontal</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>360</width>
+                                <height>20</height>
+                            </size>
+                        </property>
+                    </spacer>
+                    <widget class="QComboBox" row="2" column="1">
+                        <property name="name">
+                            <cstring>eType</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="0" column="0">
+                        <property name="name">
+                            <cstring>textLabel1</cstring>
+                        </property>
+                        <property name="text">
+                            <string>Name:</string>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Actions</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLayoutWidget" row="0" column="0">
+                        <property name="name">
+                            <cstring>layout29</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout28</cstring>
+                                </property>
+                                <grid>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                </grid>
+                            </widget>
+                            <widget class="QLayoutWidget">
+                                <property name="name">
+                                    <cstring>layout26</cstring>
+                                </property>
+                                <vbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <spacer>
+                                        <property name="name">
+                                            <cstring>spacer7</cstring>
+                                        </property>
+                                        <property name="orientation">
+                                            <enum>Vertical</enum>
+                                        </property>
+                                        <property name="sizeType">
+                                            <enum>Expanding</enum>
+                                        </property>
+                                        <property name="sizeHint">
+                                            <size>
+                                                <width>20</width>
+                                                <height>44</height>
+                                            </size>
+                                        </property>
+                                    </spacer>
+                                    <widget class="QPushButton">
+                                        <property name="name">
+                                            <cstring>bAddAction</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="pixmap">
+                                            <pixmap>arrow_left.png</pixmap>
+                                        </property>
+                                    </widget>
+                                    <widget class="QPushButton">
+                                        <property name="name">
+                                            <cstring>bRemoveAction</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="pixmap">
+                                            <pixmap>editdelete.png</pixmap>
+                                        </property>
+                                    </widget>
+                                    <widget class="QPushButton">
+                                        <property name="name">
+                                            <cstring>bMoveUp</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="pixmap">
+                                            <pixmap>arrow_up.png</pixmap>
+                                        </property>
+                                    </widget>
+                                    <widget class="QPushButton">
+                                        <property name="name">
+                                            <cstring>bMoveDown</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string></string>
+                                        </property>
+                                        <property name="pixmap">
+                                            <pixmap>arrow_down.png</pixmap>
+                                        </property>
+                                    </widget>
+                                    <spacer>
+                                        <property name="name">
+                                            <cstring>spacer8</cstring>
+                                        </property>
+                                        <property name="orientation">
+                                            <enum>Vertical</enum>
+                                        </property>
+                                        <property name="sizeType">
+                                            <enum>Expanding</enum>
+                                        </property>
+                                        <property name="sizeHint">
+                                            <size>
+                                                <width>21</width>
+                                                <height>44</height>
+                                            </size>
+                                        </property>
+                                    </spacer>
+                                </vbox>
+                            </widget>
+                        </hbox>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Aliases</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QTable" row="0" column="0">
+                        <column>
+                            <property name="text">
+                                <string>Lang</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Name</string>
+                            </property>
+                        </column>
+                        <property name="name">
+                            <cstring>tAliases</cstring>
+                        </property>
+                        <property name="numRows">
+                            <number>0</number>
+                        </property>
+                        <property name="numCols">
+                            <number>2</number>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+        </widget>
+    </grid>
+</widget>
+<toolbars>
+</toolbars>
+<connections>
+    <connection>
+        <sender>bAddAction</sender>
+        <signal>clicked()</signal>
+        <receiver>dEditCommand</receiver>
+        <slot>bAddAction_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bRemoveAction</sender>
+        <signal>clicked()</signal>
+        <receiver>dEditCommand</receiver>
+        <slot>bRemoveAction_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bMoveUp</sender>
+        <signal>clicked()</signal>
+        <receiver>dEditCommand</receiver>
+        <slot>bMoveUp_clicked()</slot>
+    </connection>
+    <connection>
+        <sender>bMoveDown</sender>
+        <signal>clicked()</signal>
+        <receiver>dEditCommand</receiver>
+        <slot>bMoveDown_clicked()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in declaration">interfacetree.h</include>
+    <include location="local" impldecl="in declaration">aliaseditor.h</include>
+    <include location="local" impldecl="in declaration">actiontree.h</include>
+    <include location="local" impldecl="in declaration">mainform.h</include>
+    <include location="local" impldecl="in implementation">deditcommand.ui.h</include>
+</includes>
+<variables>
+    <variable access="public">ananasTreeView *vComActions;</variable>
+    <variable access="public">aActionTreeView *actiontree;</variable>
+    <variable access="public">InterfaceListViewItem * item;</variable>
+    <variable access="public">aAliasEditor *al;</variable>
+    <variable access="public">aCfg *md;</variable>
+    <variable access="public">aCfgItem obj;</variable>
+</variables>
+<slots>
+    <slot>updateMD()</slot>
+    <slot>setData( InterfaceListViewItem * o )</slot>
+    <slot>bAddAction_clicked()</slot>
+    <slot>bRemoveAction_clicked()</slot>
+    <slot>bMoveUp_clicked()</slot>
+    <slot>bMoveDown_clicked()</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">destroy()</function>
+    <function access="private" specifier="non virtual">init()</function>
+    <function access="public">moveToTopLeftCorner()</function>
+</functions>
+<pixmapinproject/>
+<layoutdefaults spacing="5" margin="5"/>
+</UI>

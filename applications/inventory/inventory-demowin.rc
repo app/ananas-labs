@@ -1,0 +1,8 @@
+dbtitle=Оперативный учет. Демо.
+dbname=ananas_inventory_demo
+dbtype=mysql
+dbuser=root
+dbpass=
+dbhost=localhost
+dbport=
+

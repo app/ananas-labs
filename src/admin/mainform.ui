@@ -1,0 +1,149 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>MainForm</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>MainForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>724</width>
+            <height>599</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Ananas: Administrator</string>
+    </property>
+    <property name="icon">
+        <pixmap>a-system.png</pixmap>
+    </property>
+</widget>
+<menubar>
+    <property name="name">
+        <cstring>MenuBar</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>724</width>
+            <height>28</height>
+        </rect>
+    </property>
+    <item text="&amp;File" name="fileMenu">
+        <separator/>
+        <separator/>
+        <action name="fileExitAction"/>
+    </item>
+    <item text="&amp;Administrator" name="unnamed">
+        <action name="administratorUsersAction"/>
+        <action name="administratorRolesAction"/>
+    </item>
+</menubar>
+<toolbars>
+    <toolbar dock="2">
+        <property name="name">
+            <cstring>toolBar</cstring>
+        </property>
+        <property name="label">
+            <string>Tools</string>
+        </property>
+        <action name="fileExitAction"/>
+    </toolbar>
+</toolbars>
+<actions>
+    <action>
+        <property name="name">
+            <cstring>fileExitAction</cstring>
+        </property>
+        <property name="text">
+            <string>Exit</string>
+        </property>
+        <property name="menuText">
+            <string>E&amp;xit</string>
+        </property>
+        <property name="accel">
+            <string></string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>administratorUsersAction</cstring>
+        </property>
+        <property name="text">
+            <string>&amp;Users</string>
+        </property>
+        <property name="menuText">
+            <string>&amp;Users</string>
+        </property>
+    </action>
+    <action>
+        <property name="name">
+            <cstring>administratorRolesAction</cstring>
+        </property>
+        <property name="text">
+            <string>Roles</string>
+        </property>
+        <property name="menuText">
+            <string>Roles</string>
+        </property>
+    </action>
+</actions>
+<connections>
+    <connection>
+        <sender>fileExitAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>fileExit()</slot>
+    </connection>
+    <connection>
+        <sender>administratorUsersAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>adminUsers()</slot>
+    </connection>
+    <connection>
+        <sender>fileExitAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>fileExit()</slot>
+    </connection>
+    <connection>
+        <sender>administratorRolesAction</sender>
+        <signal>activated()</signal>
+        <receiver>MainForm</receiver>
+        <slot>adminRoles()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in declaration">ananas.h</include>
+    <include location="local" impldecl="in declaration">qworkspace.h</include>
+    <include location="local" impldecl="in declaration">awindowslist.h</include>
+    <include location="global" impldecl="in declaration">qvbox.h</include>
+    <include location="local" impldecl="in declaration">usersform.h</include>
+    <include location="local" impldecl="in implementation">mainform.ui.h</include>
+</includes>
+<variables>
+    <variable access="public">UsersForm *usersForm;</variable>
+    <variable access="public">aWindowsList *wl;</variable>
+    <variable access="public">QWorkspace *ws;</variable>
+    <variable access="public">QString rcfile;</variable>
+    <variable access="public">RolesForm *rolesForm;</variable>
+    <variable access="public">aDatabase *db;</variable>
+    <variable access="public">aCfg cfg;</variable>
+</variables>
+<slots>
+    <slot>fileNew()</slot>
+    <slot>fileOpen()</slot>
+    <slot>fileSave()</slot>
+    <slot>fileSaveAs()</slot>
+    <slot>filePrint()</slot>
+    <slot>fileExit()</slot>
+    <slot>adminUsers()</slot>
+    <slot returnType="bool">init()</slot>
+    <slot>adminRoles()</slot>
+</slots>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

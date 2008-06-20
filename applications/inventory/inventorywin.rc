@@ -1,0 +1,8 @@
+dbtitle=Оперативный учет
+dbname=ananas_inventory
+dbtype=mysql
+dbuser=root
+dbpass=
+dbhost=localhost
+dbport=
+

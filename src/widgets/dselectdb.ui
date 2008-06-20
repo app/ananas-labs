@@ -1,0 +1,298 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>dSelectDB</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>dSelectDB</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>471</width>
+            <height>376</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Information base</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>true</bool>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QLayoutWidget" row="0" column="0">
+            <property name="name">
+                <cstring>layout2</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>textLabel1</cstring>
+                    </property>
+                    <property name="text">
+                        <string>Select data base</string>
+                    </property>
+                </widget>
+                <widget class="QListView">
+                    <column>
+                        <property name="text">
+                            <string>Name</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <column>
+                        <property name="text">
+                            <string>Resource file</string>
+                        </property>
+                        <property name="clickable">
+                            <bool>true</bool>
+                        </property>
+                        <property name="resizable">
+                            <bool>true</bool>
+                        </property>
+                    </column>
+                    <property name="name">
+                        <cstring>listDBRC</cstring>
+                    </property>
+                    <property name="hScrollBarMode">
+                        <enum>AlwaysOff</enum>
+                    </property>
+                    <property name="allColumnsShowFocus">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QLabel">
+                    <property name="name">
+                        <cstring>tDBRC</cstring>
+                    </property>
+                    <property name="paletteBackgroundColor">
+                        <color>
+                            <red>208</red>
+                            <green>208</green>
+                            <blue>216</blue>
+                        </color>
+                    </property>
+                    <property name="text">
+                        <string></string>
+                    </property>
+                </widget>
+            </vbox>
+        </widget>
+        <widget class="QLayoutWidget" row="0" column="1">
+            <property name="name">
+                <cstring>layout7</cstring>
+            </property>
+            <vbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonOk</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;OK</string>
+                    </property>
+                    <property name="accel">
+                        <string></string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                    <property name="default">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bNewRC</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;New</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+N</string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bNewGroup</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Group</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+G</string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bDeleteRC</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Delete</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+D</string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>bEditRC</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Edit</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+E</string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonCancel</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Cancel</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+C</string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>buttonHelp</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Help</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+H</string>
+                    </property>
+                    <property name="autoDefault">
+                        <bool>true</bool>
+                    </property>
+                </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>Spacer1</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>80</height>
+                        </size>
+                    </property>
+                </spacer>
+            </vbox>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>buttonOk</sender>
+        <signal>clicked()</signal>
+        <receiver>dSelectDB</receiver>
+        <slot>onOK()</slot>
+    </connection>
+    <connection>
+        <sender>buttonCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>dSelectDB</receiver>
+        <slot>onCancel()</slot>
+    </connection>
+    <connection>
+        <sender>listDBRC</sender>
+        <signal>selectionChanged(QListViewItem*)</signal>
+        <receiver>dSelectDB</receiver>
+        <slot>itemSelect(QListViewItem*)</slot>
+    </connection>
+    <connection>
+        <sender>bNewGroup</sender>
+        <signal>clicked()</signal>
+        <receiver>dSelectDB</receiver>
+        <slot>newGroup()</slot>
+    </connection>
+    <connection>
+        <sender>bNewRC</sender>
+        <signal>clicked()</signal>
+        <receiver>dSelectDB</receiver>
+        <slot>newItem()</slot>
+    </connection>
+    <connection>
+        <sender>bEditRC</sender>
+        <signal>clicked()</signal>
+        <receiver>dSelectDB</receiver>
+        <slot>editItem()</slot>
+    </connection>
+    <connection>
+        <sender>bDeleteRC</sender>
+        <signal>clicked()</signal>
+        <receiver>dSelectDB</receiver>
+        <slot>deleteItem()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in declaration">ananasglobal.h</include>
+    <include location="local" impldecl="in declaration">qsettings.h</include>
+    <include location="local" impldecl="in declaration">qmessagebox.h</include>
+    <include location="local" impldecl="in implementation">dselectdb.ui.h</include>
+</includes>
+<variables>
+    <variable access="public">QString rcfile;</variable>
+    <variable access="private">int withgroups;</variable>
+    <variable access="private">bool changes;</variable>
+    <variable access="private">int ro_mode;</variable>
+    <variable>QSettings settings;</variable>
+    <variable access="private">bool local;</variable>
+</variables>
+<slots>
+    <slot access="private" specifier="non virtual">init()</slot>
+    <slot access="private" specifier="non virtual">itemSelect( QListViewItem * item )</slot>
+    <slot access="private" specifier="non virtual">newGroup()</slot>
+    <slot access="private" specifier="non virtual">readSettings(QStringList lst)</slot>
+    <slot specifier="non virtual">newItem()</slot>
+    <slot specifier="non virtual">editItem()</slot>
+    <slot specifier="non virtual">deleteItem()</slot>
+    <slot access="private" specifier="non virtual">saveRC()</slot>
+    <slot access="private" specifier="non virtual">onOK()</slot>
+    <slot specifier="non virtual">onCancel()</slot>
+    <slot specifier="non virtual">ItemRenamed( QListViewItem * item, int col )</slot>
+</slots>
+<functions>
+    <function access="protected">clearSettings()</function>
+</functions>
+<pixmapinproject/>
+<exportmacro>ANANAS_EXPORT</exportmacro>
+<layoutdefaults spacing="5" margin="5"/>
+</UI>

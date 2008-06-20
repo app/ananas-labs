@@ -1,0 +1,7 @@
+Makefile
+.moc
+.ui
+.obj
+cfgform.h
+mainform.h
+libananasplugin.so

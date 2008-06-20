@@ -1,0 +1,7 @@
+Makefile
+.moc
+.ui
+.obj
+.qmake.internal.cache
+
+

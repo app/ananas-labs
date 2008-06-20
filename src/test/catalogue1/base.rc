@@ -1,0 +1,9 @@
+dbpass=
+workdir=
+dbhost=localhost
+dbtitle= catalogue test base
+dbuser=root
+dbtype=mysql
+configfile=base.cfg
+dbname=test_catalog_base
+dbport=

@@ -1,0 +1,366 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>dEditField</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>dEditField</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>399</width>
+            <height>403</height>
+        </rect>
+    </property>
+    <property name="minimumSize">
+        <size>
+            <width>300</width>
+            <height>378</height>
+        </size>
+    </property>
+    <property name="caption">
+        <string>Field</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QTabWidget" row="0" column="0">
+            <property name="name">
+                <cstring>tabWidget</cstring>
+            </property>
+            <property name="font">
+                <font>
+                    <pointsize>10</pointsize>
+                </font>
+            </property>
+            <property name="tabPosition">
+                <enum>Bottom</enum>
+            </property>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Common</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QLabel" row="2" column="0">
+                        <property name="name">
+                            <cstring>tWidth</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>1</hsizetype>
+                                <vsizetype>5</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="text">
+                            <string>Width</string>
+                        </property>
+                    </widget>
+                    <widget class="QLayoutWidget" row="2" column="1">
+                        <property name="name">
+                            <cstring>layout12</cstring>
+                        </property>
+                        <hbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QSpinBox">
+                                <property name="name">
+                                    <cstring>eWidth</cstring>
+                                </property>
+                                <property name="maxValue">
+                                    <number>254</number>
+                                </property>
+                                <property name="minValue">
+                                    <number>1</number>
+                                </property>
+                                <property name="value">
+                                    <number>10</number>
+                                </property>
+                            </widget>
+                            <widget class="QLabel">
+                                <property name="name">
+                                    <cstring>tDec</cstring>
+                                </property>
+                                <property name="sizePolicy">
+                                    <sizepolicy>
+                                        <hsizetype>1</hsizetype>
+                                        <vsizetype>5</vsizetype>
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                </property>
+                                <property name="text">
+                                    <string>Decimals</string>
+                                </property>
+                            </widget>
+                            <widget class="QSpinBox">
+                                <property name="name">
+                                    <cstring>eDec</cstring>
+                                </property>
+                            </widget>
+                            <spacer>
+                                <property name="name">
+                                    <cstring>spacer7</cstring>
+                                </property>
+                                <property name="orientation">
+                                    <enum>Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                    <enum>Expanding</enum>
+                                </property>
+                                <property name="sizeHint">
+                                    <size>
+                                        <width>230</width>
+                                        <height>20</height>
+                                    </size>
+                                </property>
+                            </spacer>
+                        </hbox>
+                    </widget>
+                    <widget class="QLabel" row="1" column="0">
+                        <property name="name">
+                            <cstring>textLabel4</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>1</hsizetype>
+                                <vsizetype>5</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>80</width>
+                                <height>0</height>
+                            </size>
+                        </property>
+                        <property name="maximumSize">
+                            <size>
+                                <width>80</width>
+                                <height>32767</height>
+                            </size>
+                        </property>
+                        <property name="text">
+                            <string>Type</string>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="0" column="0">
+                        <property name="name">
+                            <cstring>textLabel1</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>1</hsizetype>
+                                <vsizetype>5</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                            <size>
+                                <width>80</width>
+                                <height>0</height>
+                            </size>
+                        </property>
+                        <property name="text">
+                            <string>Name</string>
+                        </property>
+                    </widget>
+                    <widget class="QLineEdit" row="0" column="1">
+                        <property name="name">
+                            <cstring>eName</cstring>
+                        </property>
+                    </widget>
+                    <widget class="QGroupBox" row="3" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>groupBox1</cstring>
+                        </property>
+                        <property name="title">
+                            <string>Flags</string>
+                        </property>
+                        <vbox>
+                            <property name="name">
+                                <cstring>unnamed</cstring>
+                            </property>
+                            <widget class="QCheckBox">
+                                <property name="name">
+                                    <cstring>efSort</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Sort</string>
+                                </property>
+                            </widget>
+                            <widget class="QCheckBox">
+                                <property name="name">
+                                    <cstring>efPlus</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Positive</string>
+                                </property>
+                            </widget>
+                            <widget class="QCheckBox">
+                                <property name="name">
+                                    <cstring>efNZ</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Not null</string>
+                                </property>
+                            </widget>
+                            <widget class="QCheckBox">
+                                <property name="name">
+                                    <cstring>efSum</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Sum</string>
+                                </property>
+                            </widget>
+                        </vbox>
+                    </widget>
+                    <widget class="QComboBox" row="1" column="1">
+                        <property name="name">
+                            <cstring>eType</cstring>
+                        </property>
+                        <property name="duplicatesEnabled">
+                            <bool>false</bool>
+                        </property>
+                    </widget>
+                    <widget class="QLabel" row="4" column="0">
+                        <property name="name">
+                            <cstring>saldoTextLabel</cstring>
+                        </property>
+                        <property name="sizePolicy">
+                            <sizepolicy>
+                                <hsizetype>5</hsizetype>
+                                <vsizetype>0</vsizetype>
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                            </sizepolicy>
+                        </property>
+                        <property name="text">
+                            <string>Saldo source</string>
+                        </property>
+                    </widget>
+                    <widget class="QComboBox" row="5" column="0" rowspan="1" colspan="2">
+                        <property name="name">
+                            <cstring>comboBox2</cstring>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>tab</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Description</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QTextEdit" row="0" column="0">
+                        <property name="name">
+                            <cstring>eDescription</cstring>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+            <widget class="QWidget">
+                <property name="name">
+                    <cstring>TabPage</cstring>
+                </property>
+                <attribute name="title">
+                    <string>Aliases</string>
+                </attribute>
+                <grid>
+                    <property name="name">
+                        <cstring>unnamed</cstring>
+                    </property>
+                    <widget class="QTable" row="0" column="0">
+                        <column>
+                            <property name="text">
+                                <string>Lang</string>
+                            </property>
+                        </column>
+                        <column>
+                            <property name="text">
+                                <string>Name</string>
+                            </property>
+                        </column>
+                        <property name="name">
+                            <cstring>tAliases</cstring>
+                        </property>
+                        <property name="numRows">
+                            <number>0</number>
+                        </property>
+                        <property name="numCols">
+                            <number>2</number>
+                        </property>
+                    </widget>
+                </grid>
+            </widget>
+        </widget>
+    </grid>
+</widget>
+<toolbars>
+</toolbars>
+<connections>
+    <connection>
+        <sender>eType</sender>
+        <signal>activated(int)</signal>
+        <receiver>dEditField</receiver>
+        <slot>typeSelect(int)</slot>
+    </connection>
+    <connection>
+        <sender>eName</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>dEditField</receiver>
+        <slot>nameChanged()</slot>
+    </connection>
+    <connection>
+        <sender>comboBox2</sender>
+        <signal>activated(int)</signal>
+        <receiver>dEditField</receiver>
+        <slot>AARegSelect(int)</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in declaration">acfg.h</include>
+    <include location="local" impldecl="in declaration">mdtree.h</include>
+    <include location="local" impldecl="in declaration">qseditor.h</include>
+    <include location="local" impldecl="in declaration">aliaseditor.h</include>
+    <include location="local" impldecl="in declaration">mainform.h</include>
+    <include location="local" impldecl="in implementation">deditfield.ui.h</include>
+</includes>
+<variables>
+    <variable access="public">QStringList otypes;</variable>
+    <variable access="public">QStringList artypes;</variable>
+    <variable access="public">aListViewItem *item;</variable>
+    <variable access="public">aAliasEditor *al;</variable>
+    <variable access="private">QString capt;</variable>
+</variables>
+<slots>
+    <slot>setData( aListViewItem * o )</slot>
+    <slot>updateMD()</slot>
+    <slot>typeSelect( int idx )</slot>
+    <slot>nameChanged()</slot>
+    <slot>AARegSelect( int i )</slot>
+</slots>
+<functions>
+    <function access="private" specifier="non virtual">destroy()</function>
+    <function access="private" specifier="non virtual">init()</function>
+    <function access="public" specifier="non virtual">moveToTopLeftCorner()</function>
+</functions>
+<pixmapinproject/>
+<layoutdefaults spacing="5" margin="5"/>
+</UI>

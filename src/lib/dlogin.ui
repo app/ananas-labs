@@ -1,0 +1,109 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>dLogin</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>dLogin</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>303</width>
+            <height>89</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Ananas: Login</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <property name="resizeMode">
+            <enum>Fixed</enum>
+        </property>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="text">
+                <string>Login name</string>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="0">
+            <property name="name">
+                <cstring>textLabel2</cstring>
+            </property>
+            <property name="text">
+                <string>Password</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="0" column="1">
+            <property name="name">
+                <cstring>eName</cstring>
+            </property>
+        </widget>
+        <widget class="QLineEdit" row="1" column="1">
+            <property name="name">
+                <cstring>ePassword</cstring>
+            </property>
+            <property name="echoMode">
+                <enum>Password</enum>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="1" column="2">
+            <property name="name">
+                <cstring>bCancel</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Cancel</string>
+            </property>
+            <property name="accel">
+                <string>Alt+C</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="0" column="2">
+            <property name="name">
+                <cstring>bOK</cstring>
+            </property>
+            <property name="text">
+                <string>O&amp;K</string>
+            </property>
+            <property name="accel">
+                <string>Alt+K</string>
+            </property>
+            <property name="default">
+                <bool>true</bool>
+            </property>
+        </widget>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>bOK</sender>
+        <signal>clicked()</signal>
+        <receiver>dLogin</receiver>
+        <slot>buttonOK()</slot>
+    </connection>
+    <connection>
+        <sender>bCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>dLogin</receiver>
+        <slot>reject()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in declaration">ananasglobal.h</include>
+    <include location="local" impldecl="in implementation">dlogin.ui.h</include>
+</includes>
+<variables>
+    <variable access="public">QString username, password;</variable>
+</variables>
+<slots>
+    <slot>init()</slot>
+    <slot>buttonOK()</slot>
+</slots>
+<pixmapinproject/>
+<exportmacro>ANANAS_EXPORT</exportmacro>
+<layoutdefaults spacing="5" margin="5"/>
+</UI>

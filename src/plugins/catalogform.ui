@@ -1,0 +1,112 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>CatalogForm</class>
+<widget class="QMainWindow">
+    <property name="name">
+        <cstring>CatalogForm</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>610</width>
+            <height>466</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Catalogue</string>
+    </property>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>bCancel</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>530</x>
+                <y>410</y>
+                <width>70</width>
+                <height>24</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>Cancel</string>
+        </property>
+    </widget>
+</widget>
+<toolbars>
+</toolbars>
+<connections>
+    <connection>
+        <sender>bCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>CatalogForm</receiver>
+        <slot>close()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in declaration">wfield.h</include>
+    <include location="local" impldecl="in declaration">catalogformwidgets.h</include>
+    <include location="global" impldecl="in declaration">qmap.h</include>
+    <include location="global" impldecl="in implementation">qimage.h</include>
+    <include location="local" impldecl="in implementation">alog.h</include>
+    <include location="local" impldecl="in declaration">qstatusbar.h</include>
+    <include location="local" impldecl="in implementation">../ananas/ananasmainform.h</include>
+    <include location="local" impldecl="in implementation">aform.h</include>
+    <include location="local" impldecl="in implementation">aservice.h</include>
+    <include location="local" impldecl="in implementation">catalogform.ui.h</include>
+</includes>
+<variables>
+    <variable access="public">aListView* ListView;</variable>
+    <variable access="private">QMap&lt;Q_ULLONG, QListViewItem*&gt; map_gr;</variable>
+    <variable>QGridLayout* GridLayout;</variable>
+    <variable>QVBoxLayout* layout1;</variable>
+    <variable>Q_ULLONG id,idElementForm,idGroupForm;</variable>
+    <variable access="public">QString fieldName;</variable>
+    <variable access="public">aLineEdit *LineEdit;</variable>
+    <variable access="public">aListBox* ListHint;</variable>
+    <variable>QStringList fieldList, fieldListGroup;</variable>
+    <variable access="private">QMap&lt;Q_ULLONG, QListViewItem*&gt; map_el;</variable>
+    <variable access="public">QFrame* StatusFrame;</variable>
+    <variable access="public">aCatalogue* cat;</variable>
+    <variable access="private">QMap&lt;Q_ULLONG,bool&gt; map_deleted;</variable>
+    <variable access="public">bool FormToSelect;</variable>
+</variables>
+<signals>
+    <signal>selected(Q_ULLONG)</signal>
+</signals>
+<slots>
+    <slot>setData( aCatalogue * catalog, QMap&lt;Q_ULLONG, QListViewItem *&gt; mg, const QStringList &amp; Fname, const QStringList &amp; FnameGroup, Q_ULLONG idElForm, Q_ULLONG idGrForm, const bool toSelect )</slot>
+    <slot>setId( Q_ULLONG idx )</slot>
+    <slot>find( const QString &amp; s )</slot>
+    <slot>pressArrow()</slot>
+    <slot>isPressArrow()</slot>
+    <slot>setText( const QString &amp; s )</slot>
+    <slot>go()</slot>
+    <slot>goToItem( QListViewItem * item )</slot>
+    <slot>loadElements( Q_ULLONG idGroup )</slot>
+    <slot>onLoadElements( QListViewItem * item )</slot>
+    <slot>new_item( QListViewItem * parentItem )</slot>
+    <slot>new_group( QListViewItem * parentItem )</slot>
+    <slot>del_item( QListViewItem * item )</slot>
+    <slot>mark_deleted( QListViewItem * item )</slot>
+    <slot>undo_mark_deleted( QListViewItem * item )</slot>
+    <slot>edit( QListViewItem * item, int )</slot>
+    <slot>select( QListViewItem * item )</slot>
+    <slot access="private">doOk()</slot>
+    <slot access="protected">keyPressEvent( QKeyEvent * e )</slot>
+    <slot>Refresh( Q_ULLONG id )</slot>
+</slots>
+<functions>
+    <function returnType="Q_ULLONG">getId()</function>
+    <function>init()</function>
+    <function>destroy()</function>
+    <function returnType="long">findFirst( const QString &amp; s )</function>
+    <function returnType="Q_ULLONG">getIdg( Q_ULLONG ide )</function>
+    <function access="protected" returnType="long">getGroupId( QListViewItem * item )</function>
+    <function returnType="QPixmap">getGroupPixmap()</function>
+    <function returnType="void">edit( QListViewItem * item, bool )</function>
+    <function returnType="QPixmap">getElementPixmap()</function>
+    <function returnType="QPixmap">getMarkDeletedPixmap()</function>
+    <function access="protected" returnType="Q_ULLONG">getElementId( QListViewItem * item )</function>
+</functions>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

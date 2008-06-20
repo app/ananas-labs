@@ -1,0 +1,15 @@
+#!/bin/sh
+PROJECTNAME=ananas-engine-qt
+DF=$(date --date 'now' +%Y%m%d)
+mkdir -p rpm
+cvs export -D20200101 $PROJECTNAME
+cd $PROJECTNAME
+cp $PROJECTNAME.spec.in $PROJECTNAME.spec.in0
+sed "/^Release: */ c\Release: alt0.cvs$DF$1" $PROJECTNAME.spec.in0>$PROJECTNAME.spec.in;
+rm -f $PROJECTNAME.spec.in0
+add_changelog -e "  - Automatic generated cvs build" $PROJECTNAME.spec.in;
+make srpm 
+mv rpm/*.src.rpm ../rpm
+cd ..
+rm -f -r $PROJECTNAME
+#rpm --resign rpm/*

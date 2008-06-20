@@ -1,0 +1,577 @@
+\documentclass[11pt,russian,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphics}
+%\oddsidemargin=-2cm
+\pagestyle{empty}
+\author{}
+\title{В.А.Гражданкин\\
+\includegraphics{ananas-text.jpg}\\
+``Ананас-Скрипт''\\
+Руководство по встроенному языку}
+\makeindex
+%\makeatletter
+
+\begin{document}
+\maketitle
+
+%\newenvironment{code}{\begin{verbatim}}{\end{verbatim}}
+\newcommand{\AS}{Ananas Script }
+\newcommand{\A}{Ananas}
+%\newcommand{\AS}{Ananas script for applications}
+\newcommand{\Q}{script}
+\newcommand{\QS}{script}
+%\newcommand{\BR}{\\}
+%\newcommand{%\omit}{\\}
+%\newcommand{%\endomit}{\\}
+%\newcommand{\i}[1]{\index{#1}}
+%\newcommand{\l}[1]{\index{#1}}
+%\newcommand{\code}{\begin{verbatim}}
+%\newcommand{\code}{\end{verbatim}}
+%\newcommand{\e}{\sf}
+%\renewcommand{\c}{\sf}
+%\renewcommand{\bf}{\si}
+%\newcommand{\section1}[1]{\section{#1}}
+%\newcommand{\section2}[1]{\subsection{#1}}
+%\newcommand{\section3}[1]{\subsubsection{#1}}
+
+\newpage
+\abstract
+
+Данное руководство предназначено для прикладных программистов, настройщиков, осуществляющих разработку, внедрение
+прикладных решений на основе платформы Ананас. Осуществляющих сопровождение систем автоматизации учетной деятельности.
+\vfill{}
+(с) 2004г.
+\newpage
+\tableofcontents
+\newpage
+
+\section{Введение}
+
+
+\section{Основные идеи}
+
+
+\section{Основы синтаксиса}
+
+\subsection{Комментарии}
+
+\AS поддерживает такой же синтаксис комментариев, как и C++. Однострочные
+комментарии располагаются в начале или после операторов на той же строке.
+Многострочные комментарии могут располагаться где угодно.
+
+\begin{verbatim}
+// Однострочный комментарий.
+
+/*
+    Многострочный
+    комментарий.
+*/
+\end{verbatim}
+
+
+\subsection{Идентификаторы}
+
+Идентификаторы совпадают с регулярным выражением \verb! [_A-Za-z][_A-Za-z0-9]!.
+Идентификаторы используются для переменных, констант, имен классов, имен функций
+и меток.
+
+Существуют зарезервированные слова, которые нельзя использовать в качестве
+идентификаторов. Смотри полный список в главе {Встроенные функции и операторы}.
+
+\subsection{Объявление классов, функций, констант, переменных}
+
+
+\subsubsection{Класс}
+
+\AS полностью объектно ориентированный язык. Классы могут быть объявлены
+в исходных модулях как показано ниже.
+
+Пример:
+
+\begin{verbatim}
+    class Circle {
+        var x;
+        var y;
+        var r;
+
+        function Circle( posx, posy, radius )
+        {
+            this.x = posx;
+            this.y = posy;
+            this.r = radius;
+        }
+        function setX( posx ) { this.x = posy; }
+        function setY( posy ) { this.y = posy; }
+        function setR( radius ) { this.r = radius; }
+        function x() { return this.x; }
+        function y() { return this.y; }
+        function r() { return this.r; }
+    }
+
+    class ColorCircle extends Circle {
+        var rgb;
+
+        function ColorCircle( posx, posy, radius, rgbcolor)
+        {
+            Circle( posx, posy, radius );
+            this.rgb = rgbcolor;
+        }
+        function setRgb( rgbcolor ) { rgb = rgbcolor; }
+        function rgb() { return rgb; }
+    }
+
+\end{verbatim}
+
+Конструктор класса является функцией, имя которой совпадает с именем класса
+(Регистро-чувствительная). Конструктор не должен содержать
+выражения return; он автоматически возвращает объект соответствующего
+типа.
+
+\AS не имеет функции деструктора ( функции, которая вызывается когда
+класс уничтожается) для класса.
+
+Переменные-члены класса объявляются через var, члены-функции (методы) - через
+function.
+
+Экземпляр объекта ссылается на себя с использованием оператора this.
+
+Внутри методов класса члены-переменные и члены-функции могут быть
+явно доступны через this (например this.x = posx;).
+Это не требуется, но иногда повышает наглядность.
+
+\AS поддерживает одиночное наследование,и если класс наследуется от другого класса
+конструктор родителя может быть вызван функцией super().
+
+Функции и переменные могут определять типы их аргументов
+и тип возвращаемого результата если необходимо.
+
+Например:
+\begin{verbatim}
+    class ColorCircle extends Circle {
+        var _rgb : Color;
+
+        function ColorCircle(
+                x : Integer, y : Integer, r : Integer,
+                rgb : Color )
+        {
+                super( x, y, r );
+                this._rgb = rgb;
+        }
+        function setRgb( rgb : Color ) { this._rgb = rgb; }
+        function rgb() : Color { return this._rgb; }
+        }
+\end{verbatim}
+
+Смотри также \l class, \l function, \l{Function type}, \l{function
+operator}.
+
+\subsubsection{Квалифицированные имена}
+
+Когда вы объявляете объект определенного типа, он сам для себя
+является пространством имен. Например, в \AS есть функция
+ \c Math.sin(). Если вы хотите иметь функцию sin() в вашем
+ классе, это не вызовет проблем, потому что объекты вашего класса
+ могут вызывать функцию с использованием синтаксиса
+\c{object.function()}. Точка используется для определения пространства
+имен идентификатора, следующего за ней.
+
+Например, в GUI приложении \A , каждый объект приложения принадлежит
+объекту Application. Из этого может следовать довольно длинный код,
+например, \c{Application.Dialog.ListBox.count}.
+Такие длинные имена часто можно сократить, например внутри
+обработчика сигнала, используя \c{this.ListBox.count}.
+На практике \A достаточно интеллектуально работает с неполностью
+кваливицированными именами, поэтому часто код может быть сокращен
+просто до \c{ListBox.count}. Вам необходимо использовать
+квалифицированные имена если неквалифицированные имена неоднозначны
+или когда выиспользуете импортированные через Import имена.
+
+\subsubsection{Свойства класса}
+
+Свойство это неопределенная переменная которая может быть
+присвоена и доступна если класс поддерживает свойства.
+
+\begin{verbatim}
+var obj = new Object
+object.myProperty = 100;
+\end{verbatim}
+
+В классе Object не описана переменная \c myProperty, но так как
+класс поддерживает свойства мы можем описать переменную
+с этим именем на лету и использовать ее позднее.
+Свойства связанные с объектом принадлежат ему. Если в рассмотренном
+выше примере присвоить значение свойству \c myProperty другому
+экземпляру объекта, оно будет содержать другое значение не зависимо
+от свойства класса obj.
+
+\subsubsection{Константа}
+
+Константы объявляются с использованием ключевого слова \l const:
+
+\begin{verbatim}
+    const x = "Willow";
+    const y = 42;
+\end{verbatim}
+
+Значения констант должны быть описаны в месте объявления
+потому что они не могут быть изменены позднее.
+При попытке присвоить значение константе интерпретатор
+выведет сообщение об ошибке и остановит работу.
+
+\subsubsection{Функция}
+
+
+\subsubsection{Переменная}
+
+Переменные объявляются с помощью ключевого слова var:
+
+\begin{verbatim}
+    var a;               // Не определена
+    var c = "foliage";   // Строка "foliage"
+    x = 1;               // Глобальная переменная
+
+\end{verbatim}
+
+Если переменная имеет определенный тип, т.е. добавлен
+':ИмяТипа' после ее имени, только объекты указанного типа
+могут быть присвоены этой переменной.
+
+Переменные, объявленные через var являются локальными
+по отношению к окружающему их блоку кода.
+
+\subsection{Управляющие конструкции}
+
+Управление последовательностью выполнения программ \AS
+определяется управляющими вырадениями, например,
+The flow--of--control in \QS programs is controlled by control
+\l if и \l switch, \l for и \l while. \AS
+также поддерживает исключения с \l try и \l catch.
+
+
+\subsubsection{break}
+
+\begin{verbatim}
+
+label:
+for ( var i = 0; i < limit; i++ ) {
+    if ( condition ) {
+        break label;
+    }
+}
+
+switch ( expression ) {
+    case 1:
+        Statements1;
+        break;
+    default:
+        DefaultStatements;
+	break;
+}
+\end{verbatim}
+
+Это ключевое слово используется в циклах for, do, while и
+операторах switch. Когда выполняется команда break в цикле,
+управление передается на оператор, следующий за оператором цикла,
+содержащим break; в отличие от оператора
+break со следующим за ним именем метки. В этом случае
+управление передается оператору, следующему за меткой.
+
+A \c break statement is usually placed at the end of each \l{case} in
+a switch statement to prevent the interpreter "falling through" to the
+next case. When the interpreter encounters a \c break statement, it
+passes control to the statement that follows the inner-most enclosing
+\c switch statement. If every \c case has a corresponding \c break,
+then at most one \c case's statements will be executed. If the \c
+break statement is followed by a label name (\e label) then when the
+\c break is encountered, control will pass to the statement marked
+with that label; this is useful, for example, for breaking out of
+deeply nested loops.
+
+Пример:
+\begin{verbatim}
+    red:
+    for ( x = 0; x < object.width; x++ ) {
+	for ( y = 0; y < object.height; y++ ) {
+	    if ( color[x][y] == 0xFF0000 ) {
+		break red;
+	    }
+	}
+    }
+\end{verbatim}
+
+Смотри switch для других примеров.
+См.также do, while, for и break.
+
+
+\subsubsection{case}
+
+
+\subsubsection{catch}
+
+
+\subsubsection{continue}
+
+
+\subsubsection{default}
+
+
+\subsubsection{do}
+
+
+\subsubsection{else}
+
+
+\subsubsection{for}
+
+
+\subsubsection{if}
+
+
+\subsubsection{finally}
+
+
+\subsubsection{label}
+
+
+\subsubsection{return}
+
+
+\subsubsection{switch}
+
+
+\subsubsection{throw}
+
+
+\subsubsection{try}
+
+
+Текст.
+
+\subsubsection{while}
+
+Текст.
+
+\subsubsection{with}
+
+Текст.
+
+
+\section{Встроенные типы и объекты}
+
+
+\subsection{Типы данных}
+
+
+\subsubsection{Массив}
+
+
+\subsubsection{Логический}
+
+
+\subsubsection{Дата}
+
+
+\subsubsection{Функция}
+
+
+\subsubsection{Числовой}
+
+
+\subsubsection{Объект}
+
+
+\subsubsection{Точка}
+
+
+\subsubsection{Прямоугольник}
+
+
+\subsubsection{Размер}
+
+
+\subsubsection{Регулярное выражение}
+
+
+\subsubsection{Строка}
+
+
+\subsubsection{Цвет}
+
+
+\subsubsection{Палитра}
+
+
+\subsubsection{Цвет группы}
+
+
+\subsubsection{Массив байтов}
+
+
+\subsubsection{Шрифт}
+
+
+\subsubsection{Карта битов}
+
+
+\subsection{Объекты}
+
+
+
+\subsubsection{Math}
+
+
+\subsubsection{System}
+
+
+\section{Встроенные переменные и константы}
+
+\AS предоставляет несколько встроенных констант и переменных.
+Встроенные переменные включают \i{arguments}.
+Встроенные константы включают \i{Infinity}, \i{NaN} и \i{undefined}.
+
+
+\subsection{arguments}
+
+Это массив аргументов, которые переданы функции.
+Он существует только внутри контекста функции.
+
+Пример:
+\begin{verbatim}
+    function sum()
+    {
+        total = 0;
+        for ( i = 0; i < arguments.length; i++ ) {
+                total += arguments[ i ];
+        }
+        return total;
+    }
+\end{verbatim}
+
+\subsection{Application.argv}
+
+Этот массив переменных содержит упорядоченный список аргументов
+командной строки которые были переданы приложению ( если были ).
+\c{Application.argv[0]} имя приложения, исполняющего скрипт;
+ все остальные аргументы начинаются с \c{Application.argv[1]} и далее.
+
+%\Bold
+Пример:
+\begin{verbatim}
+    function main()
+    {
+        for ( var i = 1; i < Application.argv.length; i++ ) {
+                debug( Application.argv[i] );
+        }
+    }
+\end{verbatim}
+
+
+\subsection{Константы}
+
+
+\subsubsection{Infinity}
+
+
+\subsubsection{NaN}
+
+
+\subsubsection{undefined}
+
+
+\section{Встроенные функции и операторы}
+
+
+\subsection{Функции}
+
+
+\subsubsection{connect()}
+
+
+\subsubsection{debug()}
+
+Отладка.
+
+\subsubsection{eval()}
+
+
+\subsubsection{isFinite()}
+
+
+\subsubsection{isNaN()}
+
+
+\subsubsection{killTimer()}
+
+
+\subsubsection{killTimers()}
+
+
+\subsubsection{parseFloat()}
+
+
+\subsubsection{parseInt()}
+
+
+\subsubsection{startTimer()}
+
+
+\subsection{Операторы}
+
+
+\subsubsection{Арифметические операторы}
+
+
+\subsubsection{Операторы работы со строками}
+
+
+\subsubsection{Логические операторы}
+
+
+\subsubsection{Операторы сравнения}
+
+
+\subsubsection{Битовые операторы}
+
+
+\subsubsection{Операторы специального назначения}
+
+
+
+\section{Доступ к объектам и функциям платформы}
+
+Текст.
+
+\subsection{Общая организация и пространства видимости}
+
+Текст.
+
+\subsection{Работа с документами}
+
+Текст.
+
+\subsubsection{Модуль экранной формы документа}
+
+Модуль экранной формы документа позволяет задавать порядок обработки
+таких событий как открытие, закрытие экранной формы,
+выбор элементов (виджетов) экранной формы, щелчек мыши по кнопкам формы.
+Для редактирования кода скрипта в Дизайнере, вызвав редактор
+экранной формы документа (forms), следует перейти на закладку Module (Модуль).
+
+\subsection{Работа с каталогами}
+
+
+\subsection{Работа с регистрами}
+
+
+\subsection{Работа с журналами}
+
+
+\subsection{Работа с отчетами}
+
+
+\subsection{Работа с метаданными}
+
+
+\end{document}

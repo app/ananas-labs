@@ -1,0 +1,119 @@
+<!DOCTYPE UI><UI version="3.2" stdsetdef="1">
+<class>eSelectDocType</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>eSelectDocType</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>304</width>
+            <height>272</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>Select document type</string>
+    </property>
+    <grid>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QPushButton" row="1" column="1">
+            <property name="name">
+                <cstring>bCancel</cstring>
+            </property>
+            <property name="text">
+                <string>Cancel</string>
+            </property>
+        </widget>
+        <widget class="QPushButton" row="0" column="1">
+            <property name="name">
+                <cstring>bOK</cstring>
+            </property>
+            <property name="text">
+                <string>OK</string>
+            </property>
+            <property name="default">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QListView" row="0" column="0" rowspan="3" colspan="1">
+            <column>
+                <property name="text">
+                    <string>Document type</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>ID</string>
+                </property>
+                <property name="clickable">
+                    <bool>true</bool>
+                </property>
+                <property name="resizable">
+                    <bool>true</bool>
+                </property>
+            </column>
+            <property name="name">
+                <cstring>listDocs</cstring>
+            </property>
+            <property name="hScrollBarMode">
+                <enum>AlwaysOff</enum>
+            </property>
+        </widget>
+        <spacer row="2" column="1">
+            <property name="name">
+                <cstring>spacer1</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Expanding</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>21</width>
+                    <height>171</height>
+                </size>
+            </property>
+        </spacer>
+    </grid>
+</widget>
+<connections>
+    <connection>
+        <sender>bOK</sender>
+        <signal>clicked()</signal>
+        <receiver>eSelectDocType</receiver>
+        <slot>accepted()</slot>
+    </connection>
+    <connection>
+        <sender>bCancel</sender>
+        <signal>clicked()</signal>
+        <receiver>eSelectDocType</receiver>
+        <slot>reject()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in declaration">ananas.h</include>
+    <include location="local" impldecl="in implementation">eselectdoctype.ui.h</include>
+</includes>
+<variables>
+    <variable access="public">QStringList dlist;</variable>
+    <variable access="public">int docId;</variable>
+</variables>
+<slots>
+    <slot>init()</slot>
+    <slot>setJournal( aCfg * md, int id )</slot>
+    <slot>accepted()</slot>
+</slots>
+<pixmapinproject/>
+<layoutdefaults spacing="5" margin="5"/>
+</UI>

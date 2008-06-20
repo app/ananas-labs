@@ -1,0 +1,7 @@
+Makefile
+.moc
+.ui
+.obj
+ananas-designer
+
+libformdesigner.a

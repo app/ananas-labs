@@ -1,0 +1,7 @@
+dbpass=
+dbhost=localhost
+dbtitle=Demo configuration
+dbuser=root
+dbtype=internal
+configfile=../demo.cfg
+dbname=../ananas_demo.db

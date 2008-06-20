@@ -1,0 +1,14 @@
+#!/bin/bash
+flist=`find src -name *.cpp`
+
+function replace {
+    for f in $flist; do
+        echo $f
+        cp -f $f $f~
+	sed "s/$1/$2/g" $f~>$f
+    done
+}
+
+replace "aLog::ERROR" "aLog::MT_ERROR"
+replace "aLog::INFO" "aLog::MT_INFO"
+replace "aLog::DEBUG" "aLog::MT_DEBUG"
