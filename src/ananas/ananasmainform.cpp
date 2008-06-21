@@ -40,6 +40,7 @@
 #include "ananasmainform.h"
 
 #include "ananas.h"
+#include "aminicalc.h"
 
 MainForm *mainform=NULL;
 QWorkspace *mainformws=NULL;
@@ -67,7 +68,7 @@ MainForm::MainForm( QWidget* parent, const char* name, WFlags fl )
     if ( !name ) setName( "mainwindow" );
     engine_settings.insertSearchPath( QSettings::Unix, QString(QDir::homeDirPath())+QString("/.ananas"));
     engine_settings.insertSearchPath( QSettings::Windows, "/ananasgroup/ananas" );
-    
+
 //    QStringList lst = settings.entryList("/engine");
     engine_settings.beginGroup("/engine");
     bool maximize = engine_settings.readBoolEntry( "/maximize", 0 );
@@ -80,12 +81,12 @@ MainForm::MainForm( QWidget* parent, const char* name, WFlags fl )
     move(offset_x,offset_y);
     if(maximize)
     {
-//	   setWindowState(windowState() ^ WindowMaximized); 
+//	   setWindowState(windowState() ^ WindowMaximized);
     }
     rcfile="";
 }
 
-bool 
+bool
 MainForm::init()
 {
     MessagesWindow *msgWindow = new MessagesWindow( this );// , WDestructiveClose );
@@ -123,13 +124,17 @@ void
 MainForm::initMenuBar()
 {
 	QPopupMenu *m;
+	QPopupMenu *s;
 	m = new QPopupMenu();
+	s = new QPopupMenu();
 	windowsMenu = new QPopupMenu();
     	connect( windowsMenu, SIGNAL( aboutToShow() ),
 	     this, SLOT( windowsMenuAboutToShow() ) );
-	m->insertItem(rcIcon("ananas-32x32.png"), tr( "About" ), this, SLOT( helpAbout() ));
+	m->insertItem(rcIcon("ananas-32x32.png"), tr( "About" ), this, SLOT( helpAbout() ), Key_F11);
+	s->insertItem(rcIcon("calc.png"), tr( "Calculator" ), this, SLOT( miniCalc() ), Key_F10);
 	//windowsMenu->insertItem(rcIcon("ananas-32x32.png"), tr( "Windows" ), this, SLOT( windowsMenuAboutToShow() ));
         menubar = new AMenuBar( md, this, "menubar");
+	InsertMainMenu( tr("&Tools"), s );
 	InsertMainMenu( tr("&Help"), m );
     	InsertMainMenu( tr("&Windows"), windowsMenu );
 	menuBar()->show();
@@ -159,7 +164,7 @@ MainForm::helpAbout()
     QMessageBox::about( this, tr("About Ananas.Engine program"),
 			trUtf8("<h4>\"%1\"</h4>"
 			   "%2<br><br>"
-			   "Автор: %3<br>" 
+			   "Автор: %3<br>"
 			   "%4<br><br>"
  			   "Разработано на платформе \"Ананас\"! (версия %5)<br>"
  			   "Доступные расширения:<br>%6")
@@ -197,13 +202,13 @@ MainForm::close()
 //MainWindow::close();
 }
 
-void 
+void
 MainForm::statusMessage( const QString &msg )
 {
  	statusBar()->message( msg );
 }
 
-void 
+void
 MainForm::setBackground( const QPixmap &pix ){
 	ws->setBackgroundPixmap( pix );
 }
@@ -251,11 +256,11 @@ void MainForm::windowsMenuAboutToShow()
     QWidgetList windows = ws->windowList();
     if(windows.count()==0) return;
     int i=0, count = windows.count();
-    
+
     do
     {
 	int id=0;
-	if(windows.at(i) && windows.at(i)->isHidden()) 
+	if(windows.at(i) && windows.at(i)->isHidden())
 	{
 		++i;
 		continue;
@@ -279,7 +284,7 @@ void MainForm::tileHorizontal()
 	if(!window->isHidden()) count++;
     }
     if ( !count ) return;
-    
+
     int heightForEach = ws->height() / count;
     int y = 0;
     for ( int i = 0; i < windows.count(); ++i )
@@ -295,7 +300,7 @@ void MainForm::tileHorizontal()
 	}
 	int preferredHeight = window->minimumHeight()+window->parentWidget()->baseSize().height();
 	int actHeight = QMAX(heightForEach, preferredHeight);
-	
+
 	window->parentWidget()->setGeometry( 0, y, ws->width(), actHeight );
 	y += actHeight;
     }
@@ -306,4 +311,14 @@ void MainForm::windowsMenuActivated( int id )
     QWidget* w = ws->windowList().at( id );
     if ( w ) w->showNormal();
     w->setFocus();
+}
+
+/*
+ *  Open a Calculator Widget
+ */
+void
+MainForm::miniCalc()
+{
+	MiniCalc *calc = new MiniCalc(ws, "MiniCalc", false, 0);
+	calc->show();
 }
