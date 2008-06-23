@@ -1,4 +1,4 @@
-TEMPLATE = lib 
+TEMPLATE = lib
 CONFIG		+= warn_on link_prl
 shared:CONFIG 	+= qt dll
 unix:VERSION 	= 1.0.1
@@ -6,9 +6,11 @@ unix:VERSION 	= 1.0.1
 TARGET 		= ananas
 
 SOURCES	+= acfg.cpp \
+	acalendar.cpp \
 	acfgrc.cpp \
 	adatabase.cpp \
 	adatafield.cpp \
+	aminicalc.cpp \
 	asqlfield.cpp \
 	asqltable.cpp \
 	messageswindow.cpp \
@@ -46,13 +48,15 @@ SOURCES	+= acfg.cpp \
 	afilter.cpp \
 	amoney.cpp \
 	binreloc.c
-	
+
 HEADERS	+= ananasglobal.h \
 	ananas.h \
+	acalendar.h \
 	acfg.h \
 	acfgrc.h \
 	adatabase.h \
 	adatafield.h \
+	aminicalc.h \
 	asqlfield.h \
 	asqltable.h \
 	messageswindow.h \
@@ -89,9 +93,9 @@ HEADERS	+= ananasglobal.h \
 	afilter.h \
 	amoney.h \
 	binreloc.h
-	
+
 unix{
-	alib.path = $(LIBDIR) 
+	alib.path = $(LIBDIR)
 	alib.files = libananas.so.$$VERSION
 	alib.extra = cp -df libananas.so* $(INSTALL_ROOT)$(LIBDIR)
 
@@ -135,14 +139,14 @@ win32 {
 
 TRANSLATIONS = \
     ../../translations/ananas-lib-en.ts \
-    ../../translations/ananas-lib-ru.ts 
+    ../../translations/ananas-lib-ru.ts
 
 
 FORMS	= deditrc.ui \
 	dselectdb.ui \
 	dlogin.ui \
 	dhelpcfgform.ui
-	
+
 IMAGES	= images/lib_database.png \
 	images/lib_dbgroup.png \
 	images/print.png \
