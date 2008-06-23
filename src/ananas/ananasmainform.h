@@ -46,7 +46,8 @@
 #include "atoolbar.h"
 #include "awindowslist.h"
 #include "engine.h"
-
+#include "aminicalc.h"
+#include "acalendar.h"
 
 class QVBoxLayout;
 class QHBoxLayout;
@@ -76,6 +77,8 @@ public:
 	QPopupMenu *windowsMenu;
 	QWorkspace* ws;
 	aWindowsList* wl;
+	MiniCalc* calc;
+	PopupCalendar* calendar;
 	QString rcfile;
 
 public slots:
@@ -88,6 +91,8 @@ public slots:
 	void Exit(int code);
 	void close();
 	void helpAbout();
+	void miniCalc();
+	void ShowCalendar();
 	void statusMessage( const QString &msg );
 	void windowsMenuAboutToShow();
 	void windowsMenuActivated( int id );

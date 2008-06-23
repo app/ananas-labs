@@ -41,6 +41,7 @@
 
 #include "ananas.h"
 #include "aminicalc.h"
+#include "ananas.h"
 
 MainForm *mainform=NULL;
 QWorkspace *mainformws=NULL;
@@ -132,6 +133,7 @@ MainForm::initMenuBar()
 	     this, SLOT( windowsMenuAboutToShow() ) );
 	m->insertItem(rcIcon("ananas-32x32.png"), tr( "About" ), this, SLOT( helpAbout() ), Key_F11);
 	s->insertItem(rcIcon("calc.png"), tr( "Calculator" ), this, SLOT( miniCalc() ), Key_F10);
+	s->insertItem(rcIcon("calendar.png"), tr( "Calendar" ), this, SLOT( ShowCalendar() ), Key_F12);
 	//windowsMenu->insertItem(rcIcon("ananas-32x32.png"), tr( "Windows" ), this, SLOT( windowsMenuAboutToShow() ));
         menubar = new AMenuBar( md, this, "menubar");
 	InsertMainMenu( tr("&Tools"), s );
@@ -321,4 +323,15 @@ MainForm::miniCalc()
 {
 	MiniCalc *calc = new MiniCalc(ws, "MiniCalc", false, 0);
 	calc->show();
+}
+
+/*
+ *  Open a Calendar
+ */
+void
+MainForm::ShowCalendar()
+{
+	PopupCalendar *calendar = new PopupCalendar(QDate::currentDate(),
+			       QPoint(ws->width() / 2, ws->height() / 2 ), ws, "");
+	calendar->show();
 }
