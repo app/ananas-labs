@@ -50,6 +50,7 @@
 #include "wdateedit.h"
 #include "wcatalogeditor.h"
 #include "efield.h"
+#include "acalendar.h"
 
 
 
