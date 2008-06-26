@@ -51,8 +51,7 @@
 #include "wcatalogeditor.h"
 #include "efield.h"
 #include "acalendar.h"
-
-
+#include "acfg.h"
 
 /*!
  * \en	Constructs object with parent=parent, name=name and flags=fl \_en
@@ -67,6 +66,10 @@ wField::wField( QWidget *parent, const char *name, WFlags fl )
 	setSizePolicy( QSizePolicy( QSizePolicy::Preferred, QSizePolicy::Fixed ) );
 	setFocusPolicy(StrongFocus);
 	new QHBoxLayout( this, 0, 0 );
+	nzLabel = new QLabel(this);
+	nzLabel->setText(" ");
+	nzLabel->setPaletteForegroundColor(Qt::red);
+	nzLabel->show();
 	lineEdit = new QLineEdit(this);
 	lineEdit->hide();
 	dateEdit = new wDateEdit(this);
@@ -129,6 +132,7 @@ wField::widgetInit()
 	disconnect( lineEdit, SIGNAL( lostFocus() ), this, SLOT( focusOutEvent()) );
   //  lineEdit->disconnect();
     lineEdit->setReadOnly(false);
+    layout()->add( nzLabel );
     layout()->remove(lineEdit);
     dateEdit->hide();// = new QDateEdit(this);
     disconnect(dateEdit, SIGNAL( valueChanged ( const QDate&) ),
@@ -626,6 +630,22 @@ wField::SetReadOnly(bool fl)
 		break;
     }
 
+}
+
+/*!
+ * \en	Mark field by red asterisk if it is Non Zero. \_en
+ * \ru 	Помечает поле красной звездочкой, если поле не нулевое.\_ru
+ */
+void
+wField::SetNonZero(bool fl)
+{
+
+   if( fl == true )
+   {
+	   nzLabel->setText("*");
+   }else{
+	   nzLabel->setText(" ");
+   }
 }
 
 /*!

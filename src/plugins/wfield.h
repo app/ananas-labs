@@ -41,6 +41,7 @@
 #include "wdateedit.h"
 #include "adatabase.h"
 #include "ananas.h"
+#include "acalendar.h"
 
 class wCatButton;
 class wCheckBox;
@@ -54,7 +55,7 @@ class wCheckBox;
  * 	Наследует aWidget.
  *
  * 	В отличие от wDBField класс wField не биндится к атрибутам persistent бизнес объектов. То есть время жизни
- * 	хранимых в нем значений равно времени жизни родительской экранной формы. Прикладной программист сам должен 
+ * 	хранимых в нем значений равно времени жизни родительской экранной формы. Прикладной программист сам должен
  * 	решить вопрос обработки и хранения значений задаваемых пользователем.
  * \_ru
  */
@@ -99,6 +100,7 @@ public slots:
 	virtual void		focusOutEvent();
 	void 			selectAll();
 	virtual void		SetReadOnly(bool);
+	virtual void		SetNonZero(bool);
 
 private slots:
 	void on_selected( Q_ULLONG uid );
@@ -108,6 +110,7 @@ protected:
 	QLineEdit 	*lineEdit;
 	wDateEdit	*dateEdit;
 	QLabel		*objLabel;
+	QLabel		*nzLabel;
 	wCatButton	*objButton;
 	wCheckBox	*checkBox;
 	tEditorType	vEditorType;

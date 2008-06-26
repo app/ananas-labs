@@ -37,7 +37,7 @@
 #include "wdbfield.h"
 #include "addfdialog.h"
 //#include "mainform.h"
-
+#include "acfg.h"
 
 
 /*!
@@ -139,7 +139,7 @@ wDBField::setFieldName( QString n )
 /*!
  * \en 	Gets field name in metadata. \_en
  * \ru	Получение имени поля в метаданных, на которое настроен виджет. \_ru
- * return - \en Field name. \_en \ru Имя поля в метаданных.\_ru 
+ * return - \en Field name. \_en \ru Имя поля в метаданных.\_ru
  */
 /*
 QString
@@ -168,12 +168,14 @@ wDBField::init()
 	id=0;
 	//get copy of metadata
 	md = getMd();
+
 	if(md)
 	{
 		// get id of container object - catalogue or document
 		id = aWidget::parentContainer(this)->getId();
 		head = md->find(id);
 	}
+
 }
 
 
@@ -199,12 +201,12 @@ wDBField::getFields()
   defFields.clear();
   defDisplayFields.clear();
   if(!head.isNull())
-  { 
+  {
 	if(md->objClass(head) == md_catalogue)
 	{
 //		printf("getting fields from metadata\n");
-		o = md->findChild(head,md_element); //object element 
-	    	res = md->countChild(o,md_field); 
+		o = md->findChild(head,md_element); //object element
+	    	res = md->countChild(o,md_field);
 //		printf("find elements\n");
 	    	for( i = 0; i < res; i++ )
 	    	{
@@ -223,7 +225,7 @@ wDBField::getFields()
 			}
 	    	}
 		o = md->findChild(head,md_group); // object group
-	    	res = md->countChild(o,md_field); 
+	    	res = md->countChild(o,md_field);
 //		printf("find groups\n");
 	    	for( i = 0; i < res; i++ )
 	    	{
@@ -314,8 +316,14 @@ void
 wDBField::initObject(aDatabase *adb )
 {
   wField::initObject( adb );
-  //aCfgItem o;
-  //o = md->find( getId() );
+  aCfgItem o;
+  o = md->find( getId() );
+  if ( md->attr(o,mda_nz) == "1")
+  {
+	wField::SetNonZero(true);
+  }else{
+	wField::SetNonZero(false);
+  }
   //aObject* obj = new aObject(o,adb);
   //tableInsert( aDatabase::tableDbName( *md, o ), o );
 //  debug_message("init dbfield  \n");
@@ -331,12 +339,13 @@ void
 wDBField::setEditorType ()
 {
     aCfgItem o_head,o;
-    QString str, type;
+    QString str, type, nz;
     int id;
 	if(!head.isNull())
 	{
 		id = property("Id").toInt();
 		o_head = md->find(id);
+
 		if(!o_head.isNull())
 		{
 			type = md->attr(o_head,mda_type);
