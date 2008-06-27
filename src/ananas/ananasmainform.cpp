@@ -316,5 +316,5 @@ void
 MainForm::miniCalc()
 {
 	const QString code = "var calc= new Calc(); calc.Show();";
-	engine->project.interpreter()->evaluate(code);
+	engine.project.interpreter()->evaluate(code);
 }

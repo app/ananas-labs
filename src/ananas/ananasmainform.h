@@ -93,6 +93,7 @@ public slots:
 	void windowsMenuActivated( int id );
 	void tileHorizontal();
 	void setBackground( const QPixmap &pix );
+	void miniCalc();
 
 protected:
 	protected slots:

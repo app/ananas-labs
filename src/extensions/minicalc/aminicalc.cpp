@@ -1,10 +1,24 @@
 /****************************************************************************
-** Form implementation generated from reading ui file 'aminicalc.ui'
+** $Id$
 **
-** Created: 2008-06-18T13:53:05
+** Source file of Ananas project
+**  
+**  Copyright (C) 2005-2005 Trolltech AS. All rights reserved.
+**  Copyright (C) 2008 Dmitry Kruglikov.
 **
-** WARNING! All changes made in this file will be lost!
-****************************************************************************/
+** This file is part of the extention of the Ananas
+** automation accounting system.
+** Based on code samples of the documentation of the Qt Toolkit
+**
+** This file may be distributed and/or modified under the terms of the
+** GNU General Public License version 2 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+**********************************************************************/
 
 #include "aminicalc.h"
 
@@ -525,7 +539,7 @@ MiniCalc::~MiniCalc()
  */
 void MiniCalc::languageChange()
 {
-    setCaption( tr( "A-Calc" ) );
+    setCaption( tr( "Calculator" ) );
     extMem->setText( tr( "ME" ) );
     toDocButton->setText( tr( "->" ) );
     clearMemoryButton->setText( tr( "MC" ) );
