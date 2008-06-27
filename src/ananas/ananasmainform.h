@@ -41,6 +41,8 @@
 #include <qvbox.h>
 #include <qapplication.h>
 #include <qsettings.h>
+#include <qtranslator.h>
+#include <qlabel.h>
 #include "ananas.h"
 #include "amenubar.h"
 #include "atoolbar.h"
@@ -73,13 +75,20 @@ public:
 	aEngine engine;
 	aCfg *md;
 
+	int e_lang, r_lang, u_lang;
 	AMenuBar* menubar;
 	QPopupMenu *windowsMenu;
+	QPopupMenu *systemMenu;
+	QPopupMenu *lang;
 	QWorkspace* ws;
 	aWindowsList* wl;
 	MiniCalc* calc;
 	PopupCalendar* calendar;
 	QString rcfile;
+	QLabel *statusLabel1;
+	QLabel *statusLabel2;
+	QLabel *statusLabel3;
+	QLabel *statusLabel4;
 
 public slots:
 	bool init();
@@ -93,11 +102,15 @@ public slots:
 	void helpAbout();
 	void miniCalc();
 	void ShowCalendar();
+	void statusMessage( const QString &msg, const int &pos );
 	void statusMessage( const QString &msg );
+
 	void windowsMenuAboutToShow();
 	void windowsMenuActivated( int id );
+	void setLang( int lang_id );
 	void tileHorizontal();
 	void setBackground( const QPixmap &pix );
+	void loginAs();
 
 protected:
 	protected slots:

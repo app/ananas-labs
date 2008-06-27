@@ -33,8 +33,9 @@
 #ifndef AMENUBAR_H
 #define AMENUBAR_H
 
-#include <qmenubar.h>
-
+#include 	<qmenubar.h>
+#include 	<qpopupmenu.h>
+#include 	<qapplication.h>
 #include	"acfg.h"
 
 class  ANANAS_EXPORT AMenuBar : public QMenuBar
@@ -43,6 +44,7 @@ class  ANANAS_EXPORT AMenuBar : public QMenuBar
 
 	private:
 	aCfg	*md;
+
 
     public:
 	AMenuBar( QWidget* parent = 0, const char* name = 0 );
@@ -54,10 +56,9 @@ class  ANANAS_EXPORT AMenuBar : public QMenuBar
 
     public slots:
 	void on_Item(){};
-
 	int insertItem ( const QString & text, QPopupMenu * popup, int id = -1, int index = -1 );
 /*
-	int insertItem ( const QString & text, const QObject * receiver, const char * member, const QKeySequence & accel = 0, int id = -1, int index = -1 ); 
+	int insertItem ( const QString & text, const QObject * receiver, const char * member, const QKeySequence & accel = 0, int id = -1, int index = -1 );
 	int insertItem ( const QPixmap & pixmap, const QObject * receiver, const char * member, const QKeySequence & accel = 0, int id = -1, int index = -1 );
 	int insertItem ( const QIconSet & icon, const QPixmap & pixmap, const QObject * receiver, const char * member, const QKeySequence & accel = 0, int id = -1, int index = -1 );
 	int insertItem ( const QString & text, int id = -1, int index = -1 );
@@ -71,9 +72,10 @@ class  ANANAS_EXPORT AMenuBar : public QMenuBar
 	int insertItem ( const QIconSet & icon, QCustomMenuItem * custom, int id = -1, int index = -1 );
 	int insertItem ( QCustomMenuItem * custom, int id = -1, int index = -1 );
 	int insertSeparator ( int index = -1 );
-*/	
+*/
 private:
 	QIntDict <aCfgItem> cfgItems;
+
 };
 
 

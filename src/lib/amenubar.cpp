@@ -29,13 +29,15 @@
 
 /******************************************************************
  ******************************************************************/
-
-#include "amenubar.h"
+#include 	<qapplication.h>
+#include 	<qpopupmenu.h>
+#include 	<qmenubar.h>
+#include 	"amenubar.h"
 
 
 AMenuBar::AMenuBar( QWidget* parent , const char* name  )
-	:QMenuBar( parent, name ) {
-
+	:QMenuBar( parent, name )
+{
 }
 
 AMenuBar::AMenuBar( aCfg *cfg, QWidget* parent , const char* name  )
@@ -87,8 +89,8 @@ AMenuBar::ReadMenu( QPopupMenu *parent, aCfgItem obj )
 	aCfgItem	cobj, apix;
 	QPopupMenu	*mparent;
 	QString		text, aKey;
-	long id, pid;
-    QPixmap		pix;
+	long 		id, pid;
+    	QPixmap		pix;
 
 	if ( !md )
 		return;
@@ -128,16 +130,18 @@ AMenuBar::ReadMenu( QPopupMenu *parent, aCfgItem obj )
 AMenuBar::~AMenuBar(){
 }
 
-int AMenuBar::insertItem ( const QString & text, QPopupMenu * popup, int id, int index ) {
+int AMenuBar::insertItem ( const QString & text, QPopupMenu * popup, int id, int index )
+{
 	return QMenuBar::insertItem ( text, popup, id, index);
 };
+
 
 /*
 int
 AMenuBar::insertItem ( const QString & text, const QObject * receiver, const char * member, const QKeySequence & accel, int id , int index ) {
 	return QMenuBar::insertItem( text, receiver, member, accel, id, index);
 }
-int 
+int
 AMenuBar::insertItem ( const QPixmap & pixmap, const QObject * receiver, const char * member, const QKeySequence & accel , int id , int index ) {
 	return QMenuBar::insertItem ( pixmap, receiver, member, accel,  id, index);
 }
@@ -176,5 +180,5 @@ int AMenuBar::insertItem ( QCustomMenuItem * custom, int id , int index ) {
 };
 int AMenuBar::insertSeparator ( int index ) {
 	return QMenuBar::insertSeparator ( index);
-};	
+};
 */

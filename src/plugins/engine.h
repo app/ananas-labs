@@ -57,7 +57,7 @@ class aWidget;
  *	делая доступным работу с объектами зарегистрированного класса из Ананас.Скрипта.
  *	Наследует QSObjectFactory.
  * \~
- */ 
+ */
 class ANANAS_EXPORT aObjectsFactory : public QSObjectFactory
 {
 public:
@@ -78,9 +78,9 @@ class aForm;
  *	\~russian
  *	\brief Определяет программный интерфейс Runtime системы, который используется Ананас скриптом.
  *	Наследует QObject.
- *	
- *	Класс, реализующий обработку и выполнение скриптов, открытие экранных форм, 
- *	предварительную обработку скрипта перед выполнением (для последующего использования русских управляющих инструкций), 
+ *
+ *	Класс, реализующий обработку и выполнение скриптов, открытие экранных форм,
+ *	предварительную обработку скрипта перед выполнением (для последующего использования русских управляющих инструкций),
  *	системные функции получения даты и времени, печати сообщений об ошибках и т.д
  *	\~
  */
@@ -144,7 +144,7 @@ public:
  *	\~
 */
 	int 		next_obj_id;
-	
+
 	aEngine();
         virtual	~aEngine();
 	virtual bool init( const QString &rcfile );
@@ -166,9 +166,10 @@ public slots:
 	void Exit();
 	void Message(int n, const QString &msg );
 	void StatusMessage( const QString &msg );
+	void StatusMessage( const QString &msg, const int &pos );
 	void settimer(int sec, QString proc);
 	aForm * OpenForm(QString fname, int mode=0, aObject * selecter=0, bool modal=false);
-	aForm * OpenForm(QString fname, int mode, int ido,aObject * selecter=0, bool modal=false);	
+	aForm * OpenForm(QString fname, int mode, int ido,aObject * selecter=0, bool modal=false);
 	QVariant value( const QString &name );
 	void setValue( const QString &name, QVariant value = QVariant::Invalid );
 
@@ -185,6 +186,7 @@ private slots:
 	void on_event( const QString &data );
 signals:
         void statusMessage( const QString &msg );
+	void statusMessage( const QString &msg, const int &pos );
 	void event( const QString &source, const QString &data );
 
 private:
