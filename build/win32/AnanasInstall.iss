@@ -55,10 +55,10 @@ Name: "extensions\meta"; Description: "Для доступа к метаданным"; Types: full cu
 Name: "extensions\sql"; Description: "Для выполнения SQL запросов в отчетах"; Types: full custom
 Name: "extensions\service"; Description: "Для доступа к различным служебным функциям"; Types: full custom
 Name: "extensions\dateservice"; Description: "Для работы с датами"; Types: full custom
-Name: "mysql"; Description: "Сервер баз данных MySQL"; Types: full compact custom; Flags: fixedName: "office"; Description: "Подсистема отчетов"; Types: full compact custom; Flags: fixed
-
+Name: "extensions\minicalc"; Description: "Калькулятор"; Types: full custom
+Name: "mysql"; Description: "Сервер баз данных MySQL"; Types: full compact custom; Flags: fixed
+Name: "office"; Description: "Подсистема отчетов"; Types: full compact custom; Flags: fixed
 Name: "office\ooo"; Description: "Использовать OpenOffice.org";  Types: full compact custom; Flags: exclusive;
-
 Name: "office\mso"; Description: "Использовать Microsoft Office"; Types: full compact custom; Flags: exclusive;
 
 [Tasks]
@@ -100,6 +100,8 @@ Source: "src\extensions\aextservice.dll"; DestDir: "{app}\extensions"; Component
 Source: "src\extensions\aextservice.lib"; DestDir: "{app}\extensions"; Components: extensions\service; Flags: ignoreversion;
 Source: "src\extensions\aextdateservice.dll"; DestDir: "{app}\extensions"; Components: extensions\dateservice; Flags: ignoreversion;
 Source: "src\extensions\aextdateservice.lib"; DestDir: "{app}\extensions"; Components: extensions\dateservice; Flags: ignoreversion;
+Source: "src\extensions\aextminicalc.dll"; DestDir: "{app}\extensions"; Components: extensions\minicalc; Flags: ignoreversion;
+Source: "src\extensions\aextminicalc.lib"; DestDir: "{app}\extensions"; Components: extensions\minicalc; Flags: ignoreversion;
 Source: "c:\Qt\lib\qtmtnc321.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "c:\Qt\lib\qsa110.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "c:\Qt\plugins\designer\qseditorplugin.dll"; DestDir: "{app}\designer"; Flags: ignoreversion
@@ -162,7 +164,6 @@ Root: HKCU; Subkey: "Software\ananasgroup\ananas\groups\0"; Components: applicat
 Root: HKLM; Subkey: "Software\ananasgroup\ananas\groups\0"; Components: applications\inventory_demo; ValueType: string; ValueName: "1"; ValueData: "{app}\applications\inventory\inventory-demowin.rc"
 Root: HKCU; Subkey: "Software\ananasgroup\ananas\groups\0"; Components: applications\inventory_demo; ValueType: string; ValueName: "1"; ValueData: "{app}\applications\inventory\inventory-demowin.rc"
 Root: HKCU; Subkey: "Software\ananasgroup\ananas\config\variables"; Components: office\mso; ValueType: string; ValueName: "defaultOffice";  ValueData: "MSO"
-
 Root: HKCU; Subkey: "Software\ananasgroup\ananas\config\variables"; Components: office\ooo; ValueType: string; ValueName: "defaultOffice";  ValueData: "OOO"
 
 
