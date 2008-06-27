@@ -1,7 +1,7 @@
 # ananas project
 # Spec file for building single rpm package of Ananas for ALT Linux
 # $Id: ananas.spec.alt,v 1.3 2007/12/30 14:34:59 app Exp $
-# $Name: HEAD $
+# $Name:  $
 #
 
 %define ShortName ananas

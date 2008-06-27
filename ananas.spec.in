@@ -1,7 +1,7 @@
 # ananas project
 # Spec file for building rpm and rpms under ALT Linux and Fedora
 # $Id: ananas.spec.in,v 1.14 2007/12/30 14:34:59 app Exp $
-# $Name: HEAD $
+# $Name:  $
 #
 
 %define ShortName ananas
