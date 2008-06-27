@@ -40,7 +40,6 @@
 #include "ananasmainform.h"
 
 #include "ananas.h"
-#include "aminicalc.h"
 
 MainForm *mainform=NULL;
 QWorkspace *mainformws=NULL;
@@ -124,17 +123,14 @@ void
 MainForm::initMenuBar()
 {
 	QPopupMenu *m;
-	QPopupMenu *s;
 	m = new QPopupMenu();
-	s = new QPopupMenu();
 	windowsMenu = new QPopupMenu();
     	connect( windowsMenu, SIGNAL( aboutToShow() ),
 	     this, SLOT( windowsMenuAboutToShow() ) );
 	m->insertItem(rcIcon("ananas-32x32.png"), tr( "About" ), this, SLOT( helpAbout() ), Key_F11);
-	s->insertItem(rcIcon("calc.png"), tr( "Calculator" ), this, SLOT( miniCalc() ), Key_F10);
+	m->insertItem(rcIcon("calc.png"), tr( "Calculator" ), this, SLOT( miniCalc() ), Key_F10);
 	//windowsMenu->insertItem(rcIcon("ananas-32x32.png"), tr( "Windows" ), this, SLOT( windowsMenuAboutToShow() ));
         menubar = new AMenuBar( md, this, "menubar");
-	InsertMainMenu( tr("&Tools"), s );
 	InsertMainMenu( tr("&Help"), m );
     	InsertMainMenu( tr("&Windows"), windowsMenu );
 	menuBar()->show();
@@ -319,6 +315,6 @@ void MainForm::windowsMenuActivated( int id )
 void
 MainForm::miniCalc()
 {
-	MiniCalc *calc = new MiniCalc(ws, "MiniCalc", false, 0);
-	calc->show();
+	const QString code = "var calc= new Calc(); calc.Show();";
+	engine->project.interpreter()->evaluate(code);
 }

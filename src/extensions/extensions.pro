@@ -7,3 +7,4 @@ SUBDIRS += meta
 SUBDIRS +=aextsql
 SUBDIRS +=service
 SUBDIRS +=dateservice
+SUBDIRS +=minicalc

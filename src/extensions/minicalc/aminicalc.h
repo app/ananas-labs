@@ -21,6 +21,7 @@ class QPushButton;
 class QLineEdit;
 class QLabel;
 
+
 class MiniCalc : public QDialog
 {
     Q_OBJECT

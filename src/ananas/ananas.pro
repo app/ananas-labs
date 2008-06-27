@@ -3,10 +3,10 @@ TARGET	= ananas
 include ( ../ananas.pri )
 
 SOURCES	+= main.cpp \
-	ananasmainform.cpp \
-	aminicalc.cpp
-HEADERS	+= ananasmainform.h \
-	   aminicalc.h
+	ananasmainform.cpp 
+HEADERS	+= ananasmainform.h 
+
+
 
 #load(qsa)
 
@@ -29,7 +29,6 @@ INSTALLS += ananas
 
 #FORMS	= qadocjournal.ui
 IMAGES	= images/a-system.png \
-	images/calc.png \
 	images/msg_info.png \
 	images/msg_warning.png \
 	images/msg_error.png \
@@ -57,6 +56,9 @@ IMAGES	= images/a-system.png \
 	images/lib_database.png	\
 	images/lib_dbgroup.png \
 	images/ananas-32x32.png
+	
+IMAGES	+= images/calc.png	
+	
 
 TEMPLATE	=app
 

@@ -20,6 +20,8 @@
 #include <qpalette.h>
 #include <math.h>
 
+
+
 /*
  *  Constructs a MiniCalc as a child of 'parent', with the
  *  name 'name' and widget flags set to 'f'.
