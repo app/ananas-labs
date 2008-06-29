@@ -417,6 +417,7 @@ void
 aEngine::Message(int n, const QString &msg)
 {
 	cfg_message(n, (const char *) msg.utf8());
+	emit statusIcon( n );
 }
 
 /*!

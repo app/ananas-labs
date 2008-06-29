@@ -37,7 +37,7 @@
 #include <qaction.h>
 #include <qdir.h>
 #include <qtextcodec.h>
-
+#include <qtimer.h>
 #include "ananasmainform.h"
 
 #include "ananas.h"
@@ -68,25 +68,38 @@ MainForm::MainForm( QWidget* parent, const char* name, WFlags fl )
     ws->setScrollBarsEnabled( TRUE );
     setCentralWidget( vb );
     statusBar()->setName("statusbar");
-
+    statusBar()->setSizeGripEnabled( FALSE );
     statusLabel1 = new QLabel(" Status ", this);
     statusLabel1->setMinimumSize(statusLabel1->sizeHint());
-
-    statusLabel2 = new QLabel(tr(" Info1 "),this);
+    statusLabel1->setText(" ");
+    statusLabel2 = new QLabel(tr(" TA: 34.45.3214 "),this);
     statusLabel2->setAlignment(AlignHCenter);
     statusLabel2->setMinimumSize(statusLabel2->sizeHint());
-    statusLabel3 = new QLabel(tr(" Info2 "), this);
+    statusLabel2->setText(" ");
+    statusLabel3 = new QLabel(tr(" BI: 35.65.3214 "), this);
     statusLabel3->setAlignment(AlignHCenter);
     statusLabel3->setMinimumSize(statusLabel3->sizeHint());
+    statusLabel3->setText(" ");
     //statusLabel3->clear();
-    statusLabel4 = new QLabel(tr(" Icon "), this);
+    statusLabel4 = new QLabel(tr("00"), this);
     statusLabel4->setMinimumSize(statusLabel4->sizeHint());
+    statusLabel4->setText("0");
     statusLabel4->setAlignment(AlignHCenter);
-    statusLabel4->setPixmap(rcIcon("ru.png"));
+    statpb = new QPushButton( " ", this );
+    statpb->setToggleButton ( true );
+    statpb->setDefault ( false );
+    statpb->setMaximumWidth(22);
+    statpb->setMaximumHeight(22);
+
+    connect(statpb , SIGNAL(toggled(bool)), this, SLOT(statpbToggled()) );
+    statusBar()->addWidget(statpb, 0);
+    statpb->hide();
     statusBar()->addWidget(statusLabel1, 1);
     statusBar()->addWidget(statusLabel2);
     statusBar()->addWidget(statusLabel3);
     statusBar()->addWidget(statusLabel4, 0, true);
+
+    statpb->setFocusPolicy(QWidget::NoFocus);
 
     if ( !name ) setName( "mainwindow" );
     engine_settings.insertSearchPath( QSettings::Unix, QString(QDir::homeDirPath())+QString("/.ananas"));
@@ -112,9 +125,11 @@ MainForm::MainForm( QWidget* parent, const char* name, WFlags fl )
 bool
 MainForm::init()
 {
-    MessagesWindow *msgWindow = new MessagesWindow( this );// , WDestructiveClose );
+    msgWindow = new MessagesWindow( this );// , WDestructiveClose );
     moveDockWindow( msgWindow, DockBottom );
     setMessageHandler( true );
+    msgWindow->setCloseMode(0);
+    msgWindow->setMovingEnabled(false);
     msgWindow->hide();
     if ( !initEngine() ) return false;
     connect( menubar, SIGNAL(activated(int)), &engine, SLOT(on_MenuBar(int)) );
@@ -136,6 +151,7 @@ MainForm::initEngine()
     engine.wl = wl;
     connect( &engine, SIGNAL( statusMessage( const QString & ) ), this, SLOT( statusMessage( const QString & ) ) );
     connect( &engine, SIGNAL( statusMessage( const QString &, const int & ) ), this, SLOT( statusMessage( const QString & , const int & ) ) );
+    connect( &engine, SIGNAL(statusIcon( const int &) ), this, SLOT( statusIcon( const int & )) );
 
     md = engine.md;
     if ( !md ) return false;
@@ -158,7 +174,7 @@ MainForm::initMenuBar()
 	lang->setCheckable( TRUE );
 	// TODO!!! Check *qm files and complit list
 
-	statusLabel3->setText(QString("%1\n").arg(QTextCodec::locale()));
+	//statusLabel3->setText(QString("%1\n").arg(QTextCodec::locale()));
 	e_lang = lang->insertItem( tr("EN"), 0, 0);
 	lang->setItemChecked( e_lang, true );
 	r_lang = lang->insertItem(  tr("RU"), 1, 1);
@@ -236,6 +252,33 @@ void MainForm::InsertMainMenu(QString text, QObject *pop){
     menubar->insertItem(text, (QPopupMenu *) pop);
 }
 
+void
+MainForm::statusIcon( const int &status )
+{
+	statpb->show();
+	statpb->setOn(true);
+	switch ( status )
+	{
+		case 0:
+			statpb->setPixmap(rcIcon("msg_info.png"));
+			break;
+		case 1:
+			statpb->setPixmap(rcIcon("msg_warning.png"));
+			break;
+		case 2:
+			statpb->setPixmap(rcIcon("msg_error.png"));
+			break;
+		case 3:
+			statpb->setPixmap(rcIcon("msg_fatal.png"));
+			break;
+		default:
+			statpb->setPixmap(rcIcon("msg_fatal.png"));
+			break;
+	}
+	QTimer::singleShot( 3000, this, SLOT(hideMsgWindow()) );
+	statusLabel4->setText(QString("%1").arg(statusLabel4->text().toInt() + 1));
+}
+
 
 void
 MainForm::Exit(int code)
@@ -292,6 +335,13 @@ MainForm::statusMessage( const QString &msg )
 
 
 void
+MainForm::hideMsgWindow()
+{
+	msgWindow->hide();
+	statpb->setOn(false);
+}
+
+void
 MainForm::setBackground( const QPixmap &pix ){
 	ws->setBackgroundPixmap( pix );
 }
@@ -320,16 +370,25 @@ MainForm::~MainForm()
  */
 void MainForm::languageChange()
 {
-    setCaption(QString( tr("Ananas")+" "+ananas_libversion() )+": "+md->info( md_info_name ) );
+    setCaption(md->info( md_info_name )+": "+QString( tr("Ananas")+" "+ananas_libversion()) );
 
     int i;
     for (i=0; i < menuBar()->count(); ++i)
     {
 	menuBar()->changeItem(i, QString(tr(menuBar()->text(i))));
-
     }
     //menuBar()->changeItem(6, QString( tr("&Windows")));
-//    setCaption( tr( "Ananas VERSION" ) );
+}
+
+void MainForm::statpbToggled()
+{
+	if (statpb->isOn() == true)
+	{
+		msgWindow->show();
+	}else{
+		//statusLabel4->setText( "0" );
+		msgWindow->hide();
+	}
 }
 
 void MainForm::windowsMenuAboutToShow()
@@ -431,6 +490,7 @@ void MainForm::setLang( int lang_id )
 		lang->setItemChecked( 1, false );
 		lang->setItemChecked( 2, false );
 		a_lang = "en";
+		statusLabel3->setText(QString("%1\n").arg(QTextCodec::locale()));
 	}
 	if (lang_id == 1)
 	{
@@ -458,7 +518,8 @@ void MainForm::setLang( int lang_id )
 	qApp->installTranslator( &tr_plugins );
 
 	languageChange();
-	statusBar()->message( QString(tr("Ananas"))+ QString(tr(" : %1")).arg(lang->text(lang_id)), 2000 );
+	statusLabel3->setText(a_lang.upper());
+	//statusBar()->message( QString(tr("Ananas"))+ QString(tr(" : %1")).arg(lang->text(lang_id)), 2000 );
 }
 
 /*

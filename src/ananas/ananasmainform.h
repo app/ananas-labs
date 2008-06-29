@@ -38,11 +38,13 @@
 #include <qstringlist.h>
 #include <qworkspace.h>
 #include <qmainwindow.h>
+#include <qmessagebox.h>
 #include <qvbox.h>
 #include <qapplication.h>
 #include <qsettings.h>
 #include <qtranslator.h>
 #include <qlabel.h>
+#include <qpushbutton.h>
 #include "ananas.h"
 #include "amenubar.h"
 #include "atoolbar.h"
@@ -89,6 +91,8 @@ public:
 	QLabel *statusLabel2;
 	QLabel *statusLabel3;
 	QLabel *statusLabel4;
+	QPushButton *statpb;
+	MessagesWindow *msgWindow;
 
 public slots:
 	bool init();
@@ -104,6 +108,7 @@ public slots:
 	void ShowCalendar();
 	void statusMessage( const QString &msg, const int &pos );
 	void statusMessage( const QString &msg );
+	void statusIcon( const int &status );
 
 	void windowsMenuAboutToShow();
 	void windowsMenuActivated( int id );
@@ -115,6 +120,8 @@ public slots:
 protected:
 	protected slots:
 	virtual void languageChange();
+	virtual void statpbToggled();
+	virtual void hideMsgWindow();
 
 private:
 	QSettings engine_settings;
