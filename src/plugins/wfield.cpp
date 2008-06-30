@@ -200,14 +200,12 @@ wField::widgetInit()
 		{
 			// set default validator for string
 			lineEdit->setMaxLength(20);
-		}
-		else
-		{
+		}else{
 			// set validator for string
 			lineEdit->setMaxLength(n1);
 		}
 		connect( lineEdit, SIGNAL( textChanged( const QString & ) ),
-				this, SLOT( setValue( const QString & ) ) );
+			 this, SLOT( setValue( const QString & ) ) );
 		connect( lineEdit, SIGNAL( lostFocus() ), this, SLOT( focusOutEvent()) );
 
 		setFocusProxy(lineEdit);
@@ -357,14 +355,58 @@ wField::createEditor( QWidget *parent )
 void
 wField::setValue(const QDate& newDate)
 {
-//CHECK_POINT
+	//CHECK_POINT
 	vValue = newDate.toString(Qt::ISODate);
-	vValue+="T00:00:00"; //for correct converting to date-time
+	vValue+="T00:00:00";//for correct converting to date-time
 	emit valueChanged(vValue);
 	emit valueChanged(QVariant(vValue));
 }
 
+/*!
+ * \en	Validate value and paint LineEdit frame. \_en
+ * \ru	Проверяет значение и рисует рамку поля ввода.\_ru
+ */
+void
+wField::Validate(const QString &test)
+{
+	int p = 0;
+	QString s = test;
+	QPalette pal = lineEdit->palette();
+	switch ( v->validate(s, p) )
+	{
+		case QValidator::Invalid:
+			pal.setColor(QColorGroup::Highlight, Qt::red);
+			lineEdit->setPalette(pal);
+			emit inputInvalid();
+			break;
+		case QValidator::Intermediate:
+			pal.setColor(QColorGroup::Highlight, Qt::yellow);
+			lineEdit->setPalette(pal);
+			setValue( test );
+			break;
+		case QValidator::Acceptable:
+			pal.setColor(QColorGroup::Highlight, Qt::green);
+			lineEdit->setPalette(pal);
+			setValue( test );
+			break;
+	}
+}
 
+
+/*!
+ * \en	Set validaror and connect LineEdit to Validator.
+ * \_en
+ * \ru	Устанавливает валидатор и соединяет LineEdit с Validator.
+ * \_ru
+ * \param QString Validator - \en RegExp for QRegExpValidator  \_en \ru значение RegExp для установки QRegExpValidator\_ru
+ */
+void
+wField::SetValidator(QString Validator)
+{
+	QRegExp rx( Validator );
+	v = new QRegExpValidator( rx, 0 );
+	connect( lineEdit, SIGNAL( textChanged( const QString & ) ), this, SLOT( Validate( const QString & ) ) );
+}
 
 /*!
  * \en 	Sets value. \_en
@@ -426,7 +468,6 @@ wField::setValue(const QString &newvalue)
 }
 
 
-
 /*!
  * \en	Gets value. \_en
  * \ru	Возвращает значение виджета. \_ru
@@ -438,7 +479,6 @@ wField::value() const
    QString str = vValue;
    return  str; //str.setUnicode(vValue.unicode(),vValue.length());
 }
-
 
 
 /*!
@@ -536,9 +576,6 @@ wField::fieldSelect()
 		break;
 	}
 }
-
-
-
 
 /*!
  * \en	Handler signal lostFocus. \_en

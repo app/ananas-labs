@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>478</width>
-            <height>475</height>
+            <width>488</width>
+            <height>490</height>
         </rect>
     </property>
     <property name="caption">
@@ -724,7 +724,7 @@
                             </widget>
                             <widget class="QCheckBox">
                                 <property name="name">
-                                    <cstring>VdcheckBox</cstring>
+                                    <cstring>efVd</cstring>
                                 </property>
                                 <property name="text">
                                     <string>Vd</string>
@@ -844,10 +844,10 @@
                                     <cstring>textLabel3</cstring>
                                 </property>
                                 <property name="text">
-                                    <string>&lt;font size="-1"&gt;&lt;u&gt;Example:&lt;/u&gt; RegEx &lt;b&gt;&lt;i&gt;[A-C]\d{5}[W-Z]&lt;/b&gt;&lt;/i&gt; for string &lt;i&gt;&lt;b&gt;A12345Z&lt;/b&gt;&lt;/i&gt;&lt;/font&gt;</string>
+                                    <string>&lt;u&gt;Example:&lt;/u&gt; RegExp &lt;b&gt;&lt;i&gt;[A-C]\d{5}[W-Z]&lt;/b&gt;&lt;/i&gt; for string &lt;i&gt;&lt;b&gt;A12345Z&lt;/b&gt;&lt;/i&gt;</string>
                                 </property>
-                                <property name="alignment">
-                                    <set>WordBreak|AlignCenter</set>
+                                <property name="textFormat">
+                                    <enum>AutoText</enum>
                                 </property>
                             </widget>
                         </grid>
@@ -1048,10 +1048,10 @@
         <slot>tNotBound_stateChanged(int)</slot>
     </connection>
     <connection>
-        <sender>VdcheckBox</sender>
+        <sender>efVd</sender>
         <signal>stateChanged(int)</signal>
         <receiver>dEditField</receiver>
-        <slot>VdcheckBox_stateChanged(int)</slot>
+        <slot>efVd_stateChanged(int)</slot>
     </connection>
     <connection>
         <sender>VdRegEx</sender>
@@ -1090,7 +1090,7 @@
     <slot>tNotBound_stateChanged( int )</slot>
     <slot>aUsersList_clicked( QListViewItem * )</slot>
     <slot>setExample()</slot>
-    <slot>VdcheckBox_stateChanged( int )</slot>
+    <slot>efVd_stateChanged( int )</slot>
     <slot>VdRegEx_textChanged( const QString &amp; )</slot>
     <slot>Testline_textChanged( const QString &amp; )</slot>
 </slots>

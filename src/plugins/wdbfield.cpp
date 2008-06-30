@@ -324,6 +324,12 @@ wDBField::initObject(aDatabase *adb )
   }else{
 	wField::SetNonZero(false);
   }
+  if ( md->attr(o,mda_vd) == "1" && md->attr(o,mda_validator) != "")
+  {
+	  wField::SetValidator( md->attr(o,mda_validator) );
+  }
+
+
   //aObject* obj = new aObject(o,adb);
   //tableInsert( aDatabase::tableDbName( *md, o ), o );
 //  debug_message("init dbfield  \n");

@@ -38,7 +38,7 @@
 #include <qdatetime.h>
 #include <qvaluelist.h>
 #include <qlistview.h>
-#include <qvalidator.h> 
+#include <qvalidator.h>
 #include "alog.h"
 #include "acfg.h"
 #include "acfgrc.h"
@@ -73,7 +73,7 @@ void dEditField::init()
 	eType->clear();
 	otypes.append(" ");
 	lzcheckBox->setText(tr("Add leading zeros"));
-	VdcheckBox->setText(tr("Validate"));
+	efVd->setText(tr("Validate"));
 	eType->insertItem(tr("Unknown"), 0);
 
 }
@@ -124,6 +124,11 @@ void dEditField::setData( aListViewItem *o )
 	else efPlus->setChecked( false );
 	if( md->attr( obj, mda_nz ) == "1" ) efNZ->setChecked( true );
 	else efNZ->setChecked( false );
+	if( md->attr( obj, mda_vd ) == "1" ) efVd->setChecked( true );
+	else efVd->setChecked( false );
+
+	VdRegEx->setText( md->attr( obj, mda_validator ) );
+
 	efSum->setChecked(md->attr( obj, mda_sum ) == "1");
 
 	QStringList tlist;
@@ -291,6 +296,9 @@ void dEditField::updateMD()
  else md->setAttr( obj, mda_plus, "0" );
  if( efNZ->isChecked() ) md->setAttr( obj, mda_nz, "1" );
  else md->setAttr( obj, mda_nz, "0" );
+ if( efVd->isChecked() ) md->setAttr( obj, mda_vd, "1" );
+ else md->setAttr( obj, mda_vd, "0" );
+ if (VdRegEx->text() )md->setAttr( obj, mda_validator, VdRegEx->text().stripWhiteSpace() );
  if( efSum->isChecked() )
      md->setAttr( obj, mda_sum, "1" );
  else
@@ -327,7 +335,7 @@ void dEditField::typeSelect( int idx )
 		tSepTriads->show();
 		comboBox2->setEnabled(false);
 		comboBox2->hide();
-		VdcheckBox->show();
+		efVd->show();
 		ValidateGroupBox->show();
 		DateMask->hide();
 		saldoTextLabel->hide();
@@ -359,7 +367,7 @@ void dEditField::typeSelect( int idx )
 			lzcheckBox->hide();
 			tNotBound->show();
 			DateMask->show();
-			VdcheckBox->show();
+			efVd->show();
 			ValidateGroupBox->show();
 			efSum->setChecked(false);
 			comboBox2->setEnabled(false);
@@ -392,7 +400,7 @@ void dEditField::typeSelect( int idx )
 			    efSum->hide();
 			    tNotBound->hide();
 			    tSepTriads->hide();
-			    VdcheckBox->hide();
+			    efVd->hide();
 			    ValidateGroupBox->hide();
 			    //
 			    Num_Label->hide();
@@ -422,7 +430,7 @@ void dEditField::typeSelect( int idx )
 				efSum->hide();
 				tNotBound->hide();
 				tSepTriads->hide();
-				VdcheckBox->hide();
+				efVd->hide();
 				DateMask->hide();
 				ValidateGroupBox->hide();
 				 //
@@ -508,9 +516,9 @@ void dEditField::setExample()
 
 
 
-void dEditField::VdcheckBox_stateChanged( int )
+void dEditField::efVd_stateChanged( int )
 {
-    if (VdcheckBox->isChecked() )
+    if (efVd->isChecked() )
     {
 	ValidateGroupBox->show();
     } else {
@@ -546,6 +554,6 @@ void dEditField::Testline_textChanged( const QString & )
      if(v.validate(s, pos ) == QValidator::Acceptable)
     {
 	 pal.setColor(QColorGroup::Highlight, Qt::green);
-	 Testline->setPalette(pal);	 
+	 Testline->setPalette(pal);
     }
 }

@@ -210,6 +210,9 @@ Metadata attributes.
 #define mda_format		"format"
 #define mda_stdf		"stdf"
 #define mda_rights		"rights"
+#define mda_vd			"vd"
+#define mda_validator		"validator"
+
 
 /*!
 Actions types

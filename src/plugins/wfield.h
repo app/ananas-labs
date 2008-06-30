@@ -42,6 +42,7 @@
 #include "adatabase.h"
 #include "ananas.h"
 #include "acalendar.h"
+#include <qvalidator.h>
 
 class wCatButton;
 class wCheckBox;
@@ -80,6 +81,7 @@ public:
 signals:
 	void valueChanged( const QString & );
 	void valueChanged( const QVariant & );
+	void inputInvalid();
 	void lostFocus();
 
 public slots:
@@ -88,6 +90,7 @@ public slots:
 	virtual QString		value() const;
 	QString			text() const;
 	virtual void		setValue( const QString &fn );
+	virtual void		Validate( const QString &fn );
 	void			setValue( const QDate& d);
 	virtual	QString 	textValue() {return text();};
 	void			setFieldType( QString n );
@@ -101,6 +104,7 @@ public slots:
 	void 			selectAll();
 	virtual void		SetReadOnly(bool);
 	virtual void		SetNonZero(bool);
+	virtual void		SetValidator(QString Validator);
 
 private slots:
 	void on_selected( Q_ULLONG uid );
@@ -113,6 +117,7 @@ protected:
 	QLabel		*nzLabel;
 	wCatButton	*objButton;
 	wCheckBox	*checkBox;
+	QValidator 	*v;
 	tEditorType	vEditorType;
 	QString		vFieldType;
 	QString		vValue;
