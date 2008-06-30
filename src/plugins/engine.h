@@ -187,6 +187,7 @@ private slots:
 signals:
         void statusMessage( const QString &msg );
 	void statusMessage( const QString &msg, const int &pos );
+	void statusIcon( const int &status );
 	void event( const QString &source, const QString &data );
 
 private:
