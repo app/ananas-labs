@@ -385,7 +385,7 @@ void dEditField::typeSelect( int idx )
 			    tNotBound->hide();
 			    tSepTriads->hide();
 			    efVd->hide();
-			    efNumerator->->hide();
+			    efNumerator->hide();
 			    ValidateGroupBox->hide();
 			    NumeratorGroupBox->hide();
 			    efSum->setChecked(false);
@@ -404,7 +404,7 @@ void dEditField::typeSelect( int idx )
 				tNotBound->hide();
 				tSepTriads->hide();
 				efVd->hide();
-				efNumerator->->hide();
+				efNumerator->hide();
 				NumeratorGroupBox->hide();
 				ValidateGroupBox->hide();
 				efSum->setChecked(false);
