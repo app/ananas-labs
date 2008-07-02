@@ -104,7 +104,8 @@ public slots:
 	void 			selectAll();
 	virtual void		SetReadOnly(bool);
 	virtual void		SetNonZero(bool);
-	virtual void		SetValidator(QString Validator);
+	virtual void		SetMask(QString);
+	virtual void		SetValidator(QString Validator, int twostate);
 
 private slots:
 	void on_selected( Q_ULLONG uid );
@@ -118,6 +119,7 @@ protected:
 	wCatButton	*objButton;
 	wCheckBox	*checkBox;
 	QValidator 	*v;
+	int		two_state;
 	tEditorType	vEditorType;
 	QString		vFieldType;
 	QString		vValue;

@@ -74,6 +74,7 @@ void dEditField::init()
 	otypes.append(" ");
 	lzcheckBox->setText(tr("Add leading zeros"));
 	efVd->setText(tr("Validate"));
+	efNumerator->setText(tr("Numerator"));
 	eType->insertItem(tr("Unknown"), 0);
 
 }
@@ -126,8 +127,10 @@ void dEditField::setData( aListViewItem *o )
 	else efNZ->setChecked( false );
 	if( md->attr( obj, mda_vd ) == "1" ) efVd->setChecked( true );
 	else efVd->setChecked( false );
-
+	if( md->attr( obj, mda_twostate ) == "1" ) two_state->setChecked( true );
+	else two_state->setChecked( false );
 	VdRegEx->setText( md->attr( obj, mda_validator ) );
+	inputMask->setText( md->attr( obj, mda_inputmask ) );
 
 	efSum->setChecked(md->attr( obj, mda_sum ) == "1");
 
@@ -299,6 +302,9 @@ void dEditField::updateMD()
  if( efVd->isChecked() ) md->setAttr( obj, mda_vd, "1" );
  else md->setAttr( obj, mda_vd, "0" );
  if (VdRegEx->text() )md->setAttr( obj, mda_validator, VdRegEx->text().stripWhiteSpace() );
+ if (inputMask->text() )md->setAttr( obj, mda_inputmask, inputMask->text().stripWhiteSpace() );
+ if (two_state->isChecked() ) md->setAttr( obj, mda_twostate, "1" );
+ else md->setAttr( obj, mda_twostate, "0" );
  if( efSum->isChecked() )
      md->setAttr( obj, mda_sum, "1" );
  else
@@ -337,21 +343,8 @@ void dEditField::typeSelect( int idx )
 		comboBox2->hide();
 		efVd->show();
 		ValidateGroupBox->show();
-		DateMask->hide();
+		NumeratorGroupBox->hide();
 		saldoTextLabel->hide();
-		//
-		Num_Label->hide();
-		MinLabel->hide();
-		eMin->hide();
-		MaxLabel->hide();
-		eMax->hide();
-		PrLabel->hide();
-		ePrefix->hide();
-		SfLabel->hide();
-		eSuffix->hide();
-		exLabel->hide();
-		eXample->hide();
-		 //
 	}
 	else
 	{
@@ -366,24 +359,13 @@ void dEditField::typeSelect( int idx )
 			tSepTriads->hide();
 			lzcheckBox->hide();
 			tNotBound->show();
-			DateMask->show();
+			NumeratorGroupBox->show();
 			efVd->show();
 			ValidateGroupBox->show();
 			efSum->setChecked(false);
 			comboBox2->setEnabled(false);
 			comboBox2->hide();
 			saldoTextLabel->hide();
-			    Num_Label->show();
-			    MinLabel->show();
-			    eMin->show();
-			    MaxLabel->show();
-			    eMax->show();
-			    PrLabel->show();
-			    ePrefix->show();
-			    SfLabel->show();
-			    eSuffix->show();
-			    exLabel->show();
-			    eXample->show();
 		}
 		else
 		{
@@ -402,19 +384,7 @@ void dEditField::typeSelect( int idx )
 			    tSepTriads->hide();
 			    efVd->hide();
 			    ValidateGroupBox->hide();
-			    //
-			    Num_Label->hide();
-			    MinLabel->hide();
-			    eMin->hide();
-			    MaxLabel->hide();
-			    eMax->hide();
-			    PrLabel->hide();
-			    ePrefix->hide();
-			    SfLabel->hide();
-			    eSuffix->hide();
-			    exLabel->hide();
-			    eXample->hide();
-			    //
+			    NumeratorGroupBox->hide();
 			    efSum->setChecked(false);
 			}
   			else
@@ -431,21 +401,8 @@ void dEditField::typeSelect( int idx )
 				tNotBound->hide();
 				tSepTriads->hide();
 				efVd->hide();
-				DateMask->hide();
+				NumeratorGroupBox->hide();
 				ValidateGroupBox->hide();
-				 //
-			    Num_Label->hide();
-			    MinLabel->hide();
-			    eMin->hide();
-			    MaxLabel->hide();
-			    eMax->hide();
-			    PrLabel->hide();
-			    ePrefix->hide();
-			    SfLabel->hide();
-			    eSuffix->hide();
-			    exLabel->hide();
-			    eXample->hide();
-			    //
 				efSum->setChecked(false);
 				// comboBox2->setEnabled(false);
   			}
@@ -488,16 +445,13 @@ void dEditField::setExample()
 {
      QDate date = QDate::currentDate();
      QString curdate, dateformat, numerator;
-     if (DateMask->isChecked() )
+     
+     if (DateFormat->isChecked() )
      {
 	 if (useOwnFofmat->isChecked() )
 	 {
-	     aDFormatBox->setEnabled(FALSE);
-	     eOwnFormat->setEnabled(TRUE);
 	     dateformat =eOwnFormat->text();
 	 }else{
-	     aDFormatBox->setEnabled(TRUE);
-	     eOwnFormat->setEnabled(FALSE);
 	     dateformat =aDFormatBox->currentText();
 	 }
         curdate = date.toString(dateformat);
@@ -514,8 +468,6 @@ void dEditField::setExample()
 }
 
 
-
-
 void dEditField::efVd_stateChanged( int )
 {
     if (efVd->isChecked() )
@@ -524,12 +476,6 @@ void dEditField::efVd_stateChanged( int )
     } else {
 	ValidateGroupBox->hide();
     }
-}
-
-
-void dEditField::VdRegEx_textChanged( const QString & )
-{
-
 }
 
 
@@ -548,12 +494,49 @@ void dEditField::Testline_textChanged( const QString & )
     }
     if(v.validate(s, pos ) == QValidator::Intermediate)
     {
-	 pal.setColor(QColorGroup::Highlight, Qt::red);
+	if (two_state->isChecked() ) {
+	    pal.setColor(QColorGroup::Highlight, Qt::red);
+	}else{
+	    pal.setColor(QColorGroup::Highlight, Qt::yellow);
+	}
 	 Testline->setPalette(pal);
     }
      if(v.validate(s, pos ) == QValidator::Acceptable)
     {
 	 pal.setColor(QColorGroup::Highlight, Qt::green);
 	 Testline->setPalette(pal);
+    }
+}
+
+void dEditField::inputMask_textChanged( const QString & )
+{
+    Testline->setInputMask(inputMask->text());
+}
+
+
+void dEditField::efNumerator_stateChanged( int )
+{
+    if (efNumerator->isChecked() )
+    {
+	NumeratorGroupBox->show();
+    } else {
+	NumeratorGroupBox->hide();
+    }
+}
+
+
+void dEditField::DateFormat_stateChanged( int )
+{
+    if (DateFormat->isChecked() )
+    {
+	aDFormatBox->setEnabled(TRUE);
+	textLabel2->setEnabled(TRUE);
+	useOwnFofmat->setEnabled(TRUE);
+	eOwnFormat->setEnabled(TRUE);
+    } else {
+	aDFormatBox->setEnabled(FALSE);
+	textLabel2->setEnabled(FALSE);
+	useOwnFofmat->setEnabled(FALSE);
+	eOwnFormat->setEnabled(FALSE);
     }
 }

@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>488</width>
-            <height>490</height>
+            <width>585</width>
+            <height>478</height>
         </rect>
     </property>
     <property name="caption">
@@ -42,7 +42,7 @@
                     <property name="name">
                         <cstring>unnamed</cstring>
                     </property>
-                    <widget class="QLabel" row="0" column="0" rowspan="1" colspan="2">
+                    <widget class="QLabel" row="0" column="0">
                         <property name="name">
                             <cstring>textLabel1</cstring>
                         </property>
@@ -68,7 +68,7 @@
                             <string>Name</string>
                         </property>
                     </widget>
-                    <widget class="QLabel" row="2" column="0" rowspan="1" colspan="2">
+                    <widget class="QLabel" row="2" column="0">
                         <property name="name">
                             <cstring>textLabel4</cstring>
                         </property>
@@ -100,7 +100,7 @@
                             <string>Type</string>
                         </property>
                     </widget>
-                    <widget class="QLabel" row="1" column="0" rowspan="1" colspan="2">
+                    <widget class="QLabel" row="1" column="0">
                         <property name="name">
                             <cstring>textLabel1_2_2</cstring>
                         </property>
@@ -126,7 +126,7 @@
                             <string>Comment</string>
                         </property>
                     </widget>
-                    <widget class="QLineEdit" row="1" column="2" rowspan="1" colspan="3">
+                    <widget class="QLineEdit" row="1" column="1" rowspan="1" colspan="3">
                         <property name="name">
                             <cstring>eComment</cstring>
                         </property>
@@ -135,7 +135,7 @@
                             </font>
                         </property>
                     </widget>
-                    <widget class="QComboBox" row="2" column="2" rowspan="1" colspan="3">
+                    <widget class="QComboBox" row="2" column="1" rowspan="1" colspan="3">
                         <property name="name">
                             <cstring>eType</cstring>
                         </property>
@@ -155,7 +155,7 @@
                             <bool>false</bool>
                         </property>
                     </widget>
-                    <widget class="QLineEdit" row="0" column="4">
+                    <widget class="QLineEdit" row="0" column="3">
                         <property name="name">
                             <cstring>eCname</cstring>
                         </property>
@@ -172,7 +172,7 @@
                             </font>
                         </property>
                     </widget>
-                    <widget class="QLabel" row="0" column="3">
+                    <widget class="QLabel" row="0" column="2">
                         <property name="name">
                             <cstring>textLabel1_2</cstring>
                         </property>
@@ -192,7 +192,7 @@
                             <string>Cname</string>
                         </property>
                     </widget>
-                    <widget class="QLineEdit" row="0" column="2">
+                    <widget class="QLineEdit" row="0" column="1">
                         <property name="name">
                             <cstring>eName</cstring>
                         </property>
@@ -209,7 +209,7 @@
                             </font>
                         </property>
                     </widget>
-                    <widget class="QLabel" row="3" column="0" rowspan="1" colspan="2">
+                    <widget class="QLabel" row="3" column="0">
                         <property name="name">
                             <cstring>tWidth</cstring>
                         </property>
@@ -221,177 +221,7 @@
                             <string>Width</string>
                         </property>
                     </widget>
-                    <widget class="QLabel" row="4" column="0" rowspan="1" colspan="2">
-                        <property name="name">
-                            <cstring>Num_Label</cstring>
-                        </property>
-                        <property name="text">
-                            <string>Numerator</string>
-                        </property>
-                    </widget>
-                    <widget class="QLabel" row="6" column="0">
-                        <property name="name">
-                            <cstring>exLabel</cstring>
-                        </property>
-                        <property name="text">
-                            <string>&lt;u&gt;&lt;i&gt;Example&lt;/i&gt;:&lt;/u&gt;</string>
-                        </property>
-                    </widget>
-                    <widget class="QLayoutWidget" row="6" column="1" rowspan="1" colspan="4">
-                        <property name="name">
-                            <cstring>layout27</cstring>
-                        </property>
-                        <hbox>
-                            <property name="name">
-                                <cstring>unnamed</cstring>
-                            </property>
-                            <spacer>
-                                <property name="name">
-                                    <cstring>spacer20</cstring>
-                                </property>
-                                <property name="orientation">
-                                    <enum>Horizontal</enum>
-                                </property>
-                                <property name="sizeType">
-                                    <enum>Expanding</enum>
-                                </property>
-                                <property name="sizeHint">
-                                    <size>
-                                        <width>144</width>
-                                        <height>16</height>
-                                    </size>
-                                </property>
-                            </spacer>
-                            <widget class="QLabel">
-                                <property name="name">
-                                    <cstring>eXample</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>___</string>
-                                </property>
-                            </widget>
-                            <spacer>
-                                <property name="name">
-                                    <cstring>spacer19</cstring>
-                                </property>
-                                <property name="orientation">
-                                    <enum>Horizontal</enum>
-                                </property>
-                                <property name="sizeType">
-                                    <enum>Expanding</enum>
-                                </property>
-                                <property name="sizeHint">
-                                    <size>
-                                        <width>135</width>
-                                        <height>16</height>
-                                    </size>
-                                </property>
-                            </spacer>
-                        </hbox>
-                    </widget>
-                    <widget class="QLayoutWidget" row="4" column="2" rowspan="1" colspan="3">
-                        <property name="name">
-                            <cstring>layout19</cstring>
-                        </property>
-                        <property name="sizePolicy">
-                            <sizepolicy>
-                                <hsizetype>7</hsizetype>
-                                <vsizetype>0</vsizetype>
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
-                        </property>
-                        <hbox>
-                            <property name="name">
-                                <cstring>unnamed</cstring>
-                            </property>
-                            <widget class="QLabel">
-                                <property name="name">
-                                    <cstring>MinLabel</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Min:</string>
-                                </property>
-                            </widget>
-                            <widget class="QLineEdit">
-                                <property name="name">
-                                    <cstring>eMin</cstring>
-                                </property>
-                                <property name="sizePolicy">
-                                    <sizepolicy>
-                                        <hsizetype>7</hsizetype>
-                                        <vsizetype>0</vsizetype>
-                                        <horstretch>2</horstretch>
-                                        <verstretch>0</verstretch>
-                                    </sizepolicy>
-                                </property>
-                            </widget>
-                            <widget class="QLabel">
-                                <property name="name">
-                                    <cstring>MaxLabel</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Max:</string>
-                                </property>
-                            </widget>
-                            <widget class="QLineEdit">
-                                <property name="name">
-                                    <cstring>eMax</cstring>
-                                </property>
-                                <property name="sizePolicy">
-                                    <sizepolicy>
-                                        <hsizetype>7</hsizetype>
-                                        <vsizetype>0</vsizetype>
-                                        <horstretch>2</horstretch>
-                                        <verstretch>0</verstretch>
-                                    </sizepolicy>
-                                </property>
-                            </widget>
-                            <widget class="QLabel">
-                                <property name="name">
-                                    <cstring>PrLabel</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Prefix:</string>
-                                </property>
-                            </widget>
-                            <widget class="QLineEdit">
-                                <property name="name">
-                                    <cstring>ePrefix</cstring>
-                                </property>
-                                <property name="sizePolicy">
-                                    <sizepolicy>
-                                        <hsizetype>7</hsizetype>
-                                        <vsizetype>0</vsizetype>
-                                        <horstretch>1</horstretch>
-                                        <verstretch>0</verstretch>
-                                    </sizepolicy>
-                                </property>
-                            </widget>
-                            <widget class="QLabel">
-                                <property name="name">
-                                    <cstring>SfLabel</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>Suffix:</string>
-                                </property>
-                            </widget>
-                            <widget class="QLineEdit">
-                                <property name="name">
-                                    <cstring>eSuffix</cstring>
-                                </property>
-                                <property name="sizePolicy">
-                                    <sizepolicy>
-                                        <hsizetype>7</hsizetype>
-                                        <vsizetype>0</vsizetype>
-                                        <horstretch>1</horstretch>
-                                        <verstretch>0</verstretch>
-                                    </sizepolicy>
-                                </property>
-                            </widget>
-                        </hbox>
-                    </widget>
-                    <widget class="QGroupBox" row="10" column="0" rowspan="1" colspan="5">
+                    <widget class="QGroupBox" row="8" column="0" rowspan="1" colspan="4">
                         <property name="name">
                             <cstring>PropBox</cstring>
                         </property>
@@ -485,7 +315,7 @@
                             </spacer>
                         </hbox>
                     </widget>
-                    <widget class="QLayoutWidget" row="9" column="2" rowspan="1" colspan="3">
+                    <widget class="QLayoutWidget" row="7" column="1" rowspan="1" colspan="3">
                         <property name="name">
                             <cstring>layout19</cstring>
                         </property>
@@ -536,18 +366,12 @@
                             </widget>
                         </hbox>
                     </widget>
-                    <widget class="QGroupBox" row="5" column="0" rowspan="1" colspan="5">
+                    <widget class="QGroupBox" row="4" column="0" rowspan="1" colspan="4">
                         <property name="name">
-                            <cstring>DateMask</cstring>
+                            <cstring>NumeratorGroupBox</cstring>
                         </property>
                         <property name="title">
-                            <string>Use Date with Mask</string>
-                        </property>
-                        <property name="checkable">
-                            <bool>true</bool>
-                        </property>
-                        <property name="checked">
-                            <bool>true</bool>
+                            <string>Numeranor</string>
                         </property>
                         <grid>
                             <property name="name">
@@ -559,93 +383,256 @@
                             <property name="spacing">
                                 <number>3</number>
                             </property>
+                            <widget class="QLabel" row="2" column="0">
+                                <property name="name">
+                                    <cstring>exLabel</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>&lt;u&gt;&lt;i&gt;Example&lt;/i&gt;:&lt;/u&gt;</string>
+                                </property>
+                            </widget>
                             <widget class="QLabel" row="0" column="0">
                                 <property name="name">
-                                    <cstring>textLabel1_3</cstring>
+                                    <cstring>Num_Label</cstring>
                                 </property>
                                 <property name="text">
-                                    <string>Date format</string>
+                                    <string>Numerator</string>
                                 </property>
                             </widget>
-                            <widget class="AComboBox" row="0" column="1">
-                                <item>
-                                    <property name="text">
-                                        <string>yyyyMMdd</string>
-                                    </property>
-                                </item>
-                                <item>
-                                    <property name="text">
-                                        <string>yyMMdd</string>
-                                    </property>
-                                </item>
-                                <item>
-                                    <property name="text">
-                                        <string>dd MMMM yyyy</string>
-                                    </property>
-                                </item>
+                            <widget class="QCheckBox" row="1" column="0">
                                 <property name="name">
-                                    <cstring>aDFormatBox</cstring>
-                                </property>
-                                <property name="sizePolicy">
-                                    <sizepolicy>
-                                        <hsizetype>1</hsizetype>
-                                        <vsizetype>0</vsizetype>
-                                        <horstretch>2</horstretch>
-                                        <verstretch>0</verstretch>
-                                    </sizepolicy>
-                                </property>
-                            </widget>
-                            <widget class="QLabel" row="0" column="2">
-                                <property name="name">
-                                    <cstring>textLabel2</cstring>
+                                    <cstring>DateFormat</cstring>
                                 </property>
                                 <property name="text">
-                                    <string>or</string>
+                                    <string>and date</string>
                                 </property>
                             </widget>
-                            <spacer row="0" column="5">
+                            <widget class="QLayoutWidget" row="0" column="1">
                                 <property name="name">
-                                    <cstring>spacer21</cstring>
-                                </property>
-                                <property name="orientation">
-                                    <enum>Horizontal</enum>
-                                </property>
-                                <property name="sizeType">
-                                    <enum>Expanding</enum>
-                                </property>
-                                <property name="sizeHint">
-                                    <size>
-                                        <width>20</width>
-                                        <height>16</height>
-                                    </size>
-                                </property>
-                            </spacer>
-                            <widget class="QLineEdit" row="0" column="4">
-                                <property name="name">
-                                    <cstring>eOwnFormat</cstring>
+                                    <cstring>layout19</cstring>
                                 </property>
                                 <property name="sizePolicy">
                                     <sizepolicy>
                                         <hsizetype>7</hsizetype>
                                         <vsizetype>0</vsizetype>
-                                        <horstretch>1</horstretch>
+                                        <horstretch>0</horstretch>
                                         <verstretch>0</verstretch>
                                     </sizepolicy>
                                 </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>MinLabel</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Min:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>eMin</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>7</hsizetype>
+                                                <vsizetype>0</vsizetype>
+                                                <horstretch>2</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>MaxLabel</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Max:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>eMax</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>7</hsizetype>
+                                                <vsizetype>0</vsizetype>
+                                                <horstretch>2</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>PrLabel</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Prefix:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>ePrefix</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>7</hsizetype>
+                                                <vsizetype>0</vsizetype>
+                                                <horstretch>1</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>SfLabel</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Suffix:</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>eSuffix</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>7</hsizetype>
+                                                <vsizetype>0</vsizetype>
+                                                <horstretch>1</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                    </widget>
+                                </hbox>
                             </widget>
-                            <widget class="QCheckBox" row="0" column="3">
+                            <widget class="QLayoutWidget" row="2" column="1">
                                 <property name="name">
-                                    <cstring>useOwnFofmat</cstring>
+                                    <cstring>layout27</cstring>
                                 </property>
-                                <property name="text">
-                                    <string>use own format</string>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <spacer>
+                                        <property name="name">
+                                            <cstring>spacer20</cstring>
+                                        </property>
+                                        <property name="orientation">
+                                            <enum>Horizontal</enum>
+                                        </property>
+                                        <property name="sizeType">
+                                            <enum>Expanding</enum>
+                                        </property>
+                                        <property name="sizeHint">
+                                            <size>
+                                                <width>144</width>
+                                                <height>16</height>
+                                            </size>
+                                        </property>
+                                    </spacer>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>eXample</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>___</string>
+                                        </property>
+                                    </widget>
+                                    <spacer>
+                                        <property name="name">
+                                            <cstring>spacer19</cstring>
+                                        </property>
+                                        <property name="orientation">
+                                            <enum>Horizontal</enum>
+                                        </property>
+                                        <property name="sizeType">
+                                            <enum>Expanding</enum>
+                                        </property>
+                                        <property name="sizeHint">
+                                            <size>
+                                                <width>135</width>
+                                                <height>16</height>
+                                            </size>
+                                        </property>
+                                    </spacer>
+                                </hbox>
+                            </widget>
+                            <widget class="QLayoutWidget" row="1" column="1">
+                                <property name="name">
+                                    <cstring>layout9</cstring>
                                 </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="AComboBox">
+                                        <item>
+                                            <property name="text">
+                                                <string>yyyyMMdd</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>yyMMdd</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>dd MMMM yyyy</string>
+                                            </property>
+                                        </item>
+                                        <property name="name">
+                                            <cstring>aDFormatBox</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>1</hsizetype>
+                                                <vsizetype>0</vsizetype>
+                                                <horstretch>2</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel2</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>or</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox">
+                                        <property name="name">
+                                            <cstring>useOwnFofmat</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>use own format</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>eOwnFormat</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>7</hsizetype>
+                                                <vsizetype>0</vsizetype>
+                                                <horstretch>1</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                    </widget>
+                                </hbox>
                             </widget>
                         </grid>
                     </widget>
-                    <widget class="QLayoutWidget" row="3" column="2" rowspan="1" colspan="3">
+                    <widget class="QLayoutWidget" row="3" column="1" rowspan="1" colspan="3">
                         <property name="name">
-                            <cstring>layout6</cstring>
+                            <cstring>layout7</cstring>
                         </property>
                         <hbox>
                             <property name="name">
@@ -733,6 +720,14 @@
                                     <bool>true</bool>
                                 </property>
                             </widget>
+                            <widget class="QCheckBox">
+                                <property name="name">
+                                    <cstring>efNumerator</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Num</string>
+                                </property>
+                            </widget>
                             <spacer>
                                 <property name="name">
                                     <cstring>spacer7</cstring>
@@ -745,31 +740,14 @@
                                 </property>
                                 <property name="sizeHint">
                                     <size>
-                                        <width>15</width>
+                                        <width>45</width>
                                         <height>20</height>
                                     </size>
                                 </property>
                             </spacer>
                         </hbox>
                     </widget>
-                    <spacer row="8" column="3">
-                        <property name="name">
-                            <cstring>spacer13</cstring>
-                        </property>
-                        <property name="orientation">
-                            <enum>Vertical</enum>
-                        </property>
-                        <property name="sizeType">
-                            <enum>Expanding</enum>
-                        </property>
-                        <property name="sizeHint">
-                            <size>
-                                <width>16</width>
-                                <height>40</height>
-                            </size>
-                        </property>
-                    </spacer>
-                    <widget class="QGroupBox" row="7" column="0" rowspan="1" colspan="5">
+                    <widget class="QGroupBox" row="5" column="0" rowspan="1" colspan="4">
                         <property name="name">
                             <cstring>ValidateGroupBox</cstring>
                         </property>
@@ -783,47 +761,65 @@
                             <property name="name">
                                 <cstring>unnamed</cstring>
                             </property>
-                            <widget class="QLayoutWidget" row="0" column="0">
+                            <widget class="QLabel" row="2" column="0" rowspan="1" colspan="3">
                                 <property name="name">
-                                    <cstring>layout8</cstring>
+                                    <cstring>textLabel3</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>&lt;u&gt;Example:&lt;/u&gt; RegExp &lt;b&gt;&lt;i&gt;[A-C]\d{5}[W-Z]&lt;/b&gt;&lt;/i&gt; for string &lt;i&gt;&lt;b&gt;A12345Z&lt;/b&gt;&lt;/i&gt;</string>
+                                </property>
+                                <property name="textFormat">
+                                    <enum>AutoText</enum>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="0" column="0">
+                                <property name="name">
+                                    <cstring>textLabel1_5</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>RegExp</string>
+                                </property>
+                            </widget>
+                            <widget class="QCheckBox" row="0" column="2">
+                                <property name="name">
+                                    <cstring>two_state</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Intermediate == Invalid</string>
+                                </property>
+                            </widget>
+                            <widget class="QLabel" row="1" column="0">
+                                <property name="name">
+                                    <cstring>textLabel1_4</cstring>
+                                </property>
+                                <property name="text">
+                                    <string>Input Mask</string>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit" row="0" column="1">
+                                <property name="name">
+                                    <cstring>VdRegEx</cstring>
+                                </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>[ABCD], will match an A or a B or a C or a D.</string>
+                                </property>
+                            </widget>
+                            <widget class="QLineEdit" row="1" column="1">
+                                <property name="name">
+                                    <cstring>inputMask</cstring>
+                                </property>
+                                <property name="toolTip" stdset="0">
+                                    <string>[ABCD], will match an A or a B or a C or a D.</string>
+                                </property>
+                            </widget>
+                            <widget class="QLayoutWidget" row="1" column="2">
+                                <property name="name">
+                                    <cstring>layout7</cstring>
                                 </property>
                                 <hbox>
                                     <property name="name">
                                         <cstring>unnamed</cstring>
                                     </property>
-                                    <widget class="QLabel">
-                                        <property name="name">
-                                            <cstring>textLabel1_5</cstring>
-                                        </property>
-                                        <property name="text">
-                                            <string>RegExp</string>
-                                        </property>
-                                    </widget>
-                                    <widget class="QLineEdit">
-                                        <property name="name">
-                                            <cstring>VdRegEx</cstring>
-                                        </property>
-                                        <property name="toolTip" stdset="0">
-                                            <string>[ABCD], will match an A or a B or a C or a D.</string>
-                                        </property>
-                                    </widget>
-                                    <spacer>
-                                        <property name="name">
-                                            <cstring>spacer7_2</cstring>
-                                        </property>
-                                        <property name="orientation">
-                                            <enum>Horizontal</enum>
-                                        </property>
-                                        <property name="sizeType">
-                                            <enum>Expanding</enum>
-                                        </property>
-                                        <property name="sizeHint">
-                                            <size>
-                                                <width>20</width>
-                                                <height>21</height>
-                                            </size>
-                                        </property>
-                                    </spacer>
                                     <widget class="QLabel">
                                         <property name="name">
                                             <cstring>textLabel2_3</cstring>
@@ -839,19 +835,25 @@
                                     </widget>
                                 </hbox>
                             </widget>
-                            <widget class="QLabel" row="1" column="0">
-                                <property name="name">
-                                    <cstring>textLabel3</cstring>
-                                </property>
-                                <property name="text">
-                                    <string>&lt;u&gt;Example:&lt;/u&gt; RegExp &lt;b&gt;&lt;i&gt;[A-C]\d{5}[W-Z]&lt;/b&gt;&lt;/i&gt; for string &lt;i&gt;&lt;b&gt;A12345Z&lt;/b&gt;&lt;/i&gt;</string>
-                                </property>
-                                <property name="textFormat">
-                                    <enum>AutoText</enum>
-                                </property>
-                            </widget>
                         </grid>
                     </widget>
+                    <spacer row="6" column="2">
+                        <property name="name">
+                            <cstring>spacer13</cstring>
+                        </property>
+                        <property name="orientation">
+                            <enum>Vertical</enum>
+                        </property>
+                        <property name="sizeType">
+                            <enum>Expanding</enum>
+                        </property>
+                        <property name="sizeHint">
+                            <size>
+                                <width>16</width>
+                                <height>80</height>
+                            </size>
+                        </property>
+                    </spacer>
                 </grid>
             </widget>
             <widget class="QWidget">
@@ -1000,12 +1002,6 @@
         <slot>setExample()</slot>
     </connection>
     <connection>
-        <sender>DateMask</sender>
-        <signal>toggled(bool)</signal>
-        <receiver>dEditField</receiver>
-        <slot>setExample()</slot>
-    </connection>
-    <connection>
         <sender>ePrefix</sender>
         <signal>textChanged(const QString&amp;)</signal>
         <receiver>dEditField</receiver>
@@ -1054,16 +1050,28 @@
         <slot>efVd_stateChanged(int)</slot>
     </connection>
     <connection>
-        <sender>VdRegEx</sender>
-        <signal>textChanged(const QString&amp;)</signal>
-        <receiver>dEditField</receiver>
-        <slot>VdRegEx_textChanged(const QString&amp;)</slot>
-    </connection>
-    <connection>
         <sender>Testline</sender>
         <signal>textChanged(const QString&amp;)</signal>
         <receiver>dEditField</receiver>
         <slot>Testline_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>inputMask</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>dEditField</receiver>
+        <slot>inputMask_textChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
+        <sender>efNumerator</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>dEditField</receiver>
+        <slot>efNumerator_stateChanged(int)</slot>
+    </connection>
+    <connection>
+        <sender>DateFormat</sender>
+        <signal>stateChanged(int)</signal>
+        <receiver>dEditField</receiver>
+        <slot>DateFormat_stateChanged(int)</slot>
     </connection>
 </connections>
 <includes>
@@ -1091,8 +1099,10 @@
     <slot>aUsersList_clicked( QListViewItem * )</slot>
     <slot>setExample()</slot>
     <slot>efVd_stateChanged( int )</slot>
-    <slot>VdRegEx_textChanged( const QString &amp; )</slot>
     <slot>Testline_textChanged( const QString &amp; )</slot>
+    <slot>inputMask_textChanged( const QString &amp; )</slot>
+    <slot>efNumerator_stateChanged( int )</slot>
+    <slot>DateFormat_stateChanged( int )</slot>
 </slots>
 <functions>
     <function access="private">destroy()</function>

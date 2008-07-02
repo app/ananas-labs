@@ -380,7 +380,11 @@ wField::Validate(const QString &test)
 			emit inputInvalid();
 			break;
 		case QValidator::Intermediate:
-			pal.setColor(QColorGroup::Highlight, Qt::yellow);
+			if (two_state == 0) {
+				pal.setColor(QColorGroup::Highlight, Qt::yellow);
+			}else{
+				pal.setColor(QColorGroup::Highlight, Qt::red);
+			}
 			lineEdit->setPalette(pal);
 			setValue( test );
 			break;
@@ -401,11 +405,26 @@ wField::Validate(const QString &test)
  * \param QString Validator - \en RegExp for QRegExpValidator  \_en \ru значение RegExp для установки QRegExpValidator\_ru
  */
 void
-wField::SetValidator(QString Validator)
+wField::SetValidator(QString Validator, int twostate)
 {
+	two_state = twostate;
 	QRegExp rx( Validator );
 	v = new QRegExpValidator( rx, 0 );
 	connect( lineEdit, SIGNAL( textChanged( const QString & ) ), this, SLOT( Validate( const QString & ) ) );
+}
+
+/*!
+ * \en	Set input Mask to LineEdit.
+ * \_en
+ * \ru	Устанавливает маску ввода в LineEdit.
+ * \_ru
+ * \param QString inputMas - \en inputMas for  LineEdit. \_en
+ * \ru inputMas для LineEdit.\_ru
+ */
+void
+wField::SetMask(QString inputMask)
+{
+	if (inputMask != "") lineEdit->setInputMask(inputMask);
 }
 
 /*!

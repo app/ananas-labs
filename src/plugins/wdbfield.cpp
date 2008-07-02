@@ -326,7 +326,11 @@ wDBField::initObject(aDatabase *adb )
   }
   if ( md->attr(o,mda_vd) == "1" && md->attr(o,mda_validator) != "")
   {
-	  wField::SetValidator( md->attr(o,mda_validator) );
+	  wField::SetValidator( md->attr(o,mda_validator), md->attr(o,mda_twostate).toInt() );
+  }
+  if (md->attr(o,mda_inputmask) != "" )
+  {
+	  wField::SetMask(md->attr(o,mda_inputmask));
   }
 
 
