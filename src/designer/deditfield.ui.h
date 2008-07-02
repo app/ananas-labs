@@ -344,6 +344,7 @@ void dEditField::typeSelect( int idx )
 		efVd->show();
 		ValidateGroupBox->show();
 		NumeratorGroupBox->hide();
+		efNumerator->hide();
 		saldoTextLabel->hide();
 	}
 	else
@@ -359,6 +360,7 @@ void dEditField::typeSelect( int idx )
 			tSepTriads->hide();
 			lzcheckBox->hide();
 			tNotBound->show();
+			efNumerator->show();
 			NumeratorGroupBox->show();
 			efVd->show();
 			ValidateGroupBox->show();
@@ -383,6 +385,7 @@ void dEditField::typeSelect( int idx )
 			    tNotBound->hide();
 			    tSepTriads->hide();
 			    efVd->hide();
+			    efNumerator->->hide();
 			    ValidateGroupBox->hide();
 			    NumeratorGroupBox->hide();
 			    efSum->setChecked(false);
@@ -401,6 +404,7 @@ void dEditField::typeSelect( int idx )
 				tNotBound->hide();
 				tSepTriads->hide();
 				efVd->hide();
+				efNumerator->->hide();
 				NumeratorGroupBox->hide();
 				ValidateGroupBox->hide();
 				efSum->setChecked(false);
@@ -445,7 +449,7 @@ void dEditField::setExample()
 {
      QDate date = QDate::currentDate();
      QString curdate, dateformat, numerator;
-     
+
      if (DateFormat->isChecked() )
      {
 	 if (useOwnFofmat->isChecked() )
