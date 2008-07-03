@@ -214,6 +214,11 @@ Metadata attributes.
 #define mda_twostate		"twostate"
 #define mda_validator		"validator"
 #define mda_inputmask		"inputmask"
+#define mda_numerator		"numerator"
+#define mda_numpref		"numpref"
+#define mda_numsuff		"numsuff"
+#define mda_numdate		"numdate"
+#define mda_lz			"lz"
 
 
 /*!
