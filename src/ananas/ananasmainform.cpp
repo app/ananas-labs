@@ -167,11 +167,6 @@ MainForm::initMenuBar()
 	windowsMenu = new QPopupMenu();
 	connect( windowsMenu, SIGNAL( aboutToShow() ),
 	     this, SLOT( windowsMenuAboutToShow() ) );
-	systemMenu = new QPopupMenu();
-	systemMenu->insertItem( tr( "Login As..." ), this, SLOT( loginAs() ));
-	systemMenu->insertItem( "&Language Selector", lang );
-	systemMenu->insertSeparator();
-	systemMenu->insertItem(rcIcon("ananas-32x32.png"), tr( "Exit" ), qApp, SLOT( closeAllWindows() ), CTRL+Key_Q);
 
 	m->insertItem(rcIcon("ananas-32x32.png"), tr( "About" ), this, SLOT( helpAbout() ), Key_F11);
 	m->insertItem(rcIcon("calc.png"), tr( "Calculator" ), this, SLOT( miniCalc() ), Key_F10);
@@ -179,15 +174,8 @@ MainForm::initMenuBar()
         menubar = new AMenuBar( md, this, "menubar");
 	InsertMainMenu( tr("&Help"), m );
 	InsertMainMenu( tr("&Windows"), windowsMenu );
-	menuBar()->insertItem(tr("&System"),systemMenu,0,0);
 	menuBar()->show();
 
-}
-
-void
-MainForm::loginAs()
-{
-	statusBar()->message( "Try again later...", 3000 );
 }
 
 void
@@ -442,63 +430,6 @@ void MainForm::windowsMenuActivated( int id )
     w->setFocus();
 }
 
-/*
- *  Language selector
- */
-void MainForm::setLang( int lang_id )
-{
-	QString langdir;
-	QString a_lang;
-	extern QTranslator tr_app;
-	extern QTranslator tr_lib;
-	extern QTranslator tr_plugins;
-	qApp->removeTranslator( &tr_app );
-	qApp->removeTranslator( &tr_lib );
-	qApp->removeTranslator( &tr_plugins );
-
-#ifdef _Windows
-	langdir = qApp->applicationDirPath()+"/translations/";
-#else
-	//langdir = QString("/usr/share/ananas/translations/");
-	langdir = QString(br_find_data_dir("/usr/share")) + QString("/ananas/translations/");
-#endif
-	if (lang_id == 0)
-	{
-		lang->setItemChecked( 0, true );
-		lang->setItemChecked( 1, false );
-		lang->setItemChecked( 2, false );
-		a_lang = "en";
-		statusLabel3->setText(QString("%1\n").arg(QTextCodec::locale()));
-	}
-	if (lang_id == 1)
-	{
-		lang->setItemChecked( 0, false );
-		lang->setItemChecked( 1, true );
-		lang->setItemChecked( 2, false );
-		a_lang = "ru";
-	}
-	if (lang_id == 2)
-	{
-		lang->setItemChecked( 0, false );
-		lang->setItemChecked( 1, false );
-		lang->setItemChecked( 2, true );
-		a_lang = "ua";
-	}
-
-	if (!tr_app.load("ananas-engine-"+a_lang.lower()+".qm", langdir)) printf("No tr_app.load\n");
-
-	if (!tr_lib.load("ananas-lib-"+a_lang.lower()+".qm", langdir)) printf("No tr_lib.load\n");
-
-	if (!tr_plugins.load("ananas-plugins-"+a_lang.lower()+".qm", langdir)) printf("No tr_plug.load\n");
-
-	qApp->installTranslator( &tr_app );
-	qApp->installTranslator( &tr_lib );
-	qApp->installTranslator( &tr_plugins );
-
-	languageChange();
-	statusLabel3->setText(a_lang.upper());
-	//statusBar()->message( QString(tr("Ananas"))+ QString(tr(" : %1")).arg(lang->text(lang_id)), 2000 );
-}
 
 /*
  *  Open a Calculator Widget
@@ -510,13 +441,3 @@ MainForm::miniCalc()
 	engine.project.interpreter()->evaluate(code);
 }
 
-/*
- *  Open a Calendar
- */
-void
-MainForm::ShowCalendar()
-{
-	PopupCalendar *calendar = new PopupCalendar(QDate::currentDate(),
-		QPoint(ws->width() / 2, ws->height() / 2 ), ws, "");
-	calendar->show();
-}

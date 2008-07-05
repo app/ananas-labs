@@ -10,7 +10,6 @@ SOURCES	+= acfg.cpp \
 	acfgrc.cpp \
 	adatabase.cpp \
 	adatafield.cpp \
-	aminicalc.cpp \
 	asqlfield.cpp \
 	asqltable.cpp \
 	messageswindow.cpp \
@@ -56,7 +55,6 @@ HEADERS	+= ananasglobal.h \
 	acfgrc.h \
 	adatabase.h \
 	adatafield.h \
-	aminicalc.h \
 	asqlfield.h \
 	asqltable.h \
 	messageswindow.h \
