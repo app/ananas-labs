@@ -1,5 +1,19 @@
 /****************************************************************************
-** $Id: acalendar.h,v 1.37 2008/06/09 11:44:27 dkr Exp $
+** $Id: acalendar.h,v 1.2 2008/07/05 12:43:48 app Exp $
+**
+** Copyright (C) 2008 Dmitry Kruglikov (dkr)
+** Copyright (C) 2008 Ananas Project 
+**
+** This file is part of the Ananas 
+** automation accounting system.
+**
+** This file may be distributed and/or modified under the terms of the
+** GNU General Public License version 2 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 **
 **
 **********************************************************************/
