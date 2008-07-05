@@ -50,12 +50,12 @@
  * \ru
  * 	\brief Универсальный Плагин -- виджет, предназначен для редактирования атрибутов бизнес объектов Ананаса.
  * 	Наследует wField.
- *
+ * 	
  * 	Основным полезным свойством этого визуального класса является возможность его привязки к атрибуту persistence бизнес объекта
  * 	Ананаса. Как только привязка задана - логика заполнения объекта значением соответствующего атрибута бизнес объекта, логика
- * 	сохранения заданного пользователем значения в соответствующем атрибуте бизнес объекта выполняется автоматически runtime
+ * 	сохранения заданного пользователем значения в соответствующем атрибуте бизнес объекта выполняется автоматически runtime 
  * 	подсистемой Ананаса. То есть мы используем прием, который имеет общепринятое название data bindings.
- *
+ * 	
  * \_ru
  */
 class QT_WIDGET_PLUGIN_EXPORT wDBField : public wField
@@ -67,7 +67,7 @@ class QT_WIDGET_PLUGIN_EXPORT wDBField : public wField
 
 friend class addfdialog;
 
-
+	
 public:
 
 	wDBField( QWidget *parent, WFlags fl );
@@ -81,7 +81,7 @@ public:
 	virtual QString	getFieldName()	const 	{ return FieldName;	};
 	void		setOpenEditor(bool b)  	{ if(b) openEditor();	};
 	void		setFieldName(QString n);
-protected:
+protected:	
 	QStringList	getFields();
 	void		init();
 	QValueList<Q_ULLONG> getBindList();
