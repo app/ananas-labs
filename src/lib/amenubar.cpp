@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: amenubar.cpp,v 1.5 2004/07/01 11:30:55 pashik Exp $
+** $Id: amenubar.cpp,v 1.6 2008/07/05 12:19:39 app Exp $
 **
 ** Code file of the Ananas Menu bar of Ananas
 ** Designer and Engine applications

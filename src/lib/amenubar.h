@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: amenubar.h,v 1.4 2004/09/01 16:55:58 leader Exp $
+** $Id: amenubar.h,v 1.5 2008/07/05 12:19:39 app Exp $
 **
 ** Header file of the Ananas Menu bar of Ananas
 ** Designer and Engine applications

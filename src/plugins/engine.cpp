@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: engine.cpp,v 1.41 2008/05/19 06:45:31 app Exp $
+** $Id: engine.cpp,v 1.42 2008/07/05 12:19:40 app Exp $
 **
 ** Code file of the Ananas Engine of Ananas
 ** Engine applications

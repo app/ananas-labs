@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: deditfield.ui.h,v 1.29 2006/05/31 06:44:22 gr Exp $
+** $Id: deditfield.ui.h,v 1.31 2008/07/05 12:19:39 app Exp $
 **
 ** Code file of the Edit Field window
 ** of Ananas Designer applications

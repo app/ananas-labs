@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: wfield.h,v 1.37 2008/06/09 11:44:27 app Exp $
+** $Id: wfield.h,v 1.38 2008/07/05 12:19:40 app Exp $
 **
 ** Header file of the field plugin of Ananas
 ** Designer and Engine applications

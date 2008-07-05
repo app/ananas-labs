@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: mdtree.cpp,v 1.54 2008/06/09 11:47:59 app Exp $
+** $Id: mdtree.cpp,v 1.55 2008/07/05 12:19:39 app Exp $
 **
 ** Code file of the Metadata Tree of Ananas Designer applications
 **

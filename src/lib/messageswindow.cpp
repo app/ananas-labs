@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: messageswindow.cpp,v 1.10 2006/09/26 08:56:42 gr Exp $
+** $Id: messageswindow.cpp,v 1.11 2008/07/05 12:19:39 app Exp $
 **
 ** Header file of the Mesages window of Ananas
 ** Designer and Engine applications

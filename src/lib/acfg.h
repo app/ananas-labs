@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: acfg.h,v 1.121 2008/01/22 12:08:22 app Exp $
+** $Id: acfg.h,v 1.122 2008/07/05 12:19:39 app Exp $
 **
 ** Header file of the Ananas configuration objects of Ananas
 ** Designer and Engine applications

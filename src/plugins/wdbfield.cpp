@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: wdbfield.cpp,v 1.47 2007/12/21 11:34:03 app Exp $
+** $Id: wdbfield.cpp,v 1.48 2008/07/05 12:19:40 app Exp $
 **
 ** Code file of the field plugin of Ananas
 ** Designer and Engine applications

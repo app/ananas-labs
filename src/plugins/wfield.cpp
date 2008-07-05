@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: wfield.cpp,v 1.73 2008/06/09 11:45:27 app Exp $
+** $Id: wfield.cpp,v 1.74 2008/07/05 12:19:40 app Exp $
 **
 ** Code file of the field plugin of Ananas
 ** Designer and Engine applications
