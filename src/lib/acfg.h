@@ -210,11 +210,20 @@ Metadata attributes.
 #define mda_format		"format"
 #define mda_stdf		"stdf"
 #define mda_rights		"rights"
+#define mda_vd			"vd"
+#define mda_twostate		"twostate"
+#define mda_validator		"validator"
+#define mda_inputmask		"inputmask"
+#define mda_numerator		"numerator"
+#define mda_numpref		"numpref"
+#define mda_numsuff		"numsuff"
+#define mda_numdate		"numdate"
+#define mda_lz			"lz"
+
 
 /*!
 Actions types
 */
-
 #define md_action_new		0
 #define md_action_edit		1
 #define md_action_view		2

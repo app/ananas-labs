@@ -36,10 +36,12 @@
 #include <qapplication.h>
 #include <qaction.h>
 #include <qdir.h>
-
+#include <qtextcodec.h>
+#include <qtimer.h>
 #include "ananasmainform.h"
 
 #include "ananas.h"
+#include "binreloc.h"
 
 MainForm *mainform=NULL;
 QWorkspace *mainformws=NULL;
@@ -64,6 +66,39 @@ MainForm::MainForm( QWidget* parent, const char* name, WFlags fl )
     ws->setScrollBarsEnabled( TRUE );
     setCentralWidget( vb );
     statusBar()->setName("statusbar");
+    statusBar()->setSizeGripEnabled( FALSE );
+    statusLabel1 = new QLabel(" Status ", this);
+    statusLabel1->setMinimumSize(statusLabel1->sizeHint());
+    statusLabel1->setText(" ");
+    statusLabel2 = new QLabel(tr(" TA: 34.45.3214 "),this);
+    statusLabel2->setAlignment(AlignHCenter);
+    statusLabel2->setMinimumSize(statusLabel2->sizeHint());
+    statusLabel2->setText(" ");
+    statusLabel3 = new QLabel(tr(" BI: 35.65.3214 "), this);
+    statusLabel3->setAlignment(AlignHCenter);
+    statusLabel3->setMinimumSize(statusLabel3->sizeHint());
+    statusLabel3->setText(" ");
+    //statusLabel3->clear();
+    statusLabel4 = new QLabel(tr("00"), this);
+    statusLabel4->setMinimumSize(statusLabel4->sizeHint());
+    statusLabel4->setText("0");
+    statusLabel4->setAlignment(AlignHCenter);
+    statpb = new QPushButton( " ", this );
+    statpb->setToggleButton ( true );
+    statpb->setDefault ( false );
+    statpb->setMaximumWidth(22);
+    statpb->setMaximumHeight(22);
+
+    connect(statpb , SIGNAL(toggled(bool)), this, SLOT(statpbToggled()) );
+    statusBar()->addWidget(statpb, 0);
+    statpb->hide();
+    statusBar()->addWidget(statusLabel1, 1);
+    statusBar()->addWidget(statusLabel2);
+    statusBar()->addWidget(statusLabel3);
+    statusBar()->addWidget(statusLabel4, 0, true);
+
+    statpb->setFocusPolicy(QWidget::NoFocus);
+
     if ( !name ) setName( "mainwindow" );
     engine_settings.insertSearchPath( QSettings::Unix, QString(QDir::homeDirPath())+QString("/.ananas"));
     engine_settings.insertSearchPath( QSettings::Windows, "/ananasgroup/ananas" );
@@ -88,9 +123,11 @@ MainForm::MainForm( QWidget* parent, const char* name, WFlags fl )
 bool
 MainForm::init()
 {
-    MessagesWindow *msgWindow = new MessagesWindow( this );// , WDestructiveClose );
+    msgWindow = new MessagesWindow( this );// , WDestructiveClose );
     moveDockWindow( msgWindow, DockBottom );
     setMessageHandler( true );
+    msgWindow->setCloseMode(0);
+    msgWindow->setMovingEnabled(false);
     msgWindow->hide();
     if ( !initEngine() ) return false;
     connect( menubar, SIGNAL(activated(int)), &engine, SLOT(on_MenuBar(int)) );
@@ -111,6 +148,9 @@ MainForm::initEngine()
     engine.ws = ws;
     engine.wl = wl;
     connect( &engine, SIGNAL( statusMessage( const QString & ) ), this, SLOT( statusMessage( const QString & ) ) );
+    connect( &engine, SIGNAL( statusMessage( const QString &, const int & ) ), this, SLOT( statusMessage( const QString & , const int & ) ) );
+    connect( &engine, SIGNAL(statusIcon( const int &) ), this, SLOT( statusIcon( const int & )) );
+
     md = engine.md;
     if ( !md ) return false;
     initMenuBar();
@@ -125,15 +165,29 @@ MainForm::initMenuBar()
 	QPopupMenu *m;
 	m = new QPopupMenu();
 	windowsMenu = new QPopupMenu();
-    	connect( windowsMenu, SIGNAL( aboutToShow() ),
+	connect( windowsMenu, SIGNAL( aboutToShow() ),
 	     this, SLOT( windowsMenuAboutToShow() ) );
+	systemMenu = new QPopupMenu();
+	systemMenu->insertItem( tr( "Login As..." ), this, SLOT( loginAs() ));
+	systemMenu->insertItem( "&Language Selector", lang );
+	systemMenu->insertSeparator();
+	systemMenu->insertItem(rcIcon("ananas-32x32.png"), tr( "Exit" ), qApp, SLOT( closeAllWindows() ), CTRL+Key_Q);
+
 	m->insertItem(rcIcon("ananas-32x32.png"), tr( "About" ), this, SLOT( helpAbout() ), Key_F11);
 	m->insertItem(rcIcon("calc.png"), tr( "Calculator" ), this, SLOT( miniCalc() ), Key_F10);
 	//windowsMenu->insertItem(rcIcon("ananas-32x32.png"), tr( "Windows" ), this, SLOT( windowsMenuAboutToShow() ));
         menubar = new AMenuBar( md, this, "menubar");
 	InsertMainMenu( tr("&Help"), m );
-    	InsertMainMenu( tr("&Windows"), windowsMenu );
+	InsertMainMenu( tr("&Windows"), windowsMenu );
+	menuBar()->insertItem(tr("&System"),systemMenu,0,0);
 	menuBar()->show();
+
+}
+
+void
+MainForm::loginAs()
+{
+	statusBar()->message( "Try again later...", 3000 );
 }
 
 void
@@ -174,7 +228,33 @@ MainForm::helpAbout()
 
 void MainForm::InsertMainMenu(QString text, QObject *pop){
     menubar->insertItem(text, (QPopupMenu *) pop);
+}
 
+void
+MainForm::statusIcon( const int &status )
+{
+	statpb->show();
+	statpb->setOn(true);
+	switch ( status )
+	{
+		case 0:
+			statpb->setPixmap(rcIcon("msg_info.png"));
+			break;
+		case 1:
+			statpb->setPixmap(rcIcon("msg_warning.png"));
+			break;
+		case 2:
+			statpb->setPixmap(rcIcon("msg_error.png"));
+			break;
+		case 3:
+			statpb->setPixmap(rcIcon("msg_fatal.png"));
+			break;
+		default:
+			statpb->setPixmap(rcIcon("msg_fatal.png"));
+			break;
+	}
+	QTimer::singleShot( 3000, this, SLOT(hideMsgWindow()) );
+	statusLabel4->setText(QString("%1").arg(statusLabel4->text().toInt() + 1));
 }
 
 
@@ -184,6 +264,7 @@ MainForm::Exit(int code)
 
 	qApp->exit(code);
 }
+
 void
 MainForm::close()
 {
@@ -199,9 +280,43 @@ MainForm::close()
 }
 
 void
+MainForm::statusMessage( const QString &msg, const int &pos )
+{
+	switch ( pos )
+	{
+		case 0:
+			statusBar()->message( msg, 3000);
+			break;
+		case 1:
+			statusLabel1->setText( msg );
+			break;
+		case 2:
+			statusLabel2->setText( msg );
+			break;
+		case 3:
+			statusLabel3->setText( msg );
+			break;
+		default:
+			statusBar()->message( msg, 3000 );
+			break;
+	}
+
+}
+
+
+void
 MainForm::statusMessage( const QString &msg )
 {
- 	statusBar()->message( msg );
+ 	//statusBar()->message( msg );
+	statusLabel1->setText( msg );
+}
+
+
+void
+MainForm::hideMsgWindow()
+{
+	msgWindow->hide();
+	statpb->setOn(false);
 }
 
 void
@@ -233,8 +348,25 @@ MainForm::~MainForm()
  */
 void MainForm::languageChange()
 {
-    setCaption(QString( tr("Ananas")+" "+ananas_libversion() )+": "+md->info( md_info_name ) );
-//    setCaption( tr( "Ananas VERSION" ) );
+    setCaption(md->info( md_info_name )+": "+QString( tr("Ananas")+" "+ananas_libversion()) );
+
+    int i;
+    for (i=0; i < menuBar()->count(); ++i)
+    {
+	menuBar()->changeItem(i, QString(tr(menuBar()->text(i))));
+    }
+    //menuBar()->changeItem(6, QString( tr("&Windows")));
+}
+
+void MainForm::statpbToggled()
+{
+	if (statpb->isOn() == true)
+	{
+		msgWindow->show();
+	}else{
+		//statusLabel4->setText( "0" );
+		msgWindow->hide();
+	}
 }
 
 void MainForm::windowsMenuAboutToShow()
@@ -267,6 +399,7 @@ void MainForm::windowsMenuAboutToShow()
 	++i;
     }while( i < count );
 }
+
 
 void MainForm::tileHorizontal()
 {
@@ -310,6 +443,64 @@ void MainForm::windowsMenuActivated( int id )
 }
 
 /*
+ *  Language selector
+ */
+void MainForm::setLang( int lang_id )
+{
+	QString langdir;
+	QString a_lang;
+	extern QTranslator tr_app;
+	extern QTranslator tr_lib;
+	extern QTranslator tr_plugins;
+	qApp->removeTranslator( &tr_app );
+	qApp->removeTranslator( &tr_lib );
+	qApp->removeTranslator( &tr_plugins );
+
+#ifdef _Windows
+	langdir = qApp->applicationDirPath()+"/translations/";
+#else
+	//langdir = QString("/usr/share/ananas/translations/");
+	langdir = QString(br_find_data_dir("/usr/share")) + QString("/ananas/translations/");
+#endif
+	if (lang_id == 0)
+	{
+		lang->setItemChecked( 0, true );
+		lang->setItemChecked( 1, false );
+		lang->setItemChecked( 2, false );
+		a_lang = "en";
+		statusLabel3->setText(QString("%1\n").arg(QTextCodec::locale()));
+	}
+	if (lang_id == 1)
+	{
+		lang->setItemChecked( 0, false );
+		lang->setItemChecked( 1, true );
+		lang->setItemChecked( 2, false );
+		a_lang = "ru";
+	}
+	if (lang_id == 2)
+	{
+		lang->setItemChecked( 0, false );
+		lang->setItemChecked( 1, false );
+		lang->setItemChecked( 2, true );
+		a_lang = "ua";
+	}
+
+	if (!tr_app.load("ananas-engine-"+a_lang.lower()+".qm", langdir)) printf("No tr_app.load\n");
+
+	if (!tr_lib.load("ananas-lib-"+a_lang.lower()+".qm", langdir)) printf("No tr_lib.load\n");
+
+	if (!tr_plugins.load("ananas-plugins-"+a_lang.lower()+".qm", langdir)) printf("No tr_plug.load\n");
+
+	qApp->installTranslator( &tr_app );
+	qApp->installTranslator( &tr_lib );
+	qApp->installTranslator( &tr_plugins );
+
+	languageChange();
+	statusLabel3->setText(a_lang.upper());
+	//statusBar()->message( QString(tr("Ananas"))+ QString(tr(" : %1")).arg(lang->text(lang_id)), 2000 );
+}
+
+/*
  *  Open a Calculator Widget
  */
 void
@@ -317,4 +508,15 @@ MainForm::miniCalc()
 {
 	const QString code = "var calc= new Calc(); calc.Show();";
 	engine.project.interpreter()->evaluate(code);
+}
+
+/*
+ *  Open a Calendar
+ */
+void
+MainForm::ShowCalendar()
+{
+	PopupCalendar *calendar = new PopupCalendar(QDate::currentDate(),
+		QPoint(ws->width() / 2, ws->height() / 2 ), ws, "");
+	calendar->show();
 }

@@ -6,8 +6,6 @@ SOURCES	+= main.cpp \
 	ananasmainform.cpp 
 HEADERS	+= ananasmainform.h 
 
-
-
 #load(qsa)
 
 TRANSLATIONS = \

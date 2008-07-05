@@ -95,7 +95,7 @@ aObjectsFactory::aObjectsFactory( aEngine *e )
 
 //Register extensions classes
 	QStringList extlist = AExtensionFactory::keys();
-	for ( int i=0; i<extlist.count(); i++) 
+	for ( int i=0; i<extlist.count(); i++)
 	    registerClass(extlist[i],extlist[i]);
 }
 
@@ -104,7 +104,7 @@ aObjectsFactory::aObjectsFactory( aEngine *e )
 
 /*!
  *	\~english
- *	Creates script object. Mapping Script name to real name. 
+ *	Creates script object. Mapping Script name to real name.
  *	\~russian
  *	Создает объект. Отображает имена из скрипта в имена объектов библиотеки.
  *	\param className - \~english scripn object name \~russian имя объекта в скрипте \~
@@ -193,7 +193,7 @@ aObjectsFactory::create( const QString &className,
  *	Constructor.
  *\_en
  *\ru
- *	Конструктор. Создает новый объект с именем "sys". Доступ к функциям этого объекта из Ананас.Скрипта возможен примерно так: 
+ *	Конструктор. Создает новый объект с именем "sys". Доступ к функциям этого объекта из Ананас.Скрипта возможен примерно так:
  *	\code
  *	sys.Date(); // текущая дата
  *	sys.OpenForm("DocJournal.Системный журнал.Form.Список документов"); // открывает форму "Список Документов" журнала "Системный журнал"
@@ -209,7 +209,7 @@ aEngine::aEngine():QObject(0,"sys")
 
 
 /*!
- *\en 
+ *\en
  *	Destructor
  *\_en \ru
  *	Деструктор.
@@ -236,7 +236,7 @@ aEngine::init( const QString &rcfile )
 {
 //	QString mGlobal;
 	aCfgItem gobj, obj, obj0;
-	QString sysf = 
+	QString sysf =
 //	"function Message( t, msg ){ sys.Message( t, msg );}"
 //	"function StatusMessage( msg ){ sys.StatusMessage( msg );}"
 //	"function Date(){ return sys.Date();}"
@@ -417,9 +417,8 @@ void
 aEngine::Message(int n, const QString &msg)
 {
 	cfg_message(n, (const char *) msg.utf8());
+	emit statusIcon( n );
 }
-
-
 
 /*!
  *\en
@@ -435,7 +434,22 @@ aEngine::StatusMessage( const QString &msg )
         emit statusMessage( msg );
 }
 
-
+/*!
+ *\en
+ *	Outputs status messages in target label.
+ *\_en \ru
+ *	Вывод сообщений в строке состояния в целевую метку.
+ * 	pos модет принимать любые значения.
+ * 	Если метка не 1, 2 или 3, то сообщение выводится
+ * 	в StatusBar на 3 секунды.
+ *	\param msg - текст сообщения, \param pos - номер метки.
+ *\_ru
+ */
+void
+aEngine::StatusMessage( const QString &msg, const int &pos )
+{
+	emit statusMessage( msg, pos );
+}
 
 /*!
  *\en
@@ -489,7 +503,7 @@ aEngine::on_MenuBar( int id )
  *\en
  *\_en \ru
  *	Вспомогательный метод.
- *	Запускает действие в указанном контексте. Правильная работа не гарантируется (где-то там ошибки есть). 
+ *	Запускает действие в указанном контексте. Правильная работа не гарантируется (где-то там ошибки есть).
  *	\param act - ссылка на объект метаданных, описывающий действие
  *	\param context - контекст выполнения действия.
  *\_ru
@@ -523,7 +537,7 @@ void aEngine::execAction( aCfgItem &act, QObject *context )
 				openEmbedCatalogueEditor(oid, NULL, false); //open to edit
 				break;
 			}
-			
+
 			openForm(oid, foid, satype, 0, 0, 0 );
 			break;
 /*			if ( !arg.isEmpty() ) {
@@ -538,7 +552,7 @@ void aEngine::execAction( aCfgItem &act, QObject *context )
 				printf("form already exist,set focus \n");
 				wl->get( foid )->setFocus();
 			}
-			else 
+			else
 			{
 				printf("execute action\n");
 			if ( oid )
@@ -608,14 +622,14 @@ aEngine::OpenForm(QString formName, int mode, int ido, aObject* selector, bool m
 	aCfgItem	form;
 	int		formOwnerId;
 	int		formId;
-	
+
 	form = md->find( formName );
 	if(!form.isNull())
 	{
 		formOwner = md->parent(md->parent(form));
 		if( formOwner.isNull() ) return 0;
 		Q_ULLONG idOfObjectToViewInForm = 0;
-		if (selector) 
+		if (selector)
 		{
 			idOfObjectToViewInForm = selector->sysValue("id").toULongLong();
 		}
@@ -730,7 +744,7 @@ aEngine::openForm(int formOwnerId, int formId, int defaultfor, int mode, ANANAS_
 				//printf("open form for edit %llu\n ",id);
 				break;
 			default:
-				aLog::print(aLog::MT_ERROR, tr("aEngine open form mode %1 not supported").arg(defaultfor)); 
+				aLog::print(aLog::MT_ERROR, tr("aEngine open form mode %1 not supported").arg(defaultfor));
 			}
 			connect( this, SIGNAL( event(const QString &, const QString&)),
 				 form, SLOT( on_event(const QString &, const QString&)));

@@ -38,15 +38,20 @@
 #include <qstringlist.h>
 #include <qworkspace.h>
 #include <qmainwindow.h>
+#include <qmessagebox.h>
 #include <qvbox.h>
 #include <qapplication.h>
 #include <qsettings.h>
+#include <qtranslator.h>
+#include <qlabel.h>
+#include <qpushbutton.h>
 #include "ananas.h"
 #include "amenubar.h"
 #include "atoolbar.h"
 #include "awindowslist.h"
 #include "engine.h"
-
+#include "aminicalc.h"
+#include "acalendar.h"
 
 class QVBoxLayout;
 class QHBoxLayout;
@@ -72,11 +77,22 @@ public:
 	aEngine engine;
 	aCfg *md;
 
+	int e_lang, r_lang, u_lang;
 	AMenuBar* menubar;
 	QPopupMenu *windowsMenu;
+	QPopupMenu *systemMenu;
+	QPopupMenu *lang;
 	QWorkspace* ws;
 	aWindowsList* wl;
+	MiniCalc* calc;
+	PopupCalendar* calendar;
 	QString rcfile;
+	QLabel *statusLabel1;
+	QLabel *statusLabel2;
+	QLabel *statusLabel3;
+	QLabel *statusLabel4;
+	QPushButton *statpb;
+	MessagesWindow *msgWindow;
 
 public slots:
 	bool init();
@@ -88,9 +104,15 @@ public slots:
 	void Exit(int code);
 	void close();
 	void helpAbout();
+	void miniCalc();
+	void ShowCalendar();
+	void statusMessage( const QString &msg, const int &pos );
 	void statusMessage( const QString &msg );
+	void statusIcon( const int &status );
+
 	void windowsMenuAboutToShow();
 	void windowsMenuActivated( int id );
+	void setLang( int lang_id );
 	void tileHorizontal();
 	void setBackground( const QPixmap &pix );
 	void miniCalc();
@@ -98,6 +120,8 @@ public slots:
 protected:
 	protected slots:
 	virtual void languageChange();
+	virtual void statpbToggled();
+	virtual void hideMsgWindow();
 
 private:
 	QSettings engine_settings;

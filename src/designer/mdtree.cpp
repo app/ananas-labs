@@ -517,14 +517,14 @@ void
 aListViewItem::edit()
 {
     QWorkspace *ws = mainform->ws;
-    aWindowsList *wl = mainform->wl;    
+    aWindowsList *wl = mainform->wl;
     QString oclass = md->objClass( obj );
     int objid = md->id( obj );
     if ( wl->find( objid ) ) {
 	wl->get( objid )->setFocus();
 	return;
     }
-        
+
 	if ( oclass == md_metadata )
 	{
 	    dEditCfg *e = new dEditCfg( ws, 0, WDestructiveClose );
@@ -533,7 +533,8 @@ aListViewItem::edit()
 	    QObject::connect( mainform, SIGNAL( tosave() ), editor, SLOT( updateMD() ) );
 	    e->setData( this );
 	    e->show();
-	    e->moveToTopLeftCorner();
+	    e->parentWidget()->setGeometry(0,0,e->parentWidget()->frameSize().width(), e->parentWidget()->frameSize().height());
+	    e->parentWidget()->setGeometry(0,0,e->parentWidget()->frameSize().width(), e->parentWidget()->frameSize().height());
 	    mainform->addTab(++mainform->lastTabId,e->name());
 	    return;
 	}
@@ -546,7 +547,7 @@ aListViewItem::edit()
 	    QObject::connect( mainform, SIGNAL( tosave() ), editor, SLOT( updateMD() ) );
 	    e->setData( this );
 	    e->show();
-    	    e->moveToTopLeftCorner();
+    	    e->parentWidget()->setGeometry(0,0,e->parentWidget()->frameSize().width(), e->parentWidget()->frameSize().height());
 	    mainform->addTab(++mainform->lastTabId,e->name());
 	    return;
 	};
@@ -558,7 +559,7 @@ aListViewItem::edit()
 	    QObject::connect( mainform, SIGNAL( tosave() ), editor, SLOT( updateMD() ) );
 	    e->setData( this );
 	    e->show();
-	    e->moveToTopLeftCorner();
+	    e->parentWidget()->setGeometry(0,0,e->parentWidget()->frameSize().width(), e->parentWidget()->frameSize().height());
 	    mainform->addTab(++mainform->lastTabId,e->name());
 	    return;
 	};
@@ -570,7 +571,7 @@ aListViewItem::edit()
 	    QObject::connect( mainform, SIGNAL( tosave() ), editor, SLOT( updateMD() ) );
 	    e->setData( this );
 	    e->show();
-	    e->moveToTopLeftCorner();
+	    e->parentWidget()->setGeometry(0,0,e->parentWidget()->frameSize().width(), e->parentWidget()->frameSize().height());
 	    mainform->addTab(++mainform->lastTabId,e->name());
 	    return;
 	};
@@ -582,7 +583,7 @@ aListViewItem::edit()
 	    QObject::connect( mainform, SIGNAL( tosave() ), editor, SLOT( updateMD() ) );
 	    e->setData( this );
 	    e->show();
-	    e->moveToTopLeftCorner();
+	    e->parentWidget()->setGeometry(0,0,e->parentWidget()->frameSize().width(), e->parentWidget()->frameSize().height());
 	    mainform->addTab(++mainform->lastTabId,e->name());
 	    return;
 	};
@@ -594,7 +595,7 @@ aListViewItem::edit()
 	    QObject::connect( mainform, SIGNAL( tosave() ), editor, SLOT( updateMD() ) );
 	    e->setData( this );
 	    e->show();
-	    e->moveToTopLeftCorner();
+	    e->parentWidget()->setGeometry(0,0,e->parentWidget()->frameSize().width(), e->parentWidget()->frameSize().height());
 	    mainform->addTab(++mainform->lastTabId,e->name());
 	    return;
 	};
@@ -606,7 +607,7 @@ aListViewItem::edit()
 	    QObject::connect( mainform, SIGNAL( tosave() ), editor, SLOT( updateMD() ) );
 	    e->setData( this );
 	    e->show();
-	    e->moveToTopLeftCorner();
+     e->parentWidget()->setGeometry(0,0,e->parentWidget()->frameSize().width(), e->parentWidget()->frameSize().height());
 	    mainform->addTab(++mainform->lastTabId,e->name());
 	    return;
 	};
@@ -618,7 +619,7 @@ aListViewItem::edit()
 	    QObject::connect( mainform, SIGNAL( tosave() ), editor, SLOT( updateMD() ) );
 	    e->setData( this );
 	    e->show();
-	    e->moveToTopLeftCorner();
+     e->parentWidget()->setGeometry(0,0,e->parentWidget()->frameSize().width(), e->parentWidget()->frameSize().height());
 	    mainform->addTab(++mainform->lastTabId, e->name());
 	    return;
 	};
@@ -630,7 +631,7 @@ aListViewItem::edit()
 	    e->setData( this );
 	    QObject::connect( mainform, SIGNAL( tosave() ), editor, SLOT( updateMD() ) );
 	    e->show();
-	    e->moveToTopLeftCorner();
+     e->parentWidget()->setGeometry(0,0,e->parentWidget()->frameSize().width(), e->parentWidget()->frameSize().height());
 	    mainform->addTab(++mainform->lastTabId,e->name());
 	    return;
 	};
@@ -642,7 +643,7 @@ aListViewItem::edit()
 	    QObject::connect( mainform, SIGNAL( tosave() ), editor, SLOT( updateMD() ) );
 	    e->setData( this );
 	    e->show();
-	    e->moveToTopLeftCorner();
+     e->parentWidget()->setGeometry(0,0,e->parentWidget()->frameSize().width(), e->parentWidget()->frameSize().height());
 	    mainform->addTab(++mainform->lastTabId,e->name());
 	    return;
 	};
@@ -654,7 +655,7 @@ aListViewItem::edit()
 	    QObject::connect( mainform, SIGNAL( tosave() ), editor, SLOT( updateMD() ) );
 	    e->setData( this );
 	    e->show();
-	    e->moveToTopLeftCorner();
+     e->parentWidget()->setGeometry(0,0,e->parentWidget()->frameSize().width(), e->parentWidget()->frameSize().height());
 	    mainform->addTab(++mainform->lastTabId,e->name());
 	    return;
 	}
@@ -686,7 +687,7 @@ void aListViewItem::saveItem()
 
 	//md->saveOneObject()
 	QString oclass = md->objClass( obj );
-	if ( 	oclass == md_field || 
+	if ( 	oclass == md_field ||
 		oclass == md_document ||
 		oclass == md_catalogue ||
 		oclass == md_journal ||
@@ -694,10 +695,10 @@ void aListViewItem::saveItem()
 		oclass == md_aregister ||
 		oclass == md_report ||
 		oclass == md_webform ||
-		oclass == md_form || 
+		oclass == md_form ||
 		oclass == md_table)
 	{
-			
+
 		QString fname;
 		QFileDialog fd( QString::null,
   			QObject::tr("any files (*)"),
@@ -715,17 +716,17 @@ void aListViewItem::saveItem()
 
 void aListViewItem::loadItem()
 {
-	
+
 	QString oclass = md->objClass( obj );
-	
+
 	if ( 	oclass == md_header ||
 		oclass == md_table ||
-		oclass == md_element || 
+		oclass == md_element ||
 		oclass == md_group ||
 		oclass == md_resources ||
 		oclass == md_dimensions ||
 		oclass == md_information ||
-		oclass == md_columns || 
+		oclass == md_columns ||
 		oclass == md_documents ||
 		oclass == md_catalogues ||
 		oclass == md_journals ||
@@ -755,7 +756,7 @@ void aListViewItem::loadItem()
 			// c.setAttr(loadObj, mda_name, "CATALOGUE1 COPY!!!");
 			// append to cfg
 			// c.importCfgItem( c.find(c.find(0), md_catalogues) , loadObj);
-			// 					
+			//
 			loadObj = md->loadOneObject(fname);
 			if(loadObj.isNull())
 			{
@@ -765,7 +766,7 @@ void aListViewItem::loadItem()
 			{
 				md->setAttr(loadObj, mda_name, QString("%1_copy").arg(md->attr(loadObj, mda_name)));
 				QString loclass = md->objClass(loadObj);
-				if ( loclass==md_field	&& 
+				if ( loclass==md_field	&&
 						(oclass == md_header || oclass == md_table ||
 						oclass == md_element || oclass == md_group ||
 						oclass == md_resources || oclass == md_dimensions ||
@@ -782,12 +783,12 @@ void aListViewItem::loadItem()
 					aListViewItem *newitem = new aListViewItem( this, getLastChild(), md, newobj );
 				}
 				if ( loclass==md_catalogue && oclass == md_catalogues )
-				{	
+				{
 					aCfgItem newobj = md->importCfgItem( obj, loadObj );
 					aListViewItem *newitem = new aListViewItem( this, getLastChild(), md, newobj );
 				}
 				if ( loclass==md_journal && oclass == md_journals )
-				{	
+				{
 					aCfgItem newobj = md->importCfgItem( obj, loadObj );
 					aListViewItem *newitem = new aListViewItem( this, getLastChild(), md, newobj );
 				}
@@ -801,7 +802,7 @@ void aListViewItem::loadItem()
 					aCfgItem newobj = md->importCfgItem( obj, loadObj );
 					aListViewItem *newitem = new aListViewItem( this, getLastChild(), md, newobj );
 				}
-				if ( loclass==md_report && oclass == md_reports ) 
+				if ( loclass==md_report && oclass == md_reports )
 				{
 					aCfgItem newobj = md->importCfgItem( obj, loadObj );
 					aListViewItem *newitem = new aListViewItem( this, getLastChild(), md, newobj );
@@ -982,7 +983,7 @@ aListViewItem::newForm()
 #ifdef Q_OS_WIN32
 	tpldir = qApp->applicationDirPath()+"/templates/";
 #else
-	BrInitError error; 
+	BrInitError error;
 	if (br_init_lib(&error) == 0 && error != BR_INIT_ERROR_DISABLED)
 	{
 		aLog::print(aLog::MT_INFO, QObject::tr("Warning: BinReloc failed to initialize (error code %1)\n").arg(error));
@@ -1007,7 +1008,7 @@ aListViewItem::newForm()
 		else
 		{
 			aLog::print(aLog::MT_ERROR,QObject::tr("dEditDoc file %1 not exists in templates directory %2").arg(tpl_name).arg(tpldir));
-		}		
+		}
 		newitem = new aListViewItem( this, getLastChild(), md, newobj );
 //		newitem->setSelected( TRUE );
 		newitem->setOpen( TRUE );
@@ -1072,14 +1073,14 @@ aListViewItem::newColumn()
  * \en
  *  	\brief Search on a mdtree
  *
- * 	\param mdItem - The index on a mdtree 
+ * 	\param mdItem - The index on a mdtree
  * 	\param parentObjClass - Class of an parent element in a mdtree
- * 	\param parentObjName - Heading of an element in a mdtree 
+ * 	\param parentObjName - Heading of an element in a mdtree
  * 	\param objClass - Class of an element in a mdtree
  * 	\param objName - Heading of an element in a mdtree
  * \_en
  * \ru
- * 	\brief Поиск по дереву метаданных.  
+ * 	\brief Поиск по дереву метаданных.
  *
  * 	Указываем тег-класс узла, тег-класс его родительского узла и строковые значения
  * 	для узла и его родителя.
@@ -1089,7 +1090,7 @@ aListViewItem::newColumn()
  * 	последний параметр objName указывать не нужно.
  * 	\param mdItem - Указатель на дерево
  * 	\param parentObjClass - Класс родительского элемента в дереве
- * 	\param parentObjName - Заголовок родительского элемента в дереве  
+ * 	\param parentObjName - Заголовок родительского элемента в дереве
  * 	\param objClass - Класс элемента в дереве
  * 	\param objName - Заголовок элемента в дереве
  * \_ru
@@ -1105,7 +1106,7 @@ aListViewItem::findItemInMD(aListViewItem *mdItem, const QString &parentObjClass
 	bool 			parentFound = false;
 	QString 		oName = "";
 	QString 		oClass = "";
-	
+
 	qitem = mdItem;
 	qlist = qitem->listView();
 	QListViewItemIterator it( qlist );
@@ -1141,7 +1142,7 @@ aMetadataTreeView::aMetadataTreeView(  QWidget *parent, aCfg *cfgmd )
 	connect( this, SIGNAL( collapsed( QListViewItem* ) ), this, SLOT( on_collapsed( QListViewItem* ) ) );
 }
 
-void 
+void
 aMetadataTreeView::on_collapsed( QListViewItem * item )
 {
 	aListViewItem *i = (aListViewItem *) item;

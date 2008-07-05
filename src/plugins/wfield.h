@@ -41,6 +41,8 @@
 #include "wdateedit.h"
 #include "adatabase.h"
 #include "ananas.h"
+#include "acalendar.h"
+#include <qvalidator.h>
 
 class wCatButton;
 class wCheckBox;
@@ -54,7 +56,7 @@ class wCheckBox;
  * 	Наследует aWidget.
  *
  * 	В отличие от wDBField класс wField не биндится к атрибутам persistent бизнес объектов. То есть время жизни
- * 	хранимых в нем значений равно времени жизни родительской экранной формы. Прикладной программист сам должен 
+ * 	хранимых в нем значений равно времени жизни родительской экранной формы. Прикладной программист сам должен
  * 	решить вопрос обработки и хранения значений задаваемых пользователем.
  * \_ru
  */
@@ -79,6 +81,7 @@ public:
 signals:
 	void valueChanged( const QString & );
 	void valueChanged( const QVariant & );
+	void inputInvalid();
 	void lostFocus();
 
 public slots:
@@ -87,6 +90,7 @@ public slots:
 	virtual QString		value() const;
 	QString			text() const;
 	virtual void		setValue( const QString &fn );
+	virtual void		Validate( const QString &fn );
 	void			setValue( const QDate& d);
 	virtual	QString 	textValue() {return text();};
 	void			setFieldType( QString n );
@@ -99,6 +103,9 @@ public slots:
 	virtual void		focusOutEvent();
 	void 			selectAll();
 	virtual void		SetReadOnly(bool);
+	virtual void		SetNonZero(bool);
+	virtual void		SetMask(QString);
+	virtual void		SetValidator(QString Validator, int twostate);
 
 private slots:
 	void on_selected( Q_ULLONG uid );
@@ -108,8 +115,11 @@ protected:
 	QLineEdit 	*lineEdit;
 	wDateEdit	*dateEdit;
 	QLabel		*objLabel;
+	QLabel		*nzLabel;
 	wCatButton	*objButton;
 	wCheckBox	*checkBox;
+	QValidator 	*v;
+	int		two_state;
 	tEditorType	vEditorType;
 	QString		vFieldType;
 	QString		vValue;
@@ -141,43 +151,6 @@ class  wCheckBox: public QCheckBox
 		void on_toggled();
 	signals:
 		void valueChanged(const QString &);
-};
-
-/*!
- * \en PopupCalendar for DateEdit field editor. \_en
- * \ru
- * 	\brief Всплывающий календарь для выбора даты.
- *
- * 	Используется как дополнение к виджету поля ввода/редактирования
- * 	атрибута типа Дата бизнес объекта Ананаса.
- *
- * \_ru
- */
-class PopupCalendar : public QDialog
-{
-Q_OBJECT
-public:
-	PopupCalendar(const QDate &day = QDate::currentDate(),
-		QPoint pos = QPoint(), QWidget *parent = 0, const char *name = 0);
-
-	static QDate	getDate(QWidget *parent = 0, const QDate &day = QDate::currentDate(),
-	QPoint		pos = QPoint());
-
-	const QDate&	day() const { return today; }
-	void		setDay(const QDate &day);
-	QSize		sizeHint() const;
-
-protected:
-	void mousePressEvent(QMouseEvent *event);
-	void mouseDoubleClickEvent(QMouseEvent *) { accept(); }
-	void keyPressEvent(QKeyEvent *event);
-	void paintEvent(QPaintEvent *event);
-
-private:
-	enum { ROWS = 7, COLS = 7 };
-	QFont smallFont;
-	QDate today;
-	const QDate original;
 };
 
 #endif

@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: deditfield.ui.h,v 1.30 2008/06/09 11:47:59 app Exp $
+** $Id: deditfield.ui.h,v 1.29 2006/05/31 06:44:22 gr Exp $
 **
 ** Code file of the Edit Field window
 ** of Ananas Designer applications
@@ -34,10 +34,14 @@
 ** init() function in place of a constructor, and a destroy() function in
 ** place of a destructor.
 *****************************************************************************/
+#include <qstatusbar.h>
+#include <qdatetime.h>
+#include <qvaluelist.h>
+#include <qlistview.h>
+#include <qvalidator.h>
+#include "alog.h"
 #include "acfg.h"
 #include "acfgrc.h"
-#include <qstatusbar.h>
-#include "alog.h"
 
 /*
 #include <qsproject.h>
@@ -45,12 +49,11 @@
 #include <qseditor.h>
 #include <qsinterpreter.h>
 */
-  
+
 void
 setText(){
 
 }
-
 
 void dEditField::destroy()
 {
@@ -69,8 +72,11 @@ void dEditField::init()
 	artypes.clear();
 	eType->clear();
 	otypes.append(" ");
+	lzcheckBox->setText(tr("Add zeros"));
+	efVd->setText(tr("Validate"));
+	efNumerator->setText(tr("Numerator"));
 	eType->insertItem(tr("Unknown"), 0);
- 
+
 }
 
 
@@ -79,7 +85,7 @@ void dEditField::setData( aListViewItem *o )
 	item = o;
 	aCfg *md = o->md;
 	aCfgItem obj = o->obj;
-	
+
 	QString ts;
 	char t=' ';
 	int w=0, d=0, oid, idx=0;
@@ -106,26 +112,72 @@ void dEditField::setData( aListViewItem *o )
 		comboBox2->hide();
 //		layout()->remove(comboBox2);
 //		layout()->remove(saldoTextLabel);
-		
+
 //		updateGeometry();
 	}
 	// eType0->setText( ts );
 	// eModule->setText( md->sText( obj, md_sourcecode ) );
 	eDescription->setText( md->sText( obj, md_description ) );
-	 
+
 	if( md->attr( obj, mda_sort ) == "1" ) efSort->setChecked( true );
 	else efSort->setChecked( false );
 	if( md->attr( obj, mda_plus ) == "1" ) efPlus->setChecked( true );
 	else efPlus->setChecked( false );
 	if( md->attr( obj, mda_nz ) == "1" ) efNZ->setChecked( true );
 	else efNZ->setChecked( false );
+	if( md->attr( obj, mda_vd ) == "1" ) {
+		efVd->setChecked( true );
+		ValidateGroupBox->show();
+	}else {
+		efVd->setChecked( false );
+		ValidateGroupBox->hide();
+	}
+	if( md->attr( obj, mda_numerator) == "1" )
+	{
+		efNumerator->setChecked( true );
+		NumeratorGroupBox->show();
+	}else {
+		efNumerator->setChecked( false );
+		NumeratorGroupBox->hide();
+	}
+	two_state->setChecked( md->attr( obj, mda_twostate ) == "1" );
+	lzcheckBox->setChecked( md->attr( obj, mda_lz ) == "1" );
+	VdRegEx->setText( md->attr( obj, mda_validator ) );
+	inputMask->setText( md->attr( obj, mda_inputmask ) );
+
+	if (md->attr( obj, mda_numdate) != "")
+	{
+		DateFormat->setChecked( md->attr( obj, mda_numdate) != "");
+		int i;
+		bool found;
+		found = FALSE;
+		for (i=0; i < aDFormatBox->count(); ++i)
+		{
+			if (aDFormatBox->text(i) == md->attr( obj, mda_numdate))
+			{ aDFormatBox->setCurrentText(md->attr( obj, mda_numdate));
+			aDFormatBox->setEnabled(TRUE);
+			found = TRUE;
+			}
+		}
+		if (found == FALSE)
+		{
+			eOwnFormat->setText(md->attr( obj, mda_numdate));
+			aDFormatBox->setEnabled(FALSE);
+			useOwnFofmat->setChecked(TRUE);
+		}
+
+	}
+
+
+	ePrefix->setText( md->attr( obj, mda_numpref ) );
+	eSuffix->setText( md->attr( obj, mda_numsuff ) );
+
 	efSum->setChecked(md->attr( obj, mda_sum ) == "1");
-	 
+
 	QStringList tlist;
 	if(md->objClass(md->parent(obj))==md_resources)
 	{
 		tlist.append("\t"+QObject::tr("Unknown"));
-		tlist.append("N %d %d\t"+QObject::tr("Numberic"));
 	}
 	else
 	{
@@ -160,18 +212,23 @@ void dEditField::setData( aListViewItem *o )
 		}
 	} else {
 		 if ( t == ' ' ) eType->setCurrentItem( 0 );
-	 	 if ( t == 'N' ) 
+	 	 if ( t == 'N' )
 		 {
 			eWidth->setMaxValue(20);
 			eDec->setMaxValue(99);
 			eType->setCurrentItem( 1 );
 		 }
-	 	 if ( t == 'C' ) 
+	 	 if ( t == 'C' )
 		 {
 
 			eWidth->setMaxValue(254);
 			eDec->setMaxValue(99);
 			eType->setCurrentItem( 2 );
+			if ( w == 254 )
+			{
+		          tNotBound->setChecked(TRUE);
+		          eWidth->setEnabled(FALSE);
+		        }
 		 }
 	 	 if ( t == 'D' ) eType->setCurrentItem( 3 );
 	 	 if ( t == 'B' ) eType->setCurrentItem( 4 );
@@ -190,10 +247,10 @@ void dEditField::setData( aListViewItem *o )
 	artypes.append(" ");
 	n = md->count( context, md_aregister );
 // printf("n=%d name = %s\n",n, md->attr(context,mda_name).ascii());
-	for (i=0; i<n; i++) 
+	for (i=0; i<n; i++)
 	{
 		obj = md->find( context, md_aregister, i);
-		if ( !obj.isNull() ) 
+		if ( !obj.isNull() )
 		{
 			aregid=md->attr(obj,mda_id).toInt();
 			str = tr(QString("AccumulationRegister."))+md->attr( obj, mda_name );
@@ -201,10 +258,10 @@ void dEditField::setData( aListViewItem *o )
 			obj = md->findChild(obj,md_resources);
 			n1 = md->count( obj, md_field);
 //   printf("n=%d name = %s\n",n, md->attr(obj,mda_name).ascii());
-			for (uint j=0; j<n1; j++) 
+			for (uint j=0; j<n1; j++)
 			{
 				obj2 = md->find( obj, md_field, j);
-				if ( !obj2.isNull() ) 
+				if ( !obj2.isNull() )
 				{
 					aregfid = md->attr(obj2, mda_id).toInt();
 					artypes.append(QString(" %1 %2").arg(aregid).arg(aregfid));
@@ -213,8 +270,52 @@ void dEditField::setData( aListViewItem *o )
 				}
 			}
 		}
-	}	
+	}
 	typeSelect( eType->currentItem() );
+	aUsersList->header()->hide();
+	QListViewItem * groupsItem = new QListViewItem( aUsersList, 0 );
+	groupsItem->setText( 0, tr( "Groups" ) );
+	groupsItem->setExpandable(TRUE);
+	groupsItem->setOpen( TRUE );
+
+	QListViewItem * admGroup = new QListViewItem( groupsItem, 0 );
+	admGroup->setText( 0, tr( "Administrators" ) );
+	admGroup->setExpandable(TRUE);
+	admGroup->setOpen( TRUE );
+
+	QListViewItem * operGroup = new QListViewItem( groupsItem, 0 );
+	operGroup->setText( 0, tr( "Operators" ) );
+	operGroup->setExpandable(TRUE);
+	admGroup->setOpen( TRUE );
+
+	QListViewItem * usersGroup = new QListViewItem( aUsersList, 0 );
+	usersGroup->setText( 0, tr( "Users" ) );
+	usersGroup->setExpandable(TRUE);
+	usersGroup->setOpen(TRUE);
+
+	QListViewItem * user1 = new QListViewItem( usersGroup, 0 );
+	user1->setText( 0, tr( "Tester" ) );
+
+	// Complete Right List
+	aRightsList->header()->hide();
+	QValueList<QListViewItem *> rightList;
+	rightList.append( new QCheckListItem( aRightsList, tr( "Reading" ), QCheckListItem::CheckBoxController ) );
+	rightList.append( new QCheckListItem( aRightsList, tr( "Writing" ), QCheckListItem::CheckBoxController ) );
+	rightList.append( new QCheckListItem( aRightsList, tr( "Modification" ), QCheckListItem::CheckBoxController ) );
+	rightList.append( new QCheckListItem( aRightsList, tr( "Deleting" ), QCheckListItem::CheckBoxController ) );
+
+	QListViewItem *ritem = 0;
+	unsigned int num = 1;
+	// go through the list of parent items...
+	for ( QValueList<QListViewItem*>::Iterator it = rightList.begin();
+	it != rightList.end();
+	( *it )->setOpen( TRUE ), ++it, num++ )
+	{
+	        ritem = *it;
+	}
+	//
+
+
 }
 
 void dEditField::updateMD()
@@ -223,7 +324,7 @@ void dEditField::updateMD()
 
  aCfg *md = item->md;
  aCfgItem obj = item->obj;
- 
+
  al->updateMD();
  item->setText( 0, eName->text().stripWhiteSpace() );
  md->setAttr( obj, mda_name, eName->text().stripWhiteSpace() );
@@ -238,10 +339,41 @@ void dEditField::updateMD()
  else md->setAttr( obj, mda_plus, "0" );
  if( efNZ->isChecked() ) md->setAttr( obj, mda_nz, "1" );
  else md->setAttr( obj, mda_nz, "0" );
+ if( efVd->isChecked() ) {
+	 md->setAttr( obj, mda_vd, "1" );
+ }else{
+	 md->setAttr( obj, mda_vd, "0" );
+ }
+ if (efNumerator->isChecked() ){
+	 md->setAttr( obj, mda_numerator, "1" );
+ }else{
+	 md->setAttr( obj, mda_numerator, "0" );
+ }
+ if (VdRegEx->text() )md->setAttr( obj, mda_validator, VdRegEx->text().stripWhiteSpace() );
+ if (ePrefix->text() ) md->setAttr( obj, mda_numpref, ePrefix->text());
+ if (eSuffix->text() ) md->setAttr( obj, mda_numsuff, eSuffix->text());
+ if (DateFormat->isChecked() )
+ {
+	 if (useOwnFofmat->isChecked() )
+	 {
+		 md->setAttr( obj, mda_numdate, eOwnFormat->text() );
+	 }else{
+		 md->setAttr( obj, mda_numdate, aDFormatBox->currentText() );
+	 }
+ }
+ if (inputMask->text() )md->setAttr( obj, mda_inputmask, inputMask->text().stripWhiteSpace() );
+ if (two_state->isChecked() ) md->setAttr( obj, mda_twostate, "1" );
+ else md->setAttr( obj, mda_twostate, "0" );
  if( efSum->isChecked() )
      md->setAttr( obj, mda_sum, "1" );
  else
      md->setAttr( obj, mda_sum, "0" );
+
+ if( lzcheckBox->isChecked() )
+	 md->setAttr( obj, mda_lz, "1" );
+ else
+	 md->setAttr( obj, mda_lz, "0" );
+
  if(eType->currentItem()==0)
  {
 	 st.sprintf(artypes[comboBox2->currentItem()]);
@@ -269,7 +401,15 @@ void dEditField::typeSelect( int idx )
 		tWidth->show();
 		tDec->show();
 		efSum->show();
+		tNotBound->hide();
+		tSepTriads->show();
 		comboBox2->setEnabled(false);
+		comboBox2->hide();
+		efVd->show();
+		ValidateGroupBox->show();
+		NumeratorGroupBox->hide();
+		efNumerator->hide();
+		saldoTextLabel->hide();
 	}
 	else
 	{
@@ -281,32 +421,56 @@ void dEditField::typeSelect( int idx )
 			tWidth->show();
 			tDec->hide();
 			efSum->hide();
+			tSepTriads->hide();
+			tNotBound->show();
+			efNumerator->show();
+			if ( efNumerator->isChecked() ) 	NumeratorGroupBox->show();
+			efVd->show();
+			if ( efVd->isChecked() )  ValidateGroupBox->show();
 			efSum->setChecked(false);
 			comboBox2->setEnabled(false);
+			comboBox2->hide();
+			saldoTextLabel->hide();
 		}
-		else 
+		else
 		{
 			if( idx == 0)
 			{
-				comboBox2->setEnabled(true);
-				eWidth->hide();
-				eDec->hide();
-				tWidth->hide();
-				tDec->hide();
-				efSum->hide();
-				efSum->setChecked(false);
+			    saldoTextLabel->show();
+			    comboBox2->show();
+			    comboBox2->setEnabled(true);
+			    eWidth->hide();
+			    eDec->hide();
+			    tWidth->hide();
+			    tDec->hide();
+			    efSum->hide();
+			    tNotBound->hide();
+			    tSepTriads->hide();
+			    efVd->hide();
+			    efNumerator->hide();
+			    ValidateGroupBox->hide();
+			    NumeratorGroupBox->hide();
+			    efSum->setChecked(false);
 			}
   			else
 			{
 				comboBox2->setEnabled(false);
+				comboBox2->hide();
+				saldoTextLabel->hide();
 				eWidth->hide();
 				eDec->hide();
 				tWidth->hide();
 				tDec->hide();
 				efSum->hide();
+				tNotBound->hide();
+				tSepTriads->hide();
+				efVd->hide();
+				efNumerator->hide();
+				NumeratorGroupBox->hide();
+				ValidateGroupBox->hide();
 				efSum->setChecked(false);
- // comboBox2->setEnabled(false);
-  			}	
+				// comboBox2->setEnabled(false);
+  			}
 		}
 	}
 }
@@ -314,28 +478,149 @@ void dEditField::typeSelect( int idx )
 
 void dEditField::nameChanged()
 {
-	setCaption( tr("Field:") + eName->text() );
+	setCaption( tr("Field:  ") + eName->text() );
 }
 
 
 void dEditField::AARegSelect( int i )
 {
-	
+
 }
 
 
-/**
- * \ru
- *	\brief Сдвигает окно редактирования свойств в левый верхний угол родительского окна.
- * 
- * 	Размеры перемещаемого окна остаются без изменений.
- * \_ru
- */
-void
-dEditField::moveToTopLeftCorner()
+void dEditField::tNotBound_stateChanged( int )
 {
-	this->parentWidget()->setGeometry( 0, 0, 
-		this->parentWidget()->frameSize().width(),
-		this->parentWidget()->frameSize().height());
+    if (tNotBound->isChecked() )
+    {
+	eWidth->setValue(254);
+	eWidth->setEnabled(FALSE);
+    } else {
+        eWidth->setEnabled(TRUE);
+    }
+}
 
+
+void dEditField::aUsersList_clicked( QListViewItem * )
+{
+// Read aRightsList for selected user
+}
+
+
+void dEditField::setExample()
+{
+     QDate date = QDate::currentDate();
+     QString curdate, dateformat, numerator;
+
+     if (DateFormat->isChecked() )
+     {
+	 if (useOwnFofmat->isChecked() )
+	 {
+	     dateformat =eOwnFormat->text();
+	 }else{
+	     dateformat =aDFormatBox->currentText();
+	 }
+        curdate = date.toString(dateformat);
+     }
+
+     if (lzcheckBox->isChecked())
+     {
+	numerator = QString("789").rightJustify( eWidth->value(), '0' );
+     }
+     else {
+	numerator = QString("789");
+     }
+    eXample->setText(QString("%1%2%3%4").arg(ePrefix->text()).arg(numerator).arg(eSuffix->text()).arg(curdate));
+}
+
+
+void dEditField::efVd_stateChanged( int )
+{
+    if (efVd->isChecked() )
+    {
+	ValidateGroupBox->show();
+    } else {
+	ValidateGroupBox->hide();
+    }
+}
+
+
+void dEditField::Testline_textChanged( const QString & )
+{
+    QRegExp rx( VdRegEx->text() );
+    QRegExpValidator v( rx, 0 );
+    int pos = 0;
+    QString s = Testline->text();
+    QPalette pal = Testline->palette();
+
+    if(v.validate(s, pos ) == QValidator::Invalid)
+    {
+	pal.setColor(QColorGroup::Highlight, Qt::red);
+	Testline->setPalette(pal);
+    }
+    if(v.validate(s, pos ) == QValidator::Intermediate)
+    {
+	if (two_state->isChecked() ) {
+	    pal.setColor(QColorGroup::Highlight, Qt::red);
+	}else{
+	    pal.setColor(QColorGroup::Highlight, Qt::yellow);
+	}
+	 Testline->setPalette(pal);
+    }
+     if(v.validate(s, pos ) == QValidator::Acceptable)
+    {
+	 pal.setColor(QColorGroup::Highlight, Qt::green);
+	 Testline->setPalette(pal);
+    }
+}
+
+void dEditField::inputMask_textChanged( const QString & )
+{
+    Testline->setInputMask(inputMask->text());
+}
+
+
+void dEditField::efNumerator_stateChanged( int )
+{
+    if (efNumerator->isChecked() )
+    {
+	NumeratorGroupBox->show();
+	eWidth->setValue(10);
+    } else {
+	NumeratorGroupBox->hide();
+    }
+}
+
+
+void dEditField::DateFormat_stateChanged( int )
+{
+    if (DateFormat->isChecked() )
+    {
+	aDFormatBox->setEnabled(TRUE);
+	textLabel2->setEnabled(TRUE);
+	useOwnFofmat->setEnabled(TRUE);
+	eOwnFormat->setEnabled(TRUE);
+    } else {
+	aDFormatBox->setEnabled(FALSE);
+	textLabel2->setEnabled(FALSE);
+	useOwnFofmat->setEnabled(FALSE);
+	eOwnFormat->setEnabled(FALSE);
+    }
+}
+
+
+void dEditField::useOwnFofmat_stateChanged( int )
+{
+	if (useOwnFofmat->isChecked() )
+	{
+		aDFormatBox->setEnabled(FALSE);
+	}else{
+		aDFormatBox->setEnabled(TRUE);
+	}
+
+}
+
+
+void dEditField::eWidth_valueChanged( int )
+{
+    if (efNumerator->isChecked() ) setExample();
 }

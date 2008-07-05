@@ -34,6 +34,7 @@
 #include <qworkspace.h>
 #include <qimage.h>
 #include <qpixmap.h>
+#include <qdatetime.h>
 #include "messageswindow.h"
 #include "acfg.h"
 
@@ -57,13 +58,14 @@ MessagesWindow::MessagesWindow( QWidget* parent, WFlags fl )
 	msgBrowser = new QTextBrowser( this, "msgBrowser" );
 	boxLayout()->addWidget( msgBrowser );
 	languageChange();
-	setMinimumSize( QSize( 1, 1 ) );
-	msgBrowser->setMinimumSize( QSize( 1, 1 ) );
+	setMinimumSize( QSize( 1, 100 ) );
+	msgBrowser->setMinimumSize( QSize( 1, 100 ) );
 	clearWState( WState_Polished );
 	setResizeEnabled( TRUE );
 	setExpanded(false);
 	setCloseMode( QDockWindow::Always );
 	msgBrowser->show();
+	msgBrowser->setText(QTime::currentTime().toString()+". System started");
 	msgwindow = this;
 	connect(msgBrowser, SIGNAL(doubleClicked(int,int)), this, SLOT(on_click()));
 	cfg_messageproc=messageproc;
@@ -82,13 +84,14 @@ void
 MessagesWindow::message( int msgtype, const QString &msg)
 {
 	char st[4][50]={
-			"<img src=\"msg_info.png\" width=12>",
-			"<img src=\"msg_warning.png\" width=12>",
-			"<img src=\"msg_error.png\" width=12>",
-			"<img src=\"msg_fatal.png\" width=12>"};
+			"<img src=\"msg_info.png\" width=16>",
+			"<img src=\"msg_warning.png\" width=16>",
+			"<img src=\"msg_error.png\" width=16>",
+			"<img src=\"msg_fatal.png\" width=16>"};
 	if (msgtype<0) msgtype=0;
 	if (msgtype>3) msgtype=3;
-	msgBrowser->append( tr( st[ msgtype ] )+msg );
+	msgBrowser->append( tr( st[ msgtype ] )+" ("+QTime::currentTime().toString()+") "+msg );
+	msgBrowser->verticalScrollBar()->setValue(msgBrowser->verticalScrollBar()->maxValue());
 	show();
 }
 
@@ -100,25 +103,25 @@ MessagesWindow::message( int msgtype, const QString &msg)
 void MessagesWindow::languageChange()
 {
     setCaption( tr( "Messages window" ) );
-    msgBrowser->setText( QString::null );
+    //msgBrowser->setText( QString::null );
 }
 
 void
 MessagesWindow::hideEvent ( QHideEvent *e )
 {
-	msgBrowser->clear();
+	//msgBrowser->clear();
 	QDockWindow::hideEvent( e );
 }
 
 
-void 
+void
 MessagesWindow::on_click()
 {
 	setExpanded(!expanded);
 }
 
 
-void 
+void
 MessagesWindow::setExpanded(bool exp)
 {
 	if(exp) setFixedExtentHeight ( 150 );
