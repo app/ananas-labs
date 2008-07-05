@@ -84,6 +84,9 @@ wField::wField( QWidget *parent, const char *name, WFlags fl )
 	checkBox = new wCheckBox(this);
 	checkBox->hide();
 	vEditorType = Unknown;
+	defaultLineEditFrameMargin = lineEdit->margin();
+	defaultLineEditPalette = lineEdit->palette();
+	defaultLineEditFrameStyle = lineEdit->frameStyle();
 }
 /*
 wField::wField( QWidget *parent, const char *name, WFlags fl, bool dbf )
@@ -369,27 +372,41 @@ wField::setValue(const QDate& newDate)
 void
 wField::Validate(const QString &test)
 {
+	
 	int p = 0;
 	QString s = test;
+	// restore LineEdit color state
+	lineEdit->setPalette( defaultLineEditPalette );
+	lineEdit->setMargin( defaultLineEditFrameMargin );
+	lineEdit->setFrameStyle( defaultLineEditFrameStyle );
+
+	if ( test.isNull()  || test.isEmpty() ) return;
+
 	QPalette pal = lineEdit->palette();
 	switch ( v->validate(s, p) )
 	{
 		case QValidator::Invalid:
-			pal.setColor(QColorGroup::Highlight, Qt::red);
+			lineEdit->setFrameStyle(QFrame::Box);
+			lineEdit->setMargin(2);
+			pal.setColor(QPalette::Active, QColorGroup::Light, Qt::red);
 			lineEdit->setPalette(pal);
 			emit inputInvalid();
 			break;
 		case QValidator::Intermediate:
+			lineEdit->setFrameStyle(QFrame::Box);
+			lineEdit->setMargin(2);
 			if (two_state == 0) {
-				pal.setColor(QColorGroup::Highlight, Qt::yellow);
+				pal.setColor(QPalette::Active, QColorGroup::Light, Qt::yellow);
 			}else{
-				pal.setColor(QColorGroup::Highlight, Qt::red);
+				pal.setColor(QPalette::Active, QColorGroup::Light, Qt::red);
 			}
 			lineEdit->setPalette(pal);
 			setValue( test );
 			break;
 		case QValidator::Acceptable:
-			pal.setColor(QColorGroup::Highlight, Qt::green);
+			lineEdit->setFrameStyle(QFrame::Box);
+			lineEdit->setMargin(2);
+			pal.setColor(QPalette::Active, QColorGroup::Light, Qt::green);
 			lineEdit->setPalette(pal);
 			setValue( test );
 			break;

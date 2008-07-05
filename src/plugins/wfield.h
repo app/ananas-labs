@@ -129,6 +129,11 @@ private:
 	int loaded;
 	int md_oid, md_fid;
 	void popupCalendar(QDateEdit *dateEdit);
+//	QColorGroup::ColorRole defaultFrameBorderLightColor;
+//	QColorGroup::ColorRole defaultFrameBorderDarkColor;
+	QPalette defaultLineEditPalette;
+	int defaultLineEditFrameMargin;
+	int defaultLineEditFrameStyle;
 };
 
 class  wCatButton: public QPushButton
