@@ -144,7 +144,7 @@ void dEditField::setData( aListViewItem *o )
 	lzcheckBox->setChecked( md->attr( obj, mda_lz ) == "1" );
 	VdRegEx->setText( md->attr( obj, mda_validator ) );
 	inputMask->setText( md->attr( obj, mda_inputmask ) );
-
+	aDFormatBox->setEnabled(FALSE);
 	if (md->attr( obj, mda_numdate) != "")
 	{
 		DateFormat->setChecked( md->attr( obj, mda_numdate) != "");
@@ -524,12 +524,13 @@ void dEditField::setExample()
 
      if (lzcheckBox->isChecked())
      {
-	numerator = QString("789").rightJustify( eWidth->value(), '0' );
+	numerator = QString("789").rightJustify( 8, '0' );
      }
      else {
 	numerator = QString("789");
      }
     eXample->setText(QString("%1%2%3%4").arg(ePrefix->text()).arg(numerator).arg(eSuffix->text()).arg(curdate));
+    eWidth->setValue(eXample->text().length());
 }
 
 

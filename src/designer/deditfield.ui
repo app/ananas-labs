@@ -8,7 +8,7 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>570</width>
+            <width>569</width>
             <height>507</height>
         </rect>
     </property>
@@ -675,73 +675,6 @@
                                     </spacer>
                                 </hbox>
                             </widget>
-                            <widget class="QLayoutWidget" row="1" column="1">
-                                <property name="name">
-                                    <cstring>layout10</cstring>
-                                </property>
-                                <hbox>
-                                    <property name="name">
-                                        <cstring>unnamed</cstring>
-                                    </property>
-                                    <widget class="AComboBox">
-                                        <item>
-                                            <property name="text">
-                                                <string>yyyyMMdd</string>
-                                            </property>
-                                        </item>
-                                        <item>
-                                            <property name="text">
-                                                <string>yyMMdd</string>
-                                            </property>
-                                        </item>
-                                        <item>
-                                            <property name="text">
-                                                <string>dd MMMM yyyy</string>
-                                            </property>
-                                        </item>
-                                        <property name="name">
-                                            <cstring>aDFormatBox</cstring>
-                                        </property>
-                                        <property name="sizePolicy">
-                                            <sizepolicy>
-                                                <hsizetype>1</hsizetype>
-                                                <vsizetype>0</vsizetype>
-                                                <horstretch>2</horstretch>
-                                                <verstretch>0</verstretch>
-                                            </sizepolicy>
-                                        </property>
-                                    </widget>
-                                    <widget class="QLabel">
-                                        <property name="name">
-                                            <cstring>textLabel2</cstring>
-                                        </property>
-                                        <property name="text">
-                                            <string>or</string>
-                                        </property>
-                                    </widget>
-                                    <widget class="QCheckBox">
-                                        <property name="name">
-                                            <cstring>useOwnFofmat</cstring>
-                                        </property>
-                                        <property name="text">
-                                            <string>Own format</string>
-                                        </property>
-                                    </widget>
-                                    <widget class="QLineEdit">
-                                        <property name="name">
-                                            <cstring>eOwnFormat</cstring>
-                                        </property>
-                                        <property name="sizePolicy">
-                                            <sizepolicy>
-                                                <hsizetype>7</hsizetype>
-                                                <vsizetype>0</vsizetype>
-                                                <horstretch>1</horstretch>
-                                                <verstretch>0</verstretch>
-                                            </sizepolicy>
-                                        </property>
-                                    </widget>
-                                </hbox>
-                            </widget>
                             <widget class="QLayoutWidget" row="0" column="1">
                                 <property name="name">
                                     <cstring>layout9</cstring>
@@ -806,6 +739,65 @@
                                     <widget class="QLineEdit">
                                         <property name="name">
                                             <cstring>eSuffix</cstring>
+                                        </property>
+                                        <property name="sizePolicy">
+                                            <sizepolicy>
+                                                <hsizetype>7</hsizetype>
+                                                <vsizetype>0</vsizetype>
+                                                <horstretch>1</horstretch>
+                                                <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                        </property>
+                                    </widget>
+                                </hbox>
+                            </widget>
+                            <widget class="QLayoutWidget" row="1" column="1">
+                                <property name="name">
+                                    <cstring>layout8</cstring>
+                                </property>
+                                <hbox>
+                                    <property name="name">
+                                        <cstring>unnamed</cstring>
+                                    </property>
+                                    <widget class="QComboBox">
+                                        <item>
+                                            <property name="text">
+                                                <string>yyyyMMdd</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>yyMMdd</string>
+                                            </property>
+                                        </item>
+                                        <item>
+                                            <property name="text">
+                                                <string>dd MMMM yyyy</string>
+                                            </property>
+                                        </item>
+                                        <property name="name">
+                                            <cstring>aDFormatBox</cstring>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLabel">
+                                        <property name="name">
+                                            <cstring>textLabel2</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>or</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QCheckBox">
+                                        <property name="name">
+                                            <cstring>useOwnFofmat</cstring>
+                                        </property>
+                                        <property name="text">
+                                            <string>Own format</string>
+                                        </property>
+                                    </widget>
+                                    <widget class="QLineEdit">
+                                        <property name="name">
+                                            <cstring>eOwnFormat</cstring>
                                         </property>
                                         <property name="sizePolicy">
                                             <sizepolicy>
@@ -934,8 +926,6 @@
 </widget>
 <toolbars>
 </toolbars>
-<customwidgets>
-</customwidgets>
 <connections>
     <connection>
         <sender>eType</sender>
@@ -958,12 +948,6 @@
     <connection>
         <sender>eOwnFormat</sender>
         <signal>textChanged(const QString&amp;)</signal>
-        <receiver>dEditField</receiver>
-        <slot>setExample()</slot>
-    </connection>
-    <connection>
-        <sender>aDFormatBox</sender>
-        <signal>activated(const QString&amp;)</signal>
         <receiver>dEditField</receiver>
         <slot>setExample()</slot>
     </connection>
@@ -1045,6 +1029,12 @@
         <receiver>dEditField</receiver>
         <slot>eWidth_valueChanged(int)</slot>
     </connection>
+    <connection>
+        <sender>aDFormatBox</sender>
+        <signal>activated(int)</signal>
+        <receiver>dEditField</receiver>
+        <slot>setExample()</slot>
+    </connection>
 </connections>
 <includes>
     <include location="local" impldecl="in declaration">acfg.h</include>
@@ -1084,7 +1074,4 @@
 </functions>
 <pixmapinproject/>
 <layoutdefaults spacing="5" margin="5"/>
-<includehints>
-    <includehint>acombobox.h</includehint>
-</includehints>
 </UI>
