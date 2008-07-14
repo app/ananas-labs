@@ -78,12 +78,13 @@ QString aExtSERVICE::Generate() const
 #endif
 }
 
-/*
+/**
  * \ru
  *	\brief	Возвращает имя используемого rc файла с полным путем.
  *
  *	Враппер. Вызывает аналогичный метод класса aCfgRc.
  *	\see aCfgRc.getRcFileName()
+ *
  * 	Пример использования
  * 	\code
  * 	service = new Service();
@@ -98,12 +99,13 @@ aExtSERVICE::GetRcFileName() const
 	return db->cfg.rc.getRcFileName();
 };
 
-/*
+/**
  * \ru
  *	\brief	Возвращает значение указанного параметра, хранящегося в rc файле.
  *
  *	\param paramName - имя параметра, значение которого требуется получить из файла ресурсов.
  *	\return значение параметра в случае успеха; пустую строку в случае неудачи. Пишет в лог сообщения о возникающих ошибках.
+ *
  * 	Пример использования
  * 	\code
  * 	service = new Service();
