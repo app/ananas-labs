@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: acfgrc.h,v 1.7 2008/01/21 06:42:56 app Exp $
+** $Id: acfgrc.h,v 1.8 2008/07/14 06:13:25 app Exp $
 **
 ** Header file of the recorse work file of Ananas
 ** Designer and Engine applications
@@ -59,6 +59,8 @@ public:
 	QString	value(const QString &name);
 	void	setValue(const QString &name, const QString &value);
 	int	count();
+	QString getRcFileName();
+
 private:
 	QString		filename;
 	QDict <QString>	values;

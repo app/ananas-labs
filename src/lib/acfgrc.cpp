@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: acfgrc.cpp,v 1.9 2007/07/02 08:20:40 app Exp $
+** $Id: acfgrc.cpp,v 1.10 2008/07/14 06:13:24 app Exp $
 **
 ** Code file of the recorse work file of Ananas
 ** Designer and Engine applications
@@ -88,6 +88,7 @@ unsetMessageHandler()
 aCfgRc::aCfgRc()
 {
 	values.setAutoDelete( TRUE );
+	filename = QString::null;
 }
 
 /**
@@ -235,3 +236,16 @@ aCfgRc::count()
 {
 	return ( int ) values.count();
 }
+
+/**
+ * \ru
+ *	\brief Возвращает имя используемого rc файла с полным путем.
+ * \_ru
+ */
+QString
+aCfgRc::getRcFileName() 
+{
+	return filename;
+}
+
+

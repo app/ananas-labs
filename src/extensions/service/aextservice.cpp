@@ -1,5 +1,8 @@
 #include "aservice.h"
 #include "aextservice.h"
+#include "adatabase.h"
+#include "alog.h"
+
 #include <quuid.h>
 
 aExtSERVICE::aExtSERVICE()
@@ -74,6 +77,59 @@ QString aExtSERVICE::Generate() const
 	return QUuid::createUuid().toString().upper();
 #endif
 }
+
+/*
+ * \ru
+ *	\brief	Возвращает имя используемого rc файла с полным путем.
+ *
+ *	Враппер. Вызывает аналогичный метод класса aCfgRc.
+ *	\see aCfgRc.getRcFileName()
+ * 	Пример использования
+ * 	\code
+ * 	service = new Service();
+ * 	sys.Message(0,"Name of used rc file is '"+service.GetRcFileName() + "'");
+ * 	\endcode
+ *
+ * \_ru
+ */
+QString 
+aExtSERVICE::GetRcFileName() const
+{
+	return db->cfg.rc.getRcFileName();
+};
+
+/*
+ * \ru
+ *	\brief	Возвращает значение указанного параметра, хранящегося в rc файле.
+ *
+ *	\param paramName - имя параметра, значение которого требуется получить из файла ресурсов.
+ *	\return значение параметра в случае успеха; пустую строку в случае неудачи. Пишет в лог сообщения о возникающих ошибках.
+ * 	Пример использования
+ * 	\code
+ * 	service = new Service();
+ * 	sys.Message(0,"File of business-scheme is '"+service.GetRcValue('configfile') + "'");
+ * 	\endcode
+ *
+ * \_ru
+ */
+QString 
+aExtSERVICE::GetRcValue( QString paramName ) const
+{
+	if ( !paramName || paramName.isNull() ) 
+	{
+		aLog::print(aLog::MT_ERROR, tr("Empty rc file parameter name. Can't read such parameter from rc file."));
+		return "";
+	}
+	QString paramValue = db->cfg.rc.value( paramName );
+	if ( !paramValue || paramValue.isEmpty() ) 
+	{	
+		aLog::print(aLog::MT_ERROR,tr("rc file parameter '%1' not found or empty.").arg(paramName));
+		return "";
+	}
+	return paramValue;
+}
+
+
 
 
 #include <aextensionplugin.h>

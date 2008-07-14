@@ -14,7 +14,10 @@ public:
 
 public slots:
 	QString GetOffice() const;
-    QString Generate() const;
+	QString Generate() const;
+
+	QString GetRcFileName() const;
+	QString GetRcValue( QString paramName ) const;
 };
 
 #endif
