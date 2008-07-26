@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: deditfield.ui.h,v 1.32 2008/07/09 04:16:13 app Exp $
+** $Id: deditfield.ui.h,v 1.33 2008/07/26 14:11:54 app Exp $
 **
 ** Code file of the Edit Field window
 ** of Ananas Designer applications
@@ -178,6 +178,7 @@ void dEditField::setData( aListViewItem *o )
 	if(md->objClass(md->parent(obj))==md_resources)
 	{
 		tlist.append("\t"+QObject::tr("Unknown"));
+		tlist.append("N %d %d\t"+QObject::tr("Numberic"));
 	}
 	else
 	{
