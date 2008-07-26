@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: engine.cpp,v 1.42 2008/07/05 12:19:40 app Exp $
+** $Id: engine.cpp,v 1.43 2008/07/19 07:12:38 leader Exp $
 **
 ** Code file of the Ananas Engine of Ananas
 ** Engine applications
@@ -86,7 +86,7 @@ aObjectsFactory::aObjectsFactory( aEngine *e )
 	registerClass("DataField","aDataField");
 //	registerClass("reg","QAreg");
 	registerClass("Journal","aDocJournal");
-	registerClass("ComboBox","AComboBox");
+//	registerClass("ComboBox","AComboBox");
 //registerClass("djournalview","QAjournview");
 //	registerClass("djournalview","QAdocjournal");
 //	registerClass("form","AForms");

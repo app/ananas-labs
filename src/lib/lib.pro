@@ -123,7 +123,7 @@ shared {
 	win32:DEFINES   += ANANAS_NO_DLL
 }
 
-unix:DEFINES += ENABLE_BINRELOC
+#unix:DEFINES += ENABLE_BINRELOC
 
 # prodject file of Ananas Library
 include ( ../ananas.pri )

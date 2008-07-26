@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: main.cpp,v 1.34 2007/09/18 11:56:37 app Exp $
+** $Id: main.cpp,v 1.36 2008/07/19 07:01:36 leader Exp $
 **
 ** Main file of Ananas Designer application
 **
@@ -56,13 +56,6 @@ int setTranslator(QString lang)
 #ifdef Q_OS_WIN32
 	langdir = qApp->applicationDirPath()+"/translations/";
 #else
-	BrInitError error; 
-	if (br_init_lib(&error) == 0 && error != BR_INIT_ERROR_DISABLED) { 
-		aLog::print(aLog::MT_INFO, QObject::tr("Warning: BinReloc failed to initialize (error code %1)\n").arg(error));
-		aLog::print(aLog::MT_INFO, QObject::tr("Will fallback to hardcoded default path.\n"));
-	} 
-	aLog::print(aLog::MT_DEBUG, QObject::tr("setTranslator - BinReloc path to data dir is %1.\n").arg( br_find_data_dir("/usr/share") ));
-	
 	langdir = QString( br_find_data_dir( "/usr/share") ) + "/ananas/translations/";
 #endif
 	tr_app.load( langdir+"ananas-designer-"+lang+".qm",".");
@@ -145,6 +138,14 @@ int main( int argc, char ** argv )
 	QPixmap pixmap;
 	BrInitError error; 
     
+	aLog::init("",aLog::MT_DEBUG);    
+#ifndef Q_OS_WIN32
+	if (br_init_lib(&error) == 0 && error != BR_INIT_ERROR_DISABLED) { 
+		aLog::print(aLog::MT_INFO, QObject::tr("Warning: BinReloc failed to initialize (error code %1)\n").arg(error));
+		aLog::print(aLog::MT_INFO, QObject::tr("Will fallback to hardcoded default path.\n"));
+	} 
+	aLog::print(aLog::MT_DEBUG, QObject::tr("main - BinReloc path to data dir is %1.\n").arg( br_find_data_dir("/usr/share") ));
+#endif
 	if ( parseCommandLine( argc, argv ) ) return 1;
 	qApp->installTranslator( &tr_lib );
 	qApp->installTranslator( &tr_plugins );
@@ -155,24 +156,17 @@ int main( int argc, char ** argv )
 	pixmap = QPixmap::fromMimeSource( qApp->applicationDirPath()+"/designer-splash-"+lang+".png" );
 	qApp->addLibraryPath( qApp->applicationDirPath() );
 #else
-	if (br_init_lib(&error) == 0 && error != BR_INIT_ERROR_DISABLED) { 
-		aLog::print(aLog::MT_INFO, QObject::tr("Warning: BinReloc failed to initialize (error code %1)\n").arg(error));
-		aLog::print(aLog::MT_INFO, QObject::tr("Will fallback to hardcoded default path.\n"));
-	} 
-	aLog::print(aLog::MT_DEBUG, QObject::tr("main - BinReloc path to data dir is %1.\n").arg( br_find_data_dir("/usr/share") ));
-	
 	pixmap = QPixmap::fromMimeSource( QString(br_find_data_dir("/usr/share")) + "/ananas/designer/locale/designer-splash-"+lang+".png" );
 	qApp->addLibraryPath( QString( br_find_lib_dir("/usr/lib")) + "/ananas/qt3plugins" );
-	
-    QStringList list = app.libraryPaths();
-    QString libPath = "";
-    QStringList::Iterator it = list.begin();
-    while( it != list.end() ) {
-        libPath += *it+":";
-        ++it;
-    }	
-	aLog::print(aLog::MT_DEBUG, QString("main - qt library path is '%1'\n").arg( libPath));
 #endif
+        QStringList list = app.libraryPaths();
+	QString libPath = "";
+        QStringList::Iterator it = list.begin();
+        while( it != list.end() ) {
+	    libPath += *it+":";
+    	    ++it;
+	}	
+	aLog::print(aLog::MT_DEBUG, QString("main - qt library path is '%1'\n").arg( libPath));
 	if ( pixmap.isNull() ) 
 	pixmap = QPixmap::fromMimeSource( "designer-splash-en.png" );
    	QSplashScreen *splash = new QSplashScreen( pixmap );

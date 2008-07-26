@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: alog.cpp,v 1.10 2007/05/26 19:01:06 leader Exp $
+** $Id: alog.cpp,v 1.11 2008/07/19 07:01:36 leader Exp $
 **
 ** Log functions source file of 
 ** Ananas application library
@@ -148,7 +148,8 @@ aLog::init(const QString &log_name, int show_up)
 	if(logLev=="DEBUG") aLog::logLevel = aLog::MT_DEBUG;
 	
 	aLog::logName = log;
-		
+
+	if (aLog::f.isOpen()) f.close();	
 	aLog::f.setName(getLogName());
 	aLog::f.open( IO_WriteOnly | IO_Append );
 
