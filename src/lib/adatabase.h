@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: adatabase.h,v 1.52 2008/05/19 06:45:31 app Exp $
+** $Id: adatabase.h,v 1.53 2008/07/30 15:58:51 leader Exp $
 **
 ** Header file of the ananas database of Ananas
 ** Designer and Engine applications
@@ -163,26 +163,26 @@ private:
 	bool importTableData(QDomDocument& xml, const QString &tableName);
 	void reportError(QSqlError er, const QString &query);
 
-	QString fieldtype( const QString &tdef );
-	void checkIndices(const QString &table, const QString &flddef, QStringList &ui_add, QStringList &ui_drop);
+//	QString fieldtype( const QString &tdef );
+//	void checkIndices(const QString &table, const QString &flddef, QStringList &ui_add, QStringList &ui_drop);
 	bool isExists(const QString fname, QStringList *f_lst, QString &match);
-	QString fieldsDef( aCfgItem context, const QString &idx=QString::null);
-	QString sysFieldsDef ( aCfgItem context );
-	QString convFieldsDef( const QString flddef, QString &idxdef, QString &pkey );
+//	QString fieldsDef( aCfgItem context, const QString &idx=QString::null);
+//	QString sysFieldsDef ( aCfgItem context );
+//	QString convFieldsDef( const QString flddef, QString &idxdef, QString &pkey );
 	bool createdb( bool update );
-	bool createIndexes(const QString &table, const QString &indexl, const QStringList & uidc=QStringList());
-	bool dropIndexes(const QString &table, const QStringList &indices=QStringList());
-	bool verifyTable( const QString &table, const QString &flddef,
-	QString &f_drop, QString &f_add, QString &f_upd,
-	QString &i_drop, QString &i_add, QStringList & ui_drop, QStringList & ui_add);
-	bool createTable(int update, const QString table, QString flddef );
-	bool createSystables( bool update );
-	bool createCatalogues( bool update );
-	bool createDocuments( bool update );
-	bool createJournals( bool update );
-	bool createInformationRegisters( bool update );
-	bool createAccumulationRegisters( bool update );
-        bool createARegisters( bool update );
+//	bool createIndexes(const QString &table, const QString &indexl, const QStringList & uidc=QStringList());
+//	bool dropIndexes(const QString &table, const QStringList &indices=QStringList());
+//	bool verifyTable( const QString &table, const QString &flddef,
+//	QString &f_drop, QString &f_add, QString &f_upd,
+//	QString &i_drop, QString &i_add, QStringList & ui_drop, QStringList & ui_add);
+//	bool createTable(int update, const QString table, QString flddef );
+//	bool createSystables( bool update );
+//	bool createCatalogues( bool update );
+//	bool createDocuments( bool update );
+//	bool createJournals( bool update );
+//	bool createInformationRegisters( bool update );
+//	bool createAccumulationRegisters( bool update );
+  //      bool createARegisters( bool update );
         bool dumpTable( QDomDocument& xml, const QString &tableName);
 	void fillFeatures();
 	QString feature(const QString& fetureName);

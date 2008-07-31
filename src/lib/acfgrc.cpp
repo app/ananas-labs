@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: acfgrc.cpp,v 1.10 2008/07/14 06:13:24 app Exp $
+** $Id: acfgrc.cpp,v 1.11 2008/07/30 15:58:51 leader Exp $
 **
 ** Code file of the recorse work file of Ananas
 ** Designer and Engine applications
@@ -187,11 +187,11 @@ aCfgRc::write()
  * \_ru
  */
 QString
-aCfgRc::value(const QString &name)
+aCfgRc::value(const QString &name, const QString &defValue)
 {
 	QString *s;
 	s = values.find( name );
-	if ( s ) return *s; else return "";
+	if ( s ) return *s; else return defValue;
 }
 
 

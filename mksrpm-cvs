@@ -1,5 +1,5 @@
 #!/bin/sh
-PROJECTNAME=ananas-engine-qt
+PROJECTNAME=ananas
 DF=$(date --date 'now' +%Y%m%d)
 mkdir -p rpm
 cvs export -D20200101 $PROJECTNAME

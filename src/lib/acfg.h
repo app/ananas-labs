@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: acfg.h,v 1.122 2008/07/05 12:19:39 app Exp $
+** $Id: acfg.h,v 1.123 2008/07/30 15:58:51 leader Exp $
 **
 ** Header file of the Ananas configuration objects of Ananas
 ** Designer and Engine applications
@@ -367,11 +367,54 @@ class ANANAS_EXPORT  AMetadataObject: public QObject
 {
 Q_OBJECT
 public:
-        AMetadataObject( aCfgItem newitem );
+        AMetadataObject( const QString &Name = QString::null );
 public slots:
         QString Class();
 private:
-        aCfgItem item;
+	QString MDClassName;
+};
+
+
+
+/*!
+ *\en
+ *	Metadata objects group.
+ *\_en
+ *\ru
+ *	\brief Объект метаданных для обеспечения доступа из скриптов.
+ *	Наследует QObject.
+ *\_ru
+ */
+class ANANAS_EXPORT  AMetadataGroup: public AMetadataObject
+{
+Q_OBJECT
+public:
+        AMetadataGroup( const QString &Name = QString::null );
+public slots:
+	int Count(){return 0;};
+private:
+
+};
+
+
+
+/*!
+ *\en
+ *	Metadata root object.
+ *\_en
+ *\ru
+ *	\brief Корневой объект метаданных.
+ *	Наследует AMttadataObject.
+ *\_ru
+ */
+class ANANAS_EXPORT AMetadataRoot: public AMetadataGroup
+{
+Q_OBJECT
+public:
+	AMetadataRoot();
+	~AMetadataRoot();
+private:
+
 };
 
 

@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: acfg.cpp,v 1.102 2008/01/22 12:11:01 app Exp $
+** $Id: acfg.cpp,v 1.103 2008/07/30 15:58:51 leader Exp $
 **
 ** Code file of the Ananas configuration objects of Ananas
 ** Designer and Engine applications
@@ -1846,15 +1846,43 @@ aCfg::Info( QString partname )
  * AMetadataObject
  *
  */
-AMetadataObject::AMetadataObject( aCfgItem newitem )
+AMetadataObject::AMetadataObject( const QString &Name )
 {
-        item = newitem;
+        MDClassName = Name;
 }
 
 
 QString
 AMetadataObject::Class()
 {
-        return "Unknown";
+	if (MDClassName.isEmpty()) return "Unknown";
+	return MDClassName;
+}
+
+
+AMetadataGroup::AMetadataGroup( const QString &Name )
+:AMetadataObject(Name)
+{
+	
+}
+
+
+/*!
+ *\en
+ *	Metadata root object.
+ *\_en
+ *\ru
+ *	\brief Корневой объект метаданных.
+ *	Наследует AMetadataObject.
+ *\_ru
+ */
+AMetadataRoot::AMetadataRoot()
+: AMetadataGroup("ROOT")
+{
+}
+
+
+AMetadataRoot::~AMetadataRoot()
+{
 }
 
