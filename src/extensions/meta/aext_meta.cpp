@@ -287,6 +287,27 @@ AExtMeta::GetId( QString& name )
 	return  db->cfg.getId( name );
 }
 
+/**
+ * \en
+ * \_en 
+ * \ru
+ * 	\brief Возвращает идентификатор объекта .
+ *
+ * 	\param obj - объект, идентификатор которого надо получить
+  * 	\return Уникальный идентификатор объекта метаданных
+ * 	
+ * 	Пример использования
+ * \code
+ *	cat = new Catalogue("Номенклатура");
+ * 	meta = new Meta();
+ *  SparvochnikTovarovID = meta.GetId(cat); 
+ * \endcode
+ * \_ru
+ */
+int AExtMeta::GetId( aObject * obj )
+{
+    return db->cfg.id(obj->obj);
+}
 
 
 typedef AExtensionPlugin<AExtMeta> AExtMetaPlugin;

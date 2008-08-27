@@ -73,7 +73,7 @@ public slots:
 	QStringList	DataTypes(const QString &className = NULL);
 	QString		StringOfDataTypes(const QString &className = NULL, const QString &separator = ":");
 	int		GetId( QString& name );
-	
+	int		GetId( aObject * obj );	
 };
 
 
