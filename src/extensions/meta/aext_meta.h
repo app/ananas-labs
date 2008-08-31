@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: aext_meta.h,v 1.3 2007/05/23 10:48:33 app Exp $
+** $Id: aext_meta.h,v 1.4 2008/08/31 17:18:19 app Exp $
 **
 ** Extension object header file of
 ** Ananas application library
@@ -34,6 +34,7 @@
 
 #include "aextension.h"
 #include "acfg.h"
+#include "aobject.h"
 
 /**
  * \en
@@ -73,6 +74,7 @@ public slots:
 	QStringList	DataTypes(const QString &className = NULL);
 	QString		StringOfDataTypes(const QString &className = NULL, const QString &separator = ":");
 	int		GetId( QString& name );
+	int		GetId( aObject * obj );
 	
 };
 
