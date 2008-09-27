@@ -35,6 +35,8 @@
 #include "aextension.h"
 #include "acfg.h"
 
+class aObject;
+
 /**
  * \en
  * 	Class for work with meta data API from Ananas Script.
@@ -73,7 +75,9 @@ public slots:
 	QStringList	DataTypes(const QString &className = NULL);
 	QString		StringOfDataTypes(const QString &className = NULL, const QString &separator = ":");
 	int		GetId( QString& name );
-	int		GetId( aObject * obj );	
+	int		GetId( aObject * obj );
+	QStringList GetUserFields( QString name, QString table = QString::null );	
+	QStringList GetUserFields( aObject * obj, QString table = QString::null );	
 };
 
 

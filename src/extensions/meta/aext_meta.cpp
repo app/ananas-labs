@@ -31,6 +31,7 @@
 #include <qdom.h>
 #include <qstringlist.h> 
 
+#include "aobject.h"
 #include "aext_meta.h"
 #include "adatabase.h"
 #include "alog.h"
@@ -294,7 +295,7 @@ AExtMeta::GetId( QString& name )
  * 	\brief Возвращает идентификатор объекта .
  *
  * 	\param obj - объект, идентификатор которого надо получить
-  * 	\return Уникальный идентификатор объекта метаданных
+ * 	\return Уникальный идентификатор объекта метаданных
  * 	
  * 	Пример использования
  * \code
@@ -309,6 +310,72 @@ int AExtMeta::GetId( aObject * obj )
     return db->cfg.id(obj->obj);
 }
 
+/**
+ * \en
+ * \_en 
+ * \ru
+ * 	\brief Возвращает список пользовательских полей об
+ * екта
+ *
+ * 	\param name - Полное имя объекта, см описание GetId()
+ * 	\return Список польховательских полей или пустой список.
+ * 	
+ * 	Пример использования
+ * \code
+ * 	meta = new Meta();
+ *  list = meta.GetUserFields("Catalogue.Товары"); 
+ * \endcode
+ * \_ru
+ */
+QStringList AExtMeta::GetUserFields( QString name, QString table )
+{	
+	int	n;
+	aCfgItem obj, cobj;
+	QStringList res;
+	if( !GetId(name) ) return res;
+	obj = db->cfg.find( GetId(name) );	
+	if(!table.isEmpty())
+	{
+		obj = db->cfg.objTable( obj, db->cfg.id(db->cfg.findName(obj, md_table, table)) );
+	}
+	else
+	{
+		obj = db->cfg.objTable( GetId(name), 0 );
+	}
+	n = db->cfg.count ( obj, md_field );
+	for (int i = 0; i < n; i++ )
+	{
+		cobj = db->cfg.find( obj, md_field, i  );
+		if ( !cobj.isNull() )
+		{
+			res << db->cfg.attr(cobj, mda_name);
+		}
+	}
+	return res;
+}
+
+/**
+ * \en
+ * \_en 
+ * \ru
+ * 	\brief Возвращает список пользовательских полей об
+ * екта
+ *
+ * 	\param obj - объект, идентификатор которого надо получить
+ * 	\return Список польховательских полей или пустой список.
+ * 	
+ * 	Пример использования
+ * \code
+ *	cat = new Catalogue("Номенклатура");
+ * 	meta = new Meta();
+ *  list = meta.GetUserFields(cat); 
+ * \endcode
+ * \_ru
+ */
+QStringList AExtMeta::GetUserFields( aObject * aobj, QString table )
+{	
+	return GetUserFields( db->cfg.attr(aobj->obj, mda_name), table );
+}
 
 typedef AExtensionPlugin<AExtMeta> AExtMetaPlugin;
 A_EXPORT_PLUGIN( AExtMetaPlugin )
