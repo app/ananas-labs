@@ -77,7 +77,7 @@ Copyright 2003-2006 Проект Ананас, Андрей Паскаль, Гр
     </message>
     <message>
         <source>&lt;h4&gt;Ananas.Engin %1&lt;/h4&gt; is a programm&lt;br&gt;for executing application of accounting automation system&lt;br&gt;&lt;br&gt;Copyright 2003-2006 Leader Infotech, Valery Grazdankin, Copyright 2003-2006 Project Ananas, Andrey Paskal, Grigory Panov, Andrey Strelnikov&lt;br&gt;License: GPL&lt;br&gt;&lt;br&gt;technical support:&lt;br&gt;lider-infotech@narod.ru&lt;br&gt;app@linux.ru.net&lt;br&gt;Web sites:&lt;br&gt;&lt;a href=&quot;http://ananas.lrn.ru&quot;&gt;http://ananas.lrn.ru&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.leaderit.ru&quot;&gt;http://www.leaderit.ru&lt;/a&gt;&lt;br&gt;&lt;br&gt;Avalable extensions:&lt;br&gt;%2</source>
-        <translation>&lt;h4&gt;Ананас %1&lt;/h4&gt; 
+        <translation type="obsolete">&lt;h4&gt;Ананас %1&lt;/h4&gt; 
 Ананас - платформа автоматизации учета.&lt;br&gt;
 &lt;br&gt;
 Лицензия: GPL&lt;br&gt;
@@ -94,6 +94,26 @@ app@linux.ru.net&lt;br&gt;
 Доступные расширения:&lt;br&gt;
 %2</translation>
     </message>
+    <message>
+        <source> TA: 34.45.3214 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> BI: 35.65.3214 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>00</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Calculator</source>
+        <translation>Калькулятор</translation>
+    </message>
+    <message encoding="UTF-8">
+        <source>&lt;h4&gt;&quot;%1&quot;&lt;/h4&gt;%2&lt;br&gt;&lt;br&gt;Автор: %3&lt;br&gt;%4&lt;br&gt;&lt;br&gt;Разработано на платформе &quot;Ананас&quot;! (версия %5)&lt;br&gt;Доступные расширения:&lt;br&gt;%6</source>
+        <translation></translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -108,6 +128,26 @@ app@linux.ru.net&lt;br&gt;
     <message>
         <source>Ananas runtime init error. See message window and log file for details.</source>
         <translation>Ошибка среды выполнения. Смотрите окно сообщений и лог файл для получения более подробной информации.</translation>
+    </message>
+    <message>
+        <source>Warning: BinReloc failed to initialize (error code %1)
+</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Will fallback to hardcoded default path.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>main - BinReloc path to data dir is %1.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>main - BinReloc path to lib dir is %1.
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -567,22 +567,6 @@
         <source>&lt;h4&gt;Ananas.Designer %1&lt;/h4&gt; is a programm&lt;br&gt;for adjusting accounting automation system&lt;br&gt;&lt;br&gt;Copyright 2003-2006 Leader Infotech, Valery Grazdankin &lt;br&gt;Copyright 2003-2006 Project Ananas, Andrey Paskal, Grigory Panov, Andrey Strelnikov&lt;br&gt;License: GPL&lt;br&gt;&lt;br&gt;technical support:&lt;br&gt;lider-infotech@narod.ru&lt;br&gt;app@linux.ru.net&lt;br&gt;Web sites:&lt;br&gt;&lt;a href=&quot;http://ananas.lrn.ru&quot;&gt;http://ananas.lrn.ru&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.leaderit.ru&quot;&gt;http://www.leaderit.ru&lt;/a&gt;&lt;br&gt;&lt;br&gt;Avalable extensions:&lt;br&gt;%2</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>About Configuration</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;hr&gt;&lt;br&gt;Ananas.Designer %1&lt;br&gt;Avalable extensions:&lt;br&gt;%2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A&amp;ssistant</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>About &amp;BS</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PixmapPreview</name>
@@ -816,13 +800,25 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>setTranslator - BinReloc path to data dir is %1.
+        <source>main - BinReloc path to data dir is %1.
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>main - BinReloc path to data dir is %1.
+        <source>Numberic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc::EditForm BinReloc path to data dir is %1.
 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc open file %1 for read from templates directory %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc file %1 not exists in templates directory %2</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -900,40 +896,39 @@
 </context>
 <context>
     <name>dASA</name>
+</context>
+<context>
+    <name>dEditAReg</name>
     <message>
-        <source>Assistant</source>
+        <source>Accumulating register</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Content</source>
+        <source>Common</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Articles</source>
+        <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Index</source>
+        <source>Description:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Find:</source>
+        <source>Aliases</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Search</source>
+        <source>Lang</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Column 1</source>
+        <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Keyword:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Author:</source>
+        <source>Accumulation register:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1041,6 +1036,10 @@
     </message>
     <message>
         <source>File name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Execute</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1258,6 +1257,29 @@ Enter another field name:</source>
     <message>
         <source>Form &lt;b&gt;%1&lt;/b&gt; alredy exist.
 Enter another form name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning: BinReloc failed to initialize (error code %1)
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Will fallback to hardcoded default path.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc::EditForm BinReloc path to data dir is %1.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc open file %1 for read from templates directory %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc file %1 not exists in templates directory %2</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1700,80 +1722,19 @@ Enter another form name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Wizard</source>
+        <source>dEditDialog edit form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select Form template</source>
+        <source>dEditDialog open file %1 for write</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Help</source>
+        <source>dEditDialog open file %1 for read from templates directory %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cansel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ok</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Empty template</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Vertical</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Horizontal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Empty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Buttons only</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Buttons and elements</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Generate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dEditDialog::EditForm edit form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dEditDialog::EditForm select %1 template</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dEditDialog::EditForm create new form from template %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dEditDialog::EditForm open file %1 for write</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dEditDialog::EditForm open file %1 for read from templates directory %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dEditDialog::EditForm show formdesigner</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hard work in progress. Coming soon...
-Now you must use &quot;Designer&quot; button.</source>
+        <source>dEditDialog show formdesigner</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2022,6 +1983,29 @@ Enter another table name:</source>
         <source>Rename table</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Warning: BinReloc failed to initialize (error code %1)
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Will fallback to hardcoded default path.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc::EditForm BinReloc path to data dir is %1.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc open file %1 for read from templates directory %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc file %1 not exists in templates directory %2</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>dEditField</name>
@@ -2051,10 +2035,6 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Field:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2094,14 +2074,6 @@ Enter another table name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use Date with Mask</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Date format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>yyyyMMdd</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2118,23 +2090,11 @@ Enter another table name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>use own format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;u&gt;&lt;i&gt;Example&lt;/i&gt;:&lt;/u&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>___</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Min:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Max:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2182,10 +2142,6 @@ Enter another table name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add leading zeros</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Groups</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2219,6 +2175,113 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Deleting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Validator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;u&gt;Example:&lt;/u&gt; RegExp &lt;b&gt;&lt;i&gt;[A-C]\d{5}[W-Z]&lt;/b&gt;&lt;/i&gt; for string &lt;i&gt;&lt;b&gt;A12345Z&lt;/b&gt;&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>RegExp</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intermediate == Invalid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Input Mask</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>[ABCD], will match an A or a B or a C or a D.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Test:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vd</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Num</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Construct:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+ Date as:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+ UID +</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Own format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add zeros</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Validate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Field:  </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>dEditIReg</name>
+    <message>
+        <source>Information register</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Don&apos;t delete record in unconduct</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aliases</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lang</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Information register:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2314,107 +2377,6 @@ Enter another table name:</source>
 </context>
 <context>
     <name>dEditReg</name>
-    <message>
-        <source>Register</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Common</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Comment:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cname:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Register type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Don&apos;t delete record on unconduct</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>a-Register</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>i-Register</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>New</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Dimensions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Resources</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Aliases</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lang</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Information register:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Accumulation register:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enter a new field name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add new field</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Field &lt;b&gt;%1&lt;/b&gt; alredy exist.
-Enter another field name:</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>dEditReport</name>

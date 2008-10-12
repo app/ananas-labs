@@ -42,6 +42,21 @@
     </message>
 </context>
 <context>
+    <name>PopupCalendar</name>
+    <message>
+        <source>Week: %1</source>
+        <translation>Неделя: %1</translation>
+    </message>
+    <message>
+        <source>Wed</source>
+        <translation>Ср</translation>
+    </message>
+    <message>
+        <source>A-Calendar</source>
+        <translation>Календарь</translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <source>Error read configuration line:%d col:%s %s</source>
@@ -198,6 +213,14 @@
     <message>
         <source>aDataTable QSqlCursor filter set to &apos;%1&apos;</source>
         <translation>aDataTable QSqlCursor фильтр задан как &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>aCfg::read(const QString &amp;fname) is running with fname = &apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aCfg::read(const QString &amp;fname) is running - Can&apos;t read file &apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -487,6 +510,10 @@
         <source>aCatGroup new group error %1</source>
         <translation>aCatGroup: Ошибка при создании новой группы %1 </translation>
     </message>
+    <message>
+        <source>%1 %2: aCatGroup init error %3</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>aCatalogue</name>
@@ -539,7 +566,7 @@
     <name>aCfg</name>
     <message>
         <source>Bad configuration</source>
-        <translation>Ошибка в файле бизнес-схемы</translation>
+        <translation type="obsolete">Ошибка в файле бизнес-схемы</translation>
     </message>
     <message>
         <source>aCfg swap: first element is null</source>
@@ -619,7 +646,7 @@
     </message>
     <message>
         <source>aCfg::find(const QString &amp;name) running</source>
-        <translation>Вызван метод aCfg::find(const QString &amp;name)</translation>
+        <translation type="obsolete">Вызван метод aCfg::find(const QString &amp;name)</translation>
     </message>
     <message>
         <source>aCfg::find(const QString &amp;name) choose type for %1</source>
@@ -634,7 +661,39 @@
         <translation>aCfg::find(const QString &amp;name) выход</translation>
     </message>
     <message>
-        <source>aCfg::find(const QString &amp;name) &gt;&gt;&gt;&gt; name = &apos;%1&apos;</source>
+        <source>Bad metadata xml</source>
+        <translation>Обнаружены ошибки в файле метаданных</translation>
+    </message>
+    <message>
+        <source>aCfg::readrc(const QString &amp;fname) is running with fname =&apos;%1&apos;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aCfg::readrc(const QString &amp;fname) - Empty &apos;configfile&apos; configuration parameter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> aCfg::createNew() is running - Create new empty metadata schema.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aCfg::find(const QString &amp;name) is running with name=&apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aCfg::find(const QString &amp;name) is running: length of metadata to search=&apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aCfg::findChild(aCfgItem context, const QString &amp;classname, int n) is running with classname=&apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid parameter value in aCfg::findChild(aCfgItem context, const QString &amp;classname, int n) &apos;context&apos; should not be NULL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aCfg::findChild(aCfgItem context, const QString &amp;classname, int n) is running with context length=&apos;%1&apos; </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -715,6 +774,14 @@
     <message>
         <source>aContainer delete directory %1</source>
         <translation>aContainer: Удаление папки %1 файловой системы</translation>
+    </message>
+    <message>
+        <source>aContainer save successefully to %1</source>
+        <translation>Контейнер успешно сохранен в %1</translation>
+    </message>
+    <message>
+        <source>Compress file %1</source>
+        <translation>Упаковка файла %1</translation>
     </message>
 </context>
 <context>
@@ -919,22 +986,6 @@
         <source>aDatabase::prepareDatabaseConnect - Can&apos;t use database driver &apos;%1&apos;</source>
         <translation>aDatabase::prepareDatabaseConnect - Не удалось использовать драйвер баз данных &apos;%1&apos;</translation>
     </message>
-    <message>
-        <source>&gt;&gt;&gt;&gt; return &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>tableDbName() Called for %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contex %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>tableDbName() return %1</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>aDocJournal</name>
@@ -1106,6 +1157,25 @@
     </message>
 </context>
 <context>
+    <name>aMSOTemplate</name>
+    <message>
+        <source>aMSOTemplate: report template &apos;%1&apos; has been read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aMSOTemplate: can&apos;t read report template &apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aMSOTemplate value for field %1 not setted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aMSOTemplate save %1 open for write</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>aOOTemplate</name>
     <message>
         <source>aOOTemplate temporary directory is %1</source>
@@ -1155,6 +1225,14 @@
         <source>aOOTemplate zip normal to %1</source>
         <translation>aOOTemplate: Упаковка zip успешно завершена: %1</translation>
     </message>
+    <message>
+        <source>aOOTemplate lineFeedRemove cant open %1 in read mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aOOTemplate lineFeedRemove cant open %1 for write</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>aObject</name>
@@ -1174,7 +1252,7 @@
     </message>
     <message>
         <source>aObject md object not found</source>
-        <translation>aObject: Объект метаданных не найден</translation>
+        <translation type="obsolete">aObject: Объект метаданных не найден</translation>
     </message>
     <message>
         <source>aObject table with name %1 not found</source>
@@ -1203,6 +1281,22 @@
     <message>
         <source>aObject display string context is null</source>
         <translation>aObject: Содержимое строки для отображения равно null</translation>
+    </message>
+    <message>
+        <source>Metadata object &apos;%1&apos; not found</source>
+        <translation>Не найден объект &apos;%1&apos; метаданных</translation>
+    </message>
+    <message>
+        <source>aObject::initObject() - Object allready initialized! Skip init.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aObject::initObject() - First init.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aObject::tableInsert - can&apos;t insert table</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1912,6 +2006,10 @@ Enter another name:</source>
     <message>
         <source>Shema</source>
         <translation>Схема</translation>
+    </message>
+    <message>
+        <source>&lt;p align=&quot;center&quot;&gt;&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
