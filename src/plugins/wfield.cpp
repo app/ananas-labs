@@ -207,6 +207,7 @@ wField::widgetInit()
 			// set validator for string
 			lineEdit->setMaxLength(n1);
 		}
+		lineEdit->setValidator(NULL);
 		connect( lineEdit, SIGNAL( textChanged( const QString & ) ),
 			 this, SLOT( setValue( const QString & ) ) );
 		connect( lineEdit, SIGNAL( lostFocus() ), this, SLOT( focusOutEvent()) );
