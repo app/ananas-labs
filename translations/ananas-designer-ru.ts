@@ -696,19 +696,19 @@ app@linux.ru.net&lt;br&gt;
     </message>
     <message>
         <source>About Configuration</source>
-        <translation>О конфигурации</translation>
+        <translation type="obsolete">О конфигурации</translation>
     </message>
     <message>
         <source>&lt;hr&gt;&lt;br&gt;Ananas.Designer %1&lt;br&gt;Avalable extensions:&lt;br&gt;%2</source>
-        <translation>&lt;hr&gt;&lt;br&gt;Ананас.Дизайнер %1&lt;br&gt;Доступные расширения:&lt;br&gt;%2</translation>
+        <translation type="obsolete">&lt;hr&gt;&lt;br&gt;Ананас.Дизайнер %1&lt;br&gt;Доступные расширения:&lt;br&gt;%2</translation>
     </message>
     <message>
         <source>A&amp;ssistant</source>
-        <translation>А&amp;систент</translation>
+        <translation type="obsolete">А&amp;систент</translation>
     </message>
     <message>
         <source>About &amp;BS</source>
-        <translation>О &amp;Бизнес-схеме</translation>
+        <translation type="obsolete">О &amp;Бизнес-схеме</translation>
     </message>
 </context>
 <context>
@@ -926,7 +926,7 @@ app@linux.ru.net&lt;br&gt;
     </message>
     <message>
         <source>Numberic</source>
-        <translation type="obsolete">Числовой</translation>
+        <translation>Числовой</translation>
     </message>
     <message>
         <source> Ananas List View Item %1 is null</source>
@@ -947,6 +947,34 @@ app@linux.ru.net&lt;br&gt;
     <message>
         <source>New &amp;Action</source>
         <translation>Новое &amp;действие</translation>
+    </message>
+    <message>
+        <source>Warning: BinReloc failed to initialize (error code %1)
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Will fallback to hardcoded default path.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>main - BinReloc path to data dir is %1.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc::EditForm BinReloc path to data dir is %1.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc open file %1 for read from templates directory %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc file %1 not exists in templates directory %2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1025,74 +1053,70 @@ app@linux.ru.net&lt;br&gt;
     <name>dASA</name>
     <message>
         <source>Assistant</source>
-        <translation>Ассистент</translation>
+        <translation type="obsolete">Ассистент</translation>
     </message>
     <message>
         <source>Content</source>
-        <translation>Содержимое</translation>
+        <translation type="obsolete">Содержимое</translation>
     </message>
     <message>
         <source>Articles</source>
-        <translation>Темы</translation>
+        <translation type="obsolete">Темы</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Индекс</translation>
+        <translation type="obsolete">Индекс</translation>
     </message>
     <message>
         <source>Find:</source>
-        <translation>Найти:</translation>
+        <translation type="obsolete">Найти:</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Поиск</translation>
-    </message>
-    <message>
-        <source>Column 1</source>
-        <translation></translation>
+        <translation type="obsolete">Поиск</translation>
     </message>
     <message>
         <source>Keyword:</source>
-        <translation>Ключевое слово:</translation>
+        <translation type="obsolete">Ключевое слово:</translation>
     </message>
     <message>
         <source>Author:</source>
-        <translation>Автор:</translation>
+        <translation type="obsolete">Автор:</translation>
     </message>
 </context>
 <context>
     <name>dEditAReg</name>
     <message>
         <source>Accumulating register</source>
-        <translation type="obsolete">Накопительный регистр</translation>
+        <translation>Накопительный регистр</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="obsolete">Общий</translation>
+        <translation>Общий</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="obsolete">Имя:</translation>
+        <translation>Имя:</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation type="obsolete">Описание:</translation>
+        <translation>Описание:</translation>
     </message>
     <message>
         <source>Aliases</source>
-        <translation type="obsolete">Псевдонимы</translation>
+        <translation>Псевдонимы</translation>
     </message>
     <message>
         <source>Lang</source>
-        <translation type="obsolete">Язык</translation>
+        <translation>Язык</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="obsolete">Имя</translation>
+        <translation>Имя</translation>
     </message>
     <message>
         <source>Accumulation register:</source>
-        <translation type="obsolete">Накопительный регистр:</translation>
+        <translation>Накопительный регистр:</translation>
     </message>
 </context>
 <context>
@@ -1143,7 +1167,7 @@ app@linux.ru.net&lt;br&gt;
     </message>
     <message>
         <source>Execute</source>
-        <translation type="obsolete">Выполнить</translation>
+        <translation>Выполнить</translation>
     </message>
     <message>
         <source>Object</source>
@@ -1471,6 +1495,29 @@ Enter another field name:</source>
 Enter another form name:</source>
         <translation>Форма &lt;b&gt;%1&lt;/b&gt; уже сужествует.
 Введите новое имя: </translation>
+    </message>
+    <message>
+        <source>Warning: BinReloc failed to initialize (error code %1)
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Will fallback to hardcoded default path.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc::EditForm BinReloc path to data dir is %1.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc open file %1 for read from templates directory %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc file %1 not exists in templates directory %2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1938,11 +1985,11 @@ Enter another form name:</source>
     </message>
     <message>
         <source>Wizard</source>
-        <translation>Мастер</translation>
+        <translation type="obsolete">Мастер</translation>
     </message>
     <message>
         <source>Select Form template</source>
-        <translation>Выбор шаблона формы</translation>
+        <translation type="obsolete">Выбор шаблона формы</translation>
     </message>
     <message>
         <source>Label</source>
@@ -1950,19 +1997,19 @@ Enter another form name:</source>
     </message>
     <message>
         <source>Ok</source>
-        <translation>Ок</translation>
+        <translation type="obsolete">Ок</translation>
     </message>
     <message>
         <source>Cansel</source>
-        <translation>Отмена</translation>
+        <translation type="obsolete">Отмена</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>Помощь</translation>
+        <translation type="obsolete">Помощь</translation>
     </message>
     <message>
         <source>Generate</source>
-        <translation>Создать</translation>
+        <translation type="obsolete">Создать</translation>
     </message>
     <message>
         <source>Ananas Designer</source>
@@ -1973,32 +2020,47 @@ Now you must use &quot;Designer&quot; button.</comment>
     <message>
         <source>Hard work in progress. Coming soon...
 Now you must use &quot;Designer&quot; button.</source>
-        <translation>Это тяжелая работа. Но скоро сделаем...
+        <translation type="obsolete">Это тяжелая работа. Но скоро сделаем...
 Пока вы должны использовать кнопку &quot;Редактор диалогов&quot;.</translation>
     </message>
     <message>
         <source>Empty template</source>
-        <translation>Пустой шаблон</translation>
+        <translation type="obsolete">Пустой шаблон</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Вертикальный</translation>
+        <translation type="obsolete">Вертикальный</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Горизонтальный</translation>
+        <translation type="obsolete">Горизонтальный</translation>
     </message>
     <message>
         <source>Empty</source>
-        <translation>Пустой</translation>
+        <translation type="obsolete">Пустой</translation>
     </message>
     <message>
         <source>Buttons only</source>
-        <translation>Только кнопки</translation>
+        <translation type="obsolete">Только кнопки</translation>
     </message>
     <message>
         <source>Buttons and elements</source>
-        <translation>Кнопки и элементы</translation>
+        <translation type="obsolete">Кнопки и элементы</translation>
+    </message>
+    <message>
+        <source>Warning: BinReloc failed to initialize (error code %1)
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Will fallback to hardcoded default path.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDialog::EditForm BinReloc path to data dir is %1.
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2133,7 +2195,7 @@ Now you must use &quot;Designer&quot; button.</source>
     </message>
     <message>
         <source>Documen Forms</source>
-        <translation>Формы документа</translation>
+        <translation type="obsolete">Формы документа</translation>
     </message>
     <message>
         <source>UP</source>
@@ -2305,6 +2367,33 @@ Enter another table name:</source>
         <source>Add new table. Attempt %1</source>
         <translation>Добавление новой таблицы. Попытка %1</translation>
     </message>
+    <message>
+        <source>Document Forms</source>
+        <translation>Формы документа</translation>
+    </message>
+    <message>
+        <source>Warning: BinReloc failed to initialize (error code %1)
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Will fallback to hardcoded default path.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc::EditForm BinReloc path to data dir is %1.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc open file %1 for read from templates directory %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dEditDoc file %1 not exists in templates directory %2</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>dEditField</name>
@@ -2338,7 +2427,7 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Field:</source>
-        <translation>Поле:</translation>
+        <translation type="obsolete">Поле:</translation>
     </message>
     <message>
         <source>Sum</source>
@@ -2486,11 +2575,11 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Use Date with Mask</source>
-        <translation>Использовать дату по маске</translation>
+        <translation type="obsolete">Использовать дату по маске</translation>
     </message>
     <message>
         <source>Date format</source>
-        <translation>Формат даты</translation>
+        <translation type="obsolete">Формат даты</translation>
     </message>
     <message>
         <source>yyyyMMdd</source>
@@ -2510,7 +2599,7 @@ Enter another table name:</source>
     </message>
     <message>
         <source>use own format</source>
-        <translation>собственный формат</translation>
+        <translation type="obsolete">собственный формат</translation>
     </message>
     <message>
         <source>&lt;u&gt;&lt;i&gt;Example&lt;/i&gt;:&lt;/u&gt;</source>
@@ -2522,11 +2611,11 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Min:</source>
-        <translation>Мин:</translation>
+        <translation type="obsolete">Мин:</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation>Макс:</translation>
+        <translation type="obsolete">Макс:</translation>
     </message>
     <message>
         <source>Prefix:</source>
@@ -2542,46 +2631,114 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Add leading zeros</source>
-        <translation>Дополнять лидирующими нулями</translation>
+        <translation type="obsolete">Дополнять лидирующими нулями</translation>
+    </message>
+    <message>
+        <source>Validator</source>
+        <translation>Проверка ввода</translation>
+    </message>
+    <message>
+        <source>&lt;u&gt;Example:&lt;/u&gt; RegExp &lt;b&gt;&lt;i&gt;[A-C]\d{5}[W-Z]&lt;/b&gt;&lt;/i&gt; for string &lt;i&gt;&lt;b&gt;A12345Z&lt;/b&gt;&lt;/i&gt;</source>
+        <translation>&lt;u&gt;Пример:&lt;/u&gt; Регулярное выражение &lt;b&gt;&lt;i&gt;[A-C]\d{5}[W-Z]&lt;/b&gt;&lt;/i&gt; примет строку &lt;i&gt;&lt;b&gt;A12345Z&lt;/b&gt;&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>RegExp</source>
+        <translation>Регулярное выражение</translation>
+    </message>
+    <message>
+        <source>Intermediate == Invalid</source>
+        <translation>Незавершенное считать неверным</translation>
+    </message>
+    <message>
+        <source>Input Mask</source>
+        <translation>Шаблон ввода</translation>
+    </message>
+    <message>
+        <source>[ABCD], will match an A or a B or a C or a D.</source>
+        <translation>[ABCD] допускает либо A, либо B, либо C, либо D.</translation>
+    </message>
+    <message>
+        <source>Test:</source>
+        <translation>Тест:</translation>
+    </message>
+    <message>
+        <source>Vd</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Num</source>
+        <translation>Число</translation>
+    </message>
+    <message>
+        <source>Construct:</source>
+        <translation>Состоит из:</translation>
+    </message>
+    <message>
+        <source>+ Date as:</source>
+        <translation>+ Дата в формате:</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation>+</translation>
+    </message>
+    <message>
+        <source>+ UID +</source>
+        <translation>+ идентификатор +</translation>
+    </message>
+    <message>
+        <source>Own format</source>
+        <translation>Свой формат</translation>
+    </message>
+    <message>
+        <source>Add zeros</source>
+        <translation>выравнивать нулями</translation>
+    </message>
+    <message>
+        <source>Validate</source>
+        <translation>Проверка ввода</translation>
+    </message>
+    <message>
+        <source>Field:  </source>
+        <translation>Поле:</translation>
     </message>
 </context>
 <context>
     <name>dEditIReg</name>
     <message>
         <source>Information register</source>
-        <translation type="obsolete">Информационный регистр</translation>
+        <translation>Информационный регистр</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="obsolete">Общий</translation>
+        <translation>Общий</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="obsolete">Имя:</translation>
+        <translation>Имя:</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation type="obsolete">Описание:</translation>
+        <translation>Описание:</translation>
     </message>
     <message>
         <source>Aliases</source>
-        <translation type="obsolete">Псевдонимы</translation>
+        <translation>Псевдонимы</translation>
     </message>
     <message>
         <source>Lang</source>
-        <translation type="obsolete">Язык</translation>
+        <translation>Язык</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="obsolete">Имя</translation>
+        <translation>Имя</translation>
     </message>
     <message>
         <source>Information register:</source>
-        <translation type="obsolete">Информационный регистр:</translation>
+        <translation>Информационный регистр:</translation>
     </message>
     <message>
         <source>Don&apos;t delete record in unconduct</source>
-        <translation type="obsolete">Не удалять записи при отмене проведения документа</translation>
+        <translation>Не удалять записи при отмене проведения документа</translation>
     </message>
 </context>
 <context>
@@ -2612,7 +2769,7 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="obsolete">Тип:</translation>
+        <translation>Тип:</translation>
     </message>
     <message>
         <source>Special</source>
@@ -2624,11 +2781,11 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Documents</source>
-        <translation type="obsolete">Документы</translation>
+        <translation>Документы</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation type="obsolete">Действие</translation>
+        <translation>Действие</translation>
     </message>
     <message>
         <source>Access</source>
@@ -2664,7 +2821,7 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Docs</source>
-        <translation>Документы</translation>
+        <translation type="obsolete">Документы</translation>
     </message>
     <message>
         <source>All documents</source>
@@ -2676,23 +2833,23 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Type</source>
-        <translation>Тип</translation>
+        <translation type="obsolete">Тип</translation>
     </message>
     <message>
         <source>As full docs journal</source>
-        <translation>Как полный журнал</translation>
+        <translation type="obsolete">Как полный журнал</translation>
     </message>
     <message>
         <source>As subordinate docs journal</source>
-        <translation>Как журнал подчиненных</translation>
+        <translation type="obsolete">Как журнал подчиненных</translation>
     </message>
     <message>
         <source>Cname:</source>
-        <translation>Синоним:</translation>
+        <translation type="obsolete">Синоним:</translation>
     </message>
     <message>
         <source>Forms</source>
-        <translation>Формы</translation>
+        <translation type="obsolete">Формы</translation>
     </message>
     <message>
         <source>Dn</source>
@@ -2700,19 +2857,19 @@ Enter another table name:</source>
     </message>
     <message>
         <source>New</source>
-        <translation>Новый</translation>
+        <translation type="obsolete">Новый</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Удалить</translation>
+        <translation type="obsolete">Удалить</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Изменить</translation>
+        <translation type="obsolete">Изменить</translation>
     </message>
     <message>
         <source>Add new form</source>
-        <translation>Добавление новой формы</translation>
+        <translation type="obsolete">Добавление новой формы</translation>
     </message>
     <message>
         <source>Enter a new form name:</source>
@@ -2734,65 +2891,65 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Selected documents</source>
-        <translation>Выбранные документы</translation>
+        <translation type="obsolete">Выбранные документы</translation>
     </message>
     <message>
         <source>Journal Columns</source>
-        <translation>Столбцы журнала</translation>
-    </message>
-    <message>
-        <source>Cols</source>
-        <translation></translation>
+        <translation type="obsolete">Столбцы журнала</translation>
     </message>
     <message>
         <source>Comment</source>
-        <translation>Коментарий</translation>
+        <translation type="obsolete">Коментарий</translation>
     </message>
     <message>
         <source>Enter a new forms name:</source>
-        <translation>Введите имя новой формы:</translation>
+        <translation type="obsolete">Введите имя новой формы:</translation>
     </message>
     <message>
         <source>Form &lt;b&gt;%1&lt;/b&gt; alredy exist.
 Enter another form name:</source>
-        <translation>Форма &lt;b&gt;%1&lt;/b&gt; уже сужествует.
+        <translation type="obsolete">Форма &lt;b&gt;%1&lt;/b&gt; уже сужествует.
 Введите новое имя: </translation>
     </message>
     <message>
         <source>Available documents</source>
-        <translation>Доступные документы</translation>
+        <translation type="obsolete">Доступные документы</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Выбор</translation>
+        <translation type="obsolete">Выбор</translation>
     </message>
     <message>
         <source>Cansel</source>
-        <translation>Отмена</translation>
+        <translation type="obsolete">Отмена</translation>
     </message>
     <message>
         <source>Enter a new column name:</source>
-        <translation>Введите новое имя столбца:</translation>
+        <translation type="obsolete">Введите новое имя столбца:</translation>
     </message>
     <message>
         <source>Add new column</source>
-        <translation>Добавить новый столбец</translation>
+        <translation type="obsolete">Добавить новый столбец</translation>
     </message>
     <message>
         <source>Column &lt;b&gt;%1&lt;/b&gt; alredy exist.
 Enter another column name:</source>
-        <translation>Столбец &lt;b&gt;%1&lt;/b&gt; уже существует.
+        <translation type="obsolete">Столбец &lt;b&gt;%1&lt;/b&gt; уже существует.
 Введите другое имя столбца:</translation>
     </message>
     <message>
         <source>Rename column</source>
-        <translation>Переименовать столбец</translation>
+        <translation type="obsolete">Переименовать столбец</translation>
     </message>
     <message>
         <source>Name &lt;b&gt;%1&lt;/b&gt; alredy exist.
 Enter another column name:</source>
-        <translation>Имя &lt;b&gt;%1&lt;/b&gt; уже существует.
+        <translation type="obsolete">Имя &lt;b&gt;%1&lt;/b&gt; уже существует.
 Введите другое имя столбца:</translation>
+    </message>
+    <message>
+        <source>Action_2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2826,104 +2983,104 @@ Enter another column name:</source>
     <name>dEditReg</name>
     <message>
         <source>Register</source>
-        <translation>Регистр</translation>
+        <translation type="obsolete">Регистр</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation>Общий</translation>
+        <translation type="obsolete">Общий</translation>
     </message>
     <message>
         <source>Comment:</source>
-        <translation>Комментарий:</translation>
+        <translation type="obsolete">Комментарий:</translation>
     </message>
     <message>
         <source>Cname:</source>
-        <translation>Синоним:</translation>
+        <translation type="obsolete">Синоним:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Имя:</translation>
+        <translation type="obsolete">Имя:</translation>
     </message>
     <message>
         <source>Register type</source>
-        <translation>Тип регистра</translation>
+        <translation type="obsolete">Тип регистра</translation>
     </message>
     <message>
         <source>Don&apos;t delete record on unconduct</source>
-        <translation>Не удалять запись при  отмене проведения</translation>
+        <translation type="obsolete">Не удалять запись при  отмене проведения</translation>
     </message>
     <message>
         <source>a-Register</source>
-        <translation>Накопительный регистр</translation>
+        <translation type="obsolete">Накопительный регистр</translation>
     </message>
     <message>
         <source>i-Register</source>
-        <translation>Информационный регистр</translation>
+        <translation type="obsolete">Информационный регистр</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Информация</translation>
+        <translation type="obsolete">Информация</translation>
     </message>
     <message>
         <source>New</source>
-        <translation>Новый</translation>
+        <translation type="obsolete">Новый</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Изменить</translation>
+        <translation type="obsolete">Изменить</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Удалить</translation>
+        <translation type="obsolete">Удалить</translation>
     </message>
     <message>
         <source>Dimensions</source>
-        <translation>Измерения</translation>
+        <translation type="obsolete">Измерения</translation>
     </message>
     <message>
         <source>Resources</source>
-        <translation>Ресурсы</translation>
+        <translation type="obsolete">Ресурсы</translation>
     </message>
     <message>
         <source>Aliases</source>
-        <translation>Псевдонимы</translation>
+        <translation type="obsolete">Псевдонимы</translation>
     </message>
     <message>
         <source>Lang</source>
-        <translation>Язык</translation>
+        <translation type="obsolete">Язык</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Имя</translation>
+        <translation type="obsolete">Имя</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Описание</translation>
+        <translation type="obsolete">Описание</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation>Описание:</translation>
+        <translation type="obsolete">Описание:</translation>
     </message>
     <message>
         <source>Information register:</source>
-        <translation>Информационный регистр:</translation>
+        <translation type="obsolete">Информационный регистр:</translation>
     </message>
     <message>
         <source>Accumulation register:</source>
-        <translation>Накопительный регистр:</translation>
+        <translation type="obsolete">Накопительный регистр:</translation>
     </message>
     <message>
         <source>Enter a new field name:</source>
-        <translation>Введите новое имя поля:</translation>
+        <translation type="obsolete">Введите новое имя поля:</translation>
     </message>
     <message>
         <source>Add new field</source>
-        <translation>Добавление нового поля</translation>
+        <translation type="obsolete">Добавление нового поля</translation>
     </message>
     <message>
         <source>Field &lt;b&gt;%1&lt;/b&gt; alredy exist.
 Enter another field name:</source>
-        <translation>Поле &lt;b&gt;%1&lt;/b&gt; уже существует.
+        <translation type="obsolete">Поле &lt;b&gt;%1&lt;/b&gt; уже существует.
 Введите другое имя:</translation>
     </message>
 </context>

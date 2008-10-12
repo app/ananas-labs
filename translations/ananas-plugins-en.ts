@@ -120,6 +120,22 @@
         <source>aForm::on_tabselected(...),   closeAfterSelect is false</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>on_formstop() definition wasn&apos;t found. Form should be closed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on_formstop() definition has been found. Ready to run it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on_formstop() returned &apos;%1&apos;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on_formstop() returned unexpected value type. Should be boolean true or false.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>aEditorFactory</name>
@@ -210,10 +226,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>aForm table value: column out of range</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>aForm set read only</source>
         <translation type="unfinished"></translation>
     </message>
@@ -283,6 +295,14 @@
     </message>
     <message>
         <source>Deprecated method call: aForm::close(). Use aForm::Close() instead</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aForm::init  Can&apos;t create screen form from ui. buffer=&apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aForm table value: column number &apos;%1&apos; out of range</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -994,6 +1014,38 @@
     </message>
     <message>
         <source>wJournal::insert no engine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editing of the document</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no records for editing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copying of the document</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no records for copying</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Viewing of the document</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no records for viewing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Removal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There are no records for removal</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

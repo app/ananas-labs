@@ -40,6 +40,21 @@
     </message>
 </context>
 <context>
+    <name>PopupCalendar</name>
+    <message>
+        <source>Week: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A-Calendar</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <source>Unknown</source>
@@ -191,6 +206,14 @@
     </message>
     <message>
         <source>aDataTable QSqlCursor filter set to &apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aCfg::read(const QString &amp;fname) is running with fname = &apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aCfg::read(const QString &amp;fname) is running - Can&apos;t read file &apos;%1&apos;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -477,6 +500,10 @@
         <source>aCatGroup new group error %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%1 %2: aCatGroup init error %3</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>aCatalogue</name>
@@ -527,10 +554,6 @@
 </context>
 <context>
     <name>aCfg</name>
-    <message>
-        <source>Bad configuration</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>aCfg swap: first element is null</source>
         <translation type="unfinished"></translation>
@@ -608,10 +631,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>aCfg::find(const QString &amp;name) running</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>aCfg::find(const QString &amp;name) choose type for %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -624,7 +643,39 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>aCfg::find(const QString &amp;name) &gt;&gt;&gt;&gt; name = &apos;%1&apos;</source>
+        <source>Bad metadata xml</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aCfg::readrc(const QString &amp;fname) is running with fname =&apos;%1&apos;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aCfg::readrc(const QString &amp;fname) - Empty &apos;configfile&apos; configuration parameter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> aCfg::createNew() is running - Create new empty metadata schema.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aCfg::find(const QString &amp;name) is running with name=&apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aCfg::find(const QString &amp;name) is running: length of metadata to search=&apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aCfg::findChild(aCfgItem context, const QString &amp;classname, int n) is running with classname=&apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid parameter value in aCfg::findChild(aCfgItem context, const QString &amp;classname, int n) &apos;context&apos; should not be NULL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aCfg::findChild(aCfgItem context, const QString &amp;classname, int n) is running with context length=&apos;%1&apos; </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -704,6 +755,14 @@
     </message>
     <message>
         <source>aContainer delete directory %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aContainer save successefully to %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Compress file %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -890,22 +949,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&gt;&gt;&gt;&gt; return &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>tableDbName() Called for %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Contex %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>tableDbName() return %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>New accumulation registers %s updated
 </source>
         <translation type="unfinished"></translation>
@@ -1081,6 +1124,25 @@
     </message>
 </context>
 <context>
+    <name>aMSOTemplate</name>
+    <message>
+        <source>aMSOTemplate: report template &apos;%1&apos; has been read</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aMSOTemplate: can&apos;t read report template &apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aMSOTemplate value for field %1 not setted</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aMSOTemplate save %1 open for write</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>aOOTemplate</name>
     <message>
         <source>aOOTemplate temporary directory is %1</source>
@@ -1130,15 +1192,19 @@
         <source>aOOTemplate zip normal to %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>aOOTemplate lineFeedRemove cant open %1 in read mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aOOTemplate lineFeedRemove cant open %1 for write</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>aObject</name>
     <message>
         <source>aObject have no database!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>aObject md object not found</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1172,6 +1238,22 @@
     </message>
     <message>
         <source>aObject display string context is null</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Metadata object &apos;%1&apos; not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aObject::initObject() - Object allready initialized! Skip init.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aObject::initObject() - First init.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>aObject::tableInsert - can&apos;t insert table</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1800,6 +1882,10 @@ Enter another name:</source>
     </message>
     <message>
         <source>dSelectDB backup: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;p align=&quot;center&quot;&gt;&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
