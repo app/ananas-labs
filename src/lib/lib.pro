@@ -150,7 +150,7 @@ IMAGES	= images/lib_database.png \
 	images/print.png \
 	images/filesave.png
 
-INCLUDEPATH	+= $(QTDIR)include/qdataschema
+INCLUDEPATH	+= $(QTDIR)/include/qdataschema
 LANGUAGE	= C++
 LIBS		+= -L$(QTDIR)/plugins/designer -lqsa  -L../designer -lformdesigner -lqdataschema
 unix{
