@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: aext_meta.h,v 1.4 2008/08/31 17:18:19 app Exp $
+** $Id: aext_meta.h,v 1.5 2008/10/13 08:13:53 app Exp $
 **
 ** Extension object header file of
 ** Ananas application library
