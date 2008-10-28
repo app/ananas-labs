@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: adatabase.h,v 1.53 2008/07/30 15:58:51 leader Exp $
+** $Id: adatabase.h,v 1.56 2008/10/25 21:42:30 leader Exp $
 **
 ** Header file of the ananas database of Ananas
 ** Designer and Engine applications
@@ -36,6 +36,7 @@
 #include <qdict.h>
 #include "acfg.h"
 #include <qwidget.h>
+#include <qdataschema.h>
 
 /**
  *	Константы, используемые для формирования имен sql таблиц в зависимости от соответствия
@@ -78,8 +79,21 @@ class  ANANAS_EXPORT aDatabase: public QObject
 	Q_OBJECT
 
 public slots:
+
 public:
-	/**
+	//enum DBOperations { DBO_Insert, DBO_Update, DBO_View, DBO_Delete };
+        enum DBPermission {
+            DBP_NoAccess    = 0,
+            DBP_View        = 1 << 0,
+            DBP_Update      = 1 << 1,
+            DBP_Insert      = 1 << 2,
+            DBP_Delete      = 1 << 3,
+            DBP_Execute     = 1 << 4,
+            DBP_TurnOn      = 1 << 5,
+            DBP_TurnOff     = 1 << 6,
+            DBP_All         = 0xFFFF
+        };
+        /**
 	* \en
 	*	type of database drivers 
 	* \_en \ru
@@ -113,6 +127,7 @@ public:
 	* \_ru
 	*/
 	aCfg cfg;
+        QDataSchema *qds;
 
 	aDatabase();
 	~aDatabase();
@@ -133,6 +148,8 @@ public:
 	void 		deleteMarked();
         QString 	driverName();
 
+        bool isAccessRights( int md_type, Q_ULLONG obj_id, DBPermission req_operation );
+        
 	static QStringList	supportedDriverList();
 	static QStringList	getUniqueIndices(const QString & flddef);
 	static QString		tableDbName( aCfg &md, aCfgItem context, long * tid);
@@ -149,6 +166,26 @@ public:
 	bool transaction();
 	bool commit();
 	bool rollback();
+
+        QStringList users();
+        int  loginUsersCount();
+        bool login( const QString &username, const QString &password, int applicationId = 0 );
+        void logout();
+        void netupdate();
+
+        bool isObjectLocked( Q_ULLONG id );
+        bool objectLock( Q_ULLONG id );
+        void objectUnlock( Q_ULLONG id=0 );
+//        QDataSchema *qds();
+
+        int  rolePermission( int role_id, int md_id );
+        void setRolePermission( int role_id, int md_id, int new_permission );
+        
+        static aDatabase *database();
+signals:
+        void refresh();
+protected:
+        void timerEvent ( QTimerEvent * );
 private:
 	/**
 	 * \en
@@ -158,37 +195,23 @@ private:
 	 * \_ru
 	 */
 	QSqlDatabase *dataBase;
+        int v_user_id, v_app_id;
 
+        int v_updatesCount;
+        
+        int updatesCount();
 	bool exportTableData(QDomDocument& xml, const QString &tableName);
 	bool importTableData(QDomDocument& xml, const QString &tableName);
 	void reportError(QSqlError er, const QString &query);
 
-//	QString fieldtype( const QString &tdef );
-//	void checkIndices(const QString &table, const QString &flddef, QStringList &ui_add, QStringList &ui_drop);
 	bool isExists(const QString fname, QStringList *f_lst, QString &match);
-//	QString fieldsDef( aCfgItem context, const QString &idx=QString::null);
-//	QString sysFieldsDef ( aCfgItem context );
-//	QString convFieldsDef( const QString flddef, QString &idxdef, QString &pkey );
 	bool createdb( bool update );
-//	bool createIndexes(const QString &table, const QString &indexl, const QStringList & uidc=QStringList());
-//	bool dropIndexes(const QString &table, const QStringList &indices=QStringList());
-//	bool verifyTable( const QString &table, const QString &flddef,
-//	QString &f_drop, QString &f_add, QString &f_upd,
-//	QString &i_drop, QString &i_add, QStringList & ui_drop, QStringList & ui_add);
-//	bool createTable(int update, const QString table, QString flddef );
-//	bool createSystables( bool update );
-//	bool createCatalogues( bool update );
-//	bool createDocuments( bool update );
-//	bool createJournals( bool update );
-//	bool createInformationRegisters( bool update );
-//	bool createAccumulationRegisters( bool update );
-  //      bool createARegisters( bool update );
         bool dumpTable( QDomDocument& xml, const QString &tableName);
 	void fillFeatures();
 	QString feature(const QString& fetureName);
 
 	QMap<QString, QString> featuresMySQL, featuresSQLite, featuresPostgreSQL;
-
+        QMap<int, int> accessRights;
 };
 
 #endif

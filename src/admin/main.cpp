@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: main.cpp,v 1.9 2007/09/18 11:49:34 app Exp $
+** $Id: main.cpp,v 1.12 2008/10/26 10:58:27 leader Exp $
 **
 ** Main file of Ananas Administrator application
 **
@@ -27,7 +27,7 @@
 **
 **********************************************************************/
 
-#include <qapplication.h>
+#include <aapplication.h>
 #include <qmessagebox.h>
 #include <qtranslator.h>
 #include <qsplashscreen.h>
@@ -126,7 +126,7 @@ parseCommandLine( int argc, char **argv )
 int main( int argc, char ** argv )
 {
 
-	QApplication a( argc, argv );
+	AApplication a( argc, argv );
 	//dSelectDB dselectdb;
 	int rc = 1;
 	bool ok;
@@ -166,7 +166,7 @@ int main( int argc, char ** argv )
 	if ( pixmap.isNull() )
 		pixmap = QPixmap::fromMimeSource( "administrator-splash-en.png" );
 	QSplashScreen *splash = new QSplashScreen( pixmap );
-	if ( ananas_login( rcfile, username, userpassword ) ){
+	if ( ananas_login( rcfile, username, userpassword, aDatabase::database(), AApplication::AAT_Administrator ) ){
 //	if ( rcfile.isEmpty() ) {
 //    	    if (dselectdb.exec()==QDialog::Accepted) rcfile = dselectdb.rcfile;
 //	}
@@ -192,6 +192,7 @@ int main( int argc, char ** argv )
 		} else {
 			QMessageBox::critical(0, "error","Error init Ananas engine");
 		}
+		ananas_logout();
 		return rc;
 	} else return 0;
 }

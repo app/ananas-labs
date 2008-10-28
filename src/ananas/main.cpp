@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: main.cpp,v 1.42 2008/07/19 07:01:36 leader Exp $
+** $Id: main.cpp,v 1.45 2008/10/26 10:58:44 leader Exp $
 **
 ** Main file of Ananas Engine application
 **
@@ -26,7 +26,7 @@
 **
 **********************************************************************/
 
-#include <qapplication.h>
+#include <aapplication.h>
 #include <qmessagebox.h>
 #include <qtranslator.h>
 #include <qsplashscreen.h>
@@ -120,7 +120,7 @@ parseCommandLine( int argc, char **argv )
 int main( int argc, char ** argv )
 {
 
-	QApplication a( argc, argv );
+	AApplication a( argc, argv, AApplication::AAT_Ananas );
 //	dSelectDB dselectdb;
 	dLogin dlogin;
 //	application = &a;
@@ -167,42 +167,33 @@ int main( int argc, char ** argv )
 //	AExtension *e = AExtensionFactory::create("AExtTest");
 //	if (e) printf("EXT OK\n"); else printf("NO EXT OK\n");
 
-	if ( pixmap.isNull() )
-		pixmap = QPixmap::fromMimeSource( "engine-splash-en.png" );
+	if ( pixmap.isNull() ) pixmap = QPixmap::fromMimeSource( "engine-splash-en.png" );
 	QSplashScreen *splash = new QSplashScreen( pixmap );
-	if ( ananas_login( rcfile, username, userpassword ) ){
-//	if ( rcfile.isEmpty() ) {
-//    	    if (dselectdb.exec()==QDialog::Accepted) rcfile = dselectdb.rcfile;
-//	}
-//	if ( !rcfile.isEmpty() ) {
-//    		if (dlogin.exec()==QDialog::Accepted) {
-//		    username = dlogin.username;
-//		    userpassword = dlogin.password;
-//		}
-//		if (dselectdb.rcfile.isEmpty()) return 0;
-
+	MainForm *w = new MainForm( 0, "MainForm");
+	mainform = w;
+	if ( ananas_login( rcfile, username, userpassword, &w->engine.db, AApplication::AAT_Ananas ) ){
 		splash->show();
 		splash->message( QObject::tr("Init application"), Qt::AlignBottom, Qt::white );
-		MainForm *w = new MainForm( 0, "MainForm");
-		mainform = w;
-		mainformws = mainform->ws;
+
+		w->rcfile = rcfile;
+	        mainformws = mainform->ws;
 		mainformwl = mainform->wl;
 		qApp->setMainWidget( w );
-		w->rcfile = rcfile;
 //		printf( "rcfile = %s\n", rcfile.ascii() );
 		w->show();
 		ok = w->init();
 		splash->clear();
-       	splash->finish( w );
-       	delete splash;
+           	splash->finish( w );
+	   	delete splash;
 		if ( ok ) {
 			qApp->connect( qApp, SIGNAL( lastWindowClosed() ), qApp, SLOT( quit() ) );
 			rc = qApp->exec();
-			if( w ) delete w;
-			w=0;
 		} else {
 			QMessageBox::critical(0, QObject::tr("Error"), QObject::tr("Ananas runtime init error. See message window and log file for details."));
 		}
+		ananas_logout( &w->engine.db );
+		if( w ) delete w;
+		w=0;
 		aLog::close();
 		return rc;
 	}

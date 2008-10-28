@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: ananas.cpp,v 1.12 2006/08/23 07:58:12 app Exp $
+** $Id: ananas.cpp,v 1.15 2008/10/26 10:59:40 leader Exp $
 **
 ** Code file of the Ananas Library of Ananas
 ** Designer and Engine applications
@@ -51,23 +51,36 @@ ananas_libversion()
  */
 bool
 ANANAS_EXPORT
-ananas_login( QString &rcfile, QString &username, QString &userpassword )
+ananas_login( QString &rcfile, QString &username, QString &userpassword, aDatabase *db, int appId )
 {
     dSelectDB dselectdb;
-    //dLogin dlogin;
-
+    dLogin dlogin;
+        
     if ( rcfile.isEmpty() ) {
         if (dselectdb.exec()==QDialog::Accepted) rcfile = dselectdb.rcfile;
     }
     if ( !rcfile.isEmpty() ) {
-//    	if (dlogin.exec()==QDialog::Accepted) {
-//	    username = dlogin.username;
-//	    userpassword = dlogin.password;
-	    return true;
-//	} return false;
+    	if (dlogin.exec()==QDialog::Accepted) {
+	    username = dlogin.username;
+	    userpassword = dlogin.password;
+            if ( !db ) db = aDatabase::database();
+	    if ( !db->init( rcfile ) ) return false;
+	    return ( db->login( username, userpassword, appId ) );
+	} return false;
     }
     return false;
-   // return true;
+}
+
+
+/*!
+ * Select database and user login.
+ */
+void
+ANANAS_EXPORT
+ananas_logout( aDatabase *db )
+{
+    if ( !db ) db = aDatabase::database();
+    db->logout();
 }
 
 

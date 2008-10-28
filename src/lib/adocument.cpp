@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: adocument.cpp,v 1.70 2008/01/21 08:12:42 app Exp $
+** $Id: adocument.cpp,v 1.71 2008/10/25 21:42:30 leader Exp $
 **
 ** Document metadata object implementation file of
 ** Ananas application library
@@ -423,8 +423,10 @@ ERR_Code
 aDocument::Delete()
 {
 	if ( !selected() ) return err_notselected;
-	if(IsConducted()) UnConduct();
-	Q_ULLONG uid = getUid();
+        Q_ULLONG uid = getUid();
+	
+        if ( !db->objectLock( uid ) ) return 1;
+        if(IsConducted()) UnConduct();
 	sysJournal->deleteDocument(uid);
 	
 	aLog::print(aLog::MT_DEBUG, tr("aDocument delete from sysjournal"));
@@ -439,6 +441,7 @@ aDocument::Delete()
 		tableDeleteLines( md->attr(tobj,mda_name) );
 		aLog::print(aLog::MT_DEBUG, tr("aDocument delete table %1").arg(md->attr(tobj,mda_name)));
 	}
+        db->objectUnlock( uid );
 	return aObject::Delete();
 }
 

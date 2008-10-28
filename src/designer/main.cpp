@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: main.cpp,v 1.36 2008/07/19 07:01:36 leader Exp $
+** $Id: main.cpp,v 1.39 2008/10/26 10:58:52 leader Exp $
 **
 ** Main file of Ananas Designer application
 **
@@ -26,7 +26,7 @@
 **
 **********************************************************************/
 
-#include <qapplication.h>
+#include <aapplication.h>
 #include <qtranslator.h>
 #include <qsplashscreen.h>
 #include <qtextcodec.h>
@@ -124,7 +124,7 @@ parseCommandLine( int argc, char **argv )
 
 int main( int argc, char ** argv )
 {
-	QApplication app ( argc, argv, true );
+	AApplication app ( argc, argv, AApplication::AAT_Designer );
 	MainForm *w = new MainForm();
 //#ifndef _Windows
         QTextCodec::setCodecForCStrings( QTextCodec::codecForName("UTF8") );
@@ -170,7 +170,7 @@ int main( int argc, char ** argv )
 	if ( pixmap.isNull() ) 
 	pixmap = QPixmap::fromMimeSource( "designer-splash-en.png" );
    	QSplashScreen *splash = new QSplashScreen( pixmap );
-	if ( ananas_login( rcfile, username, userpassword ) ){
+	if ( ananas_login( rcfile, username, userpassword, aDatabase::database(), AApplication::AAT_Designer ) ){
 //	if ( rcfile.isEmpty() ) {
 //    	    if (dselectdb.exec()==QDialog::Accepted) rcfile = dselectdb.rcfile;
 //	}
@@ -198,6 +198,7 @@ int main( int argc, char ** argv )
 
 		rc = app.exec();
 		if( w ) delete w;
+		ananas_logout();
 		w=0;
 		aLog::close();
 		return rc;

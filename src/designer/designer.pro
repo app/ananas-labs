@@ -3,7 +3,7 @@ LANGUAGE	= C++
 
 #LIBS	+= -L../lib -L../plugins -lananas -lananasplugin -lqsa -ldesignercore -lqassistantclient
 LIBS	+= -L. -L../lib -L../plugins -lananas -lananasplugin -lqsa -lformdesigner -lqassistantclient 
-LIBS    += -L$(QTDIR)/lib -lqdataschema
+LIBS    += -L$(QTDIR)/lib -lqt3-qdataschema
 
 #INCLUDEPATH	+= ../lib ../lib/tmp/ui ../lib/.ui $(QTDIR)/tools/designer/designer ../../qt-headers/tools/designer/designer /usr/lib
 INCLUDEPATH	+= ../lib ../lib/tmp/ui ../lib/.ui ./formdesigner /usr/lib

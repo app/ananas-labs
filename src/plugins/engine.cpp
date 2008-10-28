@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: engine.cpp,v 1.43 2008/07/19 07:12:38 leader Exp $
+** $Id: engine.cpp,v 1.45 2008/10/25 21:43:46 leader Exp $
 **
 ** Code file of the Ananas Engine of Ananas
 ** Engine applications
@@ -688,18 +688,25 @@ aForm *
 aEngine::openForm(int formOwnerId, int formId, int defaultfor, int mode, ANANAS_UID id, aWidget* caller, bool modal)
 {
 	aForm *form = 0;
-	if ( formId == 0 )
+        bool oper_ok = true;
+
+        if ( defaultfor == md_action_new ) oper_ok = db.isAccessRights( formOwnerId, id, aDatabase::DBP_Insert );
+        if ( defaultfor == md_action_view ) oper_ok = db.isAccessRights( formOwnerId, id, aDatabase::DBP_View );
+        if ( defaultfor == md_action_edit ) oper_ok = db.isAccessRights( formOwnerId, id, aDatabase::DBP_Update );
+        
+        if ( !oper_ok ) return 0;
+        if ( formId == 0 )
 	{
 		formId = md->getDefaultFormId( md->find( formOwnerId ), defaultfor, mode );
 	}
-	//printf("engine:try found %d %llu in wl\n", formId, id);
+	printf("engine:try found %d %llu in wl\n", formId, id);
 	if ( wl->find( formId, id ) )
 	{
-		//printf("foubd!, set focus\n");
+		printf("found!, set focus\n");
 		wl->get( formId, id )->setFocus();
 	}
 	else {
-		//printf("not found!\n");
+		printf("not found!\n");
 		aLog::print(aLog::MT_INFO,tr("aEngine open form %1 in mode %2, select %3").arg(formId).arg(mode).arg(id));
 		if ( formOwnerId ) {
 			switch ( defaultfor ) {
@@ -721,8 +728,8 @@ aEngine::openForm(int formOwnerId, int formId, int defaultfor, int mode, ANANAS_
 				if(form)
 				{
 					form->setMode(1);
+                                        form->SetReadOnly(true);
 					form->Select( id );
-					form->SetReadOnly(true);
 				}
 				else
 				{
@@ -752,7 +759,9 @@ aEngine::openForm(int formOwnerId, int formId, int defaultfor, int mode, ANANAS_
 	}
 	if(form && caller)
 	{
-		connect(form,SIGNAL(changedData()),caller,SLOT(Refresh()));
+            if (caller->inherits("wDBTable"))
+            connect(form,SIGNAL(changedData()),caller,SLOT(refresh()));
+            else connect(form,SIGNAL(changedData()),caller,SLOT(Refresh()));
 	}
 //	printf("before clear\n");
 //	this->project.interpreter()->clear();

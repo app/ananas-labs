@@ -6,6 +6,7 @@ unix:VERSION 	= 1.0.1
 TARGET 		= ananas
 
 SOURCES	+= acfg.cpp \
+	aapplication.cpp \
 	acalendar.cpp \
 	acfgrc.cpp \
 	adatabase.cpp \
@@ -16,6 +17,8 @@ SOURCES	+= acfg.cpp \
 	amenubar.cpp \
 	aobject.cpp \
 	awidget.cpp \
+#	aform.cpp \
+#	engine.cpp \
 	airegister.cpp \
 	aaregister.cpp \
 	acatalogue.cpp \
@@ -50,6 +53,7 @@ SOURCES	+= acfg.cpp \
 
 HEADERS	+= ananasglobal.h \
 	ananas.h \
+	aapplication.h \
 	acalendar.h \
 	acfg.h \
 	acfgrc.h \
@@ -61,6 +65,8 @@ HEADERS	+= ananasglobal.h \
 	amenubar.h \
 	aobject.h \
 	awidget.h \
+#	aform.h \
+#	engine.h \
 	airegister.h \
 	aaregister.h \
 	acatalogue.h \
@@ -152,7 +158,7 @@ IMAGES	= images/lib_database.png \
 
 INCLUDEPATH	+= $(QTDIR)/include/qdataschema
 LANGUAGE	= C++
-LIBS		+= -L$(QTDIR)/plugins/designer -lqsa  -L../designer -lformdesigner -lqdataschema
+LIBS		+= -L$(QTDIR)/plugins/designer -lqsa  -L../designer -lformdesigner -lqt3-qdataschema
 unix{
 LIBS		+=  -L/usr/X11R6/lib/
 }

@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: dselectrole.ui.h,v 1.2 2005/06/23 14:59:40 gr Exp $
+** $Id: dselectrole.ui.h,v 1.3 2008/10/25 21:41:49 leader Exp $
 **
 ** Code file of the add role window
 ** Ananas administrator application 
@@ -44,6 +44,7 @@ dSelectRole::setData( aUser *user )
  usr = user;
  listBox1->clear();
  listId.clear();
+
  QValueList<aRole*> list = user->getRoles(false);
  QValueList<aRole*>::iterator it;
  for ( it = list.begin(); it != list.end(); ++it )

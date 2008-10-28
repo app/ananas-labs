@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: ananas.h,v 1.31 2007/12/30 14:18:28 app Exp $
+** $Id: ananas.h,v 1.35 2008/10/26 10:59:40 leader Exp $
 **
 ** Header file of the Ananas Library of Ananas
 ** Designer and Engine applications
@@ -109,9 +109,6 @@
 #include "aextension.h"
 #include "aextensionfactory.h"
 #include "adataexchange.h"
-//#include "dlogin.h"
-//#include "deditrc.h"
-//#include "dselectdb.h"
 #include "atime.h"
 #include "auser.h"
 #include "arole.h"
@@ -120,8 +117,10 @@
 #include "afilter.h"
 
 #define ANANAS_LIBVERSION "0.9.5"
+
 extern const char ANANAS_EXPORT *ananas_libversion();
-extern bool ANANAS_EXPORT ananas_login( QString &rcfile, QString &username, QString &userpassword );
+extern bool ANANAS_EXPORT ananas_login( QString &rcfile, QString &username, QString &userpassword, aDatabase *db=0, int appId = 0 );
+extern void ANANAS_EXPORT ananas_logout( aDatabase *db=0 );
 extern QString ANANAS_EXPORT ananas_objectstr( aDatabase *db, Q_ULLONG uid, int oid );
 
 

@@ -60,5 +60,5 @@ IMAGES	+= images/calc.png
 
 TEMPLATE	=app
 
-INCLUDEPATH	+= ../lib ../lib/tmp/ui ../lib/.ui ../plugins
-LIBS	+= -L$(QTDIR)/lib -lqsa  -L../lib -lananas -L../plugins -lqui -lananasplugin
+INCLUDEPATH	+= ../lib ../lib/tmp/ui ../lib/.ui ../plugins $(QTDIR)/include/qdataschema
+LIBS	+= -L$(QTDIR)/lib -lqsa  -L../lib -lananas -L../plugins -lqui -lananasplugin -lqt3-qdataschema

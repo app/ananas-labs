@@ -9,6 +9,8 @@ SOURCES	+= \
 	messageswindow.cpp \	
 	amenubar.cpp \
 	awidget.cpp \
+	aform.cpp \
+	engine.cpp \
 #	areportbrowser.cpp \
 	awindowslist.cpp 
 	
@@ -16,6 +18,8 @@ HEADERS	+= \
 	messageswindow.h \
 	amenubar.h \
 	awidget.h \
+	aform.h \
+	engine.h \
 #	areportbrowser.h \
 	awindowslist.h 
 unix{

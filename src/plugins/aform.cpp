@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: aform.cpp,v 1.76 2008/05/26 08:37:14 app Exp $
+** $Id: aform.cpp,v 1.79 2008/10/25 21:43:45 leader Exp $
 **
 ** Code file of Ananas forms of Ananas
 ** Designer and Engine applications
@@ -33,6 +33,7 @@
 #include <qwidgetfactory.h>
 #include <qobjectlist.h>
 #include <qdialog.h>
+#include <qmessagebox.h>
 #include <qbuffer.h>
 #include <qcstring.h>
 #include <qiodevice.h>
@@ -72,6 +73,12 @@
 /*!
 Base form object.
 */
+
+/**
+ * 
+ * @param parent 
+ * @param eng 
+ */
 aForm::aForm( QWidget *parent,  aEngine *eng )
 :QObject( eng, (QString("aForm%1").arg(eng->next_obj_id++)).ascii())
 {
@@ -91,6 +98,13 @@ aForm::aForm( QWidget *parent,  aEngine *eng )
 
 
 
+/**
+ * 
+ * @param parent 
+ * @param eng 
+ * @param form_mid 
+ * @param caller 
+ */
 aForm::aForm( QWidget *parent,  aEngine *eng,  Q_ULONG form_mid, aWidget* caller )
 :QObject( eng, (QString("aForm%1").arg(eng->next_obj_id++)).ascii() )
 {
@@ -111,6 +125,15 @@ aForm::aForm( QWidget *parent,  aEngine *eng,  Q_ULONG form_mid, aWidget* caller
 	init();
 }
 
+
+
+/**
+ * 
+ * @param parent 
+ * @param eng 
+ * @param oftype 
+ * @param aobj 
+ */
 aForm::aForm( QWidget *parent,  aEngine *eng, QString oftype, QObject *aobj )
 :QObject( eng, (QString("aForm%1").arg(eng->next_obj_id++)).ascii())
 {
@@ -127,15 +150,26 @@ aForm::aForm( QWidget *parent,  aEngine *eng, QString oftype, QObject *aobj )
 	init();
 }
 
+
+/**
+ * 
+ */
 aForm::~aForm()
 {
-	if(dlg)	
+	if(dlg)
 	{
 		delete dlg;
 		dlg = 0;
 	}
 }
 
+
+
+/**
+ * 
+ * @param w 
+ * @return 
+ */
 aWidget *
 aForm::parentContainer( QWidget *w )
 {
@@ -223,7 +257,7 @@ aForm::initContainer( aWidget *widget, aDatabase *adb ){
  *	Init form, reparent central widget of form, if it needed. Evaluate script module.
  *\~russian
  *	Инициализирует форму, меняет родителя у центрального виджера формы, если это необходимо.
- *	Обрабатывает также модуль скрипта, благодаря этому впоследствии можно вызывать 
+ *	Обрабатывает также модуль скрипта, благодаря этому впоследствии можно вызывать
  *	функции, определенные в этом модуле.
  *\~
  */
@@ -234,7 +268,7 @@ aForm::init()
 	aCfgItem obj;
 	static QMutex mutex;
 	mainWidget = 0;
-	dlg = 0;	
+	dlg = 0;
 	if ( !mdObj.isNull() && md ) {
 		ui = ( const char * ) md->sText( mdObj, md_formdesign );
 		sModule = md->sText( mdObj, md_sourcecode );
@@ -259,7 +293,7 @@ aForm::init()
 		QMainWindow *mw = new EventWindow( parentWidget, "main form", Qt::WDestructiveClose );
   		mw->statusBar()->hide();
 		mw->setCaption( form->caption() );
-	
+
 		aLog::print(aLog::MT_DEBUG, tr("aForm::init try find in windowslist %1, %2").arg(objid).arg(db_uid));
 		if ( engine->wl->find( objid, db_uid ) )
 		{
@@ -342,7 +376,7 @@ aForm::init()
 	{
 		aLog::print(aLog::MT_ERROR, tr("aForm form not found"));
 		QMessageBox::critical( 0, tr("Error"), tr("Error open dialog form. Form not found.") );
-	
+
 	}
 }
 
@@ -375,7 +409,7 @@ aForm::aParent( QWidget *widget )
  *\~english
  *	Show form. Move it in left top corner of workspace. modal parameter determins is form modal or not.
  *\~russian
- *	\brief ScriptAPI. Показывает форму на экране. 
+ *	\brief ScriptAPI. Показывает форму на экране.
  *
  *	Перемещает ее в левый верхний угол рабочего пространства. Вызывает функцию on_formstart() скрипта модуля
  *	экранной формы, если функция определена в модуле.
@@ -422,11 +456,11 @@ aForm::show() {
  *\~english
  *	Close form. Delete this pointer after close.
  *\~russian
- *	\brief ScriptAPI. Закрывает и уничтожает форму. 
+ *	\brief ScriptAPI. Закрывает и уничтожает форму.
  *
- *	Вызывает функцию on_formstop() 
+ *	Вызывает функцию on_formstop()
  *	скрипта модуля экранной формы, если функция определена в модуле.
- *	
+ *
  *	\see show
  *\~
 */
@@ -435,7 +469,7 @@ aForm::Close() {
 	// don't call function name() in this place in Win32 - crash
 	if(!on_form_close()) return false; //to run ananas-script
 	emit(closeForm(selectedCatId()));
-	
+
 	if( form ) {
 		if( form->isShown() ) {
 			aLog::print(aLog::MT_DEBUG,tr("aForm::Close() hides form"));
@@ -449,12 +483,15 @@ aForm::Close() {
 			}
 
 		}
+                if (!RO && db) {
+                    if ( db_uid ) db->objectUnlock( db_uid );
+                }
 	}
 	if( engine && engine->wl ) {
 		engine->wl->remove( objid, db_uid );
 	}
 	deleteLater();
-	return true;	
+	return true;
 }
 
 /**
@@ -480,7 +517,7 @@ aForm::turn_on(){
  *	Turn on document.
  *\~russian
  *	\brief ScriptAPI. Проводит (регистрирует) документ.
- *	
+ *
  *	Вызывает функцю on_conduct() кода Ананас.скрипта модуля экранной формы.
  *	В скрипте вы можете проверить условия проведения документа,
  *	и, если они не выполняются, вернуть в функции false.
@@ -520,11 +557,11 @@ aForm::turn_off(){
 
 /*!
  *\~english
- *	Turn off document. Do nothing. 
+ *	Turn off document. Do nothing.
  *\~russian
  *	\brief ScriptAPI. Отменяет проведение (регистрацию) документа.
  *
- *	На самом деле ничего не делает. Отмена проведения производится при открытии 
+ *	На самом деле ничего не делает. Отмена проведения производится при открытии
  *	документа.
  *\~
  */
@@ -539,7 +576,7 @@ aForm::SignOut(){
 ERR_Code
 aForm::update(){
 	aLog::print(aLog::MT_DEBUG,tr("Deprecated method call: aForm::update()"));
-	return this->UpdateDB();	
+	return this->UpdateDB();
 }
 
 /*!
@@ -557,11 +594,12 @@ aForm::UpdateDB()
 
 	if ( RO ) return err_readonly;
 	rc = mainWidget->Update();
+        if ( db ) db->netupdate();
 	if (!rc && callerWidget!=NULL)
 	{
-		emit( changedData());
+		emit( changedData() );
 		emit( update( db_uid ) );
-	}
+        }
 	return rc;
 }
 
@@ -622,7 +660,7 @@ aForm::formMetaObjectId(QString filename){
  *	ВАЖНО! Из Ананас скрипта вы сможете обратиться только к публичным слотам и свойствам виджета. Публичные методы
  *	виджета из Ананас скрипта недоступны.
  *	Документацию по свойствам и методам QT виджетов смотрите на сайте http://trolltech.com
- *	
+ *
  * 	\code
  *	// допустим в экранной форме есть виджет myCheckBox, являющийся экземпляром класса QCheckBox
  *
@@ -633,8 +671,8 @@ aForm::formMetaObjectId(QString filename){
  *		sys.Message(0, "No" );
  *	}
  *
- *	// К сожалению мы не имеем доступа к методам  setChecked() и isChecked(), так как они не являются публичными слотами. 
- *	
+ *	// К сожалению мы не имеем доступа к методам  setChecked() и isChecked(), так как они не являются публичными слотами.
+ *
  * 	\endcode
  *	\see aWidget::Widget()
  *\~
@@ -673,8 +711,8 @@ aForm::Widget( QString name )
  *\~english
  *	Connecting widget slots to form.
  *\~russian
- *	Коннектит некоторые слоты объектов формы. 
- *	Обеспечивает работу функций ананас скрипта 
+ *	Коннектит некоторые слоты объектов формы.
+ *	Обеспечивает работу функций ананас скрипта
  *	on_valuechanged(), on_button(), on_tabvaluechanged(), etc.
  *\~
  */
@@ -710,12 +748,20 @@ aForm::connectSlots()
 //				connect( obj, SIGNAL( primeUpdate(  QSqlRecord * ) ), this, SLOT( on_tabupdate( QSqlRecord * ) ) );
 				connect( obj, SIGNAL( selected( Q_ULLONG ) ), this, SLOT( on_tabselected( Q_ULLONG ) ) );
 				connect( obj, SIGNAL( selectRecord( Q_ULLONG ) ), this, SLOT( on_tablerow( Q_ULLONG ) ) );
+                                
+                                connect( db, SIGNAL( refresh() ), obj, SLOT( refresh() ) );
                                 continue;
 			}
 	}
 	delete list;
 }
 
+
+
+/**
+ * 
+ * @param rec 
+ */
 void
 aForm::on_tabupdate( QSqlRecord *rec )
 {
@@ -723,7 +769,7 @@ aForm::on_tabupdate( QSqlRecord *rec )
 
 /*!
  * \ru
- * 		\brief ScriptAPI. Возвращает значение поля экранной формы. 
+ * 		\brief ScriptAPI. Возвращает значение поля экранной формы.
  *
  * 		Например, значение поля шапки "Номер" приходной накладной.
  * 		Слот предназначен для использования Ананас-Скриптом.
@@ -734,7 +780,7 @@ aForm::on_tabupdate( QSqlRecord *rec )
  * 		Для того что бы получить доступ к составному объекту, для обращения ко всем атрибутам товара
  * 		необходимо воспользоваться функцией DBValue();
  *\see aForm::DBValue()
- 
+
 Пример кода для размещения в модуле экранной формы. Экранная форма содержит одну кнопку с именем Button1 и
 поле ввода LineEdit1.
 После ввода значения, следует нажать на кнопку и в окно сообщений будет выведено только что введенное значение.
@@ -747,12 +793,12 @@ function on_button(buttonName) // обработчик нажатия кнопк
  	{
  		// Получаем значение поля LineEdit1 экранной формы
  		str = Value("LineEdit1");
- 	        
+
 		// Выводим в окно сообщений, полученное значение
- 	        StatusMessage(str); 
+ 	        StatusMessage(str);
  	}
 }
-\endcode		
+\endcode
  * \_ru
  */
 QVariant
@@ -809,7 +855,7 @@ aForm::Value(const QString &name)
  *	\brief ScriptAPI. Возвращает значение атрибута <name> бизнес объекта Ананаса.
  *
  * 	Предназначен для использования в контексте экранной формы редактирования бизнес объекта.
- * 	Или, говоря по другому, в модуле экранной формы. 
+ * 	Или, говоря по другому, в модуле экранной формы.
  * 	Тип возвращаемого значения такой же, как задан в метаданных у соответствующего атрибута бизнес объекта.
  * 	Для поля типа Каталог или Документ функция вернет число (id).
  * 	Функция необходима, если нужно заполнять поля сложных типов.
@@ -831,12 +877,12 @@ function on_button(buttonName) // обработчик нажатия кнопк
  	{
  		// Получаем значение атрибута "Покупатель" редактируемого бизнес объекта
  		contragent = DBValue("Покупатель");
- 	        
+
 		// Выводим в окно сообщений, полученное значение
- 	        StatusMessage(contragent); 
+ 	        StatusMessage(contragent);
  	}
 }
-\endcode		
+\endcode
 \~
  */
 QVariant
@@ -888,7 +934,7 @@ aForm::DBValue(const QString &name)
  *	Setting form widgets value of object type.
  *\~russian
  * 	\brief ScriptAPI. Устанавливает значения виджетов формы сложных типов (aDocument, aCatalogue)
- * 	
+ *
  * 	Обычно для установки значения используют SetValue(...)
  *\~
  *	\see SetValue(...)
@@ -986,8 +1032,8 @@ aForm::SetColumnReadOnly(const QString &tname, int numCol, bool ro)
  *	Count table row.
  *\~russian
  *	\brief ScriptAPI. Возвращает количество строк в табличном виджете wDBTable.
- *	
- *	Если табличный виджет не является объектом класса wDBTable, 
+ *
+ *	Если табличный виджет не является объектом класса wDBTable,
  *	метод запишет в лог сообщение об ошибке и вернет 0.
  *\~
  *\param tname - \~english Table name.\~russian Имя таблицы.\~
@@ -1005,7 +1051,7 @@ aForm::TabCount(const QString &tname)
 		{
 			res=( (wDBTable*)w )->numRows() ; //value();
 		}
-		else 
+		else
 		{
 			aLog::print(aLog::MT_ERROR, tr("Expected wDBTable widget but found %1").arg(w->className()));
 		}
@@ -1046,7 +1092,13 @@ aForm::TabNewLine(const QString &tname)
        }
 }
 
-void 
+
+
+/**
+ * 
+ * @param tname 
+ */
+void
 aForm::TabUpdate(const QString &tname)
 {
        QObject *w;
@@ -1071,13 +1123,13 @@ aForm::TabUpdate(const QString &tname)
  * 	\brief ScriptAPI. Возвращает значение ячейки табличного виджета wDBTable.
  *
  *
- * 	Если табличный виджет не является объектом класса wDBTable, метод запишет сообщение 
+ * 	Если табличный виджет не является объектом класса wDBTable, метод запишет сообщение
  * 	об ошибке в лог и вернет строку "Unknown".
  * 	То есть он предназначен только для работы с таблицами привязанными (binded) к
  * 	табличным частям бизнес объектов Ананаса. Если в ячейке хранится сложный тип данных (Документ, Элемент справочника)
  * 	будет возвращен уникальный идентификатор объекта, а не его текстовое представление, которое видит пользователь.
  * 	Для получения текстового представления сложного объекта воспользуйтесь методом aForm::TabDBValue.
- * 	
+ *
  * 	\param tname - имя виджета
  * 	\param row - индекс строки таблицы
  * 	\param col - индекс столбца таблицы
@@ -1097,13 +1149,13 @@ aForm::TabValue(const QString &tname, int row, int col)
  * 	\brief ScriptAPI. Возвращает значение ячейки табличного виджета wDBTable для сложного типа данных.
  *
  *
- * 	Если табличный виджет не является объектом класса wDBTable, метод запишет сообщение 
+ * 	Если табличный виджет не является объектом класса wDBTable, метод запишет сообщение
  * 	об ошибке в лог и вернет строку "Unknown".
  * 	То есть он предназначен только для работы с таблицами привязанными (binded) к
  * 	табличным частям бизнес объектов Ананаса.
  * 	В отличие от aForm::TabValue, который вернет числовой идентификатор, в случае, если ячейка имеет сложный тип данных,
  * 	aForm::TabDBValue вернет текстовое представление, которое видит в таблице пользователь.
- * 	
+ *
  * 	\param tname - имя виджета
  * 	\param row - индекс строки таблицы
  * 	\param col - индекс столбца таблицы
@@ -1119,6 +1171,14 @@ aForm::TabDBValue(const QString &tname, int row, int col)
 }
 
 
+/**
+ * 
+ * @param tname 
+ * @param row 
+ * @param col 
+ * @param dbval 
+ * @return 
+ */
 QVariant
 aForm::tabValue(const QString &tname, int row, int col, bool dbval)
 {
@@ -1258,7 +1318,7 @@ aForm::setfocus(QString fname){
 }
 
 /**
- * 	
+ *
  */
 void
 aForm::SetFocus(){
@@ -1268,6 +1328,9 @@ aForm::SetFocus(){
 	if(form) form->setFocus();
 }
 
+/**
+ * 
+ */
 void
 aForm::on_button(){
 	if ( FormHasFunction("on_button") )
@@ -1316,18 +1379,24 @@ aForm::on_actionbutton()
 
 
 
+/**
+ * 
+ */
 void
 aForm::on_return(){
 }
 
 
+/**
+ * 
+ */
 void
 aForm::on_lostfocus(){
 }
 
 /*!
  *\en
- *\_en	
+ *\_en
  *\ru
  *	\brief	Вызывает скриптовую функцию-обработчик события on_form_close формы.
  *
@@ -1346,11 +1415,11 @@ aForm::on_form_close(){
 	aLog::print(aLog::MT_DEBUG, QObject::tr("on_formstop() definition has been found. Ready to run it."));
 	QSArgument retval(QVariant(true,0));
 	retval = engine->project.interpreter()->call("on_formstop", QSArgumentList(),this);
-	if ( retval.type() == QSArgument::Variant && retval.variant().isValid() && retval.variant().type() == QVariant::Bool) 
+	if ( retval.type() == QSArgument::Variant && retval.variant().isValid() && retval.variant().type() == QVariant::Bool)
 	{
 		aLog::print(aLog::MT_DEBUG, QObject::tr("on_formstop() returned '%1'.").arg(retval.variant().toString()));
 		return retval.variant().toBool();
-	} 
+	}
 	aLog::print(aLog::MT_DEBUG, QObject::tr("on_formstop() returned unexpected value type. Should be boolean true or false."));
 	return true;
 }
@@ -1362,12 +1431,16 @@ aForm::on_form_close(){
  *\_ru
  */
 bool
-aForm::FormHasFunction( const QString functionName) 
+aForm::FormHasFunction( const QString functionName)
 {
 	return engine && engine->project.interpreter()->functions(this).findIndex( functionName ) != -1;
 }
 
 
+/**
+ * 
+ * @param s 
+ */
 void
 aForm::on_valueChanged(const QString &s){
 //	char buf[200];
@@ -1415,13 +1488,19 @@ aForm::on_valueChanged( const QString & name, const QVariant & val )
 		QValueList<QVariant> lst;
 		lst << name;
 		lst << val;
-//		if(!val.isNull() && !val.isValid()) v = val; 
+//		if(!val.isNull() && !val.isValid()) v = val;
 		engine->project.interpreter()->call("on_valuechanged",QSArgumentList(lst), this);
 	//	printf("aForm change value field %s to %s\n",(const char*)name.local8Bit(), val.toString().ascii());
 	}
 }
 
 
+
+/**
+ * 
+ * @param row 
+ * @param col 
+ */
 void
 aForm::on_tabvalueChanged(int row, int col)
 {
@@ -1432,7 +1511,7 @@ aForm::on_tabvalueChanged(int row, int col)
 		lst << row;
 		lst << col;
 		lst << sender()->name();
-			
+
 		engine->project.interpreter()->call("on_tabupdate",QSArgumentList(lst), this);
 	}
 /*
@@ -1456,6 +1535,11 @@ aForm::on_tabvalueChanged(int row, int col)
 }
 
 
+
+/**
+ * 
+ * @param r 
+ */
 void
 aForm::on_dbtablerow( QSqlRecord *r )
 {
@@ -1473,7 +1557,14 @@ aForm::on_dbtablerow( QSqlRecord *r )
 	}
 }
 
-void 
+
+
+/**
+ * 
+ * @param source 
+ * @param data 
+ */
+void
 aForm::on_event( const QString &source, const QString &data )
 {
 	QValueList<QVariant> lst;
@@ -1486,6 +1577,10 @@ aForm::on_event( const QString &source, const QString &data )
 
 
 
+/**
+ * 
+ * @param uid 
+ */
 void
 aForm::on_tabselected( Q_ULLONG uid )
 {
@@ -1498,6 +1593,12 @@ aForm::on_tabselected( Q_ULLONG uid )
 	}
 }
 
+
+
+/**
+ * 
+ * @param uid 
+ */
 void
 aForm::on_tablerow( Q_ULLONG uid )
 {
@@ -1509,65 +1610,75 @@ aForm::on_tablerow( Q_ULLONG uid )
 	}
 }
 
+
+
+/**
+ * 
+ * @return 
+ */
 int
 aForm::New()
 {
-        if ( mainWidget ) {
-//		printf("try find in windowslist %d, %llu\n ", objid, db_uid);
-		if ( engine->wl->find( objid, db_uid ) )
-		{
-//			printf("found, remove\n");
-			engine->wl->remove( objid, db_uid );
-		}
-		else
-		{
-//			printf("not found\n");
-		}
-                mainWidget->New();
-		db_uid = mainWidget->uid();
-		//printf(">>>>>db_uid = %llu\n",db_uid);
-		if(engine->wl->find( objid, db_uid ))
-		{
-			engine->wl->get(objid, db_uid )->setFocus();
-		}
-		else
-		{
-			engine->wl->insert( objid, form , db_uid );
-		}
+    QWidget *w;
+        
+    if ( !mainWidget ) return 1;
+    engine->wl->remove( objid, db_uid );
+    mainWidget->New();
+    db_uid = mainWidget->uid();
+        //printf(">>>>>db_uid = %llu\n",db_uid);
+    w = engine->wl->get(objid, db_uid );
+    if( w ) {
+        printf("found, activate\n");
+        w->setFocus();
+        w->raise();
+        form->close();
+        return 1;
+    }
+    if (!RO && db) {
+        if ( !db->objectLock( db_uid ) ){
+//            QMessageBox::information( 0, "Ananas",tr("Object locked by another user"), 0, 0, 0 );
+            form->close();
+            return 1;
         }
-        return 0;
+    }
+    engine->wl->insert( objid, form , db_uid );
+    return 0;
 }
 
 
+
+/**
+ * 
+ * @param id 
+ * @return 
+ */
 int
 aForm::Select( Q_ULLONG id )
 {
-        if ( mainWidget ) {
-//		printf("try find in windowslist %d, %llu\n ", objid, db_uid);
-		if ( engine->wl->find( objid, db_uid ) )
-		{
-//			printf("found, remove\n");
-			engine->wl->remove( objid, db_uid );
-		}
-		else
-		{
-//			printf("not found\n");
-		}
-//		printf("insert new in wl ok\n");
-//		printf("form->select()\n");
-		mainWidget->Select( id );
-		mainWidget->Refresh();
-		db_uid = id;
-		if(engine->wl->find( objid, db_uid ))
-		{
-			engine->wl->get(objid, db_uid )->setFocus();
-		}
-		else
-		{
-			engine->wl->insert( objid, form, db_uid );
-		}
+    QWidget *w;
+    
+    if ( !mainWidget ) return 0;
+    engine->wl->remove( objid, db_uid );
+    w = engine->wl->get(objid, id );
+    if( w ) {
+            printf("found, activate\n");
+            w->setFocus();
+            w->raise();
+            form->close();
+            return 0;
+    }
+    if (!RO && db) {
+        if ( !db->objectLock( id ) ){
+            //QMessageBox::information( 0, "Ananas",tr("Object locked by another user"), 0, 0, 0 );
+            form->close();
+            return 1;
         }
-        return 0;
+    }
+    mainWidget->Select( id );
+    mainWidget->Refresh();
+    db_uid = id;
+    engine->wl->insert( objid, form, db_uid );
+    return 0;
 }
 
 
@@ -1651,7 +1762,7 @@ aForm::Update()
  *	When form readonly we can't edit database fields, and make updatе action
  *\~russian
  *	\brief ScriptAPI. Устанавливает флаг "только чтение".
- *	
+ *
  *	Когда установлен этот флаг, запрещается редактирование полей формы,
  *	и сохранение изменений в базу.
  *\~
@@ -1706,10 +1817,10 @@ aForm::IsReadOnly()
  *\~english
  *	Convert number to russian language text format.
  *\~russian
- *	\brief Конвертирует число в его текстовое представление c указанием единиц измерения. 
- *	
+ *	\brief Конвертирует число в его текстовое представление c указанием единиц измерения.
+ *
  *	Параметры позволяют настроить вид результата. По умолчанию валюта - рубли, копейки выводятся.
- *	
+ *
  *	примеры использования:
  *	\li Propis("20301.34") = Двадцать тысяч триста один рубль 34 копейки
  *	\li Propis("20301.34", false) = Двадцать тысяч триста один рубль
@@ -1717,10 +1828,10 @@ aForm::IsReadOnly()
  *	\li Propis("2", false, true, "слонёнков", "слонёнок", "слонёнка") = Два слонёнка
  *	\li Propis("5", false, false, "мартышек", "мартышка", "мартышки") = Пять мартышек
  *	\li Propis("38.5", false, true, "попугаев", "попугай", "попугая") = Тридцать восемь попугаев
- *	
+ *
  *	пример неправильного использования:
  *	\li Propis("38.5", true, true, "попугаев", "попугай", "попугая") = Тридцать восемь попугаев 50 копеек
- *	
+ *
  *\~
  * \param val - \~english number to convert \~russian число для конвертирования\~
  * \param need_kopeyki - \~english wtite to output decimal part \~russian записывать в результат копейки (по умолчанию - да)\~
@@ -1746,16 +1857,16 @@ aForm::Propis( QString val, bool need_kopeyki, bool male, const QString &end1, c
  * 		\returns значение суммы прописью.
  * \_ru
  */
-QString 	
+QString
 aForm::MoneyToText( QString amount , QString currency ) {
 	return aService::number2money( currency, QVariant(amount).toDouble());
-} 
+}
 
 
 /*!
  * \ru
  * 	\brief ScriptAPI. Используя идентификатор редактируемого виджетами формы документа, настраивает объект aDocument на доступ к
- * 	документу с таким же идентификатором. 
+ * 	документу с таким же идентификатором.
  *
  * 	То есть к тому же документу. Используется в Ананас.Скрипте для передачи
  * 	ссылки на документ в другие объекты. Например в регистры. Для примера смотри код на Ананас.Cкрипте,
@@ -1792,7 +1903,7 @@ aForm::SetCurrent( aObject *doc) {
  *	Return current data object of form.
  *\~russian
  *	\brief ScriptAPI. Возвращает ссылку на бизнес объект, редактируемый данной экранной формой.
- *	
+ *
  *	По свему назначению метод аналогичен SelectByCurrent()
  *\~
  * \return - \~english current data object \~russian текущий объект формы \~
@@ -1855,14 +1966,14 @@ aForm::setAttribute(const QString &name, aDataField *value)
  *	Convert number to currensy format.
  *\~russian
  *	\brief ScriptAPI. Конвертирует число  в денежный формат (#0.00 :) ). Используется для вывода на печать.
- *	
+ *
  *	Для конвертирования числа в текстовое представление используйте Propis()
  *\~
  * \param number - \~english number to convert \~russian число для конвертирования\~
  * \return - \~english rounded number \~russian округленное до 2-х цифр после запятой число \~
  * \see Propis()
  */
-QString 
+QString
 aForm::ConvertNumber2MoneyFormat(double number)
 {
 	return aService::convertNumber2MoneyFormat(number);
@@ -1921,12 +2032,12 @@ aForm::setMode(int m)
  *\~english
  *	Get form mode. 0 - new, 1- edit, 2- browse
  *\~russian
- * 	\brief ScriptAPI. Получение режима открытия формы. 
+ * 	\brief ScriptAPI. Получение режима открытия формы.
  * 	\return 0 - новая, 1 - редактирование, 2- просмотр.
  *\~
  * \return - \~english mode \~russian режим открытия формы \~
  */
-int 
+int
 aForm::GetMode()
 {
 	return this->mode;

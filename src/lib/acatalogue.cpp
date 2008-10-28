@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: acatalogue.cpp,v 1.58 2008/04/12 18:05:35 app Exp $
+** $Id: acatalogue.cpp,v 1.59 2008/10/25 21:42:30 leader Exp $
 **
 ** Catalogue metadata object implementation file of
 ** Ananas application library
@@ -256,13 +256,15 @@ aCatalogue::Delete()
 	Q_ULLONG ido = t->sysValue("id").toULongLong();
 	if ( ido )
 	{
-		aLog::print(aLog::MT_DEBUG, tr("aCatalogue delete ido=%1").arg(ido));
-		aCatalogue cat( obj, db );
-		while ( !cat.selectByOwner(ido) )
-		{
-			cat.Delete();
-		}
+            if ( !db->objectLock( ido ) ) return 1;
+            aLog::print(aLog::MT_DEBUG, tr("aCatalogue delete ido=%1").arg(ido));
+            aCatalogue cat( obj, db );
+            while ( !cat.selectByOwner(ido) )
+            {
+                cat.Delete();
+            }
 	}
+        db->objectUnlock( ido );
 	return aObject::Delete();
 }
 

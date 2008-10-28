@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: wdbtable.cpp,v 1.100 2008/04/12 18:05:35 app Exp $
+** $Id: wdbtable.cpp,v 1.101 2008/10/25 21:43:46 leader Exp $
 **
 ** Code file of the database table plugin of Ananas
 ** Designer and Engine applications
@@ -1337,6 +1337,7 @@ void
 wDBTable::keyPressEvent ( QKeyEvent *e )
 {
 	Q_ULLONG id;
+        int key = 0;
 
 	aWidget *container = NULL;
 	if ( searchMode == FALSE && e->text().at( 0 ).isPrint() ) 
@@ -1354,34 +1355,41 @@ wDBTable::keyPressEvent ( QKeyEvent *e )
 	}
 	if(containerType() =="wCatalogue")
 	{
-		switch ( e->key() )
-		{
-		case Qt::Key_Escape:
-			e->ignore();
-			break;
-		case Qt::Key_Return:
-			if(currentRecord())
-			{
-				id = currentRecord()->value(0).toLongLong();
-				if ( e->state() == Qt::ShiftButton ) 
-				{
-					//printf("Shift+Return pressed %Ld\n", id);
-					EditElement();
-				} else 
-				{
-					//printf("Return pressed %Ld\n", id );
-					emit( selected( id ) );
-				}
-				e->accept();
-			}
-			else
-			{
-				aLog::print(aLog::MT_INFO, tr("wDBTable: current record not setted"));
-			}
-			break;
-		default:
-			e->ignore();
-			break;
+            key = e->key();
+//        printf("%s wDBTable key = %04x return=%04x\n", (const char*) containerType(), key, Qt::Key_Return );
+		switch ( e->key() ){
+                    case Qt::Key_Escape:
+                            e->ignore();
+                            break;
+                    case Qt::Key_F2:
+                            id = currentRecord()->value(0).toLongLong();
+                            EditElement();
+                            break;
+                    case Qt::Key_Enter:
+                    case Qt::Key_Return:
+                            if(currentRecord())
+                            {
+                                    id = currentRecord()->value(0).toLongLong();
+                                    if ( (e->state() & Qt::ShiftButton) )
+                                    {
+//                                            printf("Shift+Return pressed %Ld\n", id);
+                                            EditElement();
+                                    } else
+                                    {
+//                                            printf("Return pressed %Ld\n", id );
+                                            emit( selected( id ) );
+                                    }
+                                    e->accept();
+                            }
+                            else
+                            {
+//                                printf("NO CURREC\n");
+                                    aLog::print(aLog::MT_INFO, tr("wDBTable: current record not setted"));
+                            }
+                            break;
+                    default:
+                            e->ignore();
+                            break;
 		}
 	}
 	QDataTable::keyPressEvent( e );
@@ -1440,7 +1448,7 @@ wDBTable::EditElement()
 //	wGroupTreeItem * item = ( wGroupTreeItem * ) tree->currentItem();
 	aForm * f = 0;
 
-//CHECK_POINT
+CHECK_POINT
 	id = currentRecord()->value(0).toLongLong();
 	if ( id ) {
 		if ( engine ) {
@@ -1587,16 +1595,21 @@ wDBTable::doubleClickEventHandler(int /*rol*/, int /*col*/, int /*button*/, cons
  */
 
 QSql::Confirm 
-wDBTable::confirmEdit( QSql::Op m ) {
-	if ( m == QSql::Delete ) {
-		if ( 0 == QMessageBox::question(
+wDBTable::confirmEdit( QSql::Op m )
+{
+    int id;	
+    if ( m == QSql::Delete ) {
+            id = currentRecord()->value(0).toLongLong();
+            if ( 0 == QMessageBox::question(
             this,
             tr("Remove record?"),
             tr("You are going to remove record <br>"
                 "Are you sure?"),
             tr("&Yes, remove"), tr("&No"),
             QString::null, 0, 1 ) ) {
-            	return QSql::Yes; 
+                if ( !db->objectLock( id ) ) return QSql::No;
+                db->objectUnlock( id );
+                return QSql::Yes;
         } else {
             	return QSql::No; 
         }

@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: ananasmainform.cpp,v 1.4 2008/07/05 12:19:39 app Exp $
+** $Id: ananasmainform.cpp,v 1.5 2008/10/18 22:29:28 leader Exp $
 **
 ** Code file of the Main form of Ananas Engine application
 **
@@ -256,6 +256,7 @@ MainForm::Exit(int code)
 void
 MainForm::close()
 {
+	
         engine_settings.beginGroup("/engine");
 //	engine_settings.writeEntry( "/maximize", windowState()&WindowMaximized ? true: false);
 	engine_settings.writeEntry( "/geometry/width", width() );
@@ -318,6 +319,7 @@ MainForm::setBackground( const QPixmap &pix ){
 MainForm::~MainForm()
 {
 	engine.on_systemstop();
+	engine.db.logout();
 	close();
 //	printf("Mainform destructor\n");
 	if(ws) delete ws;

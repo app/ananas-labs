@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: mdtree.h,v 1.3 2005/07/04 09:16:03 red75 Exp $
+** $Id: mdtree.h,v 1.4 2008/10/25 21:41:49 leader Exp $
 **
 ** Header file of the Metadata Tree of Ananas Administrator applications
 **
@@ -53,7 +53,7 @@ public:
 	QWidget *editor;
 	aCfg *md;
 */
-	aDatabase adb;
+	aDatabase *adb;
 	
 	aListViewItem(	ananasListViewItem *parent,
 			ananasListViewItem *after,

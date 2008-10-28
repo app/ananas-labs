@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: deditpermissions.ui.h,v 1.1 2005/06/10 07:51:28 gr Exp $
+** $Id: deditpermissions.ui.h,v 1.2 2008/10/25 21:41:49 leader Exp $
 **
 ** Code file of the edit permission window
 ** Ananas administrator application 
@@ -37,15 +37,49 @@
 ** These will automatically be called by the form's constructor and
 ** destructor.
 *****************************************************************************/
+#include "adatabase.h"
 
-
-void dEditPermissions::setData( QMap<aPermission,bool> &m )
+void dEditPermissions::setData( int pm )
 {
-
+    int r,i;
+    r = 1;
+    QCheckBox *c;
+    for (i=1;i<=7;i++)
+    {
+	c = (QCheckBox*) child( (const char*) QString("checkBox%1").arg(i),"QCheckBox");
+	if ( c ) {
+	  c->setChecked( (pm & r ) !=0 );  
+	}
+	r = r << 1;
+    }
 }
 
 
-void dEditPermissions::getData( QMap<aPermission,bool> &m )
+int dEditPermissions::getData()
 {
+    int r,i, res=0;
+    r = 1;
+    QCheckBox *c;
+    for (i=1;i<=7;i++)
+    {
+	c = (QCheckBox*) child( (const char*) QString("checkBox%1").arg(i),"QCheckBox");
+	if ( c ) {
+	  if (c->isChecked()) res |= r;  
+	}
+	r = r << 1;
+    }
+    return res;
+}
+
+
+void dEditPermissions::setAll( bool v )
+{
+    int i;
+    QCheckBox *c;
+    for (i=1;i<=7;i++)
+    {
+	c = (QCheckBox*) child( (const char*) QString("checkBox%1").arg(i),"QCheckBox");
+	if ( c ) c->setChecked( v );  
+    }
 
 }

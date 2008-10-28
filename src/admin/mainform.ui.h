@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: mainform.ui.h,v 1.4 2005/07/04 09:13:25 red75 Exp $
+** $Id: mainform.ui.h,v 1.8 2008/10/26 18:54:57 leader Exp $
 **
 ** Code file of the main window
 ** Ananas administrator application 
@@ -37,6 +37,9 @@
 
 #include "usersform.h"
 #include "rolesform.h"
+
+#include <qdatatable.h>
+#include <qsqlcursor.h>
 
 void MainForm::fileNew()
 {
@@ -107,7 +110,7 @@ bool MainForm::init()
 // 	    printf( "readrc ERROR\n" );
 //	    return false;
  //   }
-    db = new aDatabase();
+    db = aDatabase::database();
     if(db->init(rcfile))
     {
     //vb->activate();
@@ -115,6 +118,23 @@ bool MainForm::init()
    	usersForm->hide();
     	rolesForm = new RolesForm(ws);
     	rolesForm->hide();
+	
+	QSqlCursor *t = new QSqlCursor( db->qds->tableName( db_users ), true, db->db() );
+	QDataTable *dt = new QDataTable( t, false, ws );
+	dt->addColumn("login",tr("Login name"));
+	dt->addColumn("fname",tr("First name"));
+	dt->addColumn("lname",tr("Last name"));
+	dt->addColumn("active1",tr("Ananas"));
+	dt->addColumn("active2",tr("Designer"));
+	dt->addColumn("active3",tr("Admin"));
+	dt->setColumnStretchable(0, true);
+	dt->setColumnReadOnly(0, true);
+	dt->setColumnReadOnly(1, true);
+	dt->setColumnReadOnly(2, true);
+//	dt->setColumnReadOnly(1, true);
+	dt->show();
+        dt->refresh();
+	
     }
     else
     {

@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: dedituser.ui.h,v 1.2 2005/06/23 15:04:50 gr Exp $
+** $Id: dedituser.ui.h,v 1.3 2008/10/25 21:41:49 leader Exp $
 **
 ** Code file of the edit user window
 ** Ananas administrator application 
@@ -42,6 +42,8 @@
 bool 
 dEditUser::check( const QString &login )
 {
+return true;
+
     if(usr->sysValue("login").toString()==login)
     {
   return false; 

@@ -20,3 +20,4 @@ win32 {
 #    LIBS	+= -L..\..\plugins -lananasplugin
 
 }
+INCLUDEPATH +=$(QTDIR)/include/qdataschema

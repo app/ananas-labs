@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: awindowslist.cpp,v 1.6 2006/07/07 05:43:27 gr Exp $
+** $Id: awindowslist.cpp,v 1.7 2008/10/18 22:31:01 leader Exp $
 **
 ** Main window of Ananas Designer applications
 **
@@ -119,6 +119,9 @@ aWindowsList::remove( QWidget *window )
 bool
 aWindowsList::find( int id, Q_ULLONG ido )
 {
+//    QDictIterator<QWidget> it( list );
+//    for ( ; it.current(); ++it ) printf("W=%s\n", it.current()->name());
+
     if ( !list.find( conv( id, ido ) ) ) return FALSE;
     return TRUE;
 }
