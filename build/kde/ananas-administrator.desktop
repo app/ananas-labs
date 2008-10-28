@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Администратор для Ананаса
+Name[ru]=Администратор для Ананаса
+GenericName=Administrator application from Ananas automation accounting system.
+GenericName[ru]=Приложение для администрирования системы автоматизированного учета "Ананас".
+Exec=ananas-administrator
+Icon=ananas-administrator.png
+Type=Application
+Terminal=false
+StarupNotify=true
+Categories=Application;Development;X-Red-Hat;
