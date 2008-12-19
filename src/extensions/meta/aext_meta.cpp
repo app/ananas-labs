@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: aext_meta.cpp,v 1.6 2008/10/13 08:13:53 app Exp $
+** $Id: aext_meta.cpp,v 1.7 2008/12/19 12:21:19 app Exp $
 **
 ** Extension object implementation file of
 ** Ananas application library
