@@ -377,5 +377,64 @@ QStringList AExtMeta::GetUserFields( aObject * aobj, QString table )
 	return GetUserFields( db->cfg.attr(aobj->obj, mda_name), table );
 }
 
+/**
+ * \en
+ * \_en 
+ * \ru
+ * 	\brief Возвращает тип пользовательского поля объекта
+ *
+ * 	\param name - Полное имя объекта, см описание GetId()
+ * 	\param attr - название атрибута
+ * 	\param table - необязательный, таблица объекта (для документов)
+ * 	\return тип атрибута, например "O 115"
+ * 	
+ * 	Пример использования
+ * \code
+ * 	meta = new Meta();
+ *  type = meta.GetAttrType("Catalogue.Товары", "Наименование"); 
+ * \endcode
+ * \_ru
+ */
+QString AExtMeta::GetAttrType(QString name, QString attr, QString table)
+{
+	aCfgItem obj;
+	if( !GetId(name) ) return "";
+	obj = db->cfg.find( GetId(name) );	
+	if(!table.isEmpty())
+	{
+		obj = db->cfg.objTable( obj, db->cfg.id(db->cfg.findName(obj, md_table, table)) );
+	}
+	else
+	{
+		obj = db->cfg.objTable( GetId(name), 0 );
+	}
+	obj = db->cfg.findName(obj, "fake", attr);
+	return db->cfg.attr(obj, mda_type);
+}
+
+/**
+ * \en
+ * \_en 
+ * \ru
+ * 	\brief Возвращает тип пользовательского поля объекта
+ *
+ * 	\param obj - объект, тип атрибута которого надо получить
+ * 	\param attr - название атрибута
+ * 	\param table - необязательный, таблица объекта (для документов)
+ * 	\return тип атрибута, например "O 115"
+ * 	
+ * 	Пример использования
+ * \code
+ *	cat = new Catalogue("Номенклатура");
+ * 	meta = new Meta();
+ *  type = meta.GetAttrType(cat, "Наименование");  
+ * \endcode
+ * \_ru
+ */
+QString AExtMeta::GetAttrType(aObject * aobj, QString attr, QString table)
+{
+	return GetAttrType( db->cfg.attr(aobj->obj, mda_name), attr, table );	
+}
+
 typedef AExtensionPlugin<AExtMeta> AExtMetaPlugin;
 A_EXPORT_PLUGIN( AExtMetaPlugin )

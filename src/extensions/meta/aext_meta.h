@@ -78,7 +78,9 @@ public slots:
 	int		GetId( QString& name );
 	int		GetId( aObject * obj );
 	QStringList GetUserFields( QString name, QString table = QString::null );	
-	QStringList GetUserFields( aObject * obj, QString table = QString::null );	
+	QStringList GetUserFields( aObject * obj, QString table = QString::null );
+	QString	GetAttrType(QString name, QString attr, QString table = QString::null);
+	QString	GetAttrType(aObject *obj, QString attr, QString table = QString::null);
 };
 
 
