@@ -959,6 +959,11 @@ app@linux.ru.net&lt;br&gt;
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>setTranslator - BinReloc path to data dir is %1.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>main - BinReloc path to data dir is %1.
 </source>
         <translation type="unfinished"></translation>
@@ -2048,6 +2053,42 @@ Now you must use &quot;Designer&quot; button.</source>
         <translation type="obsolete">Кнопки и элементы</translation>
     </message>
     <message>
+        <source>Search:</source>
+        <translation>Искать:</translation>
+    </message>
+    <message>
+        <source>Replace:</source>
+        <translation>Заменить:</translation>
+    </message>
+    <message>
+        <source>Forward</source>
+        <translation>Вперед</translation>
+    </message>
+    <message>
+        <source>Replace</source>
+        <translation>Заменить</translation>
+    </message>
+    <message>
+        <source>Backward</source>
+        <translation>Назад</translation>
+    </message>
+    <message>
+        <source>Replace All</source>
+        <translation>Заменить все</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>С учетом регистра</translation>
+    </message>
+    <message>
+        <source>Only whole words</source>
+        <translation>Только полные слова</translation>
+    </message>
+    <message>
+        <source>Current position</source>
+        <translation>С текущей позиции</translation>
+    </message>
+    <message>
         <source>Warning: BinReloc failed to initialize (error code %1)
 </source>
         <translation type="unfinished"></translation>
@@ -2369,7 +2410,7 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Document Forms</source>
-        <translation>Формы документа</translation>
+        <translation>Форма документа</translation>
     </message>
     <message>
         <source>Warning: BinReloc failed to initialize (error code %1)
@@ -2439,7 +2480,7 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Decimals</source>
-        <translation type="obsolete">Десятичные</translation>
+        <translation>Десятичные</translation>
     </message>
     <message>
         <source>Type</source>
@@ -2447,11 +2488,11 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Flags</source>
-        <translation type="obsolete">Флаг</translation>
+        <translation>Флаг</translation>
     </message>
     <message>
         <source>Sort</source>
-        <translation type="obsolete">Сорт</translation>
+        <translation>Сорт</translation>
     </message>
     <message>
         <source>Positive</source>
@@ -2467,11 +2508,11 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Cname</source>
-        <translation>Синоним</translation>
+        <translation type="obsolete">Синоним</translation>
     </message>
     <message>
         <source>Comment</source>
-        <translation>Комментарий</translation>
+        <translation type="obsolete">Комментарий</translation>
     </message>
     <message>
         <source>Not bound</source>
@@ -2491,7 +2532,7 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Periodic</source>
-        <translation>Периодический</translation>
+        <translation type="obsolete">Периодический</translation>
     </message>
     <message>
         <source>Separate triads</source>
@@ -2499,7 +2540,7 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Rights</source>
-        <translation>Права</translation>
+        <translation type="obsolete">Права</translation>
     </message>
     <message>
         <source>Maximum</source>
@@ -2511,67 +2552,67 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Sorted</source>
-        <translation>Сортировка</translation>
+        <translation type="obsolete">Сортировка</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="obsolete">,</translation>
     </message>
     <message>
         <source>Max</source>
-        <translation>Максимальная</translation>
+        <translation type="obsolete">Максимальная</translation>
     </message>
     <message>
         <source>As triads</source>
-        <translation>Триадами</translation>
+        <translation type="obsolete">Триадами</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation>Свойства</translation>
+        <translation type="obsolete">Свойства</translation>
     </message>
     <message>
         <source>Roles</source>
-        <translation>Роли</translation>
+        <translation type="obsolete">Роли</translation>
     </message>
     <message>
         <source>Groups</source>
-        <translation>Группы</translation>
+        <translation type="obsolete">Группы</translation>
     </message>
     <message>
         <source>Administrators</source>
-        <translation>Администраторы</translation>
+        <translation type="obsolete">Администраторы</translation>
     </message>
     <message>
         <source>Operators</source>
-        <translation>Операторы</translation>
+        <translation type="obsolete">Операторы</translation>
     </message>
     <message>
         <source>Users</source>
-        <translation>Пользователи</translation>
+        <translation type="obsolete">Пользователи</translation>
     </message>
     <message>
         <source>Tester</source>
-        <translation>Тестер</translation>
+        <translation type="obsolete">Тестер</translation>
     </message>
     <message>
         <source>Reading</source>
-        <translation>Чтение</translation>
+        <translation type="obsolete">Чтение</translation>
     </message>
     <message>
         <source>Writing</source>
-        <translation>Запись</translation>
+        <translation type="obsolete">Запись</translation>
     </message>
     <message>
         <source>Modification</source>
-        <translation>Изменение</translation>
+        <translation type="obsolete">Изменение</translation>
     </message>
     <message>
         <source>Deleting</source>
-        <translation>Удаление</translation>
+        <translation type="obsolete">Удаление</translation>
     </message>
     <message>
         <source>Numerator</source>
-        <translation>Нумератор</translation>
+        <translation type="obsolete">Нумератор</translation>
     </message>
     <message>
         <source>Use Date with Mask</source>
@@ -2595,7 +2636,7 @@ Enter another table name:</source>
     </message>
     <message>
         <source>or</source>
-        <translation>или </translation>
+        <translation type="obsolete">или </translation>
     </message>
     <message>
         <source>use own format</source>
@@ -2603,11 +2644,11 @@ Enter another table name:</source>
     </message>
     <message>
         <source>&lt;u&gt;&lt;i&gt;Example&lt;/i&gt;:&lt;/u&gt;</source>
-        <translation>&lt;u&gt;&lt;i&gt;Пример&lt;/i&gt;:&lt;/u&gt;</translation>
+        <translation type="obsolete">&lt;u&gt;&lt;i&gt;Пример&lt;/i&gt;:&lt;/u&gt;</translation>
     </message>
     <message>
         <source>___</source>
-        <translation>___</translation>
+        <translation type="obsolete">___</translation>
     </message>
     <message>
         <source>Min:</source>
@@ -2619,15 +2660,11 @@ Enter another table name:</source>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>Префикс:</translation>
+        <translation type="obsolete">Префикс:</translation>
     </message>
     <message>
         <source>Suffix:</source>
-        <translation>Суффикс:</translation>
-    </message>
-    <message>
-        <source>LZ</source>
-        <translation></translation>
+        <translation type="obsolete">Суффикс:</translation>
     </message>
     <message>
         <source>Add leading zeros</source>
@@ -2949,7 +2986,7 @@ Enter another column name:</source>
     </message>
     <message>
         <source>Action_2</source>
-        <translation type="unfinished"></translation>
+        <translation>Действие_2</translation>
     </message>
 </context>
 <context>

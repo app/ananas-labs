@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: deditdialog.ui.h,v 1.43 2008/06/09 11:47:59 app Exp $
+** $Id: deditdialog.ui.h,v 1.44 2009/06/01 08:43:24 app Exp $
 **
 ** Code file of the Edit Form view window
 ** of Ananas Designer applications
@@ -143,13 +143,13 @@ void dEditDialog::EditForm()
 #ifdef Q_OS_WIN32
 	tpldir = qApp->applicationDirPath()+"/templates/";
 #else
-	BrInitError error; 
-	if (br_init_lib(&error) == 0 && error != BR_INIT_ERROR_DISABLED) { 
+	BrInitError error;
+	if (br_init_lib(&error) == 0 && error != BR_INIT_ERROR_DISABLED) {
 		aLog::print(aLog::MT_INFO, tr("Warning: BinReloc failed to initialize (error code %1)\n").arg(error));
 		aLog::print(aLog::MT_INFO, tr("Will fallback to hardcoded default path.\n"));
-	} 
+	}
 	aLog::print(aLog::MT_DEBUG, tr("dEditDialog::EditForm BinReloc path to data dir is %1.\n").arg( br_find_data_dir("/usr/share") ));
-	
+
 	tpldir = QString( br_find_data_dir("/usr/share") ) + "/ananas/templates/";
 #endif
 
@@ -182,7 +182,7 @@ void dEditDialog::EditForm()
 		f1.close();
 
 	}
-	else 
+	else
 	{
 		aLog::print(aLog::MT_DEBUG, tr("dEditDialog create new form file from template"));
 		o = md->parent( md->parent( obj ) );
@@ -352,4 +352,51 @@ dEditDialog::moveToTopLeftCorner()
 		this->parentWidget()->frameSize().width(),
 		this->parentWidget()->frameSize().height());
 
+}
+
+void
+dEditDialog::findForwardClicked()
+{
+  QString findExp = searchEdit->text();
+
+  if (eModule->isActive())
+    {
+      eModule->find(findExp, cbSens->isChecked(), cbWhole->isChecked(), true,
+          cbCur->isChecked());
+    }
+}
+
+void
+dEditDialog::findBackwardClicked()
+{
+  QString findExp = searchEdit->text();
+  if (eModule->isActive())
+    {
+      eModule->find(findExp, cbSens->isChecked(), cbWhole->isChecked(), false,
+          cbCur->isChecked());
+    }
+}
+
+void
+dEditDialog::replaceClicked()
+{
+  QString findExp = searchEdit->text();
+  QString replaceExp = replaceEdit->text();
+  if (eModule->isActive())
+    {
+      eModule->replace(findExp, replaceExp, cbSens->isChecked(),
+          cbWhole->isChecked(), true, cbCur->isChecked(), false);
+    }
+}
+
+void
+dEditDialog::replaceAllClicked()
+{
+  QString findExp = searchEdit->text();
+  QString replaceExp = replaceEdit->text();
+  if (eModule->isActive())
+    {
+      eModule->replace(findExp, replaceExp, cbSens->isChecked(),
+          cbWhole->isChecked(), true, cbCur->isChecked(), true);
+    }
 }
