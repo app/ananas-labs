@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: wjournal.cpp,v 1.31 2007/12/24 08:33:14 app Exp $
+** $Id: wjournal.cpp,v 1.32 2009/06/11 07:54:10 app Exp $
 **
 ** Code file of the journal plugin of Ananas
 ** Designer and Engine applications

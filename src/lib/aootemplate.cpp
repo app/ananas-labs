@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: aootemplate.cpp,v 1.23 2007/12/01 08:58:35 app Exp $
+** $Id: aootemplate.cpp,v 1.24 2009/06/11 07:54:10 app Exp $
 **
 ** Report metadata object header file of 
 ** Ananas application library

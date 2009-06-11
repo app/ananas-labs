@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: acalctemplate.cpp,v 1.3 2007/05/26 19:01:04 leader Exp $
+** $Id: acalctemplate.cpp,v 1.4 2009/06/11 07:54:10 app Exp $
 **
 ** Report metadata object header file of 
 ** Ananas application library

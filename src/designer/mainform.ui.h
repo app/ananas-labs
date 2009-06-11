@@ -1,5 +1,5 @@
 /****************************************************************************
-** $Id: mainform.ui.h,v 1.47 2007/05/26 19:01:03 leader Exp $
+** $Id: mainform.ui.h,v 1.48 2009/06/11 07:54:10 app Exp $
 **
 ** Main window of Ananas Designer applications
 **
