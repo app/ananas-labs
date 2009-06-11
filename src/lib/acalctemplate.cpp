@@ -108,6 +108,7 @@ aCalcTemplate::getCellNode(QDomNode node)
 			return getCellNode(parent);
 		}
 	}
+	return node;
 }
 
  /**

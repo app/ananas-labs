@@ -688,4 +688,5 @@ aOOTemplate::lineFeedRemove(const QString &filename)
 		aLog::print(aLog::MT_ERROR, tr("aOOTemplate lineFeedRemove cant open %1 for write").arg(filename));
 		return false;
 	}
+	return false;
 }

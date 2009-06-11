@@ -193,6 +193,7 @@ int doAction(const QString& command, const QString& argument, QStringList *optio
 	if(command == "get") return doGet(argument, options);
 	if(command == "update") return doUpdate(argument, options);
 	if(command == "install") return doInstall(argument, options);
+	return 0;
 }
 
 

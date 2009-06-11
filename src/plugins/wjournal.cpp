@@ -284,6 +284,7 @@ wJournal::update()
 		delete doc;
 		return 0;
 	}
+	return 1;
 }
 
 int
@@ -319,6 +320,7 @@ wJournal::view()
 		engine->openForm( docId, 0, md_action_view, 0, docUid,  (aWidget*)this );
 		return 0;	
 	}
+	return 1;	
 }
 
 
@@ -351,6 +353,7 @@ wJournal::markDelete()
 		toolbarActionEnabled();
 		return res;
 	}
+	return 1;
 }
 
 

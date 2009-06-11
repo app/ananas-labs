@@ -472,7 +472,7 @@ void MainForm::closeChildWindows()
     QWidgetList windows = ws->windowList();
     for ( int i = 0; i < int( windows.count() ); i++ )
     {
- if(    windows.at(i)->className() != "CfgForm")
+ if(windows.at(i)->className() != QString::QString("CfgForm"))
  {
   windows.at(i)->close();
  }
